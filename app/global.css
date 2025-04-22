@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+
+
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+
+  }
+
+
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}
+
+
+body{
+    /* background-color: #111111; */
+	 /* font-family: 'Manrope', sans-seri
+	 f; */
+    font-family: var(--font-manrope), sans-serif;
+   
+}
+
+
+
+/* //  SCROLLBAR CSS START/ */
+/* // / Customize website's scrollbar like Mac OS Not supports in Firefox and IE / */
+::-webkit-scrollbar-thumb:hover {
+    background: red !important;
+}
+::-webkit-scrollbar-thumb {
+    /* // background-color: rgba(81, 83, 105, 0.5); */
+    background-color: rgba(81, 83, 105, 0.5);
+    border: none;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(81, 83, 105, 0.5) !important;
+}
+::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+    height: 6px;
+    margin: 1px !important;
+}
+/* // / background of the scrollbar except button or resizer / */
+::-webkit-scrollbar-track {
+    background-color: #07050E;
+}
+/* // / scrollbar itself / */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(81, 83, 105, 0.5);
+    border-radius: 16px;
+    margin: 1px !important;
+    /* // border: 2px solid rgba(81, 83, 105, 0.5); */
+}
+/* // / set button(top and bottom of the scrollbar) / */
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-track{
+    /* // background-color: red ;  */
+}
+
+/* // / SCROLLBAR CSS END */
+
