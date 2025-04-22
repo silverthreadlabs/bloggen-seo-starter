@@ -75,7 +75,7 @@ function Hero() {
 
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col sm:flex-row gap-4">
-                <Link  target='_blank' href="https://github.com/silverthreadlabs/bloggen-starter-template"
+                <Link  target='_blank' href="https://github.com/silverthreadlabs/bloggen-seo-starter"
                     className="flex-1 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 group"
                 
                 >

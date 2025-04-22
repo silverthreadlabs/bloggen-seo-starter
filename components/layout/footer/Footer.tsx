@@ -19,20 +19,7 @@ const Footer = () => {
     { href: "/blog", label: "Blog" }
   ]
 
-  const SOCIAL_ITEMS = [
-    { 
-      href: "https://github.com/silverthreadlabs",
-      icon: Github,
-      label: "GitHub",
-      hoverColor: "hover:text-slate-200"
-    },
-    { 
-      href: "https://linkedin.com/company/silverthreadlabs",
-      icon: Linkedin,
-      label: "LinkedIn",
-      hoverColor: "hover:text-blue-400"
-    }
-  ]
+
 
   return (
     <footer className="w-full bg-[#0A0A0F] border-t border-slate-800/50">
@@ -48,7 +35,7 @@ const Footer = () => {
                     Bloggen
                   </span>
                   <span className="text-slate-400 text-sm ml-2">
-                    SEO Template
+                    SEO Starter
                   </span>
                 </span>
               </div>
@@ -78,20 +65,23 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-2 border-l border-slate-800 pl-6">
-  {SOCIAL_ITEMS.map((social) => (
-    <Link
-      key={social.label}
-      href={social.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-[2px] border border-slate-700 p-2 text-slate-400 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/50 ${social.hoverColor}`}
-      aria-label={social.label}
-    >
-      <social.icon className="w-4 h-4" />
-    </Link>
-  ))}
-  
   {/* Reddit Button */}
+  <Link
+    href="https://github.com/silverthreadlabs/bloggen-seo-starter"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-[2px] border border-slate-700 p-2 text-slate-400 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/50 hover:text-slate-200"
+  >
+   <Github size={16}/>
+  </Link>
+  <Link
+    href="https://github.com/silverthreadlabs/bloggen-seo-starter"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-[2px] border border-slate-700 p-2 text-slate-400 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/50 hover:text-slate-200"
+  >
+   <Linkedin size={16}/>
+  </Link>
   <Link
     href="https://www.reddit.com/user/syedsaif666/"
     target="_blank"
