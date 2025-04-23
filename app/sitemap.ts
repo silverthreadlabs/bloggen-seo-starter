@@ -1,6 +1,6 @@
 import { getBlogPosts } from 'app/blog/utils'
 
-export const baseUrl = 'https://www.silverthreadlabs.com'
+export const baseUrl = 'https://bloggen-seo-starter.vercel.app/'
 // export const baseUrl = 'http://192.168.18.130:3000'
 
 export default async function sitemap() {
@@ -9,7 +9,7 @@ export default async function sitemap() {
     lastModified: post.metadata.publishedAt,
   }))
 
-  let routes = ['','/contact', '/blog', '/products', '/products/GlanceAI', '/products/DesignRift'].map((route) => ({
+  let routes = ['','/contact', '/blog', '/products', '/products/glanceai', '/products/designrift'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))

@@ -7,7 +7,7 @@ import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
 const productPage = {
   path: "products",
   title: "Products by Silverthread Labs",
-  description: "Explore our AI-powered tools and experimental ideas turned into real-world apps.",
+  description: "Explore our AI-po wered tools and experimental ideas turned into real-world apps.",
 };
 
 export const metadata: Metadata = createPageMetadata({

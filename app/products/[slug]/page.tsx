@@ -127,110 +127,100 @@ export default async function ProductPage({
   };
   return (
     <section className="relative w-full min-h-screen bg-[#0A0A0F]">
-    {/* Preserve JSON-LD exactly as is */}
-    <script
-      type="application/ld+json"
-      suppressHydrationWarning
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(jsonLd)
-      }}
-    />
-    <div className="max-w-[90%] xl:max-w-[1280px] mx-auto pt-24 px-4 sm:px-6">
-      {/* Header Section */}
-      <div className="space-y-6 mb-8 sm:mb-12">
-        <div className="flex items-center space-x-3">
-          <div className="h-px w-12 bg-slate-700" />
-          <span className="text-slate-400 text-sm uppercase tracking-wider font-medium">
-            Product Details
-          </span>
+  <script
+    type="application/ld+json"
+    suppressHydrationWarning
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(jsonLd)
+    }}
+  />
+  <div className="max-w-[90%] xl:max-w-[1216px] mx-auto pt-24 px-4 sm:px-6">
+    {/* Header Section */}
+    <div className="max-w-3xl mx-auto text-center mb-16">
+      <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-slate-800/50 border border-slate-700">
+        <span className="text-blue-400 text-sm font-medium">
+          Product Details
+        </span>
+      </div>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-6">
+        <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+          {post.metadata.title}
+        </span>
+      </h1>
+      <p className="text-lg text-slate-400">
+        {post.metadata.summary}
+      </p>
+    </div>
+
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      {/* Main Content */}
+      <div className="lg:col-span-8">
+        <div className="prose prose-invert max-w-none
+          prose-headings:text-white prose-headings:font-bold 
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+          prose-p:text-slate-300 prose-p:leading-relaxed
+          prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300
+          prose-strong:text-white
+          prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
+          prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-slate-700
+          prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-slate-800/30
+          prose-li:text-slate-300"
+        >
+          <CustomMDX source={post.content} />
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold leading-[1.1]">
-          <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
-            {post.metadata.title}
-          </span>
-        </h1>
-        <p className="text-lg sm:text-xl text-slate-400 max-w-3xl">
-          {post.metadata.summary}
-        </p>
       </div>
 
-      {/* Hero Image */}
-      {post.metadata.image && (
-        <div className="relative w-full aspect-video mb-12 sm:mb-16 rounded-[2px] overflow-hidden border border-slate-800/50">
-          <Image
-            src={post.metadata.image}
-            alt={post.metadata.title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-      )}
-
-      {/* Content Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 mb-20">
-        {/* Main Description */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="prose prose-invert max-w-none
-            prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
-            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
-            prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4
-            prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
-            prose-a:text-blue-400 prose-a:transition-all prose-a:no-underline
-            hover:prose-a:text-blue-300
-            prose-strong:text-white prose-strong:font-bold
-            prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-[2px] prose-code:text-sm
-            prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-[2px] prose-pre:p-6
-            prose-blockquote:border-l-4 prose-blockquote:border-slate-700 prose-blockquote:text-slate-400 prose-blockquote:pl-6 prose-blockquote:py-1
-            prose-li:text-slate-300 prose-li:mb-2
-            prose-img:rounded-[2px] prose-img:shadow-xl prose-img:border prose-img:border-slate-800/50"
-          >
-            <CustomMDX source={post.content} />
-          </div>
-        </div>
-
-        {/* Sidebar */}
-        <div className="lg:col-span-1">
-          <div className="sticky top-24 space-y-6 sm:space-y-8">
-            {post.metadata.link && (
-              <Link
-                href={post.metadata.link}
-                target="_blank"
-                className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-[2px] transition-all duration-200 w-full group border border-blue-500"
-              >
-                <span className="font-medium">Try {post.metadata.title} Now</span>
-                <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-            )}
-            
-            {/* Additional Info */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-[2px] p-6 space-y-4 border border-slate-700">
-              <h3 className="text-lg font-semibold text-white">Product Information</h3>
-              <div className="space-y-3">
-                {post.metadata.version && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Version</span>
-                    <span className="text-white">{post.metadata.version}</span>
-                  </div>
-                )}
-                {post.metadata.lastUpdated && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Last Updated</span>
-                    <span className="text-white">{post.metadata.lastUpdated}</span>
-                  </div>
-                )}
-                {post.metadata.category && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Category</span>
-                    <span className="text-white">{post.metadata.category}</span>
-                  </div>
-                )}
+      {/* Sidebar */}
+      <div className="lg:col-span-4">
+        <div className="sticky top-24 space-y-8">
+          {/* Action Button */}
+          {post.metadata.link && (
+            <Link
+              href={post.metadata.link}
+              target="_blank"
+              className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-lg transition-all duration-200 w-full group"
+            >
+              <span className="font-medium">Try {post.metadata.title}</span>
+              <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          )}
+          
+          {/* Info Cards */}
+          <div className="space-y-6">
+            {/* Product Info */}
+            <div className="bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/50">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Product Information</h3>
+                <div className="space-y-4">
+                  {post.metadata.version && (
+                    <div className="flex items-center justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Version</span>
+                      <span className="text-white font-medium">{post.metadata.version}</span>
+                    </div>
+                  )}
+                  {post.metadata.lastUpdated && (
+                    <div className="flex items-center justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Last Updated</span>
+                      <span className="text-white font-medium">{post.metadata.lastUpdated}</span>
+                    </div>
+                  )}
+                  {post.metadata.category && (
+                    <div className="flex items-center justify-between py-2">
+                      <span className="text-slate-400">Category</span>
+                      <span className="text-white font-medium">{post.metadata.category}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   );
 }

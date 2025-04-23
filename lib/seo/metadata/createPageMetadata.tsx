@@ -2,7 +2,7 @@ import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
 import { getURL } from "@/lib/utils/helpers";
 import { Metadata } from "next";
 
-const SITE_TITLE = "Silverthread Labs";
+const SITE_TITLE = "BlogGen SEO Starter";
 
 /**
  * Creates page-specific metadata.

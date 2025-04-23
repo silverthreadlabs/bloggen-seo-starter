@@ -11,8 +11,9 @@ import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
 
 export const metadata: Metadata = createPageMetadata({
   path: "about",
-  description: "A comprehensive Next.js SEO starter template created by Bloggen and Silverthread Labs, featuring built-in metadata optimization, JSON-LD schemas, and MDX blog support.",
+  description: "Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.",
 });
+
 
 interface Feature {
   icon: React.ReactElement;

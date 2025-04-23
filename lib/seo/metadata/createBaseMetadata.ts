@@ -2,37 +2,40 @@
 import { Metadata } from "next";
 import { getURL } from "@/lib/utils/helpers";
 
-const SITE_TITLE = "Silverthread Labs";
+const SITE_TITLE = "Bloggen SEO Starter";
 const description =
-  "Join Silverthread Labs' community creating open-source AI tools that simplify daily life. Start building and automating today!";
+  "Kickstart your SEO-optimized Next.js project with Bloggen SEO Starter. Featuring MDX support, dynamic OG images, JSON-LD, and top performance out-of-the-box.";
 // const url = getURL();
 // Base metadata object with common properties
 const meta = {
   url: getURL(),
-  creator: "Silverthread Labs",
+  creator: "BlogGen",
   // description:
   //   "We design AI that feels personal and empowers everyday innovation. Join our community of creators building open-source AI tools that simplify daily life. From custom automation to collaborative projects, Silverthread Labs transforms ideas into accessible solutions that make technology work for you, not the other way around. Start building, automating, and simplifying with us today.",
   // favicon: "/favicon.ico",
   description: description,
   keywords: [
     SITE_TITLE,
-    "AI Solutions",
-    "Personal AI",
-    "AI Tools",
-    "Open Source AI",
-    "Custom Automation",
-    "AI Innovation",
-    "Collaborative AI",
-    "AI Community",
-    "Accessible Technology",
-    "AI Simplification",
-    "Daily Life Automation",
-    "Technology Solutions",
-    "AI Development",
-    "AI Empowerment",
-    "AI Builder Platform",
-    "AI Automation Tools",
-    "Personal Technology",
+    "BlogGen SEO Starter",
+    "Bloggen",
+    "SEO",
+    "Starter Template",
+    "Boilerplate",
+    "MDX",
+    "MDX Blog",
+    "Dynamic OG Images",
+    "Open Graph Images",
+    "JSON-LD",
+    "Schema Markup",
+    "SEO Optimized",
+    "High Performance",
+    "Lighthouse Score",
+    "Web Development",
+    "Frontend",
+    "Developer Tools",
+    "Content Site",
+    "Blog Template",
+    "Vercel",
   ],
   ogImageConfig: {
     url: `${getURL()}/og?title=${encodeURIComponent(SITE_TITLE)}`,

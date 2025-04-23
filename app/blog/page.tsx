@@ -22,8 +22,9 @@ const blog = {
 export const metadata: Metadata = createPageMetadata({
   path: "blog",
   description:
-    "Blog posts from the Silverthread Labs team and community. Discover the latest in web development.",
+    "Learn how to build, customize, and grow your site with Bloggen SEO Starter and Bloggen AI. Setup guides, tips, and SEO content strategies—all in one place.",
 });
+
 
 
 // export async function generateMetadata() {

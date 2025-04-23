@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = createPageMetadata({
-  path: "Digital Innovation Studio",
+  path: "SEO by Default",
 
 });
 

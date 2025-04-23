@@ -75,7 +75,7 @@ const Footer = () => {
    <Github size={16}/>
   </Link>
   <Link
-    href="https://github.com/silverthreadlabs/bloggen-seo-starter"
+    href="https://www.linkedin.com/company/106311628/admin/dashboard/"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-flex items-center justify-center rounded-[2px] border border-slate-700 p-2 text-slate-400 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/50 hover:text-slate-200"
