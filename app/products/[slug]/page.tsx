@@ -126,7 +126,7 @@ export default async function ProductPage({
     version: post.metadata.version
   };
   return (
-    <section className="relative w-full min-h-screen bg-[#0A0A0F]">
+<section className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
   <script
     type="application/ld+json"
     suppressHydrationWarning
@@ -134,86 +134,96 @@ export default async function ProductPage({
       __html: JSON.stringify(jsonLd)
     }}
   />
-  <div className="max-w-[90%] xl:max-w-[1216px] mx-auto pt-24 px-4 sm:px-6">
-    {/* Header Section */}
-    <div className="max-w-3xl mx-auto text-center mb-16">
-      <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-slate-800/50 border border-slate-700">
-        <span className="text-blue-400 text-sm font-medium">
-          Product Details
-        </span>
-      </div>
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-6">
-        <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
-          {post.metadata.title}
-        </span>
-      </h1>
-      <p className="text-lg text-slate-400">
-        {post.metadata.summary}
-      </p>
-    </div>
+  
+  <div className="fixed inset-0 z-[-1]">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(2,6,23,0.8))]" />
+  </div>
 
-    {/* Content Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      {/* Main Content */}
-      <div className="lg:col-span-8">
-        <div className="prose prose-invert max-w-none
-          prose-headings:text-white prose-headings:font-bold 
-          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-slate-300 prose-p:leading-relaxed
-          prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300
-          prose-strong:text-white
-          prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-          prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-slate-700
-          prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-slate-800/30
-          prose-li:text-slate-300"
-        >
-          <CustomMDX source={post.content} />
+  <div className="relative z-10">
+    <div className="min-h-screen max-w-[1216px] mx-auto">
+      {/* Header Section */}
+      <div className="py-20">
+        <span className="text-blue-500 text-sm font-medium tracking-wider uppercase mb-4 block">
+          {post.metadata.category || 'Product Details'}
+        </span>
+        
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+                {post.metadata.title}
+              </span>
+            </h1>
+            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              {post.metadata.summary}
+            </p>
+            
+            {/* Action Button */}
+            {post.metadata.link && (
+              <Link
+                href={post.metadata.link}
+                target="_blank"
+                className="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 group"
+              >
+                <span className="font-medium">Try {post.metadata.title}</span>
+                <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            )}
+          </div>
+
+          <div className="grid gap-4">
+            {[
+              { label: 'Version', value: post.metadata.version },
+              { label: 'Last Updated', value: post.metadata.lastUpdated }
+            ].map((item, index) => item.value && (
+              <div key={index} className="p-6 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-600 transition-all duration-300">
+                <div className="text-sm text-slate-400 mb-1">{item.label}</div>
+                <div className="text-lg font-semibold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Sidebar */}
-      <div className="lg:col-span-4">
-        <div className="sticky top-24 space-y-8">
-          {/* Action Button */}
-          {post.metadata.link && (
-            <Link
-              href={post.metadata.link}
-              target="_blank"
-              className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 rounded-lg transition-all duration-200 w-full group"
-            >
-              <span className="font-medium">Try {post.metadata.title}</span>
-              <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          )}
-          
-          {/* Info Cards */}
-          <div className="space-y-6">
-            {/* Product Info */}
-            <div className="bg-slate-800/30 backdrop-blur-sm rounded-lg border border-slate-700/50">
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">Product Information</h3>
-                <div className="space-y-4">
-                  {post.metadata.version && (
-                    <div className="flex items-center justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-400">Version</span>
-                      <span className="text-white font-medium">{post.metadata.version}</span>
-                    </div>
-                  )}
-                  {post.metadata.lastUpdated && (
-                    <div className="flex items-center justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-400">Last Updated</span>
-                      <span className="text-white font-medium">{post.metadata.lastUpdated}</span>
-                    </div>
-                  )}
-                  {post.metadata.category && (
-                    <div className="flex items-center justify-between py-2">
-                      <span className="text-slate-400">Category</span>
-                      <span className="text-white font-medium">{post.metadata.category}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
+      {/* Content Section */}
+      <div className="grid lg:grid-cols-3 gap-8 lg:gap-16 pb-20">
+        {/* Main Content */}
+        <div className="lg:col-span-2">
+          <div className="prose prose-invert max-w-none
+            prose-headings:text-white prose-headings:font-bold 
+            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+            prose-p:text-slate-400 prose-p:leading-relaxed
+            prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300
+            prose-strong:text-white
+            prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
+            prose-pre:bg-slate-900/50 prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-slate-800 prose-pre:rounded-xl
+            prose-blockquote:border-l-4 prose-blockquote:border-blue-500/30 prose-blockquote:bg-slate-900/30
+            prose-li:text-slate-400"
+          >
+            <CustomMDX source={post.content} />
+          </div>
+        </div>
+
+        {/* Sidebar */}
+        <div className="lg:col-span-1">
+          <div className="sticky top-24 space-y-6">
+            <div className="p-6 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-600 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
+              <nav className="space-y-2">
+                <a href="#features" className="flex items-center text-slate-400 hover:text-blue-400 transition-colors">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                  Features
+                </a>
+                <a href="#installation" className="flex items-center text-slate-400 hover:text-blue-400 transition-colors">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                  Installation
+                </a>
+                <a href="#usage" className="flex items-center text-slate-400 hover:text-blue-400 transition-colors">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                  Usage
+                </a>
+              </nav>
             </div>
           </div>
         </div>
@@ -221,6 +231,7 @@ export default async function ProductPage({
     </div>
   </div>
 </section>
+
 
   );
 }
