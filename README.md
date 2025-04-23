@@ -58,19 +58,6 @@ This is an example of a blog post created using BlogGen SEO Starter.
 - Optimize images with alt text.
 ```
 
-## Configuration Options
-
-BlogGen SEO Starter allows for various configuration options. You can customize settings in the `config.js` file:
-
-```javascript
-module.exports = {
-  siteTitle: "Your Blog Title",
-  siteDescription: "A brief description of your blog.",
-  author: "Your Name",
-  // Add more configuration options as needed
-};
-```
-
 ## Dependencies
 
 The following dependencies are included in this project:
