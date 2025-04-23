@@ -58,7 +58,7 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function Page() {
   return (
-    <section className='bg-black relative'>
+    <section className='relative'>
       {/* <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1> */}
       {/* <Header/> */}
 
