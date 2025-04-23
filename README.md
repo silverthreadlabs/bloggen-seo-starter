@@ -71,17 +71,32 @@ module.exports = {
 };
 ```
 
-## API Documentation
-
-For detailed API documentation, please refer to the [BlogGen Documentation](https://bloggen.dev/).
-
 ## Dependencies
 
-- React
-- Next.js
-- MDX
-- Axios
-- [Other dependencies as needed]
+The following dependencies are included in this project:
+
+| Dependency                   | Version         |
+|------------------------------|------------------|
+| @tailwindcss/postcss         | 4.0.0-alpha.13   |
+| @types/node                  | 20.11.17         |
+| @types/react                 | 19.0.8           |
+| @types/react-dom             | 19.0.3           |
+| @vercel/analytics            | ^1.1.3           |
+| @vercel/og                   | ^0.6.8           |
+| @vercel/speed-insights       | ^1.0.9           |
+| framer-motion                | ^12.3.1          |
+| geist                        | 1.3.1            |
+| lucide-react                 | ^0.474.0         |
+| next                         | 15.3.0           |
+| next-mdx-remote             | 5.0.0            |
+| postcss                      | ^8.4.35          |
+| react                        | 19.0.0           |
+| react-dom                    | 19.0.0           |
+| schema-dts                   | ^1.1.2           |
+| sugar-high                   | 0.9.2            |
+| tailwindcss                  | 4.0.0-alpha.13   |
+| three                        | ^0.173.0         |
+| typescript                   | 5.3.3            |
 
 ## Contributing Guidelines
 
