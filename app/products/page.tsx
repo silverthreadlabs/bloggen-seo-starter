@@ -1,5 +1,5 @@
 import { ProductPosts } from "@/components/ProductPosts";
-import { baseUrl } from "app/sitemap";
+import { siteConfig } from "@/lib/config/siteConfig";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
 
@@ -25,7 +25,7 @@ export default function ProductsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProductCollection",
-            url: `${baseUrl}/products`,
+            url: `${siteConfig.baseUrl}/products`,
             brand: {
               "@type": "Organization",
               name: "Silverthread Labs",

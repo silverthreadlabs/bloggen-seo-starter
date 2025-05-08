@@ -1,54 +1,13 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
-import { baseUrl } from "app/sitemap";
+import { siteConfig } from "@/lib/config/siteConfig";
 import Image from "next/image";
-
-// import BackgroundGrid from "@/components/layout/BackgroundGrid";
 import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
 import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
-import { getURL } from "@/lib/utils/helpers";
+// import { getURL } from "@/lib/utils/helpers";
 
-// Make generateMetadata asynchronous and await params
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: Promise<{ slug: string }>
-// }) {
-//   // Await the params before using them
-//   const { slug } = await Promise.resolve(params)
-//   const post = getBlogPosts().find((post) => post.slug === slug)
-//   if (!post) {
-//     return
-//   }
 
-//   const { title, publishedAt: publishedTime, summary: description, image } =
-//     post.metadata
-//   const ogImage = image
-//     ? image
-//     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
-
-//   return {
-//     title,
-//     description,
-//     openGraph: {
-//       title,
-//       description,
-//       type: 'article',
-//       publishedTime,
-//       url: `${baseUrl}/blog/${post.slug}`,
-//       images: [{ url: ogImage }],
-//     },
-//     twitter: {
-//       card: 'summary_large_image',
-//       title,
-//       description,
-//       images: [ogImage],
-//     },
-//   }
-// }
-
-// Use the helper in generateMetadata and then override blog-specific fields.
 export async function generateMetadata({
   params,
 }: {
@@ -77,7 +36,7 @@ export async function generateMetadata({
   
   const ogImage = image
   ? image
-  : `${getURL()}/og?title=${encodeURIComponent(title)}`;
+  : `${siteConfig.baseUrl}/og?title=${encodeURIComponent(title)}`;
   
   // console.log("FUCK2: ", slug);
   return {
@@ -90,7 +49,7 @@ export async function generateMetadata({
       // description,
       type: "article",
       publishedTime,
-      url: `${getURL()}/blog/${post.slug}`,
+      url: `${siteConfig.baseUrl}/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -148,9 +107,9 @@ export default async function Blog({
               dateModified: post.metadata.publishedAt,
               description: post.metadata.summary,
               image: post.metadata.image
-                ? `${baseUrl}${post.metadata.image}`
+                ? `${siteConfig.baseUrl}${post.metadata.image}`
                 : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-              url: `${baseUrl}/blog/${post.slug}`,
+              url: `${siteConfig.baseUrl}/blog/${post.slug}`,
               author: {
                 "@type": "Person",
                 name: "Silverthread Labs",
