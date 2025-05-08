@@ -47,10 +47,10 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get in Touch
           </h1>
-          <p className="text-lg text-slate-400">
+          <h2 className="text-lg text-slate-400">
             If you have any questions about the SEO template? or how to use
             Bloggen. Or just want to share your feedback? Feel free to send us an email.
-          </p>
+          </h2>
         </div>
 
         {/* Contact Options */}

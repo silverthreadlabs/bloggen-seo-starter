@@ -31,10 +31,10 @@ export function ProductPosts() {
               Build{" "}
             </span>
           </h1>
-          <p className="text-slate-400 text-base">
+          <h2 className="text-slate-200 text-2xl text-balance">
             Discover the products we've crafted at Silverthread Labs to save
             time, boost performance.
-          </p>
+          </h2>
         </div>
 
         {/* Products Grid */}
@@ -52,15 +52,15 @@ export function ProductPosts() {
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-lg font-medium text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-medium text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                       {post.metadata.title}
                     </h3>
-                    <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+                    <p className="text-base text-balance text-slate-300 group-hover:text-slate-300 transition-colors duration-300">
                       {post.metadata.summary}
                     </p>
                   </div>
 
-                  <div className="mt-auto pt-4 flex items-center gap-2 text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
+                  <div className="mt-auto pt-4 flex items-center gap-2 text-sm text-blue-300 group-hover:text-blue-300 transition-colors">
                     <span className="text-xs font-medium">Learn more</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
