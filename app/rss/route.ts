@@ -1,4 +1,4 @@
-import { baseUrl } from 'app/sitemap'
+import { siteConfig } from '@/lib/config/siteConfig'
 import { getBlogPosts } from 'app/blog/utils'
 
 export async function GET() {
@@ -15,7 +15,7 @@ export async function GET() {
       (post) =>
         `<item>
           <title>${post.metadata.title}</title>
-          <link>${baseUrl}/blog/${post.slug}</link>
+          <link>${siteConfig.baseUrl}/blog/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
             post.metadata.publishedAt
@@ -28,7 +28,7 @@ export async function GET() {
   <rss version="2.0">
     <channel>
         <title>Blogs</title>
-        <link>${baseUrl}</link>
+        <link>${siteConfig.baseUrl}</link>
         <description>Latest Blogs</description>
         ${itemsXml}
     </channel>
