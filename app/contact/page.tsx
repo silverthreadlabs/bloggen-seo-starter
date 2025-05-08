@@ -26,13 +26,21 @@ export default function ContactPage() {
       <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="flex items-center justify-center gap-2 mb-6">
             <span className="text-slate-400">Contact</span>
-            <Link href="https://bloggen.dev" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors">
+            <Link
+              href="https://bloggen.dev"
+              target="_blank"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
               Bloggen
             </Link>
             <span className="text-slate-400">×</span>
-            <Link href="https://silverthreadlabs.com" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors">
+            <Link
+              href="https://silverthreadlabs.com"
+              target="_blank"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
               Silverthread Labs
             </Link>
           </div>
@@ -40,7 +48,8 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-lg text-slate-400">
-            Questions about the SEO template? Want to share your feedback? We're here to help you succeed.
+            If you have any questions about the SEO template? or how to use
+            Bloggen. Or just want to share your feedback? Feel free to send us an email.
           </p>
         </div>
 
@@ -66,7 +75,6 @@ export default function ContactPage() {
                   silverthreadlabs@gmail.com
                 </p>
               </div>
-              
             </div>
           </a>
           <a
@@ -85,10 +93,9 @@ export default function ContactPage() {
                   <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                 </div>
                 <p className="mt-2 text-slate-400 group-hover:text-slate-300">
-              bloggen.dev@gmail.com
+                  bloggen.dev@gmail.com
                 </p>
               </div>
-              
             </div>
           </a>
 
@@ -100,7 +107,9 @@ export default function ContactPage() {
                   <Clock className="w-5 h-5 text-slate-400" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white mb-1">Response Time</h3>
+                  <h3 className="text-sm font-medium text-white mb-1">
+                    Response Time
+                  </h3>
                   <p className="text-sm text-slate-400">Within 24 hours</p>
                 </div>
               </div>
@@ -112,8 +121,12 @@ export default function ContactPage() {
                   <MessageSquare className="w-5 h-5 text-slate-400" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-white mb-1">Support</h3>
-                  <p className="text-sm text-slate-400">24/7 Template Support</p>
+                  <h3 className="text-sm font-medium text-white mb-1">
+                    Support
+                  </h3>
+                  <p className="text-sm text-slate-400">
+                    24/7 Template Support
+                  </p>
                 </div>
               </div>
             </div>

@@ -26,17 +26,21 @@ export function ProductPosts() {
           </span>
           <h1 className="text-3xl lg:text-5xl font-bold text-white leading-tight mb-4">
             What We
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text"> Build </span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+              {" "}
+              Build{" "}
+            </span>
           </h1>
           <p className="text-slate-400 text-base">
-            Discover the products we've crafted at Silverthread Labs to save time, boost performance.
+            Discover the products we've crafted at Silverthread Labs to save
+            time, boost performance.
           </p>
         </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {sortedProducts.map((post) => (
-            <Link 
+            <Link
               key={post.slug}
               href={`/products/${post.slug}`}
               className="block group"
@@ -46,7 +50,7 @@ export function ProductPosts() {
                   <div className="p-2.5 bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg w-fit group-hover:scale-110 transition-transform duration-300">
                     <Sparkles className="w-4 h-4 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
                   </div>
-                  
+
                   <div className="mt-4">
                     <h3 className="text-lg font-medium text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                       {post.metadata.title}
@@ -55,7 +59,7 @@ export function ProductPosts() {
                       {post.metadata.summary}
                     </p>
                   </div>
-                  
+
                   <div className="mt-auto pt-4 flex items-center gap-2 text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
                     <span className="text-xs font-medium">Learn more</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

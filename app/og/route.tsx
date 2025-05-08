@@ -2,7 +2,7 @@ import { ImageResponse } from '@vercel/og'
 
 export function GET(request: Request) {
   const url = new URL(request.url)
-  const title = url.searchParams.get('title') || 'BlogGen SEO Starter'
+  const title = url.searchParams.get('title') || 'Bloggen SEO Starter'
   
   return new ImageResponse(
     (

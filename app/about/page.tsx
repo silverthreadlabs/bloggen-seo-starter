@@ -24,17 +24,17 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: <Search className="w-5 h-5" />,
-    title: "SEO On by Default	",
+    title: "SEO On by Default	",
     description: "Meta tags, OG data, sitemap & robots.txt baked in from the first commit.",
   },
   {
     icon: <FileJson className="w-5 h-5" />,
-    title: "Rich Results Ready",
+    title: "Rich Results Ready",
     description: "Auto‑generated JSON‑LD gives Google the context it needs for rich snippets.",
   },
   {
     icon: <Layout className="w-5 h-5" />,
-    title: "MDX‑Powered Blog",
+    title: "MDX‑Powered Blog",
     description: "Drop your Bloggen‑made MDX files into /content and they’re live—SEO and styling included.",
   },
   {
@@ -62,11 +62,11 @@ export default function AboutPage() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="text-slate-400">Created by</span>
+            <span className="text-slate-400">Powered by</span>
             <Link href="https://bloggen.dev" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors">
               Bloggen
             </Link>
-            <span className="text-slate-400">×</span>
+            <span className="text-slate-400">Authored by</span>
             <Link href="https://silverthreadlabs.com" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors">
               Silverthread Labs
             </Link>

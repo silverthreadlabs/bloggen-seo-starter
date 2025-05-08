@@ -1,19 +1,24 @@
-import { getBlogPosts } from 'app/blog/utils'
+import { getBlogPosts } from "app/blog/utils";
+import { getProductPosts } from "app/products/utils";
+import { siteConfig } from "@/lib/config/siteConfig";
 
-export const baseUrl = 'https://bloggen-seo-starter.vercel.app/'
-// export const baseUrl = 'http://192.168.18.130:3000'
+
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${siteConfig.baseUrl}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
-  }))
+  }));
+  let products = getProductPosts().map((post) => ({
+    url: `${siteConfig.baseUrl}/products/${post.slug}`,
+    lastModified: post.metadata.publishedAt,
+  }));
 
-  let routes = ['','/contact', '/blog', '/products', '/products/glanceai', '/products/designrift'].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
-  }))
+  let routes = siteConfig.sitemap.staticRoutes.map((route) => ({
+      url: `${siteConfig.baseUrl}${route}`,
+      lastModified: new Date().toISOString().split("T")[0],
+    })
+  );
 
-  return [...routes, ...blogs]
-  // return [...routes]
+  return [...routes, ...blogs, ...products];
 }
