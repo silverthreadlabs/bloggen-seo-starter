@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaCopy, FaCheck, FaGithub } from "react-icons/fa";
 import Link from "next/link";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "../../FeatureCard";
 import features from "./features-list";
 
 export default function Hero() {
