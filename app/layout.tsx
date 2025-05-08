@@ -21,6 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable}`}>
+<head>
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="sQQb4vR/PAMuQQuYe+LiXQ"
+          async
+        ></script>
+      </head>
       <body className="antialiased lg:mx-auto">
         <main className="flex-auto min-w-0  flex flex-col md:px-0">
           <Header />
