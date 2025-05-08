@@ -27,7 +27,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="flex-1 py-10 xl:py-20 flex flex-col justify-center"
           >
             <div className="max-w-xl">
@@ -41,7 +41,7 @@ export default function Hero() {
                   Already Done.
                 </span>
               </h1>
-              <h2 className="text-slate-400 text-2xl mb-8 leading-relaxed">
+              <h2 className="text-slate-200 text-2xl mb-8 leading-relaxed">
                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG
                 images, JSON‑LD, and top Lighthouse scores.
               </h2>

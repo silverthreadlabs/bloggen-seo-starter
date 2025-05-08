@@ -8,11 +8,9 @@ export const dynamic = "force-dynamic";
 const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-manrope",
 });
-
-
 
 export default function RootLayout({
   children,
@@ -21,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable}`}>
-<head>
+      <head>
         <script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="sQQb4vR/PAMuQQuYe+LiXQ"

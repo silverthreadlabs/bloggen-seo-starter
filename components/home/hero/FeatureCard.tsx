@@ -26,7 +26,7 @@ function FeatureCard({
             <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300 ease-out">
               {title}
             </h3>
-            <p className="text-slate-400 group-hover:text-slate-300 transition-colors duration-300 ease-out">
+            <p className="text-slate-300 group-hover:text-slate-300 transition-colors duration-300 ease-out">
               {descriptionStart}
               {code && (
                 <code className="bg-slate-800 px-2 py-1 rounded-md font-mono text-sm text-slate-200">
