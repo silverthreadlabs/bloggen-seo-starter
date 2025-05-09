@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import { formatDate} from "@/lib/utils/mdx-utils";
+import { getBlogPosts } from "@/lib/blog";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
@@ -15,8 +16,8 @@ export function BlogPosts({ isHomePage = false }) {
   const displayedBlogs = isHomePage ? sortedBlogs.slice(0, 3) : sortedBlogs;
 
   return (
-<div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
-<div className="fixed inset-0 z-[-1]">
+    <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
+      <div className="fixed inset-0 z-[-1]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(2,6,23,0.8))]" />
       </div>
 
@@ -29,7 +30,10 @@ export function BlogPosts({ isHomePage = false }) {
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
               Latest
-              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text"> Articles</span>
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+                {" "}
+                Articles
+              </span>
             </h2>
           </div>
 
@@ -89,8 +93,12 @@ export function BlogPosts({ isHomePage = false }) {
                 className="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-all duration-300 border border-slate-700 hover:border-slate-600 flex items-center justify-center gap-2"
               >
                 Subscribe to RSS
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.18 15.64a2.18 2.18 0 112.18 2.18 2.18 2.18 0 01-2.18-2.18zM6.18 8.91h4.36v2.18H6.18V8.91zm0-4.36h8.73v2.18H6.18V4.55z"/>
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M6.18 15.64a2.18 2.18 0 112.18 2.18 2.18 2.18 0 01-2.18-2.18zM6.18 8.91h4.36v2.18H6.18V8.91zm0-4.36h8.73v2.18H6.18V4.55z" />
                 </svg>
               </Link>
             </div>
@@ -98,7 +106,5 @@ export function BlogPosts({ isHomePage = false }) {
         </div>
       </div>
     </div>
-  
-
   );
 }

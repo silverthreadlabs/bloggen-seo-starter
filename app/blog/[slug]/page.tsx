@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import { formatDate} from "@/lib/utils/mdx-utils";
+import { getBlogPosts } from "@/lib/blog";
 import { siteConfig } from "@/lib/config/siteConfig";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";

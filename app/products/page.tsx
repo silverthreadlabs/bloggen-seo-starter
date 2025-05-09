@@ -1,4 +1,4 @@
-import { ProductPosts } from "@/components/ProductPosts";
+import { ProductPosts } from "@/components/products/ProductPosts";
 import { siteConfig } from "@/lib/config/siteConfig";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";

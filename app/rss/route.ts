@@ -1,5 +1,5 @@
 import { siteConfig } from '@/lib/config/siteConfig'
-import { getBlogPosts } from 'app/blog/utils'
+import { getBlogPosts } from '@/lib/blog'
 
 export async function GET() {
   let allBlogs = await getBlogPosts()

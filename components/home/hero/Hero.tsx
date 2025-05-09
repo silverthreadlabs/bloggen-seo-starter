@@ -93,7 +93,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="flex-1 py-10 xl:py-20 flex items-center"
           >
             <div className="grid gap-6 w-full">
