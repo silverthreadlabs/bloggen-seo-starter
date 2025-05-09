@@ -1,13 +1,13 @@
 import { ProductPosts } from "@/components/ProductPosts";
-// import BackgroundGrid from "@/components/layout/BackgroundGrid";
-import { baseUrl } from 'app/sitemap';
-import { Metadata } from 'next';
-import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
+import { siteConfig } from "@/lib/config/siteConfig";
+import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
 
 const productPage = {
   path: "products",
   title: "Products by Silverthread Labs",
-  description: "Explore our AI-po wered tools and experimental ideas turned into real-world apps.",
+  description:
+    "Explore our AI-powered tools and experimental ideas turned into real-world apps.",
 };
 
 export const metadata: Metadata = createPageMetadata({
@@ -15,9 +15,9 @@ export const metadata: Metadata = createPageMetadata({
   description: productPage.description,
 });
 
-export default function Page() {
+export default function ProductsPage() {
   return (
-    <section className=' relative'>
+    <section className="relative">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -25,7 +25,7 @@ export default function Page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProductCollection",
-            url: `${baseUrl}/products`,
+            url: `${siteConfig.baseUrl}/products`,
             brand: {
               "@type": "Organization",
               name: "Silverthread Labs",
@@ -33,7 +33,6 @@ export default function Page() {
           }),
         }}
       />
-      {/* <BackgroundGrid /> */}
       <ProductPosts />
     </section>
   );

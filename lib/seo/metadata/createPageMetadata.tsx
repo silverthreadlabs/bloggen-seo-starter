@@ -1,8 +1,6 @@
-import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
-import { getURL } from "@/lib/utils/helpers";
 import { Metadata } from "next";
-
-const SITE_TITLE = "BlogGen SEO Starter";
+import { siteConfig } from "@/lib/config/siteConfig";
+import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
 
 /**
  * Creates page-specific metadata.
@@ -13,6 +11,7 @@ const SITE_TITLE = "BlogGen SEO Starter";
  * @param params.baseMetadata - (Optional) The base metadata to extend from (e.g. defaultMetadata or noRobotsMetadata). Defaults to defaultMetadata.
  * @returns A Metadata object with updated title, description, and openGraph/twitter settings.
  */
+
 export function createPageMetadata({
   path,
   description,
@@ -24,10 +23,13 @@ export function createPageMetadata({
 }): Metadata {
   // Capitalize the first letter of the provided path for the page title.
   const capitalizedPath = path.charAt(0).toUpperCase() + path.slice(1);
-  const pageTitle = `${capitalizedPath} | ${SITE_TITLE}`;
-  // console.log("FUCK3: " , pageTitle)
-  const url = `${getURL()}/${path}`;
-  const ogImageUrl = `${getURL()}/og?title=${encodeURIComponent(pageTitle)}`;
+  const pageTitle = capitalizedPath
+    ? `${capitalizedPath} | ${siteConfig.title}`
+    : siteConfig.title;
+  const url = `${siteConfig.baseUrl}/${path}`;
+  const ogImageUrl = `${siteConfig.baseUrl}/og?title=${encodeURIComponent(
+    pageTitle
+  )}`;
 
   return {
     ...baseMetadata,

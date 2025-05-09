@@ -154,7 +154,7 @@ export default async function ProductPage({
                 {post.metadata.title}
               </span>
             </h1>
-            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+            <p className="text-slate-100 text-lg mb-8 leading-relaxed">
               {post.metadata.summary}
             </p>
             
