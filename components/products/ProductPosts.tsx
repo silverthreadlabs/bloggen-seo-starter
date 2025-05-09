@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProductPosts } from "app/products/utils";
+import { getProductPosts } from "@/lib/products"; 
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function ProductPosts() {
@@ -31,7 +31,7 @@ export function ProductPosts() {
               Build{" "}
             </span>
           </h1>
-          <h2 className="text-slate-200 text-2xl text-balance">
+          <h2 className="text-slate-300 text-xl text-balance">
             Discover the products we've crafted at Silverthread Labs to save
             time, boost performance.
           </h2>

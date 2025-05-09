@@ -174,13 +174,13 @@ export default function AboutPage() {
             >
               Next.js SEO Template
             </h1>
-            <p
+            <h2
               id="about-page-subtitle"
-              className="text-2xl text-slate-400"
+              className="text-xl text-slate-400 text-balance"
             >
               Spin up a production-ready site with SEO, performance, and
               content workflows already solved.
-            </p>
+            </h2>
           </header>
 
           {/* Features */}
@@ -188,9 +188,9 @@ export default function AboutPage() {
             aria-labelledby="features-title"
             className="mb-16"
           >
-            <h2 id="features-title" className="sr-only">
+            {/* <h3 id="features-title" className="sr-only">
               Key Features
-            </h2>
+            </h3> */}
             <FeaturesList />
           </section>
         </div>

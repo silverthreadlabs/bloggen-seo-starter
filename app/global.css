@@ -135,45 +135,31 @@ body{
    
 }
 
-
-
-/* //  SCROLLBAR CSS START/ */
-/* // / Customize website's scrollbar like Mac OS Not supports in Firefox and IE / */
-::-webkit-scrollbar-thumb:hover {
-    background: red !important;
-}
-::-webkit-scrollbar-thumb {
-    /* // background-color: rgba(81, 83, 105, 0.5); */
-    background-color: rgba(81, 83, 105, 0.5);
-    border: none;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(81, 83, 105, 0.5) !important;
-}
+/* Scrollbar Customization */
 ::-webkit-scrollbar {
-    width: 4px;
-    cursor: pointer;
-    height: 6px;
-    margin: 1px !important;
+  width: 6px;
+  height: 6px;
+  margin: 1px !important;
 }
-/* // / background of the scrollbar except button or resizer / */
+
+/* Track (background) */
 ::-webkit-scrollbar-track {
-    background-color: #07050E;
+  background-color: #07050E;
 }
-/* // / scrollbar itself / */
+
+/* Thumb (draggable scrolling handle) */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(81, 83, 105, 0.5);
-    border-radius: 16px;
-    margin: 1px !important;
-    /* // border: 2px solid rgba(81, 83, 105, 0.5); */
+  background-color: rgba(81, 83, 105, 0.5);
+  border-radius: 16px;
+  margin: 1px !important;
 }
-/* // / set button(top and bottom of the scrollbar) / */
+
+/* Thumb hover state */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(81, 83, 105, 0.7);
+}
+
+/* Hide scrollbar buttons */
 ::-webkit-scrollbar-button {
-    display: none;
+  display: none;
 }
-::-webkit-scrollbar-track{
-    /* // background-color: red ;  */
-}
-
-/* // / SCROLLBAR CSS END */
-

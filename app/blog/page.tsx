@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { BlogPosts } from '@/components/posts'
+import { BlogPosts } from '@/components/blog/BlogPosts'
 import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
 import { siteConfig } from '@/lib/config/siteConfig'
 
