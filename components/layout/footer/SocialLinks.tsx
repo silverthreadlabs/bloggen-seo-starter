@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaLinkedinIn, FaRedditAlien, FaGithub } from "react-icons/fa";
-import SilverthreadLabsLogo from "@/components/logo/SilverthreadLabsLogo";
+import SilverthreadLabsLogo from "@/components/logo/silverthread-labs-logo";
 
 const SocialLink = ({ href, ariaLabel, icon }) => (
   <Link

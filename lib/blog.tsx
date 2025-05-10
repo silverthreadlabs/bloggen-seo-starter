@@ -1,6 +1,6 @@
 import path from 'path';
-import { getMDXData } from './utils/mdx-utils';
-import { BlogMetadata } from './types/PostMetadata';
+import { getMDXData } from './utils/mdx';
+import { BlogMetadata } from './types/post-metadata';
 
 /**
  * Get all blog posts with metadata and content

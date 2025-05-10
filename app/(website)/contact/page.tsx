@@ -1,6 +1,6 @@
 import { Mail, ArrowUpRight, MessageSquare, Clock } from "lucide-react";
 import { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import Link from "next/link";
 
 export const metadata: Metadata = createPageMetadata({

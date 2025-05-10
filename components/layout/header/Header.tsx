@@ -94,7 +94,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaBars ,FaTimes} from "react-icons/fa";
-import Logo from '@/components/logo/Logo';
+import Logo from '@/components/logo/logo';
 
 const NAV_ITEMS = [
   { href: '/about', label: 'About' },

@@ -1,6 +1,8 @@
 // lib/seo/schema/auth.tsx
 import React from "react";
-import { getURL } from "@/lib/utils/helpers";
+// import { getURL } from "@/lib/utils/helpers";
+import {siteConfig} from "@/lib/config/site"
+
 import type { WithContext, WebPage } from "schema-dts";
 
 interface AuthSchemaProps {
@@ -8,7 +10,7 @@ interface AuthSchemaProps {
 }
 
 const AuthSchema: React.FC<AuthSchemaProps> = ({ view }) => {
-  const baseURL = getURL();
+  const baseURL = siteConfig.baseUrl;
   const url = `${baseURL}/auth/${view}`;
   let name = "";
   let description = "";

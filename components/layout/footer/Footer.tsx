@@ -90,7 +90,7 @@
 
 import Link from 'next/link';
 import SocialLinks from './SocialLinks';
-import Logo from '@/components/logo/Logo';
+import Logo from '@/components/logo/logo';
 import { FaRegEnvelope } from 'react-icons/fa';
 
 // export const dynamic = 'force-static';

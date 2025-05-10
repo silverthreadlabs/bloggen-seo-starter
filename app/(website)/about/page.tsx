@@ -115,7 +115,7 @@
 
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 import FeaturesList from '@/components/about/FeatureList';
 
 export const metadata: Metadata = createPageMetadata({

@@ -1,9 +1,10 @@
 // lib/seo/schema/support.tsx
 import React from "react";
-import { getURL } from "@/lib/utils/helpers";
+// import { getURL } from "@/lib/utils/helpers";
+import {siteConfig} from "@/lib/config/site"
 import type { WithContext, WebPage, Action, ContactPoint } from "schema-dts";
 
-const baseURL = getURL();
+const baseURL = siteConfig.baseUrl;
 const supportUrl = `${baseURL}/support`;
 const logoUrl = `${baseURL}/icon-512.png`;
 // Create a type that extends WebPage to include the properties we need

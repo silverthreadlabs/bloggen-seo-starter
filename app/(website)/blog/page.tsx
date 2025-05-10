@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { BlogPosts } from '@/components/blog/BlogPosts'
-import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
-import { siteConfig } from '@/lib/config/siteConfig'
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
+import { siteConfig } from '@/lib/config/site'
 
 
 export const metadata: Metadata = createPageMetadata({

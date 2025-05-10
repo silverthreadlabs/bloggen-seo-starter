@@ -27,13 +27,13 @@
 //   },
 // };
 
-
 // Create the common metadata structure that doesn't change between variations
 import { Metadata } from "next";
-import { getURL } from "@/lib/utils/helpers";
-import {siteConfig} from "@/lib/config/siteConfig"
+// import { getURL } from "@/lib/utils/helpers";
+import { siteConfig } from "@/lib/config/site";
 const createBaseMetadata = (): Omit<Metadata, "robots"> => ({
-  metadataBase: new URL(getURL()),
+  // metadataBase: new URL(getURL()),
+  metadataBase: new URL(siteConfig.baseUrl),
   alternates: {
     canonical: "/",
   },
@@ -48,8 +48,8 @@ const createBaseMetadata = (): Omit<Metadata, "robots"> => ({
   creator: siteConfig.creator,
   publisher: siteConfig.publisher,
   icons: {
-    icon: [{ url: '/favicon/favicon.ico', sizes: 'any' }],
-    apple: [{ url: '/favicon/apple-touch-icon.png' }],
+    icon: [{ url: "/favicon/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/favicon/apple-touch-icon.png" }],
   },
 
   openGraph: {
@@ -58,10 +58,9 @@ const createBaseMetadata = (): Omit<Metadata, "robots"> => ({
     description: siteConfig.description,
     siteName: siteConfig.title,
     // images: [meta.ogImageConfig],
-     images: [siteConfig.getImageConfig(siteConfig.title)],
+    images: [siteConfig.getImageConfig(siteConfig.title)],
     authors: [siteConfig.title],
     locale: "en_US",
-    
   },
   twitter: {
     card: "summary_large_image",
@@ -69,7 +68,7 @@ const createBaseMetadata = (): Omit<Metadata, "robots"> => ({
     creator: "@Silverthread_Labs",
     title: siteConfig.title,
     description: siteConfig.description,
-     images: [siteConfig.getImageConfig(siteConfig.title)],
+    images: [siteConfig.getImageConfig(siteConfig.title)],
   },
 });
 
@@ -108,4 +107,3 @@ const createMetadata = (robotsType: keyof typeof robotsConfig): Metadata => ({
 export const defaultMetadata: Metadata = createMetadata("default");
 export const noRobotsMetadata: Metadata = createMetadata("noIndex");
 export const noIndexFollowMetadata: Metadata = createMetadata("noIndexFollow");
-

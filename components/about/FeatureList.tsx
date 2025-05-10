@@ -15,35 +15,6 @@ interface FeatureData {
   descriptionEnd?: string;
 }
 
-// const FEATURES: FeatureData[] = [
-//   {
-//     icon: <FaSearch className="w-5 h-5" />,
-//     title: 'SEO On by Default',
-//     descriptionStart:
-//       'Meta tags, OG data, sitemap & robots.txt baked in from the first commit.',
-//   },
-//   {
-//     icon: <FaFileCode className="w-5 h-5" />,
-//     title: 'Rich Results Ready',
-//     descriptionStart:
-//       'Auto-generated JSON-LD gives Google the context it needs for rich snippets.',
-//   },
-//   {
-//     icon: <FaThLarge className="w-5 h-5" />,
-//     title: 'MDX-Powered Blog',
-//     descriptionStart:
-//       'Drop your Bloggen-made MDX files into ',
-//     code: '/content',
-//     descriptionEnd:
-//       ' and they’re live—SEO and styling included.',
-//   },
-//   {
-//     icon: <FaCode className="w-5 h-5" />,
-//     title: 'Instant RSS Feed',
-//     descriptionStart:
-//       'Keep subscribers updated automatically.',
-//   },
-// ];
 
 const FEATURES: FeatureData[] = [
   {

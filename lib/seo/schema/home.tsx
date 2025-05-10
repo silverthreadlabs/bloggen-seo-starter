@@ -1,8 +1,9 @@
 import React from "react";
-import { getURL } from "@/lib/utils/helpers";
+// import { getURL } from "@/lib/utils/helpers";
+import {siteConfig} from "@/lib/config/site"
 import type { WithContext, WebSite } from "schema-dts";
 
-const baseURL = getURL();
+const baseURL = siteConfig.baseUrl;
 const silverthreadLabsURL= 'https://www.silverthreadlabs.com';
 const SITE_TITLE = "Bloggen SEO Starter";
 
@@ -31,7 +32,7 @@ description : "Launch your agency site with Bloggen SEO Starter featuring  Globa
   image: {
     "@type": "ImageObject",
     // url: `${baseURL}/assets/images/open-graph.png`,
-    url: `${getURL()}/og?title=${encodeURIComponent(SITE_TITLE)}`,
+    url: `${baseURL}/og?title=${encodeURIComponent(SITE_TITLE)}`,
     width: "1200",
     height: "630",
     description: SITE_TITLE

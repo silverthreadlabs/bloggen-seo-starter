@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import { formatDate} from "@/lib/utils/mdx-utils";
+import { formatDate} from "@/lib/utils/mdx";
 import { getBlogPosts } from "@/lib/blog";
-import { siteConfig } from "@/lib/config/siteConfig";
+import { siteConfig } from "@/lib/config/site";
 import Image from "next/image";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
-import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
+import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
 // import { getURL } from "@/lib/utils/helpers";
 
 

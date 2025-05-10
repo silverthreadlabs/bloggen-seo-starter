@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import Hero from "@/components/home/hero/Hero";
 import HomeSchema from "@/lib/seo/schema/home";
 

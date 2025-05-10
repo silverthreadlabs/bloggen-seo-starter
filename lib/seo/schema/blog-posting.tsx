@@ -1,6 +1,7 @@
 // lib/seo/BlogPostSchema.tsx
 import React from "react";
-import { getURL } from "@/lib/utils/helpers";
+// import { getURL } from "@/lib/utils/helpers";
+import {siteConfig} from "@/lib/config/site"
 import type { WithContext, BlogPosting } from "schema-dts";
 
 interface BlogPostSchemaProps {
@@ -24,7 +25,7 @@ const BlogPostSchema: React.FC<BlogPostSchemaProps> = ({
   authorName,
   publisherName,
 }) => {
-  const baseURL = getURL();
+  const baseURL = siteConfig.baseUrl;
   const logoUrl = `${baseURL}/icon-512.png`;
 
   const blogPostingSchema: WithContext<BlogPosting> = {

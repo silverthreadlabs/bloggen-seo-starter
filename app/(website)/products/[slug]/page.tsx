@@ -5,9 +5,9 @@ import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { CustomMDX } from "@/components/mdx";
 // import { formatDate, getProductPosts } from "../utils";
 import { getProductPosts } from "@/lib/products";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
-import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
-import { getURL } from "@/lib/utils/helpers";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
+import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
+import { getURL } from "@/lib/utils/url";
 
 export async function generateMetadata({
   params,

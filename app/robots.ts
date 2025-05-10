@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/config/siteConfig";
+import { siteConfig } from "@/lib/config/site";
 
 
 //remember the robots is being controlled in the seo/metadata/createBaseMedata.ts
