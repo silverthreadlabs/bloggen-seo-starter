@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-background-gradient" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
       </div>
 
       <div className="relative z-10">
@@ -110,7 +110,7 @@ export default function Hero() {
                 <Card key={index} className="group hover:border-ring transition-all duration-300 ease-in-out backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="flex items-start gap-4 p-6">
-                      <div className="p-3 bg-gradient-to-br from-muted to-accent rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
+                      <div className="p-3 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
                         <div className="text-primary group-hover:text-primary-foreground transition-colors duration-300 ease-out">
                           {feature.icon}
                         </div>

@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       <main
         role="main"
-        className="min-h-screen bg-[radial-gradient(circle_at_50%_50%,var(color-background),oklch(0.129_0.042_264.695)"
+        className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
       >
         <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
           {/* Page Header */}

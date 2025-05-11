@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <main 
       role="main"
-      className="min-h-screen bg-gradient-to-br from-background via-card to-background"
+      className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
     >
       {/* JSON-LD Schema */}
       <script

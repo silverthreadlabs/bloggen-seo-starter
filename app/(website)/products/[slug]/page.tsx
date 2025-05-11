@@ -130,7 +130,7 @@ export default async function ProductPage({
       />
 
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--color-background),oklch(0.129_0.042_264.695)" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
       </div>
 
       <div className="relative z-10">

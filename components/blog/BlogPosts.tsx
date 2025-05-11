@@ -18,7 +18,7 @@ export function BlogPosts({ isHomePage = false }) {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--background),oklch(0.129_0.042_264.695))]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
       </div>
 
       <div className="relative z-10">
@@ -57,7 +57,7 @@ export function BlogPosts({ isHomePage = false }) {
                   </div>
 
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-2 bg-gradient-to-br from-muted to-accent rounded-sm">
+                    <div className="p-2 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm">
                       <ArrowRight className="w-4 h-4 text-primary" />
                     </div>
                     <time className="text-sm text-muted-foreground">

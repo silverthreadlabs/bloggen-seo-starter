@@ -95,7 +95,7 @@ export default async function Blog({
   }
 
   return (
-    <main role="main" className="relative min-h-screen bg-background">
+    <main role="main" className="relative min-h-screen bg-primary/5">
       <div className="relative mx-auto max-w-[900px] px-6 lg:px-8 py-16 md:py-28">
         {/* Preserve JSON-LD exactly as is */}
         <script

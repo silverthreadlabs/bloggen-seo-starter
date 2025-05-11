@@ -47,7 +47,7 @@ export function ProductPosts() {
             >
               <div className="h-full p-5 rounded bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300">
                 <div className="flex flex-col h-full">
-                  <div className="p-2.5 bg-gradient-to-br from-muted to-accent rounded-sm w-fit group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-2.5 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm w-fit group-hover:scale-110 transition-transform duration-300">
                     <Sparkles className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                   </div>
 

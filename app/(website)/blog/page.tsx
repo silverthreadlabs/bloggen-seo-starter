@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <main 
       role="main"
-      className="min-h-screen bg-background"
+      className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
     >
       <script
         type="application/ld+json"

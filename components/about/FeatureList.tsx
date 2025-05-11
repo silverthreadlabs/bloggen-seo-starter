@@ -56,7 +56,7 @@ export default function FeaturesList() {
         <Card key={index} className="group hover:border-ring transition-all duration-300 ease-in-out backdrop-blur-sm">
           <CardContent className="p-0">
             <div className="flex items-start gap-4 p-6">
-              <div className="p-3 bg-gradient-to-br from-muted to-accent rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
+              <div className="p-3 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
                 <div className="text-primary group-hover:text-primary-foreground transition-colors duration-300 ease-out">
                   {feature.icon}
                 </div>
