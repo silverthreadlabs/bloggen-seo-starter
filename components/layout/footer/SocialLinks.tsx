@@ -8,11 +8,12 @@ const SocialLink = ({ href, ariaLabel, icon }) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={ariaLabel}
-    className="inline-flex items-center justify-center rounded-[2px] border border-slate-700 p-2 text-slate-400 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800/50 hover:text-slate-200"
+    className="inline-flex items-center justify-center rounded-sm border border-border p-2 text-muted-foreground transition-all duration-200 hover:border-ring hover:bg-accent hover:text-foreground"
   >
     {icon}
   </Link>
 );
+
 const SocialLinks = () => {
   return (
     <div className="flex space-x-2">

@@ -17,7 +17,10 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function ProductsPage() {
   return (
-    <section className="relative">
+    <main
+      role="main"
+      className="relative min-h-screen bg-background-gradient"
+    >
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -34,6 +37,6 @@ export default function ProductsPage() {
         }}
       />
       <ProductPosts />
-    </section>
+    </main>
   );
 }

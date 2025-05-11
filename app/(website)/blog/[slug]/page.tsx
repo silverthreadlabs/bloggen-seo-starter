@@ -1,13 +1,15 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import { formatDate} from "@/lib/utils/mdx";
+import { formatDate } from "@/lib/utils/mdx";
 import { getBlogPosts } from "@/lib/blog";
 import { siteConfig } from "@/lib/config/site";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { MDXPreview } from "@/components/mdx-preview";
 // import { getURL } from "@/lib/utils/helpers";
-
 
 export async function generateMetadata({
   params,
@@ -34,11 +36,11 @@ export async function generateMetadata({
     description,
     baseMetadata: defaultMetadata,
   });
-  
+
   const ogImage = image
-  ? image
-  : `${siteConfig.baseUrl}/og?title=${encodeURIComponent(title)}`;
-  
+    ? image
+    : `${siteConfig.baseUrl}/og?title=${encodeURIComponent(title)}`;
+
   // console.log("FUCK2: ", slug);
   return {
     ...baseMeta,
@@ -60,7 +62,7 @@ export async function generateMetadata({
     },
     twitter: {
       ...baseMeta.twitter,
-      
+
       // title,
       // description,
       images: [
@@ -93,7 +95,7 @@ export default async function Blog({
   }
 
   return (
-<div className="relative min-h-screen bg-[#0A0A0F]">
+    <main role="main" className="relative min-h-screen bg-background">
       <div className="relative mx-auto max-w-[900px] px-6 lg:px-8 py-16 md:py-28">
         {/* Preserve JSON-LD exactly as is */}
         <script
@@ -122,24 +124,24 @@ export default async function Blog({
         {/* Header Section */}
         <div className="mb-20">
           <div className="flex items-center space-x-3 mb-6">
-            <div className="h-px w-16 bg-slate-700" />
-            <span className="text-slate-400 text-sm uppercase tracking-wider font-medium">
+            <div className="h-px w-16 bg-border" />
+            <span className="text-muted-foreground text-sm uppercase tracking-wider font-medium">
               Blog Post
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-accent via-primary to-accent-foreground text-transparent bg-clip-text">
               {post.metadata.title}
             </span>
           </h1>
-          <time className="text-slate-400 text-lg">
+          <time className="text-muted-foreground text-lg">
             {formatDate(post.metadata.publishedAt)}
           </time>
         </div>
 
         {/* Featured Image */}
         {post.metadata.image && (
-          <div className="relative w-full aspect-[21/9] mb-20 overflow-hidden rounded-[2px] shadow-2xl border border-slate-800/50">
+          <div className="relative w-full aspect-[21/9] mb-20 overflow-hidden rounded-sm shadow-2xl border border-border">
             <Image
               src={post.metadata.image}
               alt={post.metadata.title}
@@ -151,25 +153,25 @@ export default async function Blog({
         )}
 
         {/* Article Content */}
-        <article
-          className="prose prose-invert prose-lg max-w-none 
-          prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight
-          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-4
-          prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
-          prose-a:text-blue-400 prose-a:transition-all prose-a:no-underline
-          hover:prose-a:text-blue-300
-          prose-strong:text-white prose-strong:font-bold
-          prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-[2px] prose-code:text-sm
-          prose-pre:bg-slate-800/50 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-[2px] prose-pre:p-6
-          prose-blockquote:border-l-4 prose-blockquote:border-slate-700 prose-blockquote:text-slate-400 prose-blockquote:pl-6 prose-blockquote:py-1
-          prose-li:text-slate-300 prose-li:mb-2
-          prose-img:rounded-[2px] prose-img:shadow-xl prose-img:border prose-img:border-slate-800/50
-          [&>*:first-child]:mt-0"
-        >
-          <CustomMDX source={post.content} />
-        </article>
+        {/* <article className=""> */}
+        {/* <CustomMDX source={post.content} /> */}
+
+        <div className="prose prose-invert prose-sm max-w-none">
+          <MDXPreview content={post.content} />
+        </div>
+        {/* </article> */}
+
+        {/* Back Button */}
+        <div className="mt-16">
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to Blog
+          </Link>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

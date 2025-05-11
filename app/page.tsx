@@ -9,7 +9,7 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function Page() {
   return (
-    <main className="w-full flex flex-col items-center  justify-center overflow-hidden relative">
+    <main className="w-full flex flex-col items-center justify-center overflow-hidden relative">
       <HomeSchema />
       <Hero />
     </main>
