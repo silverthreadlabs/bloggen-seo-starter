@@ -5,9 +5,9 @@ import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { CustomMDX } from "@/components/mdx";
 // import { formatDate, getProductPosts } from "../utils";
 import { getProductPosts } from "@/lib/products";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
-import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
-import { getURL } from "@/lib/utils/helpers";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
+import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
+import { getURL } from "@/lib/utils/url";
 
 export async function generateMetadata({
   params,
@@ -120,7 +120,7 @@ export default async function ProductPage({
     version: post.metadata.version,
   };
   return (
-    <section className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
+    <main role="main" className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -130,25 +130,25 @@ export default async function ProductPage({
       />
 
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(2,6,23,0.8))]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
       </div>
 
       <div className="relative z-10">
         <div className="min-h-screen max-w-[1216px] mx-auto">
           {/* Header Section */}
           <div className="py-20">
-            <span className="text-blue-500 text-sm font-medium tracking-wider uppercase mb-4 block">
+            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
               {post.metadata.category || "Product Details"}
             </span>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                  <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+                <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+                  <span className="bg-gradient-to-r from-accent via-primary to-accent-foreground text-transparent bg-clip-text">
                     {post.metadata.title}
                   </span>
                 </h1>
-                <p className="text-slate-100 text-lg mb-8 leading-relaxed">
+                <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                   {post.metadata.summary}
                 </p>
 
@@ -157,9 +157,9 @@ export default async function ProductPage({
                   <Link
                     href={post.metadata.link}
                     target="_blank"
-                    className="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 group"
+                    className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary/80 text-foreground rounded transition-all duration-300 group"
                   >
-                    <span className="font-medium">
+                    <span className="font-medium ">
                       Try {post.metadata.title}
                     </span>
                     <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -176,12 +176,12 @@ export default async function ProductPage({
                     item.value && (
                       <div
                         key={index}
-                        className="p-6 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-600 transition-all duration-300"
+                        className="p-6 rounded-lg bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300"
                       >
-                        <div className="text-sm text-slate-400 mb-1">
+                        <div className="text-sm text-muted-foreground mb-1">
                           {item.label}
                         </div>
-                        <div className="text-lg font-semibold text-white">
+                        <div className="text-lg font-semibold text-foreground">
                           {item.value}
                         </div>
                       </div>
@@ -197,16 +197,16 @@ export default async function ProductPage({
             <div className="lg:col-span-2">
               <div
                 className="prose prose-invert max-w-none
-            prose-headings:text-white prose-headings:font-bold 
+            prose-headings:text-foreground prose-headings:font-bold 
             prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
             prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-            prose-p:text-slate-400 prose-p:leading-relaxed
-            prose-a:text-blue-400 prose-a:no-underline hover:prose-a:text-blue-300
-            prose-strong:text-white
-            prose-code:text-slate-300 prose-code:bg-slate-800/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-            prose-pre:bg-slate-900/50 prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-slate-800 prose-pre:rounded-xl
-            prose-blockquote:border-l-4 prose-blockquote:border-blue-500/30 prose-blockquote:bg-slate-900/30
-            prose-li:text-slate-400"
+            prose-p:text-foreground prose-p:leading-relaxed
+            prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-foreground
+            prose-strong:text-foreground
+            prose-code:text-muted-foreground prose-code:bg-card prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm
+            prose-pre:bg-card prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-border prose-pre:rounded
+            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-card
+            prose-li:text-muted-foreground"
               >
                 <CustomMDX source={post.content} />
               </div>
@@ -215,30 +215,30 @@ export default async function ProductPage({
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
-                <div className="p-6 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-600 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                <div className="p-6 rounded-lg bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">
                     Quick Links
                   </h3>
                   <nav className="space-y-2">
                     <a
                       href="#features"
-                      className="flex items-center text-slate-400 hover:text-blue-400 transition-colors"
+                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                       Features
                     </a>
                     <a
                       href="#installation"
-                      className="flex items-center text-slate-400 hover:text-blue-400 transition-colors"
+                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                       Installation
                     </a>
                     <a
                       href="#usage"
-                      className="flex items-center text-slate-400 hover:text-blue-400 transition-colors"
+                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
                       Usage
                     </a>
                   </nav>
@@ -248,6 +248,17 @@ export default async function ProductPage({
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Back Button */}
+      <div className="max-w-[1216px] mx-auto pb-12">
+        <Link
+          href="/products"
+          className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+          Back to Products
+        </Link>
+      </div>
+    </main>
   );
 }

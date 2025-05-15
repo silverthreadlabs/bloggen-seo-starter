@@ -71,7 +71,7 @@
 
 // seo/schema/blog.tsx
 import React from "react";
-import { siteConfig } from "@/lib/config/siteConfig";
+import { siteConfig } from "@/lib/config/site";
 import type { WithContext, Blog } from "schema-dts";
 
 const blogUrl = `${siteConfig.baseUrl}/blog`;

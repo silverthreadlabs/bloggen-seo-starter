@@ -111,7 +111,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#0A0A0F] border-t border-slate-800/50">
+    <footer className="w-full bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12">
           {/* Main Footer Content */}
@@ -122,7 +122,7 @@ export default function Footer() {
 
               <Link
                 href={MAILTO}
-                className="inline-flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors text-sm"
+                className="inline-flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors text-sm"
               >
                 <FaRegEnvelope className="w-4 h-4" />
                 <span>{EMAIL}</span>
@@ -136,7 +136,7 @@ export default function Footer() {
                   <Link
                     key={href}
                     href={href}
-                    className="text-slate-400 hover:text-blue-400 transition-colors text-sm"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {label}
                   </Link>
@@ -148,14 +148,14 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-slate-800/50">
-            <p className="text-sm text-slate-400">
+          <div className="mt-8 pt-8 border-t border-border">
+            <p className="text-sm text-muted-foreground">
               © {currentYear} Bloggen. Built by{' '}
               <Link
                 href="https://silverthreadlabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-primary hover:text-primary/90 transition-colors"
               >
                 Silverthread Labs
               </Link>

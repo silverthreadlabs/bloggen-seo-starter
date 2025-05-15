@@ -1,7 +1,7 @@
 import { ProductPosts } from "@/components/products/ProductPosts";
-import { siteConfig } from "@/lib/config/siteConfig";
+import { siteConfig } from "@/lib/config/site";
 import { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 
 const productPage = {
   path: "products",
@@ -17,7 +17,10 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function ProductsPage() {
   return (
-    <section className="relative">
+    <main
+      role="main"
+      className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
+    >
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -34,6 +37,6 @@ export default function ProductsPage() {
         }}
       />
       <ProductPosts />
-    </section>
+    </main>
   );
 }

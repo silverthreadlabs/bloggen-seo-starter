@@ -1,4 +1,4 @@
-import { getURL } from "@/lib/utils/helpers";
+import { getURL } from "@/lib/utils/url";
 
 export const siteConfig = {
   title: "Bloggen SEO Starter",

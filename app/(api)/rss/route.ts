@@ -1,4 +1,4 @@
-import { siteConfig } from '@/lib/config/siteConfig'
+import { siteConfig } from '@/lib/config/site'
 import { getBlogPosts } from '@/lib/blog'
 
 export async function GET() {

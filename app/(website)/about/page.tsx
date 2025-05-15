@@ -32,7 +32,7 @@
 //     icon: <Layout className="w-5 h-5" />,
 //     title: "MDX‑Powered Blog",
 //     description:
-//       "Drop your Bloggen‑made MDX files into /content and they’re live—SEO and styling included.",
+//       "Drop your Bloggen‑made MDX files into /content and they're live—SEO and styling included.",
 //   },
 //   {
 //     icon: <Code className="w-5 h-5" />,
@@ -115,7 +115,7 @@
 
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { createPageMetadata } from '@/lib/seo/metadata/createPageMetadata';
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 import FeaturesList from '@/components/about/FeatureList';
 
 export const metadata: Metadata = createPageMetadata({
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       <main
         role="main"
-        className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
+        className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
       >
         <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
           {/* Page Header */}
@@ -149,34 +149,34 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <div className="flex items-center justify-center gap-2 mb-6">
-              <span className="text-slate-400">Powered by</span>
+              <span className="text-muted-foreground">Powered by</span>
               <Link
                 href="https://bloggen.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-primary hover:text-primary-foreground transition-colors"
               >
                 Bloggen
               </Link>
-              <span className="text-slate-400">Authored by</span>
+              <span className="text-muted-foreground">Authored by</span>
               <Link
                 href="https://silverthreadlabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-color-primary hover:text-color-primary-foreground transition-colors"
               >
                 Silverthread Labs
               </Link>
             </div>
             <h1
               id="about-page-title"
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-4xl md:text-5xl font-bold text-color-foreground mb-4"
             >
               Next.js SEO Template
             </h1>
             <h2
               id="about-page-subtitle"
-              className="text-xl text-slate-400 text-balance"
+              className="text-xl text-color-muted-foreground text-balance"
             >
               Spin up a production-ready site with SEO, performance, and
               content workflows already solved.

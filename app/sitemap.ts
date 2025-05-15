@@ -1,6 +1,6 @@
 import { getBlogPosts } from "@/lib/blog";
 import { getProductPosts } from "@/lib/products"; 
-import { siteConfig } from "@/lib/config/siteConfig";
+import { siteConfig } from "@/lib/config/site";
 
 
 

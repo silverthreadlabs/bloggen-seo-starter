@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import { siteConfig } from "@/lib/config/siteConfig";
-import { defaultMetadata } from "@/lib/seo/metadata/createBaseMetadata";
+import { siteConfig } from "@/lib/config/site";
+import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
 
 /**
  * Creates page-specific metadata.
