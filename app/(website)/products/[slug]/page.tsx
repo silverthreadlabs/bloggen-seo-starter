@@ -157,9 +157,9 @@ export default async function ProductPage({
                   <Link
                     href={post.metadata.link}
                     target="_blank"
-                    className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary-foreground text-background rounded- transition-all duration-300 group"
+                    className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary/80 text-foreground rounded transition-all duration-300 group"
                   >
-                    <span className="font-medium">
+                    <span className="font-medium ">
                       Try {post.metadata.title}
                     </span>
                     <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

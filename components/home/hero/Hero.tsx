@@ -58,7 +58,7 @@ export default function Hero() {
                   <Link
                     target="_blank"
                     href="https://github.com/silverthreadlabs/bloggen-seo-starter"
-                    className="flex-1 px-8 py-3 bg-primary hover:bg-primary-foreground text-background rounded transition-all duration-300 transform flex items-center justify-center gap-2 group"
+                    className="flex-1 px-8 py-3 bg-primary hover:bg-primary/80 text-foreground rounded transition-all duration-300 transform flex items-center justify-center gap-2 group"
                     aria-label="View source code on GitHub"
                   >
                     <FaGithub className="w-5 h-5" />
@@ -82,15 +82,15 @@ export default function Hero() {
                   </span>
                   <Button
                     onClick={handleCopy}
-                    className="flex items-center cursor-pointer justify-center w-8 h-8 rounded transition-all hover:bg-muted"
+                    className="flex items-center cursor-pointer justify-center w-8 h-8 rounded transition-all hover:bg-muted "
                     aria-label="Copy command"
                     size="icon"
-                    variant="default"
+                    variant="ghost"
                   >
                     {copied ? (
                       <FaCheck className="w-4 h-4 text-green-400" />
                     ) : (
-                      <FaCopy className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+                      <FaCopy className="w-4 h-4 text-primary-forground hover:text-foreground" />
                     )}
                   </Button>
                 </div>
@@ -107,9 +107,9 @@ export default function Hero() {
           >
             <div className="grid gap-6 w-full">
               {features.map((feature, index) => (
-                <Card key={index} className="group hover:border-ring transition-all duration-300 ease-in-out backdrop-blur-sm">
+                <Card key={index} className="group hover:border-ring transition-all duration-300 ease-in-out backdrop-blur-sm cursor-default">
                   <CardContent className="p-0">
-                    <div className="flex items-start gap-4 p-6">
+                    <div className="flex items-start gap-4 px-6 py-3">
                       <div className="p-3 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
                         <div className="text-primary group-hover:text-primary-foreground transition-colors duration-300 ease-out">
                           {feature.icon}
@@ -119,7 +119,7 @@ export default function Hero() {
                         <CardTitle className="text-xl text-foreground mb-2 group-hover:text-primary transition-colors duration-300 ease-out">
                           {feature.title}
                         </CardTitle>
-                        <CardDescription className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 ease-out">
+                        <CardDescription className=" text-muted-foreground group-hover:text-foreground transition-colors duration-300 ease-out">
                           {feature.descriptionStart}
                           {feature.code && (
                             <code className="bg-card px-2 py-1 rounded-sm font-mono text-sm text-foreground">
