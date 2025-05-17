@@ -18,19 +18,19 @@ export function BlogPosts({ isHomePage = false }) {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-bg-base via-primary-bg to-bg-base" />
       </div>
 
       <div className="relative z-10">
-        <div className="max-w-[1216px] mx-auto py-20">
+        <div className="mx-auto py-20">
           {/* Section Header */}
           <div className="mb-16">
-            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+            <span className="text-primary-text text-sm font-medium tracking-wider uppercase mb-4 block">
               Browse Template Blog Posts
             </span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold text-fg-text-contrast leading-tight">
               Latest
-              <span className="bg-gradient-to-r from-accent via-primary to-accent-foreground text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
                 {" "}
                 Articles
               </span>
@@ -45,7 +45,7 @@ export function BlogPosts({ isHomePage = false }) {
                 href={`/blog/${post.slug}`}
                 className="group block"
               >
-                <article className="p-6 rounded bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300">
+                <article className="p-6 rounded bg-bg-bg backdrop-blur-sm border border-fg-border hover:border-fg-border-hover transition-all duration-300">
                   <div className="aspect-video relative rounded-sm overflow-hidden mb-6">
                     <Image
                       src={post.metadata.image || ""}
@@ -57,19 +57,19 @@ export function BlogPosts({ isHomePage = false }) {
                   </div>
 
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-2 bg-gradient-to-br from-muted via-accent/20 to-accent/40 hover:via-accent/50 rounded-sm">
-                      <ArrowRight className="w-4 h-4 text-primary" />
+                    <div className="p-2 bg-gradient-to-br from-bg-bg via-primary-bg-subtle to-primary-bg hover:via-primary-bg hover:to-primary-bg-hover rounded-sm">
+                      <ArrowRight className="w-4 h-4 text-primary-text" />
                     </div>
-                    <time className="text-sm text-muted-foreground">
-                      {formatDate(post.metadata.publishedAt, false)}
+                    <time className="text-sm text-fg-text">
+                      {formatDate(post.metadata.publishedAt)}
                     </time>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-fg-text-contrast mb-3 group-hover:text-primary-text transition-colors duration-300">
                     {post.metadata.title}
                   </h3>
 
-                  <div className="flex items-center text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                  <div className="flex items-center text-sm text-fg-text group-hover:text-primary-text transition-colors">
                     <span>Read article</span>
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -83,14 +83,14 @@ export function BlogPosts({ isHomePage = false }) {
             <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/blog"
-                className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="px-8 py-3 bg-primary-solid hover:bg-primary-solid-hover text-bg-default rounded transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 View All Posts
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/rss.xml"
-                className="px-8 py-3 bg-secondary hover:bg-accent text-secondary-foreground rounded transition-all duration-300 border border-border hover:border-ring flex items-center justify-center gap-2"
+                className="px-8 py-3 bg-secondary-bg hover:bg-secondary-bg-hover text-fg-text rounded transition-all duration-300 border border-fg-border hover:border-fg-border-hover flex items-center justify-center gap-2"
               >
                 Subscribe to RSS
                 <svg

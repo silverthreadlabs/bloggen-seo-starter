@@ -140,7 +140,7 @@ export default function AboutPage() {
 
       <main
         role="main"
-        className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
+        className="min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
       >
         <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
           {/* Page Header */}
@@ -149,34 +149,34 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto text-center mb-16"
           >
             <div className="flex items-center justify-center gap-2 mb-6">
-              <span className="text-muted-foreground">Powered by</span>
+              <span className="text-fg-text">Powered by</span>
               <Link
                 href="https://bloggen.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-foreground transition-colors"
+                className="text-primary-text hover:text-primary-text-contrast transition-colors"
               >
                 Bloggen
               </Link>
-              <span className="text-muted-foreground">Authored by</span>
+              <span className="text-fg-text">Authored by</span>
               <Link
                 href="https://silverthreadlabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-color-primary hover:text-color-primary-foreground transition-colors"
+                className="text-primary-solid hover:text-primary-solid-hover transition-colors"
               >
                 Silverthread Labs
               </Link>
             </div>
             <h1
               id="about-page-title"
-              className="text-4xl md:text-5xl font-bold text-color-foreground mb-4"
+              className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-4"
             >
               Next.js SEO Template
             </h1>
             <h2
               id="about-page-subtitle"
-              className="text-xl text-color-muted-foreground text-balance"
+              className="text-xl text-fg-text text-balance"
             >
               Spin up a production-ready site with SEO, performance, and
               content workflows already solved.

@@ -1,59 +1,262 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils"
+//v3
+import { memo } from "react";
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, VariantProps } from "class-variance-authority";
+
+// Spinner component with smooth appearance animation
+const Spinner = () => (
+  <svg
+    className="animate-spin h-4 w-4 "
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      className="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="4"
+    ></circle>
+    <path
+      className="opacity-75"
+      fill="currentColor"
+      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+);
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "items-center justify-center rounded-lg font-medium transition-colors duration-300 ease-out disabled:opacity-50 hover:cursor-pointer disabled:cursor-not-allowed leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 select-none",
+
   {
     variants: {
+      color: {
+        primary: "",
+        neutral: "",
+      },
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        solid: "",
+        soft: "",
+        surface: "",
+        outline: "",
+        ghost: "",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-alert-solid text-alert-on-alert hover:bg-alert-solid-hover ",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        sm: "px-5 h-8 text-sm",
+        default: "px-6 h-10 text-base",
+        lg: "px-8 h-14 text-lg",
+      },
+      // Add a new isIcon variant
+      isIcon: {
+        true: "",
+        false: "",
+      },
+      // Add a loading variant
+      isLoading: {
+        true: "",
+        false: "",
+      },
+      fullWidth: {
+        false: "inline-flex w-fit", // default: shrink-to-fit
+        true: "flex w-full", // fill the container
       },
     },
+    compoundVariants: [
+      // Primary color variants
+      {
+        color: "primary",
+        variant: "solid",
+        class:
+          "bg-primary-solid text-primary-on-primary hover:bg-primary-solid-hover",
+      },
+      {
+        color: "primary",
+        variant: "soft",
+        class:
+          "bg-primary-bg-hover text-primary-text hover:bg-primary-bg-active",
+      },
+      {
+        color: "primary",
+        variant: "surface",
+        class:
+          "border border-primary-border bg-primary-bg-hover text-primary-text hover:bg-primary-bg-active hover:border-primary-border-hover",
+      },
+      {
+        color: "primary",
+        variant: "outline",
+        class:
+          "border border-primary-border text-primary-text hover:border-primary-border-hover",
+      },
+      {
+        color: "primary",
+        variant: "ghost",
+        class: "bg-transparent text-primary-text hover:bg-primary-bg-hover",
+      },
+      // Neutral color variants
+      {
+        color: "neutral",
+        variant: "solid",
+        class:
+          "bg-fg-text-contrast text-bg-default hover:bg-fg-text-contrast/90",
+      },
+      {
+        color: "neutral",
+        variant: "soft",
+        class: "bg-bg-bg-hover text-fg-text hover:bg-bg-bg-active",
+      },
+      {
+        color: "neutral",
+        variant: "surface",
+        class:
+          "border border-fg-border bg-bg-bg-hover text-fg-text hover:bg-bg-bg-active hover:border-fg-border-hover",
+      },
+      {
+        color: "neutral",
+        variant: "outline",
+        class:
+          "border border-fg-border text-fg-text hover:border-fg-border-hover",
+      },
+      {
+        color: "neutral",
+        variant: "ghost",
+        class: "bg-transparent text-fg-text hover:bg-bg-bg-hover",
+      },
+      // Focus ring styles based on color
+      {
+        color: "primary",
+        class: "focus-visible:ring-primary-solid",
+      },
+      {
+        color: "neutral",
+        class: "focus-visible:ring-fg-solid",
+      },
+
+      // Icon button styles
+      {
+        isIcon: true,
+        size: "sm",
+        class: "!px-0 !w-8 !max-w-8",
+      },
+      {
+        isIcon: true,
+        size: "default",
+        class: "!px-0 !w-10 !max-w-10",
+      },
+      {
+        isIcon: true,
+        size: "lg",
+        class: "!px-0 !w-14 !max-w-14",
+      },
+      // Loading state styles
+      {
+        isLoading: true,
+        class: "relative !cursor-wait",
+      },
+    ],
     defaultVariants: {
-      variant: "default",
+      color: "primary",
+      variant: "solid",
       size: "default",
+      isIcon: false,
+      isLoading: false,
+      fullWidth: false,
     },
   }
-)
+);
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
-  const Comp = asChild ? Slot : "button"
-
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
+export interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  leadingIcon?: React.ReactElement;
+  trailingIcon?: React.ReactElement;
+  iconOnly?: boolean; // set for icon buttons
+  isLoading?: boolean; // new loading state prop
+  loadingText?: string; // optional loading text
+  fullWidth?: boolean;
 }
 
-export { Button, buttonVariants }
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      color,
+      variant,
+      size,
+      asChild = false,
+      leadingIcon,
+      trailingIcon,
+      iconOnly = false,
+      isLoading = false,
+      loadingText,
+      className,
+      children,
+      disabled,
+      fullWidth = false,
+      ...props
+    },
+    ref
+  ) => {
+    const Comp = asChild ? Slot : "button";
+
+    // If iconOnly is true, we only render the leadingIcon
+    const icon = iconOnly ? leadingIcon : null;
+
+    // Determine if button should be disabled (when loading or explicitly disabled)
+    const isDisabled = isLoading || disabled;
+
+    return (
+      <Comp
+        ref={ref}
+        type="button"
+        className={buttonVariants({
+          color,
+          variant,
+          size,
+          isIcon: iconOnly,
+          isLoading,
+          fullWidth,
+          className,
+        })}
+        disabled={isDisabled}
+        {...props}
+      >
+        {/* Loading State */}
+        {isLoading && iconOnly && <Spinner />}
+
+        {/* Loading State with Text */}
+        {isLoading && !iconOnly && (
+          <>
+            <span className="mr-2">
+              <Spinner />
+            </span>
+            {loadingText || children}
+          </>
+        )}
+
+        {/* Normal Icon Only */}
+        {!isLoading && iconOnly && icon}
+
+        {/* Normal Button with Text */}
+        {!isLoading && !iconOnly && (
+          <>
+            {leadingIcon && <span className="mr-2">{leadingIcon}</span>}
+            {children}
+            {trailingIcon && <span className="ml-2">{trailingIcon}</span>}
+          </>
+        )}
+      </Comp>
+    );
+  }
+);
+Button.displayName = "Button";
+
+// export default Button;
+
+const ButtonMemoized = memo(Button);
+export { ButtonMemoized as Button };

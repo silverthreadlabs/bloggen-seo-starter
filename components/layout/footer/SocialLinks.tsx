@@ -8,7 +8,7 @@ const SocialLink = ({ href, ariaLabel, icon }) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={ariaLabel}
-    className="inline-flex items-center justify-center rounded-sm border border-border p-2 text-muted-foreground transition-all duration-200 hover:border-ring hover:bg-accent hover:text-foreground"
+    className="inline-flex items-center justify-center rounded-sm border border-fg-border p-2 text-fg-text transition-all duration-200 hover:border-ring hover:bg-accent hover:text-fg-text"
   >
     {icon}
   </Link>

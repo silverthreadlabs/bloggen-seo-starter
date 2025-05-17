@@ -95,7 +95,7 @@ export default async function Blog({
   }
 
   return (
-    <main role="main" className="relative min-h-screen bg-primary/5">
+    <main role="main" className="relative min-h-screen bg-primary-bg">
       <div className="relative mx-auto max-w-[900px] px-6 lg:px-8 py-16 md:py-28">
         {/* Preserve JSON-LD exactly as is */}
         <script
@@ -124,24 +124,24 @@ export default async function Blog({
         {/* Header Section */}
         <div className="mb-20">
           <div className="flex items-center space-x-3 mb-6">
-            <div className="h-px w-16 bg-border" />
-            <span className="text-muted-foreground text-sm uppercase tracking-wider font-medium">
+            <div className="h-px w-16 bg-fg-border" />
+            <span className="text-fg-text text-sm uppercase tracking-wider font-medium">
               Blog Post
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-accent via-primary to-accent-foreground text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
               {post.metadata.title}
             </span>
           </h1>
-          <time className="text-muted-foreground text-lg">
+          <time className="text-fg-text text-lg">
             {formatDate(post.metadata.publishedAt)}
           </time>
         </div>
 
         {/* Featured Image */}
         {post.metadata.image && (
-          <div className="relative w-full aspect-[21/9] mb-20 overflow-hidden rounded-sm shadow-2xl border border-border">
+          <div className="relative w-full aspect-[21/9] mb-20 overflow-hidden rounded-sm shadow-2xl border border-fg-border">
             <Image
               src={post.metadata.image}
               alt={post.metadata.title}
@@ -156,7 +156,18 @@ export default async function Blog({
         {/* <article className=""> */}
         {/* <CustomMDX source={post.content} /> */}
 
-        <div className="prose prose-invert prose-sm max-w-none">
+        <div className="prose prose-invert prose-sm max-w-none
+          prose-headings:text-fg-text-contrast prose-headings:font-bold 
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+          prose-p:text-fg-text prose-p:leading-relaxed
+          prose-a:text-primary-text prose-a:no-underline hover:prose-a:text-primary-text-contrast
+          prose-strong:text-fg-text-contrast
+          prose-code:text-fg-text-contrast prose-code:bg-bg-bg prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm
+          prose-pre:bg-bg-bg prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-fg-border prose-pre:rounded
+          prose-blockquote:border-l-4 prose-blockquote:border-primary-border prose-blockquote:bg-bg-bg
+          prose-li:text-fg-text"
+        >
           <MDXPreview content={post.content} />
         </div>
         {/* </article> */}
@@ -165,7 +176,7 @@ export default async function Blog({
         <div className="mt-16">
           <Link
             href="/blog"
-            className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group"
+            className="inline-flex items-center text-fg-text hover:text-primary-text transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Blog

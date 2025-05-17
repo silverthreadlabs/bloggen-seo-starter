@@ -130,25 +130,25 @@ export default async function ProductPage({
       />
 
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-bg-base via-primary-bg to-bg-base" />
       </div>
 
       <div className="relative z-10">
         <div className="min-h-screen max-w-[1216px] mx-auto">
           {/* Header Section */}
           <div className="py-20">
-            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
+            <span className="text-primary-text text-sm font-medium tracking-wider uppercase mb-4 block">
               {post.metadata.category || "Product Details"}
             </span>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                  <span className="bg-gradient-to-r from-accent via-primary to-accent-foreground text-transparent bg-clip-text">
+                <h1 className="text-4xl lg:text-6xl font-bold text-fg-text-contrast leading-tight mb-6">
+                  <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
                     {post.metadata.title}
                   </span>
                 </h1>
-                <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                <p className="text-fg-text text-lg mb-8 leading-relaxed">
                   {post.metadata.summary}
                 </p>
 
@@ -157,7 +157,7 @@ export default async function ProductPage({
                   <Link
                     href={post.metadata.link}
                     target="_blank"
-                    className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary-foreground text-background rounded- transition-all duration-300 group"
+                    className="inline-flex items-center px-8 py-3 bg-primary-solid hover:bg-primary-solid-hover text-bg-default rounded transition-all duration-300 group"
                   >
                     <span className="font-medium">
                       Try {post.metadata.title}
@@ -176,12 +176,12 @@ export default async function ProductPage({
                     item.value && (
                       <div
                         key={index}
-                        className="p-6 rounded-lg bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300"
+                        className="p-6 rounded-lg bg-bg-bg backdrop-blur-sm border border-fg-border hover:border-fg-border-hover transition-all duration-300"
                       >
-                        <div className="text-sm text-muted-foreground mb-1">
+                        <div className="text-sm text-fg-text mb-1">
                           {item.label}
                         </div>
-                        <div className="text-lg font-semibold text-foreground">
+                        <div className="text-lg font-semibold text-fg-text-contrast">
                           {item.value}
                         </div>
                       </div>
@@ -197,16 +197,16 @@ export default async function ProductPage({
             <div className="lg:col-span-2">
               <div
                 className="prose prose-invert max-w-none
-            prose-headings:text-foreground prose-headings:font-bold 
+            prose-headings:text-fg-text-contrast prose-headings:font-bold 
             prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
             prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-            prose-p:text-foreground prose-p:leading-relaxed
-            prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-foreground
-            prose-strong:text-foreground
-            prose-code:text-muted-foreground prose-code:bg-card prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm
-            prose-pre:bg-card prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-border prose-pre:rounded
-            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-card
-            prose-li:text-muted-foreground"
+            prose-p:text-fg-text prose-p:leading-relaxed
+            prose-a:text-primary-text prose-a:no-underline hover:prose-a:text-primary-text-contrast
+            prose-strong:text-fg-text-contrast
+            prose-code:text-fg-text-contrast prose-code:bg-bg-bg prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm
+            prose-pre:bg-bg-bg prose-pre:backdrop-blur-sm prose-pre:border prose-pre:border-fg-border prose-pre:rounded
+            prose-blockquote:border-l-4 prose-blockquote:border-primary-border prose-blockquote:bg-bg-bg
+            prose-li:text-fg-text"
               >
                 <CustomMDX source={post.content} />
               </div>
@@ -215,30 +215,30 @@ export default async function ProductPage({
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
-                <div className="p-6 rounded-lg bg-card backdrop-blur-sm border border-border hover:border-ring transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                <div className="p-6 rounded-lg bg-bg-bg backdrop-blur-sm border border-fg-border hover:border-fg-border-hover transition-all duration-300">
+                  <h3 className="text-xl font-semibold text-fg-text-contrast mb-4">
                     Quick Links
                   </h3>
                   <nav className="space-y-2">
                     <a
                       href="#features"
-                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center text-fg-text hover:text-primary-text transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-solid mr-2"></span>
                       Features
                     </a>
                     <a
                       href="#installation"
-                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center text-fg-text hover:text-primary-text transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-solid mr-2"></span>
                       Installation
                     </a>
                     <a
                       href="#usage"
-                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center text-fg-text hover:text-primary-text transition-colors"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-solid mr-2"></span>
                       Usage
                     </a>
                   </nav>
@@ -249,13 +249,13 @@ export default async function ProductPage({
         </div>
       </div>
 
-      {/* Back Button */}
-      <div className="max-w-[1216px] mx-auto pb-12">
+      {/* Back Link */}
+      <div className="max-w-[1216px] mx-auto py-12">
         <Link
           href="/products"
-          className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors group"
+          className="inline-flex items-center text-fg-text hover:text-primary-text transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Products
         </Link>
       </div>

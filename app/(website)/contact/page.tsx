@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <main 
       role="main"
-      className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
+      className="min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
     >
       {/* JSON-LD Schema */}
       <script
@@ -39,29 +39,29 @@ export default function ContactPage() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="text-muted-foreground">Contact</span>
+            <span className="text-fg-text">Contact</span>
             <Link
               href="https://bloggen.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-primary/90 transition-colors"
+              className="text-primary-text hover:text-primary-text-contrast transition-colors"
             >
               Bloggen
             </Link>
-            <span className="text-muted-foreground">×</span>
+            <span className="text-fg-text">×</span>
             <Link
               href="https://silverthreadlabs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-primary/90 transition-colors"
+              className="text-primary-text hover:text-primary-text-contrast transition-colors"
             >
               Silverthread Labs
             </Link>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-6">
             Get in Touch
           </h1>
-          <h2 className="text-lg text-muted-foreground">
+          <h2 className="text-lg text-fg-text">
             If you have any questions about the SEO template? or how to use
             Bloggen. Or just want to share your feedback? Feel free to send us an email.
           </h2>
@@ -71,20 +71,20 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto">
           {/* Email Cards */}
           <Link href="mailto:silverthreadlabs@gmail.com" className="block group mb-6">
-            <Card className="hover:border-ring transition-all duration-300">
+            <Card className="hover:border-fg-border-hover transition-all duration-300">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
-                  <div className="p-3 bg-muted rounded-sm group-hover:text-primary transition-colors duration-300">
+                  <div className="p-3 bg-bg-bg rounded-sm group-hover:text-primary-text transition-colors duration-300">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                      <CardTitle className="text-lg group-hover:text-primary-text transition-colors duration-300">
                         Email Us
                       </CardTitle>
-                      <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                      <ArrowUpRight className="w-5 h-5 text-fg-text group-hover:text-primary-text group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </div>
-                    <CardDescription className="mt-2 group-hover:text-foreground">
+                    <CardDescription className="mt-2 group-hover:text-fg-text">
                       silverthreadlabs@gmail.com
                     </CardDescription>
                   </div>
@@ -94,20 +94,20 @@ export default function ContactPage() {
           </Link>
           
           <Link href="mailto:bloggen.dev@gmail.com" className="block group mb-6">
-            <Card className="hover:border-ring transition-all duration-300">
+            <Card className="hover:border-fg-border-hover transition-all duration-300">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
-                  <div className="p-3 bg-muted rounded-sm group-hover:text-primary transition-colors duration-300">
+                  <div className="p-3 bg-bg-bg rounded-sm group-hover:text-primary-text transition-colors duration-300">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                      <CardTitle className="text-lg group-hover:text-primary-text transition-colors duration-300">
                         Email Us
                       </CardTitle>
-                      <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                      <ArrowUpRight className="w-5 h-5 text-fg-text group-hover:text-primary-text group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </div>
-                    <CardDescription className="mt-2 group-hover:text-foreground">
+                    <CardDescription className="mt-2 group-hover:text-fg-text">
                       bloggen.dev@gmail.com
                     </CardDescription>
                   </div>
@@ -121,14 +121,14 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
-                  <div className="p-3 bg-muted rounded-sm">
-                    <Clock className="w-5 h-5 text-muted-foreground" />
+                  <div className="p-3 bg-bg-bg rounded-sm">
+                    <Clock className="w-5 h-5 text-fg-text" />
                   </div>
                   <div>
-                    <CardTitle className="text-sm mb-1">
+                    <CardTitle className="text-sm mb-1 text-fg-text-contrast">
                       Response Time
                     </CardTitle>
-                    <CardDescription>
+                    <CardDescription className="text-fg-text">
                       Within 24 hours
                     </CardDescription>
                   </div>
@@ -139,14 +139,14 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
-                  <div className="p-3 bg-muted rounded-sm">
-                    <MessageSquare className="w-5 h-5 text-muted-foreground" />
+                  <div className="p-3 bg-bg-bg rounded-sm">
+                    <MessageSquare className="w-5 h-5 text-fg-text" />
                   </div>
                   <div>
-                    <CardTitle className="text-sm mb-1">
+                    <CardTitle className="text-sm mb-1 text-fg-text-contrast">
                       Support
                     </CardTitle>
-                    <CardDescription>
+                    <CardDescription className="text-fg-text">
                       24/7 Template Support
                     </CardDescription>
                   </div>

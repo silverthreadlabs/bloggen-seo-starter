@@ -19,7 +19,7 @@ export default function ProductsPage() {
   return (
     <main
       role="main"
-      className="relative min-h-screen bg-gradient-to-br from-background via-primary/5 to-background"
+      className="relative min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
     >
       <script
         type="application/ld+json"
