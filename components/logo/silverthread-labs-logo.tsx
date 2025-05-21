@@ -1,3 +1,4 @@
+import React from "react";
 // Create a reusable SilverThreadLabs logo component
 const SilverthreadLabsLogo = () => (
   <svg

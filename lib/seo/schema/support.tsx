@@ -2,7 +2,7 @@
 import React from "react";
 // import { getURL } from "@/lib/utils/helpers";
 import {siteConfig} from "@/lib/config/site"
-import type { WithContext, WebPage, Action, ContactPoint } from "schema-dts";
+import type { WithContext, WebPage, ContactPoint } from "schema-dts";
 
 const baseURL = siteConfig.baseUrl;
 const supportUrl = `${baseURL}/support`;
@@ -12,7 +12,7 @@ type SupportPage = WebPage & {
   mainEntity: {
     "@type": "Organization";
     contactPoint: ContactPoint;
-    [key: string]: any;
+    [key: string]: unknown;
   };
 };
 

@@ -7,6 +7,6 @@ import { BlogMetadata } from "./types/post-metadata";
  */
 export function getBlogPosts() {
   return getMDXData<BlogMetadata>(
-    path.join(process.cwd(), "app", "(website)", "blog", "content")
+    path.join(process.cwd(), "content", "blogs")
   );
 }

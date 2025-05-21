@@ -23,12 +23,12 @@ function slugify(str: string) {
     .toLowerCase()
     .trim()
     .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-");
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-");
 }
 
 // Custom H1 component
-const H1: React.FC<React.PropsWithChildren<{ node?: any }>> = ({
+const H1: React.FC<React.PropsWithChildren<{ node?: unknown }>> = ({
   children,
   ...props
 }) => {
@@ -45,7 +45,7 @@ const H1: React.FC<React.PropsWithChildren<{ node?: any }>> = ({
 
 // Custom Link (respects internal vs external)
 const CustomLink: React.FC<
-  React.ComponentPropsWithoutRef<"a"> & { node?: any }
+  React.ComponentPropsWithoutRef<"a"> & { node?: unknown }
 > = ({ href, children, ...props }) => {
   if (typeof href === "string") {
     if (href.startsWith("/")) {
@@ -72,7 +72,7 @@ const Code: React.FC<{
   inline?: boolean;
   className?: string;
   children?: React.ReactNode;
-  node?: any;
+  node?: unknown;
 }> = ({ inline, className, children, ...props }) => {
   const match = /language-(\w+)/.exec(className || "");
   return !inline && match ? (

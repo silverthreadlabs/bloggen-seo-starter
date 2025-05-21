@@ -1,3 +1,4 @@
+import React from "react";
 import { FaFileAlt, FaTachometerAlt, FaTerminal } from "react-icons/fa";
 interface Feature {
   icon: React.ReactElement;

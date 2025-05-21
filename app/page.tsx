@@ -1,3 +1,4 @@
+import React from "react";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import Hero from "@/components/home/hero/Hero";

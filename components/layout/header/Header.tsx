@@ -1,10 +1,12 @@
 "use client";
+import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "@/components/logo/Logo";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/about", label: "About" },
@@ -45,26 +47,29 @@ export default function Header() {
               ))}
             </ul>
             <Link href="/contact" className="flex-1">
-              <Button color="primary" size="default" variant="solid">
+              <Button color="primary" size="default" variant="solid" >
                 Contact
+              </Button>
+            </Link>
+            <Link href="https://www.bloggen.dev/" target="_blank">
+              <Button color="neutral" size="default" variant="outline" trailingIcon={<ArrowUpRight className="w-4 h-4" />} >
+                Create your first post
               </Button>
             </Link>
           </nav>
 
           {/* Mobile menu button */}
-          <button
+          <Button
             onClick={toggleMobile}
             aria-label="Toggle menu"
             aria-controls="mobile-menu"
             aria-expanded={mobileOpen}
-            className="md:hidden text-fg-text hover:text-fg-text-contrast transition-colors"
-          >
-            {mobileOpen ? (
-              <FaTimes className="h-5 w-5" />
-            ) : (
-              <FaBars className="h-5 w-5" />
-            )}
-          </button>
+            className="md:hidden"
+            color="neutral"
+            variant="ghost"
+            iconOnly
+            leadingIcon={mobileOpen ? <FaTimes className="h-5 w-5" /> : <FaBars className="h-5 w-5" />}
+          />
         </div>
       </div>
 
@@ -93,9 +98,11 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={toggleMobile}
-                className="block w-full px-6 py-2 text-center text-sm font-medium rounded bg-primary-solid hover:bg-primary-solid-hover text-bg-default transition transform hover:scale-105"
+                className="flex-1"
               >
-                Contact
+                <Button color="primary" size="default" variant="solid" fullWidth>
+                  Contact
+                </Button>
               </Link>
             </li>
           </ul>

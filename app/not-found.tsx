@@ -1,5 +1,5 @@
+import React from "react";
 import Link from "next/link";
-
 export default function NotFound() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-[#0A0A0F] px-4">
@@ -17,7 +17,7 @@ export default function NotFound() {
 
           {/* Description */}
           <p className="text-slate-400 text-lg">
-            The page you're looking for doesn't exist or has been moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
 
           {/* Back to Home Button */}

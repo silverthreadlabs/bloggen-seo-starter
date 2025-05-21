@@ -1,8 +1,8 @@
+import React from "react";
 import "./global.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import { Manrope } from "next/font/google";
-import Script from "next/script";
 import type { Viewport } from "next";
 import { RootProvider } from "fumadocs-ui/provider";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -35,7 +35,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head> */}
       <body className="antialiased lg:mx-auto">
-        <main className="flex-auto items-center min-w-0 flex flex-col md:px-0">
+        <main className="flex-auto items-center bg-gradient-to-br from-bg-base via-primary-bg to-bg-base min-w-0 flex flex-col md:px-0">
           <Header />
           <RootProvider>{children}</RootProvider>
           <Footer />

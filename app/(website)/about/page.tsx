@@ -113,21 +113,21 @@
 //   );
 // }
 
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
-import FeaturesList from '@/components/about/FeatureList';
-
+import React from "react";
+import Link from "next/link";
+import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
+import FeaturesList from "@/components/about/FeatureList";
+import { Text } from "@/components/ui/text";
 export const metadata: Metadata = createPageMetadata({
-  path: 'about',
+  path: "about",
   description:
-    'Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.',
+    "Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.",
 });
 
 export default function AboutPage() {
   return (
-    <>
-      {/* JSON-LD for rich results */}
+    <main role="main" className="min-h-screen ">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -137,64 +137,58 @@ export default function AboutPage() {
           }),
         }}
       />
-
-      <main
-        role="main"
-        className="min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
-      >
-        <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
-          {/* Page Header */}
-          <header
-            role="banner"
-            className="max-w-3xl mx-auto text-center mb-16"
-          >
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <span className="text-fg-text">Powered by</span>
+      <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
+        {/* Page Header */}
+        <header role="banner" className="max-w-3xl mx-auto text-center mb-16">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6 px-4">
+            <div className="flex items-center gap-2">
+              <Text renderAs="p" className="">
+                Powered by
+              </Text>
               <Link
                 href="https://bloggen.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-text hover:text-primary-text-contrast transition-colors"
+                className="text-primary-text hover:text-primary-text-contrast transition-colors "
               >
                 Bloggen
               </Link>
-              <span className="text-fg-text">Authored by</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Text renderAs="p" className="">
+                Authored by
+              </Text>
               <Link
                 href="https://silverthreadlabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-solid hover:text-primary-solid-hover transition-colors"
+                className="text-primary-solid hover:text-primary-solid-hover transition-colors "
               >
                 Silverthread Labs
               </Link>
             </div>
-            <h1
-              id="about-page-title"
-              className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-4"
-            >
-              Next.js SEO Template
-            </h1>
-            <h2
-              id="about-page-subtitle"
-              className="text-xl text-fg-text text-balance"
-            >
-              Spin up a production-ready site with SEO, performance, and
-              content workflows already solved.
-            </h2>
-          </header>
-
-          {/* Features */}
-          <section
-            aria-labelledby="features-title"
-            className="mb-16"
+          </div>
+          <Text
+            renderAs="h1"
+            id="about-page-title"
+            className="text-4xl md:text-5xl mb-4"
           >
-            {/* <h3 id="features-title" className="sr-only">
+            Next.js SEO Template
+          </Text>
+          <Text renderAs="h5" id="about-page-subtitle" className="text-balance">
+            Spin up a production-ready site with SEO, performance, and content
+            workflows already solved.
+          </Text>
+        </header>
+
+        {/* Features */}
+        <section aria-labelledby="features-title" className="mb-16">
+          {/* <h3 id="features-title" className="sr-only">
               Key Features
             </h3> */}
-            <FeaturesList />
-          </section>
-        </div>
-      </main>
-    </>
+          <FeaturesList />
+        </section>
+      </div>
+    </main>
   );
 }

@@ -1,13 +1,10 @@
-import { Mail, ArrowUpRight, MessageSquare, Clock } from "lucide-react";
+import React from "react";
+import { Mail, MessageSquare, Clock } from "lucide-react";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import Link from "next/link";
-import { 
-  Card, 
-  CardContent, 
-  CardTitle, 
-  CardDescription 
-} from "@/components/ui/card";
+import FeatureCard from "@/components/ui/feature-card";
+import { Text } from "@/components/ui/text";
 
 export const metadata: Metadata = createPageMetadata({
   path: "contact",
@@ -19,7 +16,7 @@ export default function ContactPage() {
   return (
     <main 
       role="main"
-      className="min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
+      className="min-h-screen"
     >
       {/* JSON-LD Schema */}
       <script
@@ -39,7 +36,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="text-fg-text">Contact</span>
+            <Text renderAs="p" className="text-fg-text">Contact</Text>
             <Link
               href="https://bloggen.dev"
               target="_blank"
@@ -58,20 +55,20 @@ export default function ContactPage() {
               Silverthread Labs
             </Link>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-6">
+          <Text renderAs="h1" className="text-4xl md:text-5xl mb-6">
             Get in Touch
-          </h1>
-          <h2 className="text-lg text-fg-text">
+          </Text>
+          <Text renderAs="p" className="text-lg text-fg-text">
             If you have any questions about the SEO template? or how to use
             Bloggen. Or just want to share your feedback? Feel free to send us an email.
-          </h2>
+          </Text>
         </div>
 
         {/* Contact Options */}
         <div className="max-w-2xl mx-auto">
           {/* Email Cards */}
-          <Link href="mailto:silverthreadlabs@gmail.com" className="block group mb-6">
-            <Card className="hover:border-fg-border-hover transition-all duration-300">
+          <Link href="mailto:silverthreadlabs@gmail.com" className="block group mb-6 hover:cursor-pointer">
+            {/* <Card className="hover:border-fg-border-hover transition-all duration-300">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
                   <div className="p-3 bg-bg-bg rounded-sm group-hover:text-primary-text transition-colors duration-300">
@@ -90,11 +87,16 @@ export default function ContactPage() {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
+            <FeatureCard 
+              icon={<Mail className="w-6 h-6" />}
+              title="Email Us"
+              descriptionStart="silverthreadlabs@gmail.com"
+            />
           </Link>
           
-          <Link href="mailto:bloggen.dev@gmail.com" className="block group mb-6">
-            <Card className="hover:border-fg-border-hover transition-all duration-300">
+          <Link href="mailto:bloggen.dev@gmail.com" className="block group mb-6 hover:cursor-pointer">
+            {/* <Card className="hover:border-fg-border-hover transition-all duration-300">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
                   <div className="p-3 bg-bg-bg rounded-sm group-hover:text-primary-text transition-colors duration-300">
@@ -113,30 +115,41 @@ export default function ContactPage() {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
+            <FeatureCard 
+              icon={<Mail className="w-6 h-6" />}
+              title="Email Us"
+              descriptionStart="bloggen.dev@gmail.com"
+            />
           </Link>
 
           {/* Additional Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
-              <CardContent className="p-0">
-                <div className="flex items-start gap-4 p-6">
-                  <div className="p-3 bg-bg-bg rounded-sm">
-                    <Clock className="w-5 h-5 text-fg-text" />
+              {/* <Card>
+                <CardContent className="p-0">
+                  <div className="flex items-start gap-4 p-6">
+                    <div className="p-3 bg-bg-bg rounded-sm">
+                      <Clock className="w-5 h-5 text-fg-text" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-sm mb-1 text-fg-text-contrast">
+                        Response Time
+                      </CardTitle>
+                      <CardDescription className="text-fg-text">
+                        Within 24 hours
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-sm mb-1 text-fg-text-contrast">
-                      Response Time
-                    </CardTitle>
-                    <CardDescription className="text-fg-text">
-                      Within 24 hours
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card> */}
 
-            <Card>
+            <FeatureCard 
+              icon={<Clock className="w-5 h-5 text-fg-text" />}
+              title="Response Time"
+              descriptionStart="Within 24 hours"
+            />
+
+            {/* <Card>
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 p-6">
                   <div className="p-3 bg-bg-bg rounded-sm">
@@ -152,7 +165,13 @@ export default function ContactPage() {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
+
+            <FeatureCard 
+              icon={<MessageSquare className="w-5 h-5 text-fg-text" />}
+              title="Support"
+              descriptionStart="24/7 Template Support"
+            />
           </div>
         </div>
       </div>

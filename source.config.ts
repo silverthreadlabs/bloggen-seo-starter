@@ -18,20 +18,55 @@ export const docs = defineDocs({
   },
 });
 
-export const games = defineCollections({
+export const blog = defineCollections({
   type: "doc",
-  dir: "./content/games",
+  dir: "./content/blogs",
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     publishedAt: z.string().optional(),
-    author: z.string().optional(),
+    author: z.union([
+      z.string(),
+      z.object({
+        name: z.string(),
+        picture: z.string()
+      })
+    ]).optional(),
     image: z.string().optional(),
     ogImage: z.object({
       url: z.string()
     }).optional(),
     summary: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    full: z.boolean().optional(),
+  })
+});
+
+
+export const products = defineCollections({
+  type: "doc",
+  dir: "./content/products",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    publishedAt: z.string().optional(),
+    author: z.union([
+      z.string(),
+      z.object({
+        name: z.string(),
+        picture: z.string()
+      })
+    ]).optional(),
+    image: z.string().optional(),
+    ogImage: z.object({
+      url: z.string()
+    }).optional(),
+    summary: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    lastUpdated: z.string().optional(),
+    category: z.string().optional(),
+    version: z.string().optional(),
+    link: z.string().optional(),
     full: z.boolean().optional(),
   })
 });

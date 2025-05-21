@@ -129,6 +129,7 @@
     --color-overlay-text: var(--overlay-text);
     --color-overlay-text-contrast: var(--overlay-text-contrast);
   }
+
   :root {
     --bg-default: #000;
     --bg-base: #151718;
@@ -144,8 +145,8 @@
     --fg-text: #9ba1a6;
     --fg-text-contrast: #ecedee;
     --fg-default: #fff;
-  
-  
+
+
     --primary-base: #131620;
     --primary-bg-subtle: #15192d;
     --primary-bg: #192140;
@@ -159,8 +160,8 @@
     --primary-text: #849dff;
     --primary-text-contrast: #eef1fd;
     --primary-on-primary: #fff;
-  
-  
+
+
     --secondary-base: #1d131d;
     --secondary-bg-subtle: #251425;
     --secondary-bg: #341a34;
@@ -174,7 +175,7 @@
     --secondary-text: #d864d8;
     --secondary-text-contrast: #fbecfc;
     --secondary-on-secondary: #fff;
-  
+
     --success-base: #0d1912;
     --success-bg-subtle: #0f1e13;
     --success-bg: #132819;
@@ -188,7 +189,7 @@
     --success-text: #63c174;
     --success-text-contrast: #e5fbeb;
     --success-on-success: #fff;
-  
+
     --warning-base: #1f1300;
     --warning-bg-subtle: #271700;
     --warning-bg: #341c00;
@@ -202,7 +203,7 @@
     --warning-text: #f1a10d;
     --warning-text-contrast: #fef3dd;
     --warning-on-warning: #000;
-  
+
     --alert-base: #1f1417;
     --alert-bg-subtle: #2a1519;
     --alert-bg: #3b181f;
@@ -216,7 +217,7 @@
     --alert-text: #ff859d;
     --alert-text-contrast: #fed2e1;
     --alert-on-alert: #fff;
-  
+
     --info-base: #0f1720;
     --info-bg-subtle: #0f1b2d;
     --info-bg: #10243e;
@@ -230,7 +231,7 @@
     --info-text: #52a9ff;
     --info-text-contrast: #eaf6ff;
     --info-on-info: #fff;
-  
+
     --overlay-base: hsla(0, 0%, 0%, 0.012);
     --overlay-bg-subtle: hsla(0, 0%, 0%, 0.027);
     --overlay-bg: hsla(0, 0%, 0%, 0.047);
@@ -251,6 +252,21 @@
 #nd-toc {
   padding-top: 80px;
 }
+
+
+/*Remove padding and max-width from product slug page so the content is flush with the top nav*/
+.product-page {
+  #nd-page {
+    padding: 0;
+  }
+
+  #nd-page article {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+
 
 html {
   color-scheme: dark;

@@ -1,9 +1,10 @@
 'use client';
-
+import React from 'react';
 import Link from 'next/link';
 import SocialLinks from './SocialLinks';
 import Logo from '@/components/logo/Logo';
 import { FaRegEnvelope } from 'react-icons/fa';
+import { Text } from '@/components/ui/text';
 import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 
 // export const dynamic = 'force-static';
@@ -34,7 +35,7 @@ export default function Footer() {
             <div className="space-y-4 flex flex-col">
               <div className="flex flex-row items-center gap-2">
                 <Logo />
-                <span className="text-fg-text-contrast font-semibold text-sm">SEO Starter</span>
+                <Text renderAs="span" className="border-none bg-transparent font-semibold">SEO Starter</Text>
               </div>
               <Link
                 href={MAILTO}

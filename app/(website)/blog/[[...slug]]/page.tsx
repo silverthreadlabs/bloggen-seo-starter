@@ -1,28 +1,17 @@
-import { gamesSource, source } from "@/lib/source";
+import React from "react";
+import { blogSource, source } from "@/lib/source";
 import {
   DocsPage,
   DocsBody,
-  DocsDescription,
-  DocsTitle,
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { getMDXComponents } from "@/mdx-components";
 import { siteConfig } from "@/lib/config/site";
-import Image from "next/image";
 import { BlogPosts } from "@/components/blog/BlogPosts";
 import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
 import BlogHeader from "@/components/blog/blog-header";
-
-// Format date function
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -34,7 +23,7 @@ export default async function Page(props: {
     return (
       <main
         role="main"
-        className="min-h-screen bg-gradient-to-br from-bg-base via-primary-bg to-bg-base"
+        className="min-h-screen"
       >
         <script
           type="application/ld+json"
@@ -57,7 +46,7 @@ export default async function Page(props: {
     );
   }
 
-  const page = gamesSource.getPage(params.slug);
+  const page = blogSource.getPage(params.slug);
   if (!page) notFound();
 
   const MDXContent = page.data.body;
@@ -86,7 +75,7 @@ export default async function Page(props: {
           }),
         }}
       />
-      <div className="flex flex-col max-w-7xl">
+      <div className="flex flex-col max-w-7xl md:py-18 py-8">
         <BlogHeader
           title={page.data.title}
           publishedAt={page.data.publishedAt}
@@ -115,7 +104,7 @@ export default async function Page(props: {
 }
 
 export async function generateStaticParams() {
-  return gamesSource.generateParams();
+  return blogSource.generateParams();
 }
 
 export async function generateMetadata({
@@ -135,7 +124,7 @@ export async function generateMetadata({
     });
   }
 
-  const page = gamesSource.getPage(resolvedParams.slug);
+  const page = blogSource.getPage(resolvedParams.slug);
   if (!page) notFound();
 
   const ogImage = page.data.image

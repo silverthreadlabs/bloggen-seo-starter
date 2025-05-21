@@ -5,16 +5,16 @@ import { siteConfig } from "@/lib/config/site";
 
 
 export default async function sitemap() {
-  let blogs = getBlogPosts().map((post) => ({
+  const blogs = getBlogPosts().map((post) => ({
     url: `${siteConfig.baseUrl}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
-  let products = getProductPosts().map((post) => ({
+  const products = getProductPosts().map((post) => ({
     url: `${siteConfig.baseUrl}/products/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
 
-  let routes = siteConfig.sitemap.staticRoutes.map((route) => ({
+  const routes = siteConfig.sitemap.staticRoutes.map((route) => ({
       url: `${siteConfig.baseUrl}${route}`,
       lastModified: new Date().toISOString().split("T")[0],
     })

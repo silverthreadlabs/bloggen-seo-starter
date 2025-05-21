@@ -1,9 +1,11 @@
+import React from "react";
 import Link from "next/link";
-import { getProductPosts } from "@/lib/products"; 
+import { getProductPosts } from "@/lib/products";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Text } from "@/components/ui/text";
 
 export function ProductPosts() {
-  let allProducts = getProductPosts();
+  const allProducts = getProductPosts();
   const sortedProducts = allProducts.sort((a, b) => {
     if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
       return -1;
@@ -21,20 +23,25 @@ export function ProductPosts() {
       <div className="relative z-10 max-w-[90%] xl:max-w-[1280px] mx-auto flex flex-col flex-1 justify-center py-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-primary-text text-sm font-medium tracking-wider uppercase mb-3 block">
+          <Text renderAs="span" className="border-none bg-transparent text-primary-text text-sm font-medium tracking-wider uppercase mb-3 block">
             Products
-          </span>
-          <h1 className="text-5xl lg:text-5xl font-bold text-fg-text-contrast leading-tight mb-4">
-            What We
-            <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
-              {" "}
-              Build{" "}
-            </span>
-          </h1>
-          <h2 className="text-fg-text text-xl text-balance">
-            Discover the products we've crafted at Silverthread Labs to save
+          </Text>
+          <div className="flex flex-row items-center justify-center gap-2">
+            <Text renderAs="h1">
+              What We{" "}
+            </Text>
+            <Text
+              renderAs="h1"
+              className="font-bold border-none bg-transparent bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text"
+            >
+              Build
+            </Text>
+          </div>
+
+          <Text renderAs="h4" className="text-fg-text font-normal text-balance">
+            Discover the products we&apos;ve crafted at Silverthread Labs to save
             time, boost performance.
-          </h2>
+          </Text>
         </div>
 
         {/* Products Grid */}
@@ -52,12 +59,12 @@ export function ProductPosts() {
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-2xl font-medium text-fg-text-contrast mb-2 group-hover:text-primary-text transition-colors duration-300">
+                    <Text renderAs="h4" className="mb-2 group-hover:text-primary-text transition-colors duration-300">
                       {post.metadata.title}
-                    </h3>
-                    <p className="text-base text-balance text-fg-text group-hover:text-fg-text transition-colors duration-300">
+                    </Text>
+                    <Text renderAs="p" className="text-balance text-fg-text group-hover:text-fg-text transition-colors duration-300">
                       {post.metadata.summary}
-                    </p>
+                    </Text>
                   </div>
 
                   <div className="mt-auto pt-4 flex items-center gap-2 text-sm text-primary-text group-hover:text-primary-text-contrast transition-colors">

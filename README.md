@@ -58,32 +58,80 @@ This is an example of a blog post created using Bloggen SEO Starter.
 - Optimize images with alt text.
 ```
 
-## Dependencies
+## Features
 
-The following dependencies are included in this project:
+Developer experience first, extremely flexible code structure and only keep what you need:
 
-| Dependency                   | Version         |
-|------------------------------|------------------|
-| @tailwindcss/postcss         | 4.0.0-alpha.13   |
-| @types/node                  | 20.11.17         |
-| @types/react                 | 19.0.8           |
-| @types/react-dom             | 19.0.3           |
-| @vercel/analytics            | ^1.1.3           |
-| @vercel/og                   | ^0.6.8           |
-| @vercel/speed-insights       | ^1.0.9           |
-| framer-motion                | ^12.3.1          |
-| geist                        | 1.3.1            |
-| lucide-react                 | ^0.474.0         |
-| next                         | 15.3.0           |
-| next-mdx-remote             | 5.0.0            |
-| postcss                      | ^8.4.35          |
-| react                        | 19.0.0           |
-| react-dom                    | 19.0.0           |
-| schema-dts                   | ^1.1.2           |
-| sugar-high                   | 0.9.2            |
-| tailwindcss                  | 4.0.0-alpha.13   |
-| three                        | ^0.173.0         |
-| typescript                   | 5.3.3            |
+### Core Stack
+
+* ⚡ **Next.js App Router** Built on the latest Next.js App Router.
+* 🔥 **TypeScript**
+  Full type safety across your codebase for early error detection .
+* 💎 **Tailwind CSS v4**
+  Utility-first styling with the latest Tailwind release.
+* ✅ **Strict Mode**
+  Enforced React and TypeScript strict flags for predictable, bug-resistant behaviour.
+* ♻️ **Type-Safe Env Vars**
+  Automatically typed environment variables via Zod for zero surprises.
+* 🛡️ **Zod Validation**
+  Schema-based validation on both client and server to guarantee data integrity.
+* 🔒 **Zero-Config Security**
+  Built-in headers (CSP, HSTS) and hardened defaults.
+
+### Developer Experience
+
+* 📏 **ESLint**
+  Preconfigured with Next.js–friendly rules and linting presets.
+* 🖋️ **Prettier**
+  Opinionated code formatting to keep your team’s style consistent.
+* 🧭 **Absolute Imports (`@/…`)**
+  Skip long relative paths—import modules from `@/` for cleaner code.
+* 🏎️ **Blazing-Fast Dev Server**
+  Built with Turbopack under the hood for minimal startup and rebuild times.
+
+
+### SEO & Performance
+
+* 🌐 **Global Metadata Config**
+  Centralized `metadata` and JSON-LD settings in one file.
+* 🤖 **Metadata Helpers**
+  Tiny, simple helpers for static and dynamic routes.
+* 📊 **Type-Safe JSON-LD**
+  Leverage `schema-dts` for fully typed structured data.
+* 🎨 **Dynamic OG Images**
+  On-the-fly Open Graph image generation via `@vercel/og` for perfect social previews.
+* 🗺️ **Sitemap & robots.txt**
+  Auto-generated `sitemap.xml` and `robots.txt` to guide search engines.
+* 📰 **RSS Feed**
+  Built-in RSS support for all blog posts—syndication made simple.
+* 📈 **Google Analytics**
+  One-line integration with GA4 for traffic insights and event tracking.
+* ⚡ **Lighthouse-Optimized**
+  Pre-tuned for top scores in Performance, Accessibility, Best Practices, and SEO.
+* 🔤 **Font Optimization**
+  Built-in Next.js Google Fonts integration for automatic font subsetting, preloading, and performance-optimized delivery.
+* 🔗 **Image Optimization**
+  Next `<Image>` component for responsive, lazy-loaded images with automatic format selection.
+
+
+
+### UI, Theming & Accessibility
+
+* ✨ **Framer Motion**
+  Out-of-the-box support for smooth, declarative animations.
+* 📚 **MDX Content with Fumadocs**
+  Generalized MDX viewer for Blog and Product pages.
+* 🌗 **Radix Colors**
+Automatic Light/Dark mode Theme with radix colors.
+* 🎨 **Designrift Design Tokens**
+  Designrift Semantic CSS variables for consistent theming and easy overrides.
+* 🔄 **Reusable CVA & Radix Primitives**
+  Pre-built, composable components with `class-variance-authority` and Radix.
+* ♿ **Accessibility-First**
+  WCAG-compliant ARIA attributes, keyboard support, and 100% Lighthouse accessibility scores.
+* 📱 **Fully Responsive**
+  Mobile-first layouts that adapt seamlessly to tablet and desktop breakpoints.
+
 
 ## Contributing Guidelines
 

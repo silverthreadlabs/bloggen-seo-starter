@@ -6,19 +6,11 @@ import {
   FaCopy,
   FaCheck,
   FaGithub,
-  FaCoffee,
-  FaBeer,
 } from "react-icons/fa";
 import Link from "next/link";
 import features from "./features-list";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
+import FeatureCard from "@/components/ui/feature-card";
 import { Text } from "@/components/ui/text";
 
 export default function Hero() {
@@ -37,7 +29,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10">
-        <div className="min-h-screen max-w-[1216px] mx-auto flex flex-col lg:flex-row lg:gap-16">
+        <div className="min-h-screen max-w-7xl mx-auto flex flex-col lg:flex-row lg:gap-16">
           {/* Left Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -46,17 +38,20 @@ export default function Hero() {
             className="flex-1 py-10 xl:py-20 flex flex-col justify-center"
           >
             <div className="max-w-xl">
-              <span className="text-fg-text text-sm font-mono tracking-widest uppercase mb-4 block">
+              <Text renderAs="span" className="border-none bg-transparent font-mono tracking-widest uppercase mb-4 block">
                 Powered by Bloggen
-              </span>
-              <h1 className="text-4xl lg:text-6xl font-bold text-fg-text-contrast leading-tight mb-6">
+              </Text>
+              <Text renderAs="h1" className="mb-6">
                 All your SEO
                 <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
                   {" "}
                   Already Done.
                 </span>
-              </h1>
-              <Text renderAs="h2" className="text-fg-text font-normal text-2xl mb-8">
+              </Text>
+              <Text
+                renderAs="h4"
+                className="text-fg-text font-normal mb-8"
+              >
                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG
                 images, JSON‑LD, and top Lighthouse scores.
               </Text>
@@ -99,20 +94,16 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-center justify-between bg-bg-bg bg-opacity-50 rounded px-4 py-3 font-mono text-sm border border-fg-border">
-                  <span className="text-fg-text">$ npx create-bloggen-app</span>
+                  <Text renderAs="span" className="border-none">$ npx create-bloggen-app</Text>
                   <Button
                     onClick={handleCopy}
                     aria-label="Copy command"
                     size="default"
                     color="neutral"
                     variant="ghost"
-                  >
-                    {copied ? (
-                      <FaCheck className="w-4 h-4 text-success-text" />
-                    ) : (
-                      <FaCopy className="w-4 h-4 text-fg-default" />
-                    )}
-                  </Button>
+                    iconOnly
+                    leadingIcon={copied ? <FaCheck className="w-4 h-4 text-success-text" /> : <FaCopy className="w-4 h-4 text-fg-default" />}
+                  />
                 </div>
               </div>
             </div>
@@ -127,34 +118,42 @@ export default function Hero() {
           >
             <div className="grid gap-6 w-full">
               {features.map((feature, index) => (
-                <Card
+                // <Card
+                //   key={index}
+                //   className="group hover:border-fg-border-hover transition-all duration-300 ease-in-out backdrop-blur-sm"
+                // >
+                //   <CardContent className="p-0">
+                //     <div className="flex items-start gap-4 p-6">
+                //       <div className="p-3 bg-gradient-to-br from-bg-bg via-primary-bg-subtle to-primary-bg group-hover:via-primary-bg hover:to-primary-bg-hover rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
+                //         <div className="text-primary-text group-hover:text-primary-text-contrast transition-colors duration-300 ease-out">
+                //           {feature.icon}
+                //         </div>
+                //       </div>
+                //       <div>
+                //         <CardTitle className="text-xl text-fg-text-contrast mb-2 group-hover:text-primary-text transition-colors duration-300 ease-out">
+                //           {feature.title}
+                //         </CardTitle>
+                //         <CardDescription className="text-fg-text group-hover:text-fg-text transition-colors duration-300 ease-out">
+                //           {feature.descriptionStart}
+                //           {feature.code && (
+                //             <code className="bg-bg-bg px-2 py-1 rounded-sm font-mono text-sm text-fg-text-contrast">
+                //               {feature.code}
+                //             </code>
+                //           )}
+                //           {feature.descriptionEnd}
+                //         </CardDescription>
+                //       </div>
+                //     </div>
+                //   </CardContent>
+                // </Card>
+                <FeatureCard 
                   key={index}
-                  className="group hover:border-fg-border-hover transition-all duration-300 ease-in-out backdrop-blur-sm"
-                >
-                  <CardContent className="p-0">
-                    <div className="flex items-start gap-4 p-6">
-                      <div className="p-3 bg-gradient-to-br from-bg-bg via-primary-bg-subtle to-primary-bg group-hover:via-primary-bg hover:to-primary-bg-hover rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
-                        <div className="text-primary-text group-hover:text-primary-text-contrast transition-colors duration-300 ease-out">
-                          {feature.icon}
-                        </div>
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl text-fg-text-contrast mb-2 group-hover:text-primary-text transition-colors duration-300 ease-out">
-                          {feature.title}
-                        </CardTitle>
-                        <CardDescription className="text-fg-text group-hover:text-fg-text transition-colors duration-300 ease-out">
-                          {feature.descriptionStart}
-                          {feature.code && (
-                            <code className="bg-bg-bg px-2 py-1 rounded-sm font-mono text-sm text-fg-text-contrast">
-                              {feature.code}
-                            </code>
-                          )}
-                          {feature.descriptionEnd}
-                        </CardDescription>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  icon={feature.icon}
+                  title={feature.title}
+                  descriptionStart={feature.descriptionStart}
+                  code={feature.code}
+                  descriptionEnd={feature.descriptionEnd}
+                />
               ))}
             </div>
           </motion.div>

@@ -1,3 +1,4 @@
+import React from "react";
 import { ComponentProps, memo } from "react";
 import { clsx } from "clsx";
 
@@ -34,21 +35,21 @@ const trackingClasses = [
 function getStyles(renderedAs: TRenderAs) {
   switch (renderedAs) {
     case "h1":
-      return "font-bold text-6xl leading-tight tracking-tight text-fg-text-contrast";
+      return "font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast";
     case "h2":
-      return "font-semibold text-4xl leading-snug tracking-normal text-fg-text-contrast";
+      return "font-semibold text-3xl md:text-4xl leading-snug tracking-normal text-fg-text-contrast";
     case "h3":
-      return "font-semibold text-3xl leading-normal tracking-normal text-fg-text-contrast";
+      return "font-semibold text-2xl md:text-3xl leading-normal tracking-normal text-fg-text-contrast";
     case "h4":
-      return "font-semibold text-2xl leading-relaxed tracking-normal text-fg-text-contrast";
+      return "font-semibold text-xl md:text-2xl leading-relaxed tracking-normal text-fg-text-contrast";
     case "h5":
-      return "font-semibold text-lg leading-relaxed tracking-normal text-fg-text-contrast";
+      return "font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text-contrast";
     case "h6":
-      return "font-semibold text-base leading-normal tracking-normal text-fg-text-contrast";
+      return "font-semibold text-base md:text-lg leading-normal tracking-normal text-fg-text-contrast";
     case "p":
-      return "font-normal text-base leading-relaxed tracking-normal text-fg-text";
+      return "font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text";
     case "span":
-      return "max-w-fit font-normal text-sm leading-normal tracking-normal text-fg-text bg-bg-bg px-1 inline-flex whitespace-nowrap rounded border border-fg-line";
+      return "max-w-fit font-normal text-sm md:text-base leading-normal tracking-normal text-fg-text bg-bg-bg px-1 inline-flex whitespace-nowrap rounded border border-fg-line";
   }
 }
 

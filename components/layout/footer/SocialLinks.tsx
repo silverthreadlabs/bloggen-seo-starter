@@ -1,16 +1,18 @@
+import React from "react";
 import Link from "next/link";
 import { FaLinkedinIn, FaRedditAlien, FaGithub } from "react-icons/fa";
 import SilverthreadLabsLogo from "@/components/logo/silverthread-labs-logo";
+import { Button } from "@/components/ui/button";
 
-const SocialLink = ({ href, ariaLabel, icon }) => (
+const SocialLink = ({ href, ariaLabel, icon }: { href: string; ariaLabel: string; icon: React.ReactNode }) => (
   <Link
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     aria-label={ariaLabel}
-    className="inline-flex items-center justify-center rounded-sm border border-fg-border p-2 text-fg-text transition-all duration-200 hover:border-ring hover:bg-accent hover:text-fg-text"
+    className=""
   >
-    {icon}
+    <Button color="neutral" variant="outline" iconOnly leadingIcon={icon as React.ReactElement} />
   </Link>
 );
 
