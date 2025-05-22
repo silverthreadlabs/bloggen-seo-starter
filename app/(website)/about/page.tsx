@@ -118,7 +118,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
 import FeaturesList from "@/components/about/FeatureList";
-import { Text } from "@/components/ui/text";
+
 export const metadata: Metadata = createPageMetadata({
   path: "about",
   description:
@@ -142,9 +142,9 @@ export default function AboutPage() {
         <header role="banner" className="max-w-3xl mx-auto text-center mb-16">
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6 px-4">
             <div className="flex items-center gap-2">
-              <Text renderAs="p" className="">
+              <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text">
                 Powered by
-              </Text>
+              </p>
               <Link
                 href="https://bloggen.dev"
                 target="_blank"
@@ -155,9 +155,9 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="flex items-center gap-2">
-              <Text renderAs="p" className="">
+              <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text">
                 Authored by
-              </Text>
+              </p>
               <Link
                 href="https://silverthreadlabs.com"
                 target="_blank"
@@ -168,17 +168,16 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          <Text
-            renderAs="h1"
+          <h1
             id="about-page-title"
-            className="text-4xl md:text-5xl mb-4"
+            className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast mb-4"
           >
             Next.js SEO Template
-          </Text>
-          <Text renderAs="h5" id="about-page-subtitle" className="text-balance">
+          </h1>
+          <h5 id="about-page-subtitle" className="font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text text-balance">
             Spin up a production-ready site with SEO, performance, and content
             workflows already solved.
-          </Text>
+          </h5>
         </header>
 
         {/* Features */}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '@/components/ui/text';
 
 // Reusable section component
 const TermsSection = ({
@@ -12,15 +11,14 @@ const TermsSection = ({
   children: React.ReactNode;
 }) => (
   <div className="mb-8">
-    <Text
-      renderAs="h2"
-      className="text-2xl font-semibold text-fg-text-contrast mb-4"
+    <h2
+      className="font-semibold text-3xl md:text-4xl leading-snug tracking-normal text-fg-text-contrast text-2xl font-semibold text-fg-text-contrast mb-4"
     >
       {number}. {title}
-    </Text>
-    <Text renderAs="p" className="text-fg-text leading-relaxed">
+    </h2>
+    <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text text-fg-text leading-relaxed">
       {children}
-    </Text>
+    </p>
   </div>
 );
 
@@ -83,13 +81,13 @@ export default function TermsOfService() {
   return (
     <div className="min-h-screen  mt-16 px-4 xl:px-0 max-w-7xl mx-auto ">
       <div className="max-w-7xl mx-auto py-12">
-        <Text renderAs="h1" className=" font-bold text-fg-text-contrast mb-8">
+        <h1 className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast font-bold text-fg-text-contrast mb-8">
           Terms of Service
-        </Text>
+        </h1>
 
-        <Text renderAs="p" className="text-fg-text mb-8">
+        <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text text-fg-text mb-8">
           Last updated: May 20, 2025
-        </Text>
+        </p>
         <div className="space-y-8">
           {sections.map((section, index) => (
             <TermsSection key={index} number={index + 1} title={section.title}>

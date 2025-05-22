@@ -37,7 +37,7 @@ export default function Header() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="px-3 py-2 text-sm font-medium rounded-sm text-fg-text hover:text-primary-text transition-colors"
+                    className="px-3 py-2 text-base font-medium rounded-sm text-fg-text hover:text-primary-text transition-colors"
                   >
                     {label}
                   </Link>
@@ -51,9 +51,9 @@ export default function Header() {
             </Link>
             <Link href="https://www.bloggen.dev/" target="_blank">
               <Button
-                color="neutral"
+                color="primary"
                 size="default"
-                variant="outline"
+                variant="surface"
                 trailingIcon={<ArrowUpRight className="w-4 h-4" />}
               >
                 Create your first post

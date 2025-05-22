@@ -485,7 +485,7 @@ export default function ContactForm() {
         </div>
       )}
 
-      {'error' === 'error' && (
+      {submitStatus === 'error' && (
         <div className="mb-6 p-4 bg-alert-bg border border-alert-border rounded-lg">
           <p className="text-alert-text font-medium">
             Something went wrong. Please try again or contact us directly.

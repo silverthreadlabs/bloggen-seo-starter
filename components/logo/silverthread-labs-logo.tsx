@@ -1,12 +1,13 @@
 import React from "react";
 // Create a reusable SilverThreadLabs logo component
-const SilverthreadLabsLogo = () => (
+const SilverthreadLabsLogo = ({ className }: { className?: string }) => (
   <svg
     width="16"
     height="16"
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={className}
   >
     <g clipPath="url(#clip0_4840_3754)">
       <mask id="path-2-inside-1_4840_3754" fill="white">

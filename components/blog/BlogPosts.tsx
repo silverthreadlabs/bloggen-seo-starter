@@ -4,7 +4,7 @@ import { formatDate } from "@/lib/utils/mdx";
 import { getBlogPosts } from "@/lib/blog";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Text } from "@/components/ui/text";
+
 interface BlogPostsProps {
   isHomePage?: boolean;
 }
@@ -30,17 +30,17 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
         <div className="mx-auto py-20">
           {/* Section Header */}
           <div className="mb-16">
-            <Text renderAs="p" className="text-primary-text tracking-wider uppercase mb-4 block">
+            <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text text-primary-text tracking-wider uppercase mb-4 block">
               Browse Template Blog Posts
-            </Text>
-            <div className="flex flex-row items-center  gap-2">
-              <Text renderAs="h1">
+            </p>
+            <div className="flex flex-row items-center gap-2">
+              <h1 className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast">
                 Latest
-              </Text>
-              <Text renderAs="h1" className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
+              </h1>
+              <h1 className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
                 {" "}
                 Articles
-              </Text>
+              </h1>
             </div>
           </div>
 
@@ -72,12 +72,12 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                     </time>
                   </div>
 
-                  <Text renderAs="h5" className="mb-3 group-hover:text-primary-text transition-colors duration-300">
+                  <h5 className="font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text-contrast mb-3 group-hover:text-primary-text transition-colors duration-300">
                     {post.metadata.title}
-                  </Text>
+                  </h5>
 
                   <div className="flex items-center text-sm text-fg-text group-hover:text-primary-text transition-colors">
-                    <Text renderAs="span" className="border-none bg-transparent">Read article</Text>
+                    <span className="max-w-fit font-normal text-sm md:text-base leading-normal tracking-normal text-fg-text bg-bg-bg px-1 inline-flex whitespace-nowrap rounded border border-fg-line border-none bg-transparent">Read article</span>
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </article>
