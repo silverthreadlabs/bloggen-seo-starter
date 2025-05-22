@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "@/components/logo/Logo";
-import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
@@ -16,8 +15,6 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
   const toggleMobile = () => setMobileOpen((open) => !open);
 
   return (
@@ -29,10 +26,10 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <Logo />
 
-          {/* Desktop nav */}
+          {/* Desktop nav - hidden on small screens, visible on md and up */}
           <nav
             aria-label="Primary navigation"
-            className={`${isMobile ? "hidden" : "flex"} items-center space-x-4`}
+            className="hidden md:flex items-center space-x-4"
           >
             <ul className="flex space-x-3">
               {NAV_ITEMS.map(({ href, label }) => (
@@ -47,40 +44,51 @@ export default function Header() {
               ))}
             </ul>
             <Link href="/contact" className="flex-1">
-              <Button color="primary" size="default" variant="solid" >
+              <Button color="primary" size="default" variant="solid">
                 Contact
               </Button>
             </Link>
             <Link href="https://www.bloggen.dev/" target="_blank">
-              <Button color="neutral" size="default" variant="outline" trailingIcon={<ArrowUpRight className="w-4 h-4" />} >
+              <Button
+                color="neutral"
+                size="default"
+                variant="outline"
+                trailingIcon={<ArrowUpRight className="w-4 h-4" />}
+              >
                 Create your first post
               </Button>
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - visible on small screens, hidden on md and up */}
           <Button
             onClick={toggleMobile}
             aria-label="Toggle menu"
             aria-controls="mobile-menu"
             aria-expanded={mobileOpen}
-            className="md:hidden"
+            className="block md:hidden" // Changed from md:hidden to block md:hidden for clarity
             color="neutral"
             variant="ghost"
             iconOnly
-            leadingIcon={mobileOpen ? <FaTimes className="h-5 w-5" /> : <FaBars className="h-5 w-5" />}
+            leadingIcon={
+              mobileOpen ? (
+                <FaTimes className="h-5 w-5 text-fg-text" />
+              ) : (
+                <FaBars className="h-5 w-5 text-fg-text" />
+              )
+            }
           />
         </div>
       </div>
 
-      {/* Mobile overlay menu */}
+      {/* Mobile overlay menu - only rendered when mobileOpen is true */}
       {mobileOpen && (
         <nav
           id="mobile-menu"
           aria-label="Mobile navigation"
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 top-16 z-50 bg-bg-base/95 backdrop-blur-sm md:hidden"
+          className="fixed z-50 inset-0 top-16 bg-bg-base/95 backdrop-blur-sm md:hidden"
         >
           <ul className="p-4 space-y-3 border-t border-fg-border">
             {NAV_ITEMS.map(({ href, label }) => (
@@ -95,15 +103,33 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <Link
-                href="/contact"
-                onClick={toggleMobile}
-                className="flex-1"
-              >
-                <Button color="primary" size="default" variant="solid" fullWidth>
-                  Contact
-                </Button>
-              </Link>
+              <div className="flex flex-col gap-3">
+                <Link href="/contact" onClick={toggleMobile} className="flex-1">
+                  <Button
+                    color="primary"
+                    size="default"
+                    variant="solid"
+                    fullWidth
+                  >
+                    Contact
+                  </Button>
+                </Link>
+                <Link
+                  href="https://www.bloggen.dev/"
+                  target="_blank"
+                  className="flex-1"
+                >
+                  <Button
+                    color="neutral"
+                    size="default"
+                    variant="outline"
+                    trailingIcon={<ArrowUpRight className="w-4 h-4" />}
+                    fullWidth
+                  >
+                    Create your first post
+                  </Button>
+                </Link>
+              </div>
             </li>
           </ul>
         </nav>

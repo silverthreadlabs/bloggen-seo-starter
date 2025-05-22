@@ -75,7 +75,7 @@ export default async function Page(props: {
           }),
         }}
       />
-      <div className="flex flex-col max-w-7xl md:py-18 py-8">
+      <div className="flex flex-col max-w-7xl py-16 md:py-28">
         <BlogHeader
           title={page.data.title}
           publishedAt={page.data.publishedAt}

@@ -26,16 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${manrope.variable}`}>
-      <GoogleAnalytics
-        gaId={env.GOOGLE_ANALYTICS_MEASUREMENT_ID}
-      />
+    <html lang="en" className={manrope.variable} suppressHydrationWarning>
+      <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_MEASUREMENT_ID} />
       {/* <Head>
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head> */}
-      <body className="antialiased lg:mx-auto">
-        <main className="flex-auto items-center bg-gradient-to-br from-bg-base via-primary-bg to-bg-base min-w-0 flex flex-col md:px-0">
+      </Head> */}
+      <body className="antialiased lg:mx-auto" suppressHydrationWarning>
+        <main className="flex-auto bg-gradient-to-br from-bg-base via-primary-bg to-bg-base min-w-0 flex flex-col md:px-0">
           <Header />
           <RootProvider>{children}</RootProvider>
           <Footer />

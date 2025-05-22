@@ -1,12 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "fumadocs-ui/style.css";
+/* @import "fumadocs-ui/style.css"; */
 
 @custom-variant dark (&:is(.dark *));
 
-.fumadocs-ui {
-  @import "fumadocs-ui/style.css";
-}
 
 @layer base {
   @theme inline {
@@ -247,10 +244,22 @@
   }
 }
 
+@layer components {
+  @import "fumadocs-ui/style.css";
+}
+
 /*Add top padding to TOC to avoid conflict with custom nav*/
 
 #nd-toc {
   padding-top: 80px;
+}
+
+/*Add max width to code blocks to solve the responsiveness on small screens*/
+
+#nd-page article figure div pre {
+  position: flex;
+  margin: auto;
+  max-width: 200px;
 }
 
 
@@ -266,6 +275,18 @@
   }
 }
 
+/* Fix figure width issues on blog pages */
+#nd-page article figure {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+#nd-page article figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 
 html {

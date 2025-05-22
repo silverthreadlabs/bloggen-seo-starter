@@ -1,5 +1,6 @@
 import React from "react";
 import { Text } from "@/components/ui/text";
+
 interface FeatureCardProps {
   icon: React.ReactElement;
   title: string;
@@ -17,32 +18,23 @@ function FeatureCard({
 }: FeatureCardProps) {
   return (
     <div className="relative group">
-      <div className="cursor-default group p-6 rounded-lg bg-bg-bg backdrop-blur-sm border border-fg-border hover:border-primary-solid transition-all duration-300 ease-in-out">
+      <div className="cursor-default p-6 rounded-xl bg-primary-base/50 backdrop-blur-sm border border-fg-border hover:border-primary-border-hover transition-all duration-300 ease-in-out">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-gradient-to-br from-bg-bg via-primary-bg-subtle to-primary-bg group-hover:via-primary-bg hover:to-primary-bg-hover rounded-sm group-hover:scale-[1.05] transition-transform duration-300 ease-out">
+          <div className="p-3 bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg group-hover:scale-[1.05] transition-transform duration-300 ease-out">
             <div className="text-primary-text group-hover:text-primary-text-contrast transition-colors duration-300 ease-out">
               {icon}
             </div>
           </div>
           <div>
-            <Text
-              renderAs="h5"
-              className="text-fg-text text-xl mb-2 group-hover:text-primary-text transition-colors duration-300 ease-out"
-            >
+            <Text renderAs="h5" className="mb-2 group-hover:text-primary-text transition-colors duration-300 ease-out">
               {title}
             </Text>
-            <Text
-              renderAs="p"
-              className="group-hover:text-primary-on-primary transition-colors duration-300 ease-out"
-            >
+            <Text renderAs="p" className="text-sm group-hover:text-fg-text-contrast transition-colors duration-300 ease-out">
               {descriptionStart}
               {code && (
-                <Text
-                  renderAs="span"
-                  className="font-mono bg-transparent border-none text-primary-on-primary"
-                >
+                <code className="bg-primary-base px-2 py-1 rounded-md font-mono text-sm text-fg-text-contrast">
                   {code}
-                </Text>
+                </code>
               )}
               {descriptionEnd}
             </Text>

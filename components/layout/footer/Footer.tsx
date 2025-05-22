@@ -19,6 +19,7 @@ const NAV_ITEMS = [
   { href: '/products', label: 'Products' },
   { href: '/contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
+  { href: '/terms', label: 'Terms' },
 ];
 
 export default function Footer() {

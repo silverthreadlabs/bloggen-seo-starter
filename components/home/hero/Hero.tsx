@@ -1,12 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaArrowRight,
-  FaCopy,
-  FaCheck,
-  FaGithub,
-} from "react-icons/fa";
+import { FaArrowRight, FaCopy, FaCheck, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import features from "./features-list";
 import { Button } from "@/components/ui/button";
@@ -38,20 +33,22 @@ export default function Hero() {
             className="flex-1 py-10 xl:py-20 flex flex-col justify-center"
           >
             <div className="max-w-xl">
-              <Text renderAs="span" className="border-none bg-transparent font-mono tracking-widest uppercase mb-4 block">
+              <Text
+                renderAs="span"
+                className="border-none bg-transparent font-mono tracking-widest uppercase mb-4 block"
+              >
                 Powered by Bloggen
               </Text>
-              <Text renderAs="h1" className="mb-6">
-                All your SEO
-                <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
-                  {" "}
+              <div className="flex flex-col mb-6">
+                <Text renderAs="h1">All your SEO</Text>
+                <Text
+                  renderAs="h1"
+                  className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text"
+                >
                   Already Done.
-                </span>
-              </Text>
-              <Text
-                renderAs="h4"
-                className="text-fg-text font-normal mb-8"
-              >
+                </Text>
+              </div>
+              <Text renderAs="h4" className="text-fg-text font-normal mb-8">
                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG
                 images, JSON‑LD, and top Lighthouse scores.
               </Text>
@@ -94,7 +91,9 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-center justify-between bg-bg-bg bg-opacity-50 rounded px-4 py-3 font-mono text-sm border border-fg-border">
-                  <Text renderAs="span" className="border-none">$ npx create-bloggen-app</Text>
+                  <Text renderAs="span" className="border-none">
+                    $ npx create-bloggen-app
+                  </Text>
                   <Button
                     onClick={handleCopy}
                     aria-label="Copy command"
@@ -102,7 +101,13 @@ export default function Hero() {
                     color="neutral"
                     variant="ghost"
                     iconOnly
-                    leadingIcon={copied ? <FaCheck className="w-4 h-4 text-success-text" /> : <FaCopy className="w-4 h-4 text-fg-default" />}
+                    leadingIcon={
+                      copied ? (
+                        <FaCheck className="w-4 h-4 text-success-text" />
+                      ) : (
+                        <FaCopy className="w-4 h-4 text-fg-default" />
+                      )
+                    }
                   />
                 </div>
               </div>
@@ -146,7 +151,7 @@ export default function Hero() {
                 //     </div>
                 //   </CardContent>
                 // </Card>
-                <FeatureCard 
+                <FeatureCard
                   key={index}
                   icon={feature.icon}
                   title={feature.title}

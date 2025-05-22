@@ -90,7 +90,7 @@ function Text(props: TProps) {
   const filteredDefaults = getFilteredDefaults(renderAs, className || "");
 
   return (
-    <Component className={clsx(filteredDefaults, className)} {...rest}>
+    <Component className={clsx(className, filteredDefaults)} {...rest}>
       {children}
     </Component>
   );

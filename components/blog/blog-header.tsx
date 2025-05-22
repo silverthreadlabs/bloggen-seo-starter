@@ -12,7 +12,7 @@ interface Props {
 
 export default function BlogHeader({ title, publishedAt, image }: Props) {
   return (
-    <header className="relative mx-auto max-w-6xl px-8 py-8 md:py-28">
+    <header className="relative mx-auto max-w-6xl px-8">
       {/* Header Section */}
       <div className="mb-20">
         <div className="flex items-center space-x-3 mb-8">

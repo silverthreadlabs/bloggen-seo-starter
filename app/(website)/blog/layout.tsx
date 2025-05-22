@@ -3,6 +3,7 @@ import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { blogSource } from '@/lib/source';
 import '@/app/global.css';
+// import "fumadocs-ui/style.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
