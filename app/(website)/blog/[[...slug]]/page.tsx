@@ -67,7 +67,7 @@ export default async function Page(props: {
             image: page.data.image
               ? `${siteConfig.baseUrl}${page.data.image}`
               : `/og?title=${encodeURIComponent(page.data.title)}`,
-            url: `${siteConfig.baseUrl}/games/${params.slug?.join("/") || ""}`,
+            url: `${siteConfig.baseUrl}/blog/${params.slug?.join("/") || ""}`,
             author: {
               "@type": "Person",
               name: "Silverthread Labs",
@@ -114,10 +114,15 @@ export async function generateMetadata({
 }) {
   const resolvedParams = await params;
 
+  // Get the current directory path from the file structure
+  // This dynamically determines we're in the blog section
+  const currentPath = __filename.split(/[\\/]/).slice(-3)[0];
+  console.log("🚀 ~ currentPath:", currentPath)
+
   // If this is the root path
   if (!resolvedParams.slug || resolvedParams.slug.length === 0) {
     return createPageMetadata({
-      path: "blog",
+      path: currentPath,
       description:
         "Learn how to build, customize, and grow your site with Bloggen SEO Starter and Bloggen AI. Setup guides, tips, and SEO content strategies—all in one place.",
       baseMetadata: defaultMetadata,
@@ -132,7 +137,7 @@ export async function generateMetadata({
     : `${siteConfig.baseUrl}/og?title=${encodeURIComponent(page.data.title)}`;
 
   const baseMeta = createPageMetadata({
-    path: page.data.title,
+    path: `${currentPath}/${resolvedParams.slug}`,
     description: page.data.description,
     baseMetadata: defaultMetadata,
   });
@@ -143,7 +148,7 @@ export async function generateMetadata({
       ...baseMeta.openGraph,
       type: "article",
       publishedTime: page.data.publishedAt,
-      url: `${siteConfig.baseUrl}/games/${
+      url: `${siteConfig.baseUrl}/${currentPath}/${
         resolvedParams.slug?.join("/") || ""
       }`,
       images: [

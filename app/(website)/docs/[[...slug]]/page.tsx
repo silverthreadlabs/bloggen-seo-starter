@@ -43,11 +43,27 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+  
+  // Get the current directory path from the file structure
+  // This dynamically determines we're in the docs section
+  const currentPath = __filename.split(/[\\/]/).slice(-3)[0];
+  
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      type: 'article',
+      title: page.data.title,
+      description: page.data.description,
+      url: `${params.slug ? `/${currentPath}/${params.slug.join('/')}` : `/${currentPath}`}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.data.title,
+      description: page.data.description,
+    }
   };
 }

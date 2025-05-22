@@ -1,8 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { getProductPosts } from "@/lib/products";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { Text } from "@/components/ui/text";
+import React from 'react';
+import Link from 'next/link';
+import { getProductPosts } from '@/lib/products';
+import { FaArrowRight, FaSnowflake } from 'react-icons/fa';
 
 export function ProductPosts() {
   const allProducts = getProductPosts();
@@ -23,53 +22,50 @@ export function ProductPosts() {
       <div className="relative z-10 max-w-[90%] xl:max-w-[1280px] mx-auto flex flex-col flex-1 justify-center py-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <Text renderAs="span" className="border-none bg-transparent text-primary-text text-sm font-medium tracking-wider uppercase mb-3 block">
+          <span className="max-w-fit font-normal text-sm md:text-base leading-normal text-primary-text px-1 whitespace-nowrap rounded border border-fg-line border-none bg-transparent font-mono tracking-widest uppercase mb-4 ">
             Products
-          </Text>
+          </span>
           <div className="flex flex-row items-center justify-center gap-2">
-            <Text renderAs="h1">
-              What We{" "}
-            </Text>
-            <Text
-              renderAs="h1"
-              className="font-bold border-none bg-transparent bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text"
-            >
+            <h1 className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast">
+              What We{' '}
+            </h1>
+            <h1 className="text-4xl md:text-6xl leading-tight tracking-tight font-bold border-none bg-transparent bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
               Build
-            </Text>
+            </h1>
           </div>
 
-          <Text renderAs="h4" className="text-fg-text font-normal text-balance">
-            Discover the products we&apos;ve crafted at Silverthread Labs to save
-            time, boost performance.
-          </Text>
+          <h4 className="text-xl md:text-2xl leading-relaxed tracking-normal text-fg-text font-normal text-balance">
+            Discover the products we&apos;ve crafted at Silverthread Labs to
+            save time, boost performance.
+          </h4>
         </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {sortedProducts.map((post) => (
+          {sortedProducts.map(post => (
             <Link
               key={post.slug}
               href={`/products/${post.slug}`}
               className="block group"
             >
-              <div className="h-full p-5 rounded bg-bg-bg backdrop-blur-sm border border-fg-border hover:border-fg-border-hover transition-all duration-300">
+              <div className="h-full py-5 px-8 rounded-lg bg-bg-bg backdrop-blur-sm border border-bg-bg-active hover:border-fg-line transition-all duration-300">
                 <div className="flex flex-col h-full">
                   <div className="p-2.5 bg-gradient-to-br from-bg-bg via-primary-bg-subtle to-primary-bg hover:via-primary-bg hover:to-primary-bg-hover rounded-sm w-fit group-hover:scale-110 transition-transform duration-300">
-                    <Sparkles className="w-4 h-4 text-primary-text group-hover:text-primary-text-contrast transition-colors duration-300" />
+                    <FaSnowflake className="w-4 h-4 text-primary-text group-hover:text-primary-text-contrast transition-colors duration-300" />
                   </div>
 
                   <div className="mt-4">
-                    <Text renderAs="h4" className="mb-2 group-hover:text-primary-text transition-colors duration-300">
+                    <h4 className="font-semibold text-xl md:text-2xl leading-relaxed tracking-normal text-fg-text-contrast mb-2 group-hover:text-primary-text transition-colors duration-300">
                       {post.metadata.title}
-                    </Text>
-                    <Text renderAs="p" className="text-balance text-fg-text group-hover:text-fg-text transition-colors duration-300">
+                    </h4>
+                    <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-balance text-fg-text group-hover:text-fg-text transition-colors duration-300">
                       {post.metadata.summary}
-                    </Text>
+                    </p>
                   </div>
 
                   <div className="mt-auto pt-4 flex items-center gap-2 text-sm text-primary-text group-hover:text-primary-text-contrast transition-colors">
-                    <span className="text-xs font-medium">Learn more</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-sm font-medium">Learn more</span>
+                    <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>

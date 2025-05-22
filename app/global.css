@@ -1,9 +1,8 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 /* @import "fumadocs-ui/style.css"; */
 
 @custom-variant dark (&:is(.dark *));
-
 
 @layer base {
   @theme inline {
@@ -129,35 +128,33 @@
 
   :root {
     --bg-default: #000;
-    --bg-base: #151718;
-    --bg-bg-subtle: #1a1d1e;
-    --bg-bg: #202425;
-    --bg-bg-hover: #26292b;
-    --bg-bg-active: #2b2f31;
-    --fg-line: #313538;
-    --fg-border: #3a3f42;
-    --fg-border-hover: #4c5155;
-    --fg-solid: #697177;
-    --fg-solid-hover: #787f85;
-    --fg-text: #9ba1a6;
-    --fg-text-contrast: #ecedee;
+    --bg-base: #0a1023;
+    --bg-bg-subtle: #11182c;
+    --bg-bg: #17203e;
+    --bg-bg-hover: #1d2747;
+    --bg-bg-active: #242f4f;
+    --fg-line: #2d3859;
+    --fg-border: #3a4668;
+    --fg-border-hover: #525f83;
+    --fg-solid: #5f6d91;
+    --fg-solid-hover: #6c7aa0;
+    --fg-text: #a4b3db;
+    --fg-text-contrast: #e6eeff;
     --fg-default: #fff;
 
-
-    --primary-base: #131620;
-    --primary-bg-subtle: #15192d;
-    --primary-bg: #192140;
-    --primary-bg-hover: #1c274f;
-    --primary-bg-active: #1f2c5c;
-    --primary-line: #22346e;
-    --primary-border: #273e89;
-    --primary-border-hover: #2f4eb2;
-    --primary-solid: #3e63dd;
-    --primary-solid-hover: #5373e7;
-    --primary-text: #849dff;
-    --primary-text-contrast: #eef1fd;
+    --primary-base: #09111f;
+    --primary-bg-subtl: #0e172a;
+    --primary-bg: #0d2353;
+    --primary-bg-hove: #0d2c70;
+    --primary-bg-activ: #123684;
+    --primary-line: #1a4196;
+    --primary-border: #224eac;
+    --primary-border-hover: #275bc9;
+    --primary-solid: #0d59fd;
+    --primary-solid-hover: #0048ec;
+    --primary-text: #88b5ff;
+    --primary-text-contrast: #cee2ff;
     --primary-on-primary: #fff;
-
 
     --secondary-base: #1d131d;
     --secondary-bg-subtle: #251425;
@@ -233,19 +230,19 @@
     --overlay-bg-subtle: hsla(0, 0%, 0%, 0.027);
     --overlay-bg: hsla(0, 0%, 0%, 0.047);
     --overlay-bg-hover: hsla(0, 0%, 0%, 0.071);
-    --overlay-bg-active: hsla(0, 0%, 0%, 0.090);
+    --overlay-bg-active: hsla(0, 0%, 0%, 0.09);
     --overlay-line: hsla(0, 0%, 0%, 0.114);
     --overlay-border: hsla(0, 0%, 0%, 0.141);
-    --overlay-border-hover: hsla(0, 0%, 0%, 0.220);
+    --overlay-border-hover: hsla(0, 0%, 0%, 0.22);
     --overlay-solid: hsla(0, 0%, 0%, 0.439);
     --overlay-solid-hover: hsla(0, 0%, 0%, 0.478);
     --overlay-text: hsla(0, 0%, 0%, 0.565);
-    --overlay-text-contrast: hsla(0, 0%, 0%, 0.910);
+    --overlay-text-contrast: hsla(0, 0%, 0%, 0.91);
   }
 }
 
 @layer components {
-  @import "fumadocs-ui/style.css";
+  @import 'fumadocs-ui/style.css';
 }
 
 /*Add top padding to TOC to avoid conflict with custom nav*/
@@ -261,7 +258,6 @@
   margin: auto;
   max-width: 200px;
 }
-
 
 /*Remove padding and max-width from product slug page so the content is flush with the top nav*/
 .product-page {
@@ -287,7 +283,6 @@
   height: auto;
   object-fit: contain;
 }
-
 
 html {
   color-scheme: dark;
@@ -320,8 +315,8 @@ pre {
 }
 
 /* Remove Safari input shadow on mobile */
-input[type="text"],
-input[type="email"] {
+input[type='text'],
+input[type='email'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
