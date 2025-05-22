@@ -1,99 +1,123 @@
-import React from "react";
-import { ComponentProps, memo } from "react";
-import { clsx } from "clsx";
+import React, { ComponentProps, memo } from 'react';
 
-type TRenderAs = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+import { clsx } from 'clsx';
 
-type TProps = ComponentProps<"h1"> & { renderAs?: TRenderAs };
+type TRenderAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+
+type TProps = ComponentProps<'h1'> & { renderAs?: TRenderAs };
 
 // Define Tailwind class groups for properties to override
 const sizeClasses = [
-  "text-xs", "text-sm", "text-base", "text-lg", "text-xl",
-  "text-2xl", "text-3xl", "text-4xl", "text-5xl", "text-6xl",
+    'text-xs',
+    'text-sm',
+    'text-base',
+    'text-lg',
+    'text-xl',
+    'text-2xl',
+    'text-3xl',
+    'text-4xl',
+    'text-5xl',
+    'text-6xl'
 ];
 
 const colorClasses = [
-  "text-fg-text", "text-fg-text-contrast", "text-fg-solid",
-  // Add more project-specific color classes if needed
+    'text-fg-text',
+    'text-fg-text-contrast',
+    'text-fg-solid'
+    // Add more project-specific color classes if needed
 ];
 
 const weightClasses = [
-  "font-thin", "font-extralight", "font-light", "font-normal",
-  "font-medium", "font-semibold", "font-bold", "font-extrabold", "font-black",
+    'font-thin',
+    'font-extralight',
+    'font-light',
+    'font-normal',
+    'font-medium',
+    'font-semibold',
+    'font-bold',
+    'font-extrabold',
+    'font-black'
 ];
 
 const leadingClasses = [
-  "leading-none", "leading-tight", "leading-snug", "leading-normal",
-  "leading-relaxed", "leading-loose",
+    'leading-none',
+    'leading-tight',
+    'leading-snug',
+    'leading-normal',
+    'leading-relaxed',
+    'leading-loose'
 ];
 
 const trackingClasses = [
-  "tracking-tighter", "tracking-tight", "tracking-normal",
-  "tracking-wide", "tracking-wider", "tracking-widest",
+    'tracking-tighter',
+    'tracking-tight',
+    'tracking-normal',
+    'tracking-wide',
+    'tracking-wider',
+    'tracking-widest'
 ];
 
 function getStyles(renderedAs: TRenderAs) {
-  switch (renderedAs) {
-    case "h1":
-      return "font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast";
-    case "h2":
-      return "font-semibold text-3xl md:text-4xl leading-snug tracking-normal text-fg-text-contrast";
-    case "h3":
-      return "font-semibold text-2xl md:text-3xl leading-normal tracking-normal text-fg-text-contrast";
-    case "h4":
-      return "font-semibold text-xl md:text-2xl leading-relaxed tracking-normal text-fg-text-contrast";
-    case "h5":
-      return "font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text-contrast";
-    case "h6":
-      return "font-semibold text-base md:text-lg leading-normal tracking-normal text-fg-text-contrast";
-    case "p":
-      return "font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text";
-    case "span":
-      return "max-w-fit font-normal text-sm md:text-base leading-normal tracking-normal text-fg-text bg-bg-bg px-1 inline-flex whitespace-nowrap rounded border border-fg-line";
-  }
+    switch (renderedAs) {
+        case 'h1':
+            return 'font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast';
+        case 'h2':
+            return 'font-semibold text-3xl md:text-4xl leading-snug tracking-normal text-fg-text-contrast';
+        case 'h3':
+            return 'font-semibold text-2xl md:text-3xl leading-normal tracking-normal text-fg-text-contrast';
+        case 'h4':
+            return 'font-semibold text-xl md:text-2xl leading-relaxed tracking-normal text-fg-text-contrast';
+        case 'h5':
+            return 'font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text-contrast';
+        case 'h6':
+            return 'font-semibold text-base md:text-lg leading-normal tracking-normal text-fg-text-contrast';
+        case 'p':
+            return 'font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text';
+        case 'span':
+            return 'max-w-fit font-normal text-sm md:text-base leading-normal tracking-normal text-fg-text bg-bg-bg px-1 inline-flex whitespace-nowrap rounded border border-fg-line';
+    }
 }
 
 function getFilteredDefaults(renderAs: TRenderAs, className: string) {
-  const defaultStyles = getStyles(renderAs);
-  const defaultClasses = defaultStyles.split(/\s+/);
-  const userClasses = className ? className.split(/\s+/) : [];
+    const defaultStyles = getStyles(renderAs);
+    const defaultClasses = defaultStyles.split(/\s+/);
+    const userClasses = className ? className.split(/\s+/) : [];
 
-  const properties = [
-    { name: "size", classes: sizeClasses },
-    { name: "color", classes: colorClasses },
-    { name: "weight", classes: weightClasses },
-    { name: "leading", classes: leadingClasses },
-    { name: "tracking", classes: trackingClasses },
-  ];
+    const properties = [
+        { name: 'size', classes: sizeClasses },
+        { name: 'color', classes: colorClasses },
+        { name: 'weight', classes: weightClasses },
+        { name: 'leading', classes: leadingClasses },
+        { name: 'tracking', classes: trackingClasses }
+    ];
 
-  const filteredDefaults = defaultClasses.filter((defaultClass) => {
-    for (const prop of properties) {
-      if (prop.classes.includes(defaultClass)) {
-        const hasOverride = userClasses.some((userClass) =>
-          prop.classes.includes(userClass)
-        );
-        if (hasOverride) {
-          return false; // Remove default class if user overrides this property
+    const filteredDefaults = defaultClasses.filter((defaultClass) => {
+        for (const prop of properties) {
+            if (prop.classes.includes(defaultClass)) {
+                const hasOverride = userClasses.some((userClass) => prop.classes.includes(userClass));
+                if (hasOverride) {
+                    return false; // Remove default class if user overrides this property
+                }
+            }
         }
-      }
-    }
-    return true; // Keep default class if no override
-  });
+        
+return true; // Keep default class if no override
+    });
 
-  return filteredDefaults.join(" ");
+    return filteredDefaults.join(' ');
 }
 
 function Text(props: TProps) {
-  const { children, className, renderAs = "h1", ...rest } = props;
-  const Component = renderAs;
+    const { children, className, renderAs = 'h1', ...rest } = props;
+    const Component = renderAs;
 
-  const filteredDefaults = getFilteredDefaults(renderAs, className || "");
+    const filteredDefaults = getFilteredDefaults(renderAs, className || '');
 
-  return (
-    <Component className={clsx(className, filteredDefaults)} {...rest}>
-      {children}
-    </Component>
-  );
+    return (
+        <Component className={clsx(className, filteredDefaults)} {...rest}>
+            {children}
+        </Component>
+    );
 }
 
 const HeadingMemoized = memo(Text);

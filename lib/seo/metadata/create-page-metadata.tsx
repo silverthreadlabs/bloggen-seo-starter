@@ -1,6 +1,7 @@
-import { Metadata } from "next";
-import { siteConfig } from "@/lib/config/site";
-import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
+import { Metadata } from 'next';
+
+import { siteConfig } from '@/lib/config/site';
+import { defaultMetadata } from '@/lib/seo/metadata/create-base-metadata';
 
 /**
  * Creates page-specific metadata.
@@ -13,53 +14,49 @@ import { defaultMetadata } from "@/lib/seo/metadata/create-base-metadata";
  */
 
 export function createPageMetadata({
-  path,
-  description,
-  baseMetadata = defaultMetadata,
+    path,
+    description,
+    baseMetadata = defaultMetadata
 }: {
-  path: string;
-  description?: string;
-  baseMetadata?: Metadata;
+    path: string;
+    description?: string;
+    baseMetadata?: Metadata;
 }): Metadata {
-  // Capitalize the first letter of the provided path for the page title.
-  const capitalizedPath = path.charAt(0).toUpperCase() + path.slice(1);
-  const pageTitle = capitalizedPath
-    ? `${capitalizedPath} | ${siteConfig.title}`
-    : siteConfig.title;
-  const url = `${siteConfig.baseUrl}/${path}`;
-  const ogImageUrl = `${siteConfig.baseUrl}/og?title=${encodeURIComponent(
-    pageTitle
-  )}`;
+    // Capitalize the first letter of the provided path for the page title.
+    const capitalizedPath = path.charAt(0).toUpperCase() + path.slice(1);
+    const pageTitle = capitalizedPath ? `${capitalizedPath} | ${siteConfig.title}` : siteConfig.title;
+    const url = `${siteConfig.baseUrl}/${path}`;
+    const ogImageUrl = `${siteConfig.baseUrl}/og?title=${encodeURIComponent(pageTitle)}`;
 
-  return {
-    ...baseMetadata,
-    alternates: {
-      canonical: url,
-    },
-    title: pageTitle,
-    description: description || baseMetadata.description,
-    openGraph: {
-      ...baseMetadata.openGraph,
-      url,
-      title: pageTitle,
-      description: description || baseMetadata.openGraph?.description,
-      images: [
-        {
-          url: ogImageUrl,
-          alt: pageTitle,
+    return {
+        ...baseMetadata,
+        alternates: {
+            canonical: url
         },
-      ],
-    },
-    twitter: {
-      ...baseMetadata.twitter,
-      title: pageTitle,
-      description: description || baseMetadata.twitter?.description,
-      images: [
-        {
-          url: ogImageUrl,
-          alt: pageTitle,
+        title: pageTitle,
+        description: description || baseMetadata.description,
+        openGraph: {
+            ...baseMetadata.openGraph,
+            url,
+            title: pageTitle,
+            description: description || baseMetadata.openGraph?.description,
+            images: [
+                {
+                    url: ogImageUrl,
+                    alt: pageTitle
+                }
+            ]
         },
-      ],
-    },
-  };
+        twitter: {
+            ...baseMetadata.twitter,
+            title: pageTitle,
+            description: description || baseMetadata.twitter?.description,
+            images: [
+                {
+                    url: ogImageUrl,
+                    alt: pageTitle
+                }
+            ]
+        }
+    };
 }

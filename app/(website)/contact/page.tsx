@@ -4,84 +4,75 @@
 // import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 // import Link from 'next/link';
 // import FeatureCard from '@/components/ui/feature-card';
-
 import { Suspense } from 'react';
+
+import { Metadata } from 'next';
+
 import CalBooking from '@/components/contact/cal-booking';
 import ContactForm from '@/components/contact/contact-form';
 import TabsComponent from '@/components/ui/tabs';
-import { Metadata } from 'next';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 
 export const metadata: Metadata = createPageMetadata({
-  path: 'contact',
-  description:
-    'Have questions about our products, or just want to share your thoughts? We would love to hear from you!',
+    path: 'contact',
+    description:
+        'Have questions about our products, or just want to share your thoughts? We would love to hear from you!'
 });
 
 const LoadingSpinner = () => (
-  <div className="h-96 flex items-center justify-center">
-    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-solid"></div>
-  </div>
+    <div className='flex h-96 items-center justify-center'>
+        <div className='border-primary-solid h-8 w-8 animate-spin rounded-full border-b-2'></div>
+    </div>
 );
 
-const ContentWrapper = ({
-  children,
-  className = '',
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  // <div className={`bg-primary-solid rounded-xl border border-fg-border shadow-sm overflow-hidden ${className}`}>
-  <div
-    className={`bg-gradient-to-bl from-bg-bg-bg from-0% via-bg-bg-subtle via-50% to-bg-bg-bg to-100% rounded-xl border border-bg-bg-line shadow-sm overflow-hidden ${className}`}
-  >
-    {children}
-  </div>
+const ContentWrapper = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+    // <div className={`bg-primary-solid rounded-xl border border-fg-border shadow-sm overflow-hidden ${className}`}>
+    <div
+        className={`from-bg-bg-bg via-bg-bg-subtle to-bg-bg-bg border-bg-bg-line overflow-hidden rounded-xl border bg-gradient-to-bl from-0% via-50% to-100% shadow-sm ${className}`}>
+        {children}
+    </div>
 );
 
 export default function ContactPage() {
-  const tabs = [
-    {
-      value: 'call',
-      label: 'Book a call',
-      content: (
-        <ContentWrapper>
-          <Suspense fallback={<LoadingSpinner />}>
-            <CalBooking />
-          </Suspense>
-        </ContentWrapper>
-      ),
-    },
-    {
-      value: 'form',
-      label: 'Send a message',
-      content: (
-        <div className="max-w-2xl mx-auto">
-          <ContentWrapper className="p-8">
-            <ContactForm />
-          </ContentWrapper>
+    const tabs = [
+        {
+            value: 'call',
+            label: 'Book a call',
+            content: (
+                <ContentWrapper>
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <CalBooking />
+                    </Suspense>
+                </ContentWrapper>
+            )
+        },
+        {
+            value: 'form',
+            label: 'Send a message',
+            content: (
+                <div className='mx-auto max-w-2xl'>
+                    <ContentWrapper className='p-8'>
+                        <ContactForm />
+                    </ContentWrapper>
+                </div>
+            )
+        }
+    ];
+
+    return (
+        <div className='mx-auto min-h-screen w-full max-w-7xl'>
+            <div className='px-4 py-16'>
+                {/* Header Section */}
+                <header className='mb-12 text-center'>
+                    <h1 className='text-fg-text-contrast mb-4 text-4xl font-bold md:text-5xl'>Get in touch</h1>
+                    <p className='text-fg-text mx-auto max-w-2xl text-lg text-balance'>
+                        Book a meeting with us to discuss how we can help or fill out a form to get in touch
+                    </p>
+                </header>
+
+                {/* Tabs Section */}
+                <TabsComponent tabs={tabs} defaultValue='call' />
+            </div>
         </div>
-      ),
-    },
-  ];
-
-  return (
-    <div className="min-h-screen w-full max-w-7xl mx-auto">
-      <div className="px-4 py-16">
-        {/* Header Section */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-4">
-            Get in touch
-          </h1>
-          <p className="text-lg text-fg-text max-w-2xl mx-auto text-balance">
-            Book a meeting with us to discuss how we can help or fill out a form
-            to get in touch
-          </p>
-        </header>
-
-        {/* Tabs Section */}
-        <TabsComponent tabs={tabs} defaultValue="call" />
-      </div>
-    </div>
-  );
+    );
 }

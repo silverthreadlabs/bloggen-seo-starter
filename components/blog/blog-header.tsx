@@ -1,21 +1,25 @@
-import React from "react";
-import Image from "next/image";
-import { formatDate } from "@/lib/utils/mdx";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import React from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { formatDate } from '@/lib/utils/mdx';
+
+import { ArrowLeft } from 'lucide-react';
+
 interface Props {
-  title: string;
-  publishedAt?: string;
-  image?: string;
+    title: string;
+    publishedAt?: string;
+    image?: string;
 }
 
 export default function BlogHeader({ title, publishedAt, image }: Props) {
-  return (
-    <header className="relative mx-auto max-w-6xl px-8">
-      {/* Header Section */}
-      <div className="mb-20">
-        <div className="flex items-center space-x-3 mb-8">
-          {/* <Link 
+    return (
+        <header className='relative mx-auto max-w-6xl px-8'>
+            {/* Header Section */}
+            <div className='mb-20'>
+                <div className='mb-8 flex items-center space-x-3'>
+                    {/* <Link 
             href="/blog" 
             className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-bg-bg via-primary-bg-subtle to-primary-bg hover:via-primary-bg hover:to-primary-bg-hover border border-fg-border hover:border-fg-border-hover transition-all duration-300 group"
           > 
@@ -26,38 +30,25 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
               Back to Blog
             </span>
           </Link> */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-fg-text hover:text-primary-text transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blogs
-          </Link>
-        </div>
-        <h1
-          className="font-bold text-4xl md:text-6xl leading-tight tracking-tight mb-8 bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast bg-clip-text"
-        >
-          {title}
-        </h1>
-        {publishedAt && (
-          <time className="text-fg-text text-lg">
-            {formatDate(publishedAt)}
-          </time>
-        )}
-      </div>
+                    <Link
+                        href='/blog'
+                        className='text-fg-text hover:text-primary-text inline-flex items-center transition-colors'>
+                        <ArrowLeft className='mr-2 h-4 w-4' />
+                        Back to Blogs
+                    </Link>
+                </div>
+                <h1 className='from-primary-solid via-primary-text to-primary-text-contrast mb-8 bg-gradient-to-r bg-clip-text text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                    {title}
+                </h1>
+                {publishedAt && <time className='text-fg-text text-lg'>{formatDate(publishedAt)}</time>}
+            </div>
 
-      {/* Featured Image */}
-      {image && (
-        <div className="relative w-full aspect-[21/9] mb-10 overflow-hidden rounded-sm shadow-2xl border border-fg-border">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-      )}
-    </header>
-  );
+            {/* Featured Image */}
+            {image && (
+                <div className='border-fg-border relative mb-10 aspect-[21/9] w-full overflow-hidden rounded-sm border shadow-2xl'>
+                    <Image src={image} alt={title} fill className='object-cover' priority />
+                </div>
+            )}
+        </header>
+    );
 }

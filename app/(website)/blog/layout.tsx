@@ -1,19 +1,21 @@
-import React from "react";
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+import React from 'react';
 import type { ReactNode } from 'react';
-import { blogSource } from '@/lib/source';
+
 import '@/app/global.css';
+import { blogSource } from '@/lib/source';
+
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+
 // import "fumadocs-ui/style.css";
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <div className="flex-auto mx-auto max-w-7xl">
+        <div className='mx-auto max-w-7xl flex-auto'>
             <DocsLayout
                 tree={blogSource.pageTree}
                 sidebar={{ enabled: false }}
                 searchToggle={{ enabled: false }}
-                nav={{enabled: false}}
-            >
+                nav={{ enabled: false }}>
                 {children}
             </DocsLayout>
         </div>
