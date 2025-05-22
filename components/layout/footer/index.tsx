@@ -1,13 +1,11 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import SocialLinks from './SocialLinks';
+import SocialLinks from './social-links';
 import Logo from '@/components/logo/Logo';
 import { FaRegEnvelope } from 'react-icons/fa';
-import { Text } from '@/components/ui/text';
-import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
+// import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 
-// export const dynamic = 'force-static';
 
 const EMAIL = 'silverthreadlabs@gmail.com';
 const SUBJECT = 'Business Inquiry';
@@ -24,20 +22,23 @@ const NAV_ITEMS = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  // const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <footer className="w-full bg-bg-base border-t border-fg-border">
+    <footer className="w-full bg-bg-bg-subtle border-t  border-bg-bg-hover shadow-inner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12">
-          {/* Main Footer Content */}
-          <div className={`flex justify-between items-start ${isMobile ? 'flex-col space-y-8' : 'flex-row space-y-0'}`}>
-            {/* Logo + Email */}
+   
+          <div
+            className={
+              'flex justify-between items-start flex-col space-y-8 md:flex-row md:space-y-0'
+            }
+          >
+   
             <div className="space-y-4 flex flex-col">
-              <div className="flex flex-row items-center gap-2">
+       
                 <Logo />
-                <Text renderAs="span" className="border-none bg-transparent font-semibold">SEO Starter</Text>
-              </div>
+
               <Link
                 href={MAILTO}
                 className="inline-flex items-center space-x-2 text-fg-text hover:text-primary-text transition-colors text-sm"
@@ -48,7 +49,9 @@ export default function Footer() {
             </div>
 
             {/* Nav + Social */}
-            <div className={`space-x-6 flex ${isMobile ? 'flex-col space-y-6 items-start' : 'flex-row space-y-0 items-center'}`}>
+            <div
+              className={'space-x-6 flex flex-col space-y-6 items-start md:flex-row md:space-y-0 md:items-center'}
+            >
               <nav className="flex flex-wrap gap-4">
                 {NAV_ITEMS.map(({ href, label }) => (
                   <Link
@@ -66,7 +69,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-fg-border">
+          <div className="mt-8 pt-8 border-t border-fg-line">
             <p className="text-sm text-fg-text">
               © {currentYear} Bloggen. Built by{' '}
               <Link

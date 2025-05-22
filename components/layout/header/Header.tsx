@@ -1,28 +1,29 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
-import Logo from "@/components/logo/Logo";
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+'use client';
+import React from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Logo from '@/components/logo/Logo';
+import { Button } from '@/components/ui/button';
+import { ArrowUpRight } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
-  { href: "/blog", label: "Blog" },
+  { href: '/about', label: 'About' },
+  { href: '/products', label: 'Products' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const toggleMobile = () => setMobileOpen((open) => !open);
+  const toggleMobile = () => setMobileOpen(open => !open);
 
   return (
     <header
-      className="sticky top-0 z-50 w-full bg-bg-base border-b border-fg-border shadow-sm"
+      className="sticky top-0 z-50 w-full bg-bg-bg-subtle border-b border-bg-bg-hover shadow-sm"
       role="banner"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* px-4 sm:px-6 lg:px-8 */}
+      <div className="px-4 xl:px-0 max-w-7xl mx-auto">
         <div className="flex h-16 items-center justify-between">
           <Logo />
 

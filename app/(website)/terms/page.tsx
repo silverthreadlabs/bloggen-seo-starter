@@ -27,6 +27,7 @@ const TermsSection = ({
 // Terms of Service component
 export default function TermsOfService() {
   // Array of sections for easy management and addition
+
   const sections = [
     {
       title: 'Introduction',
@@ -79,16 +80,13 @@ export default function TermsOfService() {
         'Questions about the Terms should be sent to us at legal@silverthreadlabs.com.',
     },
   ];
-
   return (
-    <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
+    <div className="min-h-screen  mt-16 px-4 xl:px-0 max-w-7xl mx-auto ">
       <div className="max-w-7xl mx-auto py-12">
-        <Text
-          renderAs="h1"
-          className="text-4xl font-bold text-fg-text-contrast mb-8"
-        >
+        <Text renderAs="h1" className=" font-bold text-fg-text-contrast mb-8">
           Terms of Service
         </Text>
+
         <Text renderAs="p" className="text-fg-text mb-8">
           Last updated: May 20, 2025
         </Text>

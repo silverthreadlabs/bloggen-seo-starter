@@ -149,7 +149,7 @@ export default function AboutPage() {
                 href="https://bloggen.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-text hover:text-primary-text-contrast transition-colors "
+                className="text-primary-solid hover:text-primary-solid-hover transition-colors "
               >
                 Bloggen
               </Link>

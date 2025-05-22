@@ -42,7 +42,7 @@ export default function Hero() {
               <Text renderAs="h1" className="mb-6">
                 All your SEO
                 <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
-                  {' '}
+                <br />
                   Already Done.
                 </span>
               </Text>
@@ -83,7 +83,7 @@ export default function Hero() {
                       aria-label="Generate my first blog post with Bloggen"
                       fullWidth
                     >
-                      Generate My First Post
+                      Create Your First Post
                     </Button>
                   </Link>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './global.css';
 import Header from '@/components/layout/header/Header';
-import Footer from '@/components/layout/footer/Footer';
+import Footer from '@/components/layout/footer';
 import { Manrope } from 'next/font/google';
 import type { Viewport } from 'next';
 import { RootProvider } from 'fumadocs-ui/provider';
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable}`}>
       <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_MEASUREMENT_ID} />
       <body className="antialiased lg:mx-auto">
-        {/* <main className="flex-auto items-center  min-w-0 flex flex-col md:px-0"> */}
+        {/* <main className="flex-auto items-center bg-gradient-to-tr from-bg-base from- via-bg-bg-hover via-min-w-0 flex flex-col md:px-0"> */}
         <main className="flex-auto items-center bg-gradient-to-tr from-bg-base from- via-bg-bg-hover via-min-w-0 flex flex-col md:px-0">
           <Header />
           <RootProvider>{children}</RootProvider>

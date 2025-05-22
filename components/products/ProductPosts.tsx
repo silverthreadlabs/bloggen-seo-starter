@@ -16,9 +16,9 @@ export function ProductPosts() {
   return (
     <div className="h-screen flex flex-col">
       {/* Background Elements */}
-      <div className="fixed inset-0 z-[-1]">
+      {/* <div className="fixed inset-0 z-[-1]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--bg-base),var(--primary-bg))]" />
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-[90%] xl:max-w-[1280px] mx-auto flex flex-col flex-1 justify-center py-8">
         {/* Header */}

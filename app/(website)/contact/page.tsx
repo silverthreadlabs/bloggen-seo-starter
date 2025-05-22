@@ -108,10 +108,11 @@
 //     </main>
 //   );
 // }
+
 import { Suspense } from 'react';
-import * as Tabs from '@radix-ui/react-tabs';
 import CalBooking from '@/components/contact/cal-booking';
 import ContactForm from '@/components/contact/contact-form';
+import TabsComponent from '@/components/ui/tabs';
 import { Metadata } from 'next';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 
@@ -121,60 +122,69 @@ export const metadata: Metadata = createPageMetadata({
     'Have questions about our products, or just want to share your thoughts? We would love to hear from you!',
 });
 
+const LoadingSpinner = () => (
+  <div className="h-96 flex items-center justify-center">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-solid"></div>
+  </div>
+);
+
+const ContentWrapper = ({
+  children,
+  className = '',
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  // <div className={`bg-primary-solid rounded-xl border border-fg-border shadow-sm overflow-hidden ${className}`}>
+  <div
+    className={`bg-gradient-to-bl from-bg-bg-bg from-0% via-bg-bg-subtle via-50% to-bg-bg-bg to-100% rounded-xl border border-bg-bg-line shadow-sm overflow-hidden ${className}`}
+  >
+    {children}
+  </div>
+);
+
 export default function ContactPage() {
+  const tabs = [
+    {
+      value: 'call',
+      label: 'Book a call',
+      content: (
+        <ContentWrapper>
+          <Suspense fallback={<LoadingSpinner />}>
+            <CalBooking />
+          </Suspense>
+        </ContentWrapper>
+      ),
+    },
+    {
+      value: 'form',
+      label: 'Send a message',
+      content: (
+        <div className="max-w-2xl mx-auto">
+          <ContentWrapper className="p-8">
+            <ContactForm />
+          </ContentWrapper>
+        </div>
+      ),
+    },
+  ];
+
   return (
-    <div className="min-h-screen w-7xl max-w-7xl">
-      <div className=" mx-auto px-4 py-16 ">
+    <div className="min-h-screen w-full max-w-7xl mx-auto">
+      <div className="px-4 py-16">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-fg-text mb-4">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-fg-text-contrast mb-4">
             Get in touch
           </h1>
-          <p className="text-lg text-fg-text opacity-80 max-w-2xl mx-auto">
+          <p className="text-lg text-fg-text max-w-2xl mx-auto text-balance">
             Book a meeting with us to discuss how we can help or fill out a form
             to get in touch
           </p>
-        </div>
+        </header>
 
         {/* Tabs Section */}
-        <Tabs.Root defaultValue="call" className="w-full">
-          <Tabs.List className="flex w-full max-w-md mx-auto mb-12 bg-bg-subtle rounded-lg p-1 border border-fg-border">
-            <Tabs.Trigger
-              value="call"
-              className="flex-1 px-6 py-3 text-sm font-medium rounded-md transition-all duration-200 data-[state=active]:bg-primary-solid data-[state=active]:text-primary-on-primary data-[state=inactive]:text-fg-text data-[state=inactive]:hover:text-primary-text data-[state=inactive]:hover:bg-bg-bg-hover"
-            >
-              Book a call
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              value="form"
-              className="flex-1 px-6 py-3 text-sm font-medium rounded-md transition-all duration-200 data-[state=active]:bg-primary-solid data-[state=active]:text-primary-on-primary data-[state=inactive]:text-fg-text data-[state=inactive]:hover:text-primary-text data-[state=inactive]:hover:bg-bg-bg-hover"
-            >
-              Send a message
-            </Tabs.Trigger>
-          </Tabs.List>
-
-          <Tabs.Content value="call" className="focus:outline-none">
-            <div className="bg-bg-base rounded-xl border border-fg-border shadow-sm overflow-hidden">
-              <Suspense
-                fallback={
-                  <div className="h-96 flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-solid"></div>
-                  </div>
-                }
-              >
-                <CalBooking />
-              </Suspense>
-            </div>
-          </Tabs.Content>
-
-          <Tabs.Content value="form" className="focus:outline-none">
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-bg-base rounded-xl border border-fg-border shadow-sm p-8">
-                <ContactForm />
-              </div>
-            </div>
-          </Tabs.Content>
-        </Tabs.Root>
+        <TabsComponent tabs={tabs} defaultValue="call" />
       </div>
     </div>
   );
