@@ -124,7 +124,7 @@ Developer experience first, extremely flexible code structure and only keep what
 * 🌗 **Radix Colors**
 Automatic Light/Dark mode Theme with radix colors.
 * 🎨 **Designrift Design Tokens**
-  Designrift Semantic CSS variables for consistent theming and easy overrides.
+  [Designrift](https://designrift.vercel.app/) Semantic CSS variables for consistent theming and easy overrides.
 * 🔄 **Reusable CVA & Radix Primitives**
   Pre-built, composable components with `class-variance-authority` and Radix.
 * ♿ **Accessibility-First**
