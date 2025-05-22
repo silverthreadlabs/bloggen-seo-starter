@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 
 import { type VariantProps, cva } from 'class-variance-authority';
+import React from 'react';
 
 // Assuming you have a cn utility function
 

@@ -1,6 +1,6 @@
 //v3
-import { memo } from 'react';
-import * as React from 'react';
+// import { memo } from 'react';
+import React from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 
@@ -237,5 +237,5 @@ Button.displayName = 'Button';
 
 // export default Button;
 
-const ButtonMemoized = memo(Button);
+const ButtonMemoized = React.memo(Button);
 export { ButtonMemoized as Button };
