@@ -128,32 +128,32 @@
 
   :root {
     --bg-default: #000;
-    --bg-base: #0a1023;
-    --bg-bg-subtle: #11182c;
-    --bg-bg: #17203e;
-    --bg-bg-hover: #1d2747;
-    --bg-bg-active: #242f4f;
-    --fg-line: #2d3859;
-    --fg-border: #3a4668;
-    --fg-border-hover: #525f83;
-    --fg-solid: #5f6d91;
-    --fg-solid-hover: #6c7aa0;
-    --fg-text: #a4b3db;
-    --fg-text-contrast: #e6eeff;
+    --bg-base: #0d111b;
+    --bg-bg-subtle: #141924;
+    --bg-bg: #1c2233;
+    --bg-bg-hover: #21293f;
+    --bg-bg-active: #262f49;
+    --fg-line: #2d3858;
+    --fg-border: #37456d;
+    --fg-border-hover: #4c5e92;
+    --fg-solid: #596ba1;
+    --fg-solid-hover: #6779ad;
+    --fg-text: #a3b3db;
+    --fg-text-contrast: #e9eefa;
     --fg-default: #fff;
 
-    --primary-base: #09111f;
-    --primary-bg-subtl: #0e172a;
-    --primary-bg: #0d2353;
-    --primary-bg-hove: #0d2c70;
-    --primary-bg-activ: #123684;
-    --primary-line: #1a4196;
-    --primary-border: #224eac;
-    --primary-border-hover: #275bc9;
-    --primary-solid: #0d59fd;
-    --primary-solid-hover: #0048ec;
+    --primary-base: #0a111e;
+    --primary-bg-subtle: #0f1728;
+    --primary-bg: #10244e;
+    --primary-bg-hover: #122e69;
+    --primary-bg-active: #18387d;
+    --primary-line: #20438e;
+    --primary-border: #2850a3;
+    --primary-border-hover: #2f5dbf;
+    --primary-solid: #084ad9;
+    --primary-solid-hover: #0037c7;
     --primary-text: #88b5ff;
-    --primary-text-contrast: #cee2ff;
+    --primary-text-contrast: #d0e2ff;
     --primary-on-primary: #fff;
 
     --secondary-base: #1d131d;

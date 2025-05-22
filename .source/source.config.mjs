@@ -1,11 +1,5 @@
 // source.config.ts
-import {
-  defineConfig,
-  defineDocs,
-  defineCollections,
-  frontmatterSchema,
-  metaSchema
-} from "fumadocs-mdx/config";
+import { defineCollections, defineConfig, defineDocs, frontmatterSchema, metaSchema } from "fumadocs-mdx/config";
 import { z } from "zod";
 var docs = defineDocs({
   docs: {

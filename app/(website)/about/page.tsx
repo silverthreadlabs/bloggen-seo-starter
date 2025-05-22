@@ -2,19 +2,16 @@
 // import { ArrowUpRight, FileJson, Search, Layout, Code } from "lucide-react";
 // import { Metadata } from "next";
 // import { createPageMetadata } from "@/lib/seo/metadata/createPageMetadata";
-
 // export const metadata: Metadata = createPageMetadata({
 //   path: "about",
 //   description:
 //     "Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.",
 // });
-
 // interface Feature {
 //   icon: React.ReactElement;
 //   title: string;
 //   description: string;
 // }
-
 // const features: Feature[] = [
 //   {
 //     icon: <Search className="w-5 h-5" />,
@@ -40,7 +37,6 @@
 //     description: "Keep subscribers updated automatically",
 //   },
 // ];
-
 // export default function AboutPage() {
 //   return (
 //     <section className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -54,7 +50,6 @@
 //           }),
 //         }}
 //       />
-
 //       <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
 //         {/* Header */}
 //         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -84,7 +79,6 @@
 //             workflows already solved.
 //           </h2>
 //         </div>
-
 //         {/* Features Grid */}
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
 //           {features.map((feature, index) => (
@@ -112,82 +106,81 @@
 //     </section>
 //   );
 // }
+import React from 'react';
 
-import React from "react";
-import Link from "next/link";
-import { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo/metadata/create-page-metadata";
-import FeaturesList from "@/components/about/FeatureList";
+import { Metadata } from 'next';
+import Link from 'next/link';
+
+import FeaturesList from '@/components/about/FeatureList';
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 
 export const metadata: Metadata = createPageMetadata({
-  path: "about",
-  description:
-    "Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.",
+    path: 'about',
+    description:
+        'Launch a fully optimized Next.js site with Bloggen SEO Starter, then create high-quality, SEO-friendly content effortlessly using Bloggen AI.'
 });
 
 export default function AboutPage() {
-  return (
-    <main role="main" className="min-h-screen ">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            /* your existing structured data */
-          }),
-        }}
-      />
-      <div className="max-w-[90%] xl:max-w-[1280px] mx-auto py-24">
-        {/* Page Header */}
-        <header role="banner" className="max-w-3xl mx-auto text-center mb-16">
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-6 px-4">
-            <div className="flex items-center gap-2">
-              <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text">
-                Powered by
-              </p>
-              <Link
-                href="https://bloggen.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-solid hover:text-primary-solid-hover transition-colors "
-              >
-                Bloggen
-              </Link>
-            </div>
-            <div className="flex items-center gap-2">
-              <p className="font-normal text-base md:text-lg leading-relaxed tracking-normal text-fg-text">
-                Authored by
-              </p>
-              <Link
-                href="https://silverthreadlabs.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-solid hover:text-primary-solid-hover transition-colors "
-              >
-                Silverthread Labs
-              </Link>
-            </div>
-          </div>
-          <h1
-            id="about-page-title"
-            className="font-bold text-4xl md:text-6xl leading-tight tracking-tight text-fg-text-contrast mb-4"
-          >
-            Next.js SEO Template
-          </h1>
-          <h5 id="about-page-subtitle" className="font-semibold text-lg md:text-xl leading-relaxed tracking-normal text-fg-text text-balance">
-            Spin up a production-ready site with SEO, performance, and content
-            workflows already solved.
-          </h5>
-        </header>
+    return (
+        <main role='main' className='min-h-screen'>
+            <script
+                type='application/ld+json'
+                suppressHydrationWarning
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        /* your existing structured data */
+                    })
+                }}
+            />
+            <div className='mx-auto max-w-[90%] py-24 xl:max-w-[1280px]'>
+                {/* Page Header */}
+                <header role='banner' className='mx-auto mb-16 max-w-3xl text-center'>
+                    <div className='mb-6 flex flex-wrap items-center justify-center gap-2 px-4'>
+                        <div className='flex items-center gap-2'>
+                            <p className='text-fg-text text-base leading-relaxed font-normal tracking-normal md:text-lg'>
+                                Powered by
+                            </p>
+                            <Link
+                                href='https://bloggen.dev'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='text-primary-solid hover:text-primary-solid-hover transition-colors'>
+                                Bloggen
+                            </Link>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <p className='text-fg-text text-base leading-relaxed font-normal tracking-normal md:text-lg'>
+                                Authored by
+                            </p>
+                            <Link
+                                href='https://silverthreadlabs.com'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='text-primary-solid hover:text-primary-solid-hover transition-colors'>
+                                Silverthread Labs
+                            </Link>
+                        </div>
+                    </div>
+                    <h1
+                        id='about-page-title'
+                        className='text-fg-text-contrast mb-4 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                        Next.js SEO Template
+                    </h1>
+                    <h5
+                        id='about-page-subtitle'
+                        className='text-fg-text text-lg leading-relaxed font-semibold tracking-normal text-balance md:text-xl'>
+                        Spin up a production-ready site with SEO, performance, and content workflows already solved.
+                    </h5>
+                </header>
 
-        {/* Features */}
-        <section aria-labelledby="features-title" className="mb-16">
-          {/* <h3 id="features-title" className="sr-only">
+                {/* Features */}
+                <section aria-labelledby='features-title' className='mb-16'>
+                    {/* <h3 id="features-title" className="sr-only">
               Key Features
             </h3> */}
-          <FeaturesList />
-        </section>
-      </div>
-    </main>
-  );
+                    <FeaturesList />
+                </section>
+            </div>
+        </main>
+    );
 }
