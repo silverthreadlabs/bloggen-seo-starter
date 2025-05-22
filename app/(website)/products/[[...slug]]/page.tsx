@@ -99,7 +99,7 @@ export default async function Page(props: {
       />
 
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-br from-bg-base via-primary-bg to-bg-base" />
+        <div className="absolute inset-0 " />
       </div>
 
       <div className="relative z-10">

@@ -1,5 +1,4 @@
-import { siteConfig } from "@/lib/config/site";
-
+import { siteConfig } from '@/lib/config/site';
 
 //remember the robots is being controlled in the seo/metadata/createBaseMedata.ts
 export default function robots() {
@@ -10,5 +9,5 @@ export default function robots() {
       },
     ],
     sitemap: `${siteConfig.baseUrl}/sitemap.xml`,
-  }
+  };
 }

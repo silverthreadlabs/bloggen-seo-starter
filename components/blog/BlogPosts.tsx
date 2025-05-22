@@ -23,7 +23,7 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-br from-bg-base via-primary-bg to-bg-base" />
+        <div className="absolute inset-0 " />
       </div>
 
       <div className="relative z-10">

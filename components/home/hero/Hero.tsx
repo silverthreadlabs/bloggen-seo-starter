@@ -1,18 +1,18 @@
-"use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FaArrowRight, FaCopy, FaCheck, FaGithub } from "react-icons/fa";
-import Link from "next/link";
-import features from "./features-list";
-import { Button } from "@/components/ui/button";
-import FeatureCard from "@/components/ui/feature-card";
-import { Text } from "@/components/ui/text";
+'use client';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaArrowRight, FaCopy, FaCheck, FaGithub } from 'react-icons/fa';
+import Link from 'next/link';
+import features from './features-list';
+import { Button } from '@/components/ui/button';
+import FeatureCard from '@/components/ui/feature-card';
+import { Text } from '@/components/ui/text';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText("npx create-bloggen-app");
+    await navigator.clipboard.writeText('npx create-bloggen-app');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-8 lg:px-0">
       <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-br from-bg-base via-primary-bg to-bg-base" />
+        <div className="absolute inset-0 " />
       </div>
 
       <div className="relative z-10">
@@ -39,15 +39,13 @@ export default function Hero() {
               >
                 Powered by Bloggen
               </Text>
-              <div className="flex flex-col mb-6">
-                <Text renderAs="h1">All your SEO</Text>
-                <Text
-                  renderAs="h1"
-                  className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text"
-                >
+              <Text renderAs="h1" className="mb-6">
+                All your SEO
+                <span className="bg-gradient-to-r from-primary-solid via-primary-text to-primary-text-contrast text-transparent bg-clip-text">
+                  {' '}
                   Already Done.
-                </Text>
-              </div>
+                </span>
+              </Text>
               <Text renderAs="h4" className="text-fg-text font-normal mb-8">
                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG
                 images, JSON‑LD, and top Lighthouse scores.
