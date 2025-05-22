@@ -63,73 +63,71 @@ This is an example of a blog post created using Bloggen SEO Starter.
 Developer experience first, extremely flexible code structure and only keep what you need:
 
 ### Core Stack
-
-* ⚡ **Next.js App Router** Built on the latest Next.js App Router.
-* 🔥 **TypeScript**
-  Full type safety across your codebase for early error detection .
-* 💎 **Tailwind CSS v4**
+* ⚡ **Next.js App Router**<br>
+Built on the latest Next.js App Router.
+* 🔷 **TypeScript 5**<br>
+  Latest TypeScript with strict type checking and modern language features for enhanced developer productivity and code reliability.
+* 💎 **Tailwind CSS v4**<br>
   Utility-first styling with the latest Tailwind release.
-* ✅ **Strict Mode**
+* ✅ **Strict Mode**<br>
   Enforced React and TypeScript strict flags for predictable, bug-resistant behaviour.
-* ♻️ **Type-Safe Env Vars**
+* ♻️ **Type-Safe Env Vars**<br>
   Automatically typed environment variables via Zod for zero surprises.
-* 🛡️ **Zod Validation**
+* 🛡️ **Zod Validation**<br>
   Schema-based validation on both client and server to guarantee data integrity.
-* 🔒 **Zero-Config Security**
+* 🔒 **Zero-Config Security**<br>
   Built-in headers (CSP, HSTS) and hardened defaults.
 
-### Developer Experience
 
-* 📏 **ESLint**
-  Preconfigured with Next.js–friendly rules and linting presets.
-* 🖋️ **Prettier**
-  Opinionated code formatting to keep your team’s style consistent.
-* 🧭 **Absolute Imports (`@/…`)**
+### Developer Experience
+* 📏 **ESLint 9**<br>
+  Preconfigured with Next.js–friendly rules and comprehensive linting presets including [`@eslint/js`](https://www.npmjs.com/package/@eslint/js), [`typescript-eslint`](https://typescript-eslint.io/), [`eslint-plugin-react`](https://github.com/jsx-eslint/eslint-plugin-react), [`@next/eslint-plugin-next`](https://nextjs.org/docs/app/building-your-application/configuring/eslint), [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier), [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import), and [`eslint-plugin-promise`](https://github.com/eslint-community/eslint-plugin-promise).
+* 🖋️ **Prettier 3**<br>
+  Opinionated code formatting to keep your team's style consistent, enhanced with [`@trivago/prettier-plugin-sort-imports`](https://github.com/trivago/prettier-plugin-sort-imports) for automatic import organization and [`prettier-plugin-tailwindcss`](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) for optimal class sorting.
+
+* 🧭 **Absolute Imports (`@/…`)**<br>
   Skip long relative paths—import modules from `@/` for cleaner code.
-* 🏎️ **Blazing-Fast Dev Server**
-  Built with Turbopack under the hood for minimal startup and rebuild times.
+* 🏎️ **Blazing-Fast Dev Server**<br>
+  Built with [Turbopack](https://turbo.build/pack) under the hood for minimal startup and rebuild times.
 
 
 ### SEO & Performance
-
-* 🌐 **Global Metadata Config**
+* 🌐 **Global Metadata Config**<br>
   Centralized `metadata` and JSON-LD settings in one file.
-* 🤖 **Metadata Helpers**
+* 🤖 **Metadata Helpers**<br>
   Tiny, simple helpers for static and dynamic routes.
-* 📊 **Type-Safe JSON-LD**
-  Leverage `schema-dts` for fully typed structured data.
-* 🎨 **Dynamic OG Images**
-  On-the-fly Open Graph image generation via `@vercel/og` for perfect social previews.
-* 🗺️ **Sitemap & robots.txt**
+* 📊 **Type-Safe JSON-LD**<br>
+  Leverage [`schema-dts`](https://github.com/google/schema-dts) for fully typed structured data.
+* 🎨 **Dynamic OG Images**<br>
+  On-the-fly Open Graph image generation via [`@vercel/og`](https://vercel.com/docs/functions/edge-functions/og-image-generation) for perfect social previews.
+* 🗺️ **Sitemap & robots.txt**<br>
   Auto-generated `sitemap.xml` and `robots.txt` to guide search engines.
-* 📰 **RSS Feed**
+* 📰 **RSS Feed**<br>
   Built-in RSS support for all blog posts—syndication made simple.
-* 📈 **Google Analytics**
+* 📈 **Google Analytics**<br>
   One-line integration with GA4 for traffic insights and event tracking.
-* ⚡ **Lighthouse-Optimized**
+* ⚡ **Lighthouse-Optimized**<br>
   Pre-tuned for top scores in Performance, Accessibility, Best Practices, and SEO.
-* 🔤 **Font Optimization**
+* 🔤 **Font Optimization**<br>
   Built-in Next.js Google Fonts integration for automatic font subsetting, preloading, and performance-optimized delivery.
-* 🔗 **Image Optimization**
+* 🔗 **Image Optimization**<br>
   Next `<Image>` component for responsive, lazy-loaded images with automatic format selection.
 
 
-
 ### UI, Theming & Accessibility
-
-* ✨ **Framer Motion**
-  Out-of-the-box support for smooth, declarative animations.
-* 📚 **MDX Content with Fumadocs**
-  Generalized MDX viewer for Blog and Product pages.
-* 🌗 **Radix Colors**
-Automatic Light/Dark mode Theme with radix colors.
-* 🎨 **Designrift Design Tokens**
-  [Designrift](https://designrift.vercel.app/) Semantic CSS variables for consistent theming and easy overrides.
-* 🔄 **Reusable CVA & Radix Primitives**
-  Pre-built, composable components with `class-variance-authority` and Radix.
-* ♿ **Accessibility-First**
+* ✨ **Framer Motion**<br>
+  Out-of-the-box support for smooth, declarative animations with [`framer-motion`](https://www.framer.com/motion/).
+* 📚 **MDX Content with Fumadocs**<br>
+  Generalized MDX viewer for Blog and Product pages using [`fumadocs`](https://fumadocs.vercel.app/).
+* 🌗 **Radix Colors**<br>
+Automatic Light/Dark mode Theme with [`radix-colors`](https://www.radix-ui.com/colors).
+* 🎨 **Designrift Design Tokens**<br>
+  Semantic CSS variables for consistent theming and easy overrides with [Designrift](https://designrift.vercel.app/) .
+* 🔄 **Reusable CVA & Radix Primitives**<br>
+  Pre-built, composable components with [`class-variance-authority`](https://cva.style/) and [Radix UI](https://www.radix-ui.com/).
+* ♿ **Accessibility-First**<br>
   WCAG-compliant ARIA attributes, keyboard support, and 100% Lighthouse accessibility scores.
-* 📱 **Fully Responsive**
+* 📱 **Fully Responsive**<br>
   Mobile-first layouts that adapt seamlessly to tablet and desktop breakpoints.
 
 

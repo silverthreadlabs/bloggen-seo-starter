@@ -65,7 +65,7 @@
 // };
 // export default BlogSchema;
 // seo/schema/blog.tsx
-import React from 'react';
+
 
 import { siteConfig } from '@/lib/config/site';
 
