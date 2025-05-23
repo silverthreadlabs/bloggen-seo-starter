@@ -160,6 +160,7 @@ export interface ButtonProps
     isLoading?: boolean; // new loading state prop
     loadingText?: string; // optional loading text
     fullWidth?: boolean;
+    name?: string; // button text content
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -178,6 +179,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             children,
             disabled,
             fullWidth = false,
+            name,
             ...props
         },
         ref
@@ -214,7 +216,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         <span className='mr-2'>
                             <Spinner />
                         </span>
-                        {loadingText || children}
+                        {loadingText || name || children}
                     </>
                 )}
 
@@ -225,7 +227,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {!isLoading && !iconOnly && (
                     <>
                         {leadingIcon && <span className='mr-2'>{leadingIcon}</span>}
-                        {children}
+                        {name || children}
                         {trailingIcon && <span className='ml-2'>{trailingIcon}</span>}
                     </>
                 )}

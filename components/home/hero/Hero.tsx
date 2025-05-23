@@ -61,11 +61,11 @@ export default function Hero() {
                                             size='lg'
                                             aria-label='View source code on GitHub'
                                             fullWidth
+                                            name='View Source'
                                             leadingIcon={<FaGithub className='h-5 w-5' />}
                                             trailingIcon={
                                                 <FaArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
                                             }>
-                                            View Source
                                         </Button>
                                     </Link>
                                     <Link target='_blank' href='https://www.bloggen.dev/' className='flex-1'>
@@ -74,8 +74,8 @@ export default function Hero() {
                                             variant='surface'
                                             size='lg'
                                             aria-label='Generate my first blog post with Bloggen'
-                                            fullWidth>
-                                            Create Your First Post
+                                            fullWidth
+                                            name='Create Your First Post'>
                                         </Button>
                                     </Link>
                                 </div>

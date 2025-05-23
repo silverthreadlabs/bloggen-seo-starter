@@ -118,10 +118,10 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                                             variant='solid'
                                             size='lg'
                                             aria-label='Try {page.data.title}'
+                                            name={`Try ${page.data.title}`}
                                             trailingIcon={
                                                 <ArrowUpRight className='ml-2 h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
                                             }>
-                                            Try {page.data.title}
                                         </Button>
                                     </Link>
                                 )}
