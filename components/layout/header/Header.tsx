@@ -44,8 +44,7 @@ export default function Header() {
                             ))}
                         </ul>
                         <Link href='/contact' className='flex-1'>
-                            <Button color='primary' size='default' variant='solid'>
-                                Contact
+                            <Button color='primary' size='default' variant='solid' name='Contact'>
                             </Button>
                         </Link>
                         <Link href='https://www.bloggen.dev/' target='_blank'>
@@ -53,8 +52,8 @@ export default function Header() {
                                 color='primary'
                                 size='default'
                                 variant='surface'
+                                name='Create your first post'
                                 trailingIcon={<ArrowUpRight className='h-4 w-4' />}>
-                                Create your first post
                             </Button>
                         </Link>
                     </nav>
@@ -102,8 +101,7 @@ export default function Header() {
                         <li>
                             <div className='flex flex-col gap-3'>
                                 <Link href='/contact' onClick={toggleMobile} className='flex-1'>
-                                    <Button color='primary' size='default' variant='solid' fullWidth>
-                                        Contact
+                                    <Button color='primary' size='default' variant='solid' fullWidth name='Contact'>
                                     </Button>
                                 </Link>
                                 <Link href='https://www.bloggen.dev/' target='_blank' className='flex-1'>
@@ -112,8 +110,8 @@ export default function Header() {
                                         size='default'
                                         variant='outline'
                                         trailingIcon={<ArrowUpRight className='h-4 w-4' />}
-                                        fullWidth>
-                                        Create your first post
+                                        fullWidth
+                                        name='Create your first post'>
                                     </Button>
                                 </Link>
                             </div>
