@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 // Reusable section component
 const TermsSection = ({ number, title, children }: { number: number; title: string; children: React.ReactNode }) => (

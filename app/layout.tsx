@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import type { Viewport } from 'next';
 import { Manrope } from 'next/font/google';
