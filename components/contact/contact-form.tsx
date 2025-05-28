@@ -143,8 +143,8 @@ export default function ContactForm() {
     return (
         <div>
             <div className='mb-8'>
-                <h3 className='text-fg-text-contrast mb-2 text-2xl font-semibold'>Tell us about your project</h3>
-                <p className='text-fg-text'>Fill out the form below and we'll get back to you within 24 hours.</p>
+                <h3 className='text-canvas-text-contrast mb-2 text-2xl font-semibold'>Tell us about your project</h3>
+                <p className='text-canvas-text'>Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
 
             {submitStatus === 'success' && (
@@ -161,7 +161,7 @@ export default function ContactForm() {
                         Something went wrong. Please try again or contact us directly.
                     </p>
                     <Link
-                        className='text-fg-text-contrast font-bold underline'
+                        className='text-canvas-text-contrast font-bold underline'
                         href='mailto:silverthreadlabs@gmail.com'>
                         silverthreadlabs@gmail.com
                     </Link>

@@ -1,13 +1,9 @@
 'use client';
-
-
-
 import Link from 'next/link';
-
 import Logo from '@/components/logo/Logo';
-
 import SocialLinks from './social-links';
 import { FaRegEnvelope } from 'react-icons/fa';
+import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
 // import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 
@@ -29,19 +25,21 @@ export default function Footer() {
     // const isMobile = useMediaQuery('(max-width: 768px)');
 
     return (
-        <footer className='bg-bg-bg-subtle border-bg-bg-hover w-full border-t shadow-inner'>
+        <footer className='bg-canvas-bg-subtle border-canvas-bg-hover w-full border-t shadow-inner'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
                 <div className='py-12'>
                     <div className={'flex flex-col items-start justify-between space-y-8 md:flex-row md:space-y-0'}>
                         <div className='flex flex-col space-y-4'>
                             <Logo />
 
+
                             <Link
                                 href={MAILTO}
-                                className='text-fg-text hover:text-primary-text inline-flex items-center space-x-2 text-sm transition-colors'>
+                                className='text-canvas-text hover:text-primary-text inline-flex items-center space-x-2 text-sm transition-colors'>
                                 <FaRegEnvelope className='h-4 w-4' />
                                 <span>{EMAIL}</span>
                             </Link>
+                            <ThemeSwitcher />
                         </div>
 
                         {/* Nav + Social */}
@@ -54,7 +52,7 @@ export default function Footer() {
                                     <Link
                                         key={href}
                                         href={href}
-                                        className='text-fg-text hover:text-primary-text text-sm transition-colors'>
+                                        className='text-canvas-text hover:text-primary-text text-sm transition-colors'>
                                         {label}
                                     </Link>
                                 ))}
@@ -65,8 +63,8 @@ export default function Footer() {
                     </div>
 
                     {/* Copyright */}
-                    <div className='border-fg-line mt-8 border-t pt-8'>
-                        <p className='text-fg-text text-sm'>
+                    <div className='border-canvas-line mt-8 border-t pt-8'>
+                        <p className='text-canvas-text text-sm'>
                             © {currentYear} Bloggen. Built by{' '}
                             <Link
                                 href='https://silverthreadlabs.com'

@@ -1,12 +1,10 @@
-
-
 // Reusable section component
 const TermsSection = ({ number, title, children }: { number: number; title: string; children: React.ReactNode }) => (
     <div className='mb-8'>
-        <h2 className='text-fg-text-contrast text-fg-text-contrast mb-4 text-2xl text-3xl leading-snug font-semibold tracking-normal md:text-4xl'>
+        <h2 className='text-canvas-text-contrast text-canvas-text-contrast mb-4 text-2xl text-3xl leading-snug font-semibold tracking-normal md:text-4xl'>
             {number}. {title}
         </h2>
-        <p className='text-fg-text text-fg-text text-base leading-relaxed font-normal tracking-normal md:text-lg'>
+        <p className='text-canvas-text text-canvas-text text-base leading-relaxed font-normal tracking-normal md:text-lg'>
             {children}
         </p>
     </div>
@@ -71,11 +69,11 @@ export default function TermsOfService() {
 return (
         <div className='mx-auto mt-16 min-h-screen max-w-7xl px-4 xl:px-0'>
             <div className='mx-auto max-w-7xl py-12'>
-                <h1 className='text-fg-text-contrast text-fg-text-contrast mb-8 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                <h1 className='text-canvas-text-contrast text-canvas-text-contrast mb-8 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                     Terms of Service
                 </h1>
 
-                <p className='text-fg-text text-fg-text mb-8 text-base leading-relaxed font-normal tracking-normal md:text-lg'>
+                <p className='text-canvas-text text-canvas-text mb-8 text-base leading-relaxed font-normal tracking-normal md:text-lg'>
                     Last updated: May 20, 2025
                 </p>
                 <div className='space-y-8'>

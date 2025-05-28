@@ -1,7 +1,7 @@
-
-
 import type { Viewport } from 'next';
 import { Manrope } from 'next/font/google';
+
+import { ThemeProvider } from 'next-themes';
 
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header/Header';
@@ -28,12 +28,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang='en' className={`${manrope.variable}`}>
             <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_MEASUREMENT_ID} />
             <body className='antialiased lg:mx-auto'>
-                {/* <main className="flex-auto items-center bg-gradient-to-tr from-bg-base from- via-bg-bg-hover via-min-w-0 flex flex-col md:px-0"> */}
-                <main className='from-bg-base from- via-bg-bg via-min-w-0 flex flex-auto flex-col items-center bg-gradient-to-tr md:px-0'>
-                    <Header />
-                    <RootProvider>{children}</RootProvider>
-                    <Footer />
-                </main>
+                {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
+                <ThemeProvider
+                    attribute='class'
+                    defaultTheme='system'
+                    enableSystem={true}
+                    storageKey='designrift-theme'
+                    disableTransitionOnChange>
+                    <main className='from-canvas-bg-subtle via-canvas-bg via-min-w-0 flex flex-auto flex-col items-center bg-gradient-to-tr md:px-0'>
+                        <Header />
+                        <RootProvider>{children}</RootProvider>
+                        <Footer />
+                    </main>
+                </ThemeProvider>
                 {/* <Script
           src="https://analytics.ahrefs.com/analytics.js"
           strategy="lazyOnload"

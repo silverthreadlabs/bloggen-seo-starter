@@ -26,9 +26,9 @@ const LoadingSpinner = () => (
 );
 
 const ContentWrapper = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    // <div className={`bg-primary-solid rounded-xl border border-fg-border shadow-sm overflow-hidden ${className}`}>
+    // <div className={`bg-primary-solid rounded-xl border border-canvas-border shadow-sm overflow-hidden ${className}`}>
     <div
-        className={`from-bg-bg-bg via-bg-bg-subtle to-bg-bg-bg border-bg-bg-line overflow-hidden rounded-xl border bg-gradient-to-bl from-0% via-50% to-100% shadow-sm ${className}`}>
+        className={`from-canvas-bg via-canvas-subtle to-canvas-bg border-canvas-line overflow-hidden rounded-xl border bg-gradient-to-bl from-0% via-50% to-100% shadow-sm ${className}`}>
         {children}
     </div>
 );
@@ -64,8 +64,8 @@ export default function ContactPage() {
             <div className='px-4 py-16'>
                 {/* Header Section */}
                 <header className='mb-12 text-center'>
-                    <h1 className='text-fg-text-contrast mb-4 text-4xl font-bold md:text-5xl'>Get in touch</h1>
-                    <p className='text-fg-text mx-auto max-w-2xl text-lg text-balance'>
+                    <h1 className='text-canvas-text-contrast mb-4 text-4xl font-bold md:text-5xl'>Get in touch</h1>
+                    <p className='text-canvas-text mx-auto max-w-2xl text-lg text-balance'>
                         Book a meeting with us to discuss how we can help or fill out a form to get in touch
                     </p>
                 </header>

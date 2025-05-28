@@ -23,7 +23,7 @@ export default function Header() {
 
     return (
         <header
-            className='bg-bg-bg-subtle border-bg-bg-hover sticky top-0 z-50 w-full border-b shadow-sm'
+            className='bg-canvas-bg-subtle border-canvas-bg-hover sticky top-0 z-50 w-full border-b shadow-sm'
             role='banner'>
             {/* px-4 sm:px-6 lg:px-8 */}
             <div className='mx-auto max-w-7xl px-4 xl:px-0'>
@@ -37,7 +37,7 @@ export default function Header() {
                                 <li key={href}>
                                     <Link
                                         href={href}
-                                        className='text-fg-text hover:text-primary-text rounded-sm px-3 py-2 text-base font-medium transition-colors'>
+                                        className='text-canvas-text hover:text-primary-text rounded-sm px-3 py-2 text-base font-medium transition-colors'>
                                         {label}
                                     </Link>
                                 </li>
@@ -70,9 +70,9 @@ export default function Header() {
                         iconOnly
                         leadingIcon={
                             mobileOpen ? (
-                                <FaTimes className='text-fg-text h-5 w-5' />
+                                <FaTimes className='text-canvas-text h-5 w-5' />
                             ) : (
-                                <FaBars className='text-fg-text h-5 w-5' />
+                                <FaBars className='text-canvas-text h-5 w-5' />
                             )
                         }
                     />
@@ -86,14 +86,14 @@ export default function Header() {
                     aria-label='Mobile navigation'
                     role='dialog'
                     aria-modal='true'
-                    className='bg-bg-base/95 fixed inset-0 top-16 z-50 backdrop-blur-sm md:hidden'>
-                    <ul className='border-fg-border space-y-3 border-t p-4'>
+                    className='bg-canvas-base/95 fixed inset-0 top-16 z-50 backdrop-blur-sm md:hidden'>
+                    <ul className='border-canvas-border space-y-3 border-t p-4'>
                         {NAV_ITEMS.map(({ href, label }) => (
                             <li key={href}>
                                 <Link
                                     href={href}
                                     onClick={toggleMobile}
-                                    className='text-fg-text hover:bg-bg-bg hover:text-primary-text block rounded-sm px-4 py-2 text-base font-medium transition-colors'>
+                                    className='text-canvas-text hover:bg-canvas-bg hover:text-primary-text block rounded-sm px-4 py-2 text-base font-medium transition-colors'>
                                     {label}
                                 </Link>
                             </li>

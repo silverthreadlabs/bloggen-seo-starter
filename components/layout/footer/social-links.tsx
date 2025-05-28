@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 
 import SilverthreadLabsLogo from '@/components/logo/silverthread-labs-logo';
@@ -20,7 +18,7 @@ const SocialLinks = () => {
                 href='https://github.com/silverthreadlabs/bloggen-seo-starter'
                 ariaLabel='Visit SilverThread Labs GitHub repository'
                 icon={
-                    <FaGithub size={16} className='group-hover:text-fg-text-contrast transition-colors duration-200' />
+                    <FaGithub size={16} className='group-hover:text-canvas-text-contrast transition-colors duration-200' />
                 }
             />
 
@@ -30,7 +28,7 @@ const SocialLinks = () => {
                 icon={
                     <FaLinkedinIn
                         size={16}
-                        className='group-hover:text-fg-text-contrast transition-colors duration-200'
+                        className='group-hover:text-canvas-text-contrast transition-colors duration-200'
                     />
                 }
             />
@@ -38,14 +36,14 @@ const SocialLinks = () => {
             <SocialLink
                 href='https://www.reddit.com/user/syedsaif666/'
                 ariaLabel='Follow SilverThread Labs on Reddit'
-                icon={<FaRedditAlien className='group-hover:text-fg-text-contrast transition-colors duration-200' />}
+                icon={<FaRedditAlien className='group-hover:text-canvas-text-contrast transition-colors duration-200' />}
             />
 
             <SocialLink
                 href='https://www.silverthreadlabs.com'
                 ariaLabel='Visit SilverThread Labs website'
                 icon={
-                    <SilverthreadLabsLogo className='group-hover:text-fg-text-contrast transition-colors duration-200' />
+                    <SilverthreadLabsLogo className='group-hover:text-canvas-text-contrast transition-colors duration-200' />
                 }
             />
         </div>

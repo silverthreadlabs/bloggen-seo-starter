@@ -11,7 +11,7 @@ export default function NotFound() {
                     <div className='relative'>
                         <h1 className='text-[8rem] font-bold text-slate-800'>404</h1>
                         <div className='absolute inset-0 flex items-center justify-center'>
-                            <span className='bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600 bg-clip-text text-2xl font-semibold text-transparent'>
+                            <span className='from-canvas-bg-subtle via-canvas-bg bg-gradient-to-tr bg-clip-text text-2xl font-semibold text-transparent'>
                                 Page Not Found
                             </span>
                         </div>

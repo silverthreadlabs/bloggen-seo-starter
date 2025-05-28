@@ -35,17 +35,17 @@ export default function Hero() {
                         transition={{ duration: 0.2 }}
                         className='flex flex-1 flex-col justify-center py-10 xl:py-20'>
                         <div className='max-w-xl'>
-                            <span className='text-primary-text border-fg-line mb-4 block max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>
+                            <span className='text-primary-text border-canvas-line mb-4 block max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>
                                 Powered by Bloggen
                             </span>
-                            <h1 className='text-fg-text-contrast mb-6 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                            <h1 className='text-canvas-text-contrast mb-6 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                                 All your SEO
                                 <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'>
                                     <br />
                                     Already Done.
                                 </span>
                             </h1>
-                            <h4 className='text-fg-text mb-8 text-xl leading-relaxed font-normal tracking-normal md:text-2xl'>
+                            <h4 className='text-canvas-text mb-8 text-xl leading-relaxed font-normal tracking-normal md:text-2xl'>
                                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG images, JSON‑LD, and top
                                 Lighthouse scores.
                             </h4>
@@ -80,8 +80,8 @@ export default function Hero() {
                                     </Link>
                                 </div>
 
-                                <div className='bg-bg-bg-subtle border-fg-line flex items-center justify-between rounded border px-4 py-3 font-mono text-sm'>
-                                    <span className='text-fg-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg'>
+                                <div className='bg-canvas-bg-subtle border-canvas-line flex items-center justify-between rounded border px-4 py-3 font-mono text-sm'>
+                                    <span className='text-canvas-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg'>
                                         $ npx create-bloggen-app
                                     </span>
                                     <Button
@@ -95,7 +95,7 @@ export default function Hero() {
                                             copied ? (
                                                 <FaCheck className='text-success-text h-4 w-4' />
                                             ) : (
-                                                <FaCopy className='text-fg-default h-4 w-4' />
+                                                <FaCopy className='text-canvas-default h-4 w-4' />
                                             )
                                         }
                                     />

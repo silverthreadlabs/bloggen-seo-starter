@@ -1,5 +1,3 @@
-
-
 import { cn } from '@/lib/utils';
 
 import { type VariantProps, cva } from 'class-variance-authority';
@@ -13,8 +11,8 @@ const inputVariants = cva(
         variants: {
             variant: {
                 default:
-                    'bg-bg-bg border border-fg-border text-fg-text hover:border-fg-border-hover focus:border-primary-border',
-                error: 'bg-bg-bg border border-alert-border text-alert-text'
+                    'bg-canvas-bg border border-canvas-border text-canvas-text hover:border-canvas-border-hover focus:border-primary-border',
+                error: 'bg-canvas-bg border border-alert-border text-alert-text'
             },
             size: {
                 default: 'px-4 py-3',
@@ -32,7 +30,7 @@ const inputVariants = cva(
 const labelVariants = cva('block text-sm font-medium mb-2', {
     variants: {
         variant: {
-            default: 'text-fg-text',
+            default: 'text-canvas-text',
             error: 'text-alert-text'
         }
     },
