@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -97,16 +95,16 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                 <div className='mx-auto min-h-screen max-w-7xl'>
                     {/* Header Section */}
                     <div className='py-20'>
-                        <span className='base border-fg-line text-primary-text mb-4 block max-w-fit rounded border border-none bg-transparent px-1 text-sm leading-normal font-normal tracking-wider whitespace-nowrap uppercase'>
+                        <span className='base border-canvas-line text-primary-text mb-4 block max-w-fit rounded border border-none bg-transparent px-1 text-sm leading-normal font-normal tracking-wider whitespace-nowrap uppercase'>
                             {page.data.category || 'Product Details'}
                         </span>
 
                         <div className='grid items-start gap-12 lg:grid-cols-2'>
                             <div>
-                                <h1 className='text-fg-text-contrast from-primary-solid via-primary-text to-primary-text-contrast mb-6 bg-gradient-to-r bg-clip-text text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                                <h1 className='text-canvas-text-contrast from-primary-solid via-primary-text to-primary-text-contrast mb-6 bg-gradient-to-r bg-clip-text text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                                     {page.data.title}
                                 </h1>
-                                <p className='text-fg-text mb-8 text-base leading-relaxed font-normal tracking-normal md:text-lg'>
+                                <p className='text-canvas-text mb-8 text-base leading-relaxed font-normal tracking-normal md:text-lg'>
                                     {page.data.summary}
                                 </p>
 
@@ -136,9 +134,9 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                                         item.value && (
                                             <div
                                                 key={index}
-                                                className='bg-bg-bg border-fg-border hover:border-fg-border-hover rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
-                                                <div className='text-fg-text mb-1 text-sm'>{item.label}</div>
-                                                <div className='text-fg-text-contrast text-lg font-semibold'>
+                                                className='bg-canvas-bg border-canvas-border hover:border-canvas-border-hover rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
+                                                <div className='text-canvas-text mb-1 text-sm'>{item.label}</div>
+                                                <div className='text-canvas-text-contrast text-lg font-semibold'>
                                                     {item.value}
                                                 </div>
                                             </div>
@@ -170,27 +168,27 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                         {/* Sidebar */}
                         <div className='lg:col-span-1'>
                             <div className='sticky top-24 space-y-6'>
-                                <div className='bg-bg-bg border-fg-border hover:border-fg-border-hover rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
-                                    <h5 className='text-fg-text-contrast mb-4 text-lg leading-relaxed font-semibold tracking-normal md:text-xl'>
+                                <div className='bg-canvas-bg border-canvas-border hover:border-canvas-border-hover rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
+                                    <h5 className='text-canvas-text-contrast mb-4 text-lg leading-relaxed font-semibold tracking-normal md:text-xl'>
                                         Quick Links
                                     </h5>
                                     <nav className='space-y-2'>
                                         <a
                                             href='#features'
-                                            className='text-fg-text hover:text-primary-text flex items-center transition-colors'>
-                                            <p className='text-fg-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
+                                            className='text-canvas-text hover:text-primary-text flex items-center transition-colors'>
+                                            <p className='text-canvas-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
                                             Features
                                         </a>
                                         <a
                                             href='#installation'
-                                            className='text-fg-text hover:text-primary-text flex items-center transition-colors'>
-                                            <p className='text-fg-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
+                                            className='text-canvas-text hover:text-primary-text flex items-center transition-colors'>
+                                            <p className='text-canvas-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
                                             Installation
                                         </a>
                                         <a
                                             href='#usage'
-                                            className='text-fg-text hover:text-primary-text flex items-center transition-colors'>
-                                            <p className='text-fg-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
+                                            className='text-canvas-text hover:text-primary-text flex items-center transition-colors'>
+                                            <p className='text-canvas-text bg-primary-solid mr-2 h-1.5 w-1.5 rounded-full text-base leading-relaxed font-normal tracking-normal md:text-lg'></p>
                                             Usage
                                         </a>
                                     </nav>
@@ -205,7 +203,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
             <div className='mx-auto max-w-7xl py-12'>
                 <Link
                     href='/products'
-                    className='text-fg-text hover:text-primary-text inline-flex items-center transition-colors'>
+                    className='text-canvas-text hover:text-primary-text inline-flex items-center transition-colors'>
                     <ArrowLeft className='mr-2 h-4 w-4' />
                     Back to Products
                 </Link>
