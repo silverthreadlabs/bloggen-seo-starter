@@ -27,10 +27,10 @@ export const viewport: Viewport = {
     // userScalable: false,
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-    console.log('Crafted by Silverthread Labs');
+    console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
 
     return (
-        <html lang='en' className={`${manrope.variable}`}>
+        <html suppressHydrationWarning lang='en' className={`${manrope.variable}`} >
             <Suspense fallback={null}>
                 <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
 

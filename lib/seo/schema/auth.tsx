@@ -36,7 +36,7 @@ const AuthSchema: React.FC<AuthSchemaProps> = ({ view }) => {
             url: baseURL,
             logo: {
                 '@type': 'ImageObject',
-                url: `${baseURL}/favicon.ico`
+                url: `${baseURL}/favicon/favicon.ico`
             }
         },
         image: {
