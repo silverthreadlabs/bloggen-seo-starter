@@ -38,10 +38,12 @@ const ThemeSwitcher = () => {
         };
 
         mediaQuery.addEventListener('change', handleSystemThemeChange);
+
         return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
     }, [theme, setTheme]);
 
     if (!theme) {
+        
         return null;
     }
 

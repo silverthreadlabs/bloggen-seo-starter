@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     attribute='class'
                     defaultTheme='system'
                     enableSystem={true}
-                    storageKey='designrift-theme'
+                    storageKey='bloggen-seo-starter-theme'
                     disableTransitionOnChange>
                     <main className='from-canvas-bg-subtle via-canvas-bg via-min-w-0 flex flex-auto flex-col items-center bg-gradient-to-tr md:px-0'>
                         <Header />
