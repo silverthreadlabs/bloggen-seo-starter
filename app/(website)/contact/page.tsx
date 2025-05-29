@@ -36,17 +36,6 @@ const ContentWrapper = ({ children, className = '' }: { children: React.ReactNod
 export default function ContactPage() {
     const tabs = [
         {
-            value: 'call',
-            label: 'Book a call',
-            content: (
-                <ContentWrapper>
-                    <Suspense fallback={<LoadingSpinner />}>
-                        <CalBooking />
-                    </Suspense>
-                </ContentWrapper>
-            )
-        },
-        {
             value: 'form',
             label: 'Send a message',
             content: (
@@ -55,6 +44,17 @@ export default function ContactPage() {
                         <ContactForm />
                     </ContentWrapper>
                 </div>
+            )
+        },
+        {
+            value: 'call',
+            label: 'Book a call',
+            content: (
+                <ContentWrapper>
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <CalBooking />
+                    </Suspense>
+                </ContentWrapper>
             )
         }
     ];
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </header>
 
                 {/* Tabs Section */}
-                <TabsComponent tabs={tabs} defaultValue='call' />
+                <TabsComponent tabs={tabs} defaultValue='form' />
             </div>
         </div>
     );
