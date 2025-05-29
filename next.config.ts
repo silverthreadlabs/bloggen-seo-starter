@@ -29,11 +29,11 @@ const config: NextConfig = {
                         key: 'Content-Security-Policy',
                         value: [
                             "default-src 'self'",
-                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://embed.cal.com https://app.cal.com https://*.cal.com https://js.stripe.com https://checkout.stripe.com",
+                            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://embed.cal.com https://app.cal.com https://*.cal.com https://js.stripe.com https://checkout.stripe.com https://www.googletagmanager.com https://www.google-analytics.com",
                             "style-src 'self' 'unsafe-inline' https://embed.cal.com https://app.cal.com https://*.cal.com",
                             "img-src 'self' data: blob: https: http:",
                             "font-src 'self' data: https:",
-                            "connect-src 'self' https://embed.cal.com https://app.cal.com https://*.cal.com https://api.stripe.com wss:",
+                            "connect-src 'self' https://embed.cal.com https://app.cal.com https://*.cal.com https://api.stripe.com https://www.google-analytics.com https://stats.g.doubleclick.net wss:",
                             "frame-src 'self' https://embed.cal.com https://app.cal.com https://*.cal.com https://js.stripe.com https://checkout.stripe.com",
                             "frame-ancestors 'self'",
                             "object-src 'none'",
