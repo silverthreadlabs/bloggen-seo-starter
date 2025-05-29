@@ -10,12 +10,15 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
+import { Suspense } from 'react';
 
 const manrope = Manrope({
     subsets: ['latin'],
     display: 'swap',
     weight: ['400', '500', '600', '700'],
-    variable: '--font-manrope'
+    variable: '--font-manrope',
+    preload: true, // Add this
+    fallback: ['system-ui', 'arial'] // Add fallback
 });
 export const viewport: Viewport = {
     width: 'device-width',
@@ -25,10 +28,13 @@ export const viewport: Viewport = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     console.log('Crafted by Silverthread Labs');
-    
+
     return (
         <html lang='en' className={`${manrope.variable}`}>
-            <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
+            <Suspense fallback={null}>
+                <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
+
+            </Suspense>
             <body className='antialiased lg:mx-auto'>
                 {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
                 <ThemeProvider
