@@ -45,10 +45,10 @@ export default function Hero() {
                                     Already Done.
                                 </span>
                             </h1>
-                            <h4 className='text-canvas-text mb-8 text-xl leading-relaxed font-normal tracking-normal md:text-2xl'>
+                            <h2 className='text-canvas-text mb-8 text-xl leading-relaxed font-normal tracking-normal md:text-2xl'>
                                 Ready‑to‑deploy Next.js template with MDX blogs, Dynamic OG images, JSON‑LD, and top
                                 Lighthouse scores.
-                            </h4>
+                            </h2>
                             <div className='flex flex-col gap-4'>
                                 <div className='flex flex-col gap-4 sm:flex-row'>
                                     <Link
@@ -60,12 +60,13 @@ export default function Hero() {
                                             variant='solid'
                                             size='lg'
                                             aria-label='View source code on GitHub'
+                                            name='View source code on GitHub'
                                             fullWidth
-                                            name='View Source'
                                             leadingIcon={<FaGithub className='h-5 w-5' />}
                                             trailingIcon={
                                                 <FaArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
                                             }>
+                                            View Source
                                         </Button>
                                     </Link>
                                     <Link target='_blank' href='https://www.bloggen.dev/' className='flex-1'>
@@ -73,9 +74,10 @@ export default function Hero() {
                                             color='primary'
                                             variant='surface'
                                             size='lg'
-                                            aria-label='Generate my first blog post with Bloggen'
-                                            fullWidth
-                                            name='Create Your First Post'>
+                                            aria-label='Create Your First Post with Bloggen'
+                                            name='Create Your First Post with Bloggen'
+                                            fullWidth>
+                                            Create Your First Post
                                         </Button>
                                     </Link>
                                 </div>
@@ -87,6 +89,7 @@ export default function Hero() {
                                     <Button
                                         onClick={handleCopy}
                                         aria-label='Copy command'
+                                        name='Copy command'
                                         size='default'
                                         color='neutral'
                                         variant='ghost'

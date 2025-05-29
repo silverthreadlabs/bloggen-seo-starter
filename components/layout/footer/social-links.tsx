@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedinIn, FaRedditAlien } from 'react-icons/fa';
 
 const SocialLink = ({ href, ariaLabel, icon }: { href: string; ariaLabel: string; icon: React.ReactNode }) => (
     <Link href={href} target='_blank' rel='noopener noreferrer' aria-label={ariaLabel} className='group'>
-        <Button color='neutral' variant='ghost' iconOnly leadingIcon={icon as React.ReactElement} />
+        <Button color='neutral' variant='ghost' iconOnly aria-label={ariaLabel} name={ariaLabel} leadingIcon={icon as React.ReactElement} />
     </Link>
 );
 

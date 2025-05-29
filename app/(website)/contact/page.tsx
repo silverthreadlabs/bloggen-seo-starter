@@ -1,4 +1,4 @@
-// 
+//
 // import { Mail, MessageSquare, Clock } from 'lucide-react';
 // import { Metadata } from 'next';
 // import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
@@ -65,9 +65,9 @@ export default function ContactPage() {
                 {/* Header Section */}
                 <header className='mb-12 text-center'>
                     <h1 className='text-canvas-text-contrast mb-4 text-4xl font-bold md:text-5xl'>Get in touch</h1>
-                    <p className='text-canvas-text mx-auto max-w-2xl text-lg text-balance'>
+                    <h2 className='text-canvas-text mx-auto max-w-2xl text-lg text-balance'>
                         Book a meeting with us to discuss how we can help or fill out a form to get in touch
-                    </p>
+                    </h2>
                 </header>
 
                 {/* Tabs Section */}

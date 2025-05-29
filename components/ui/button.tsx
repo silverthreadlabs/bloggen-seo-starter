@@ -1,10 +1,10 @@
 //v3
-// import { memo } from 'react';
-import React from 'react';
+import { memo } from 'react';
+import * as React from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 
-import { cva, type VariantProps } from 'class-variance-authority';
+import { type VariantProps, cva } from 'class-variance-authority';
 
 // Spinner component with smooth appearance animation
 const Spinner = () => (
@@ -163,7 +163,6 @@ const buttonVariants = cva(
         }
     }
 );
-
 export interface ButtonProps
     extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
         VariantProps<typeof buttonVariants> {
@@ -174,7 +173,6 @@ export interface ButtonProps
     isLoading?: boolean; // new loading state prop
     loadingText?: string; // optional loading text
     fullWidth?: boolean;
-    name?: string; // button text content
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -193,7 +191,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             children,
             disabled,
             fullWidth = false,
-            name,
             ...props
         },
         ref
@@ -230,7 +227,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         <span className='mr-2'>
                             <Spinner />
                         </span>
-                        {loadingText || name || children}
+                        {loadingText || children}
                     </>
                 )}
 
@@ -241,7 +238,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {!isLoading && !iconOnly && (
                     <>
                         {leadingIcon && <span className='mr-2'>{leadingIcon}</span>}
-                        {name || children}
+                        {children}
                         {trailingIcon && <span className='ml-2'>{trailingIcon}</span>}
                     </>
                 )}
@@ -253,5 +250,5 @@ Button.displayName = 'Button';
 
 // export default Button;
 
-const ButtonMemoized = React.memo(Button);
+const ButtonMemoized = memo(Button);
 export { ButtonMemoized as Button };

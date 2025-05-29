@@ -1,12 +1,9 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-
 import Link from 'next/link';
-
 import { Input, Select, Textarea } from '@/components/ui/input';
 import { send } from '@emailjs/browser';
-
 import { Button } from '../ui/button';
 
 type FormData = {
@@ -84,7 +81,7 @@ export default function ContactForm() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        const sanitizedValue = sanitizeInput(value);
+        const sanitizedValue = name === 'budget' ? value : sanitizeInput(value);
 
         setFormData((prev) => ({
             ...prev,
@@ -237,7 +234,9 @@ export default function ContactForm() {
                         isLoading={isSubmitting}
                         loadingText='Sending...'
                         disabled={isSubmitting}
+                        aria-label='Send Message'
                         name='Send Message'>
+                        Send Message
                     </Button>
                 </div>
             </form>

@@ -15,17 +15,17 @@ const ThemeSwitcher = () => {
     useEffect(() => {
         // Set system as default theme if none is set
         if (!theme) {
-            console.log('No theme set, defaulting to system');
+            // console.log('No theme set, defaulting to system');
             setTheme('system');
         }
 
         // Debug system theme detection
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        console.log('System prefers dark:', mediaQuery.matches);
+        // console.log('System prefers dark:', mediaQuery.matches);
 
         // Listen for system theme changes
         const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-            console.log('System theme changed:', e.matches ? 'dark' : 'light');
+            // console.log('System theme changed:', e.matches ? 'dark' : 'light');
             if (theme === 'system') {
                 // Force a re-render when system theme changes
                 setTheme('system');
@@ -46,7 +46,7 @@ const ThemeSwitcher = () => {
             className='border-canvas-line w-fit space-x-0.5 rounded-full border p-1'
             value={theme}
             onValueChange={(value) => {
-                console.log('Theme changed to:', value);
+                // console.log('Theme changed to:', value);
                 setTheme(value);
             }}
             aria-label='Theme selection'>
