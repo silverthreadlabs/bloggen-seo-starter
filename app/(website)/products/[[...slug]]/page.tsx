@@ -199,7 +199,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                     </div>
                 </div>
             </div>
-
             {/* Back Link */}
             <div className='mx-auto max-w-7xl py-12'>
                 <Link
