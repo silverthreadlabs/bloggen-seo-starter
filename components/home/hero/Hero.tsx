@@ -82,8 +82,8 @@ export default function Hero() {
                                     </Link>
                                 </div>
 
-                                <div className='bg-canvas-base border-canvas-bg-active flex items-center justify-between rounded-lg border px-4 py-3 font-mono text-sm'>
-                                    <span className='text-canvas-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg shadow-inner'>
+                                <div className='bg-canvas-base border-canvas-bg-active flex items-center justify-between rounded-lg border px-4 py-3 font-mono text-sm shadow-inner'>
+                                    <span className='text-canvas-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg '>
                                         $ npx create-bloggen-app
                                     </span>
                                     <Button

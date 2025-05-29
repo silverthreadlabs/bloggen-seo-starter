@@ -318,19 +318,19 @@
         --warning-on-warning: #000000;
 
         /* ALERT */
-        --alert-base: #fffcfc;
-        --alert-bg-subtle: #fff8f8;
-        --alert-bg: #ffefef;
-        --alert-bg-hover: #ffe5e5;
-        --alert-bg-active: #fdd8d8;
-        --alert-line: #f9c6c6;
-        --alert-border: #f3aeaf;
-        --alert-border-hover: #eb9091;
-        --alert-solid: #e5484d;
-        --alert-solid-hover: #dc3d43;
-        --alert-text: #cd2b31;
-        --alert-text-contrast: #381316;
-        --alert-on-alert: #ffffff;
+ --alert-base: #1f1417;
+  --alert-bg-subtle: #2a1519;
+  --alert-bg: #3b181f;
+  --alert-bg-hover: #471a23;
+  --alert-bg-active: #531b27;
+  --alert-line: #661d2c;
+  --alert-border: #8a1e34;
+  --alert-border-hover: #d01b3f;
+  --alert-solid: #e54666;
+  --alert-solid-hover: #f2657e;
+  --alert-text: #ff859d;
+  --alert-text-contrast: #fed2e1;
+  --alert-on-alert: #ffffff;
 
         /* INFO */
         --info-base: #fbfdff;
