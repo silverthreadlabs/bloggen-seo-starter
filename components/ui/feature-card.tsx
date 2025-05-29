@@ -17,9 +17,9 @@ function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd }: Fe
                         </div>
                     </div>
                     <div>
-                        <h5 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
+                        <h3 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
                             {title}
-                        </h5>
+                        </h3>
                         <p className='text-canvas-text text-sm leading-relaxed font-normal tracking-normal transition-colors duration-300 ease-out md:text-lg'>
                             {descriptionStart}
                             {code && (

@@ -50,9 +50,9 @@ return 1;
                                     </div>
 
                                     <div className='mt-4'>
-                                        <h4 className='text-canvas-text-contrast group-hover:text-primary-text mb-2 text-xl leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-2xl'>
+                                        <h3 className='text-canvas-text-contrast group-hover:text-primary-text mb-2 text-xl leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-2xl'>
                                             {post.metadata.title}
-                                        </h4>
+                                        </h3>
                                         <p className='text-canvas-text group-hover:text-canvas-text text-base leading-relaxed font-normal tracking-normal text-balance transition-colors duration-300 md:text-lg'>
                                             {post.metadata.summary}
                                         </p>

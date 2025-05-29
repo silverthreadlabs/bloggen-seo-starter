@@ -33,7 +33,7 @@ return 1;
                 <div className='mx-auto py-20'>
                     {/* Section Header */}
                     <div className='mb-16'>
-                        <span className='text-primary-text mb-4 block text-base leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
+                        <span className='text-primary-text mb-4 block text-sm leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
                             Browse Template Blog Posts
                         </span>
                         <div className='flex flex-row items-center gap-2'>
@@ -68,9 +68,9 @@ return 1;
                                         </time>
                                     </div>
 
-                                    <h5 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl'>
+                                    <h2 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl'>
                                         {post.metadata.title}
-                                    </h5>
+                                    </h2>
 
                                     <div className='text-canvas-text group-hover:text-primary-text flex items-center text-sm transition-colors'>
                                         <span className='text-canvas-text border-canvas-line inline-flex max-w-fit rounded border border-none bg-transparent px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-base'>
