@@ -1,20 +1,15 @@
-'use client'
-import React, { useEffect, memo } from 'react';
-import { Sun, Moon, Monitor } from 'lucide-react';
+'use client';
+
+import React, { memo, useEffect } from 'react';
+
 import { useTheme } from 'next-themes';
+
 import * as RadioGroup from '@radix-ui/react-radio-group';
+
+import { Monitor, Moon, Sun } from 'lucide-react';
 
 const ThemeSwitcher = () => {
     const { theme, setTheme, systemTheme, resolvedTheme } = useTheme();
-
-    // Debug logging
-    // useEffect(() => {
-    //     console.log('Theme State:', {
-    //         currentTheme: theme,
-    //         systemTheme,
-    //         resolvedTheme,
-    //     });
-    // }, [theme, systemTheme, resolvedTheme]);
 
     // Avoid hydration mismatch and handle system theme
     useEffect(() => {
@@ -43,35 +38,30 @@ const ThemeSwitcher = () => {
     }, [theme, setTheme]);
 
     if (!theme) {
-        
         return null;
     }
 
     return (
         <RadioGroup.Root
-            className="w-fit border border-canvas-line rounded-full p-1 space-x-0.5"
+            className='border-canvas-line w-fit space-x-0.5 rounded-full border p-1'
             value={theme}
             onValueChange={(value) => {
                 console.log('Theme changed to:', value);
                 setTheme(value);
             }}
-            aria-label="Theme selection"
-        >
+            aria-label='Theme selection'>
             {[
                 { value: 'system', icon: <Monitor size={18} />, title: 'System theme' },
                 { value: 'light', icon: <Sun size={18} />, title: 'Light theme' },
-                { value: 'dark', icon: <Moon size={18} />, title: 'Dark theme' },
+                { value: 'dark', icon: <Moon size={18} />, title: 'Dark theme' }
             ].map(({ value, icon, title }) => (
                 <RadioGroup.Item
                     key={value}
-                    className="p-2 rounded-full data-[state=checked]:bg-canvas-bg-hover data-transition-colors"
+                    className='text-canvas-text group-hover:text-canvas-text-contrast data-[state=checked]:text-canvas-text-contrast hover:text-canvas-text-contrast data-[state=checked]:bg-canvas-bg-hover data-transition-colors rounded-full p-2 transition-colors duration-300 hover:cursor-pointer'
                     value={value}
                     title={title}
-                    aria-label={title}
-                >
-                    <div className="text-canvas-text">
-                        {icon}
-                    </div>
+                    aria-label={title}>
+                    {icon}
                 </RadioGroup.Item>
             ))}
         </RadioGroup.Root>

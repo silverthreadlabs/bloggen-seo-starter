@@ -102,8 +102,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
 
     
     const currentPath ='blog';
-    console.log("🚀 ~ generateMetadata ~ currentPath:", currentPath)
-
     // If this is the root path
     if (!resolvedParams.slug || resolvedParams.slug.length === 0) {
         return createPageMetadata({

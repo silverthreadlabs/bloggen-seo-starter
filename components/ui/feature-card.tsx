@@ -11,13 +11,13 @@ function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd }: Fe
         <div className='group relative'>
             <div className='bg-canvas-bg border-canvas-active hover:border-canvas-line cursor-default rounded-xl border p-6 backdrop-blur-sm transition-all duration-300 ease-in-out'>
                 <div className='flex items-start gap-4'>
-                    <div className='rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 p-3 transition-transform duration-300 ease-out group-hover:scale-[1.05]'>
-                        <div className='text-canvas-text group-hover:text-primary-text transition-colors duration-300 ease-out'>
+                    <div className='rounded-lg bg-gradient-to-br from-canvas-bg to-canvas-line p-3 transition-transform duration-300 ease-out group-hover:scale-[1.05]'>
+                        <div className='text-canvas-solid group-hover:text-primary-solid transition-colors duration-300 ease-out'>
                             {icon}
                         </div>
                     </div>
                     <div>
-                        <h5 className='text-canvas-text-contrast group-hover:text-primary-text mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
+                        <h5 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
                             {title}
                         </h5>
                         <p className='text-canvas-text text-sm leading-relaxed font-normal tracking-normal transition-colors duration-300 ease-out md:text-lg'>
