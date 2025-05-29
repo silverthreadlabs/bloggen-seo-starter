@@ -18,7 +18,7 @@ const Spinner = () => (
 );
 
 const buttonVariants = cva(
-    'items-center justify-center rounded-lg font-medium transition-colors duration-300 ease-out disabled:opacity-50 hover:cursor-pointer disabled:cursor-not-allowed leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 select-none',
+    'items-center justify-center rounded-lg font-medium transition-all duration-300 ease-out disabled:opacity-50 hover:cursor-pointer disabled:cursor-not-allowed leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 select-none hover:shadow-[0_1px_3px_0_rgb(0,0,0,0.1),0_1px_2px_-1px_rgb(0,0,0,0.1)]',
 
     {
         variants: {
@@ -63,27 +63,27 @@ const buttonVariants = cva(
             {
                 color: 'primary',
                 variant: 'solid',
-                class: 'bg-primary-solid text-primary-on-primary hover:bg-primary-solid-hover'
+                class: 'bg-primary-solid text-primary-on-primary hover:bg-primary-solid-hover active:bg-primary-solid-hover/90'
             },
             {
                 color: 'primary',
                 variant: 'soft',
-                class: 'bg-primary-bg-hover text-primary-text hover:bg-primary-bg-active'
+                class: 'bg-primary-bg-hover text-primary-text-contrast hover:bg-primary-bg-active active:bg-primary-line'
             },
             {
                 color: 'primary',
                 variant: 'surface',
-                class: 'border border-primary-border bg-primary-bg text-primary-text-contrast hover:bg-primary-bg-hover hover:border-primary-border-hover'
+                class: 'border border-primary-border bg-primary-bg-subtle text-primary-text-contrast hover:bg-primary-bg hover:border-primary-border-hover active:bg-primary-bg-hover'
             },
             {
                 color: 'primary',
                 variant: 'outline',
-                class: 'border border-primary-border text-primary-text hover:border-primary-border-hover'
+                class: 'border border-primary-border text-primary-text-contrast hover:border-primary-border-hover'
             },
             {
                 color: 'primary',
                 variant: 'ghost',
-                class: 'bg-transparent text-primary-text hover:bg-primary-bg-hover'
+                class: 'bg-transparent text-primary-text hover:bg-primary-bg-hover active:bg-primary-bg-active'
             },
             {
                 color: 'primary',
@@ -94,17 +94,17 @@ const buttonVariants = cva(
             {
                 color: 'neutral',
                 variant: 'solid',
-                class: 'bg-canvas-text-contrast text-canvas-default hover:bg-canvas-text-contrast/90'
+                class: 'bg-canvas-text-contrast text-canvas-on-canvas hover:bg-canvas-text-contrast/90 active:bg-canvas-text-contrast/80 '
             },
             {
                 color: 'neutral',
                 variant: 'soft',
-                class: 'bg-canvas-bg-hover text-canvas-text hover:bg-canvas-bg-active'
+                class: 'bg-canvas-bg-hover text-canvas-text hover:bg-canvas-bg-active active:bg-canvas-line'
             },
             {
                 color: 'neutral',
                 variant: 'surface',
-                class: 'border border-canvas-border bg-canvas-bg text-canvas-text hover:bg-canvas-bg-hover hover:border-canvas-border-hover'
+                class: 'border border-canvas-border bg-canvas-bg text-canvas-text hover:bg-canvas-bg-hover hover:border-canvas-border-hover active:bg-canvas-bg-active'
             },
             {
                 color: 'neutral',
@@ -114,7 +114,7 @@ const buttonVariants = cva(
             {
                 color: 'neutral',
                 variant: 'ghost',
-                class: 'bg-transparent text-canvas-text hover:bg-canvas-bg-hover'
+                class: 'bg-transparent text-canvas-text hover:bg-canvas-bg-hover active:bg-canvas-bg-active'
             },
             {
                 color: 'neutral',
@@ -135,17 +135,17 @@ const buttonVariants = cva(
             {
                 isIcon: true,
                 size: 'sm',
-                class: '!px-0 !w-8 !max-w-8'
+                class: '!px-0 !w-8 !max-w-8 hover:!shadow-none'
             },
             {
                 isIcon: true,
                 size: 'default',
-                class: '!px-0 !w-10 !max-w-10'
+                class: '!px-0 !w-10 !max-w-10 hover:!shadow-none'
             },
             {
                 isIcon: true,
                 size: 'lg',
-                class: '!px-0 !w-14 !max-w-14'
+                class: '!px-0 !w-14 !max-w-14 hover:!shadow-none'
             },
             // Loading state styles
             {

@@ -6,7 +6,7 @@
 
 @layer base {
     @theme inline {
-        --color-canvas-default: var(--canvas-default);
+   
         --color-canvas-base: var(--canvas-base);
         --color-canvas-bg-subtle: var(--canvas-bg-subtle);
         --color-canvas-bg: var(--canvas-bg);
@@ -19,7 +19,7 @@
         --color-canvas-solid-hover: var(--canvas-solid-hover);
         --color-canvas-text: var(--canvas-text);
         --color-canvas-text-contrast: var(--canvas-text-contrast);
-        --color-canvas-default: var(--canvas-default);
+        --color-canvas-on-canvas: var(--canvas-on-canvas);
 
         /* Primary colors */
         --color-primary-base: var(--primary-base);
@@ -268,7 +268,7 @@
         --primary-border-hover: #73a7ff;
         --primary-solid: #06f;
         --primary-solid-hover: #0059e8;
-        --primary-text: #005dec;
+        --primary-text: #0B4DB1;
         --primary-text-contrast: #0a2e6b;
         --primary-on-primary: #ffffff;
 

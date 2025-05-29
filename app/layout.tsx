@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     enableSystem={true}
                     storageKey='bloggen-seo-starter-theme'
                     disableTransitionOnChange>
-                    <main className='from-canvas-bg-active to-canvas-bg-subtle flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
+                    <main className='from-canvas-bg to-canvas-bg-base flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
                         <Header />
                         <RootProvider>{children}</RootProvider>
                         <Footer />

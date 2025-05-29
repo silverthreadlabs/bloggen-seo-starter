@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 
 import * as RadioGroup from '@radix-ui/react-radio-group';
 
-import { Monitor, Moon, Sun } from 'lucide-react';
+import { FaDesktop, FaMoon, FaSun } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {
     const { theme, setTheme, systemTheme, resolvedTheme } = useTheme();
@@ -51,13 +51,13 @@ const ThemeSwitcher = () => {
             }}
             aria-label='Theme selection'>
             {[
-                { value: 'system', icon: <Monitor size={18} />, title: 'System theme' },
-                { value: 'light', icon: <Sun size={18} />, title: 'Light theme' },
-                { value: 'dark', icon: <Moon size={18} />, title: 'Dark theme' }
+                { value: 'light', icon: <FaSun size={18} />, title: 'Light theme' },
+                { value: 'system', icon: <FaDesktop size={18} />, title: 'System theme' },
+                { value: 'dark', icon: <FaMoon size={18} />, title: 'Dark theme' }
             ].map(({ value, icon, title }) => (
                 <RadioGroup.Item
                     key={value}
-                    className='text-canvas-text group-hover:text-canvas-text-contrast data-[state=checked]:text-canvas-text-contrast hover:text-canvas-text-contrast data-[state=checked]:bg-canvas-bg-hover data-transition-colors rounded-full p-2 transition-colors duration-300 hover:cursor-pointer'
+                    className='text-canvas-solid group-hover:text-canvas-text-contrast data-[state=checked]:text-canvas-text-contrast hover:text-canvas-text-contrast data-[state=checked]:bg-canvas-bg-hover data-transition-colors rounded-full p-2 transition-colors duration-300 hover:cursor-pointer'
                     value={value}
                     title={title}
                     aria-label={title}>

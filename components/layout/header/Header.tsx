@@ -36,7 +36,7 @@ export default function Header() {
                                 <li key={href}>
                                     <Link
                                         href={href}
-                                        className='text-canvas-text hover:text-primary-text rounded-sm px-3 py-2 text-base font-medium transition-colors'>
+                                        className='text-canvas-text hover:text-canvas-text-contrast rounded-sm px-3 py-2 text-base font-medium transition-colors'>
                                         {label}
                                     </Link>
                                 </li>

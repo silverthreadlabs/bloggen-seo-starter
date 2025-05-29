@@ -13,7 +13,7 @@ const SocialLink = ({ href, ariaLabel, icon }: { href: string; ariaLabel: string
 
 const SocialLinks = () => {
     return (
-        <div className='flex space-x-1'>
+        <div className='flex space-x-1 '>
             <SocialLink
                 href='https://github.com/silverthreadlabs/bloggen-seo-starter'
                 ariaLabel='Visit SilverThread Labs GitHub repository'
@@ -38,14 +38,14 @@ const SocialLinks = () => {
                 ariaLabel='Follow SilverThread Labs on Reddit'
                 icon={<FaRedditAlien size={20} className='group-hover:text-canvas-text-contrast transition-colors duration-200' />}
             />
-
+{/* 
             <SocialLink
                 href='https://www.silverthreadlabs.com'
                 ariaLabel='Visit SilverThread Labs website'
                 icon={
                     <SilverthreadLabsLogo className='group-hover:text-canvas-text-contrast transition-colors duration-200' />
                 }
-            />
+            /> */}
         </div>
     );
 };
