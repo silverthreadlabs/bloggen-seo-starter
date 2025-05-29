@@ -28,17 +28,15 @@ return 1;
                         Products
                     </span>
                     <div className='flex flex-row items-center justify-center gap-2'>
-                        <h1 className='text-canvas-text-contrast text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
-                            What We{' '}
-                        </h1>
-                        <h1 className='from-primary-solid via-primary-text to-primary-text-contrast border-none bg-transparent bg-gradient-to-r bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-6xl'>
-                            Build
+                        <h1 className='text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                            <span className='text-canvas-text-contrast'>What We </span>
+                            <span className='from-primary-solid via-primary-text to-primary-text-contrast border-none bg-transparent bg-gradient-to-r bg-clip-text text-transparent'>Build</span>
                         </h1>
                     </div>
 
-                    <h4 className='text-canvas-text text-xl leading-relaxed font-normal tracking-normal text-balance md:text-2xl'>
+                    <h2 className='text-canvas-text text-xl leading-relaxed font-normal tracking-normal text-balance md:text-2xl'>
                         Discover the products we&apos;ve crafted at Silverthread Labs to save time, boost performance.
-                    </h4>
+                    </h2>
                 </div>
 
                 {/* Products Grid */}

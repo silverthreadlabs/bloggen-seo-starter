@@ -56,11 +56,11 @@ export default function AboutPage() {
                         className='text-canvas-text-contrast mb-4 text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                         Next.js SEO Template
                     </h1>
-                    <h5
+                    <h2
                         id='about-page-subtitle'
                         className='text-canvas-text text-lg leading-relaxed font-semibold tracking-normal text-balance md:text-xl'>
                         Spin up a production-ready site with SEO, performance, and content workflows already solved.
-                    </h5>
+                    </h2>
                 </header>
 
                 {/* Features */}

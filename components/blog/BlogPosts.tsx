@@ -33,16 +33,13 @@ return 1;
                 <div className='mx-auto py-20'>
                     {/* Section Header */}
                     <div className='mb-16'>
-                        <p className='text-primary-text mb-4 block text-base leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
+                        <span className='text-primary-text mb-4 block text-base leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
                             Browse Template Blog Posts
-                        </p>
+                        </span>
                         <div className='flex flex-row items-center gap-2'>
-                            <h1 className='text-canvas-text-contrast text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
-                                Latest
-                            </h1>
-                            <h1 className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-6xl'>
-                                {' '}
-                                Articles
+                            <h1 className='text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
+                                <span className='text-canvas-text-contrast'>Latest</span>
+                                <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'> Articles</span>
                             </h1>
                         </div>
                     </div>

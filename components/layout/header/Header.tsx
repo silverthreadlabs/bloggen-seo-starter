@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 
-
 import Link from 'next/link';
 
 import Logo from '@/components/logo/Logo';
@@ -44,7 +43,8 @@ export default function Header() {
                             ))}
                         </ul>
                         <Link href='/contact' className='flex-1'>
-                            <Button color='primary' size='default' variant='solid' name='Contact'>
+                            <Button color='primary' size='default' variant='solid' aria-label='Contact Us' name='Contact Us'>
+                                Contact
                             </Button>
                         </Link>
                         <Link href='https://www.bloggen.dev/' target='_blank'>
@@ -52,8 +52,10 @@ export default function Header() {
                                 color='primary'
                                 size='default'
                                 variant='surface'
+                                aria-label='Create your first post'
                                 name='Create your first post'
                                 trailingIcon={<ArrowUpRight className='h-4 w-4' />}>
+                                Create your first post
                             </Button>
                         </Link>
                     </nav>
@@ -62,6 +64,7 @@ export default function Header() {
                     <Button
                         onClick={toggleMobile}
                         aria-label='Toggle menu'
+                        name='Toggle menu'
                         aria-controls='mobile-menu'
                         aria-expanded={mobileOpen}
                         className='block md:hidden' // Changed from md:hidden to block md:hidden for clarity
@@ -84,6 +87,8 @@ export default function Header() {
                 <nav
                     id='mobile-menu'
                     aria-label='Mobile navigation'
+                    aria-labelledby='mobile-menu-label'
+                    aria-describedby='mobile-menu-description'
                     role='dialog'
                     aria-modal='true'
                     className='bg-canvas-base/95 fixed inset-0 top-16 z-50 backdrop-blur-sm md:hidden'>
@@ -101,8 +106,12 @@ export default function Header() {
                         <li>
                             <div className='flex flex-col gap-3'>
                                 <Link href='/contact' onClick={toggleMobile} className='flex-1'>
-                                    <Button color='primary' size='default' variant='solid' fullWidth name='Contact'>
-                                    </Button>
+                                    <Button
+                                        color='primary'
+                                        size='default'
+                                        variant='solid'
+                                        fullWidth
+                                        name='Contact'></Button>
                                 </Link>
                                 <Link href='https://www.bloggen.dev/' target='_blank' className='flex-1'>
                                     <Button
@@ -111,7 +120,9 @@ export default function Header() {
                                         variant='outline'
                                         trailingIcon={<ArrowUpRight className='h-4 w-4' />}
                                         fullWidth
+                                        aria-label='Create your first post'
                                         name='Create your first post'>
+                                        Create your first post
                                     </Button>
                                 </Link>
                             </div>
