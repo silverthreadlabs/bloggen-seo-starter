@@ -25,6 +25,7 @@ export const viewport: Viewport = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     console.log('Crafted by Silverthread Labs');
+    
     return (
         <html lang='en' className={`${manrope.variable}`}>
             <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
