@@ -88,12 +88,10 @@ const config: NextConfig = {
             }
         ];
     },
+     
+    // Server external packages
+    serverExternalPackages: ['@calcom/embed-react'],
     
-    // Experimental features for better security
-    experimental: {
-        // Enable server components by default
-        serverComponentsExternalPackages: ['@calcom/embed-react']
-    }
 };
 
 export default withMDX(config);
