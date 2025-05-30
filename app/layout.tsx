@@ -33,8 +33,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html suppressHydrationWarning lang='en' className={`${manrope.variable}`} >
             <Suspense fallback={null}>
                 <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
-
             </Suspense>
+       {/* Ahrefs Analytics */}
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="IanN+R1NRGaoR3nT12UJ+A"
+                    strategy="afterInteractive"
+                />
             <body className='antialiased lg:mx-auto'>
                 {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
                 <ThemeProvider
