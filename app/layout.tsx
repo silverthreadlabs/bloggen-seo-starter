@@ -1,16 +1,14 @@
+import { Suspense } from 'react';
 import type { Viewport } from 'next';
+import Script from 'next/script';
 import { Manrope } from 'next/font/google';
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { ThemeProvider } from 'next-themes';
-
+import { RootProvider } from 'fumadocs-ui/provider';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header/Header';
 import { env } from '@/lib/utils/env';
-import { GoogleAnalytics } from '@next/third-parties/google';
-
 import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
-import { Suspense } from 'react';
 
 const manrope = Manrope({
     subsets: ['latin'],
