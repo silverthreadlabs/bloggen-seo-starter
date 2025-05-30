@@ -15,7 +15,7 @@ return 1;
     });
 
     return (
-        <div className='flex h-screen flex-col'>
+        <div className='flex flex-col '>
             {/* Background Elements */}
             {/* <div className="fixed inset-0 z-[-1]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--bg-base),var(--primary-bg))]" />

@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
        {/* Ahrefs Analytics */}
                 <Script
                     src="https://analytics.ahrefs.com/analytics.js"
-                    data-key="IanN+R1NRGaoR3nT12UJ+A"
+                    data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
                     strategy="afterInteractive"
                 />
             <body className='antialiased lg:mx-auto'>

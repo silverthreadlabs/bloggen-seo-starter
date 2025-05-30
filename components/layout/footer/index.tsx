@@ -58,7 +58,7 @@ export default function Footer() {
                         {/* Nav + Social */}
                         <div
                             className={
-                                'flex flex-col space-y-6 items-end '
+                                'flex flex-col space-y-6 items-start sm:items-end '
                             }>
             
 
