@@ -53,9 +53,16 @@ return 1;
                                         <Image
                                             src={post.metadata.image || ''}
                                             alt={post.metadata.title}
+                                            fill
                                             className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                            width={400}
-                                            height={225}
+                                            loading="eager"
+                                            priority
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                            quality={75}
+                                            placeholder="blur"
+                                            blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
+                                                '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
+                                            ).toString('base64')}`}
                                         />
                                     </div>
 
