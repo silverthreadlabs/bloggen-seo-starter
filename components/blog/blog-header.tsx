@@ -49,7 +49,7 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
                         alt={title} 
                         fill 
                         className='object-cover'
-                        loading="lazy"
+                        loading="eager"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                         quality={75}
                         placeholder="blur"
