@@ -18,20 +18,6 @@ const withMDX = createMDX();
 const config: NextConfig = {
     reactStrictMode: true,
     
-    // Image optimization for better LCP
-    images: {
-        formats: ['image/webp', 'image/avif'],
-        minimumCacheTTL: 31536000, // 1 year
-        dangerouslyAllowSVG: true,
-        contentDispositionType: 'attachment',
-        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    },
-    
-    // Experimental features for performance
-    experimental: {
-        optimizePackageImports: ['lucide-react', 'react-icons'],
-    },
-    
     // Security headers
     async headers() {
         return [

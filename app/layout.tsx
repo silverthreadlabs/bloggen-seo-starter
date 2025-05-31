@@ -15,44 +15,29 @@ const manrope = Manrope({
     display: 'swap',
     weight: ['400', '500', '600', '700'],
     variable: '--font-manrope',
-    preload: true,
-    fallback: ['system-ui', 'arial']
+    preload: true, // Add this
+    fallback: ['system-ui', 'arial'] // Add fallback
 });
-
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1
+    // maximumScale: 1,
+    // userScalable: false,
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
 
     return (
-        <html suppressHydrationWarning lang='en' className={`${manrope.variable}`}>
-            <head>
-                {/* DNS prefetch for external domains */}
-                <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-                <link rel="dns-prefetch" href="//www.google-analytics.com" />
-                <link rel="dns-prefetch" href="//analytics.ahrefs.com" />
-                
-                {/* Preconnect to critical external domains */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                
-                {/* Resource hints for better performance */}
-                <link rel="preload" href="/assets/blog/deepseek/deepseek.webp" as="image" type="image/webp" />
-                <link rel="preload" href="/assets/blog/nvidia/nvidia-share-drop.webp" as="image" type="image/webp" />
-                <link rel="preload" href="/assets/blog/bolt/bolt-diy.webp" as="image" type="image/webp" />
-            </head>
+        <html suppressHydrationWarning lang='en' className={`${manrope.variable}`} >
             <Suspense fallback={null}>
                 <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
             </Suspense>
-            {/* Ahrefs Analytics */}
-            <Script
-                src="https://analytics.ahrefs.com/analytics.js"
-                data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
-                strategy="afterInteractive"
-            />
+       {/* Ahrefs Analytics */}
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
+                    strategy="afterInteractive"
+                />
             <body className='antialiased lg:mx-auto'>
                 {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
                 <ThemeProvider
