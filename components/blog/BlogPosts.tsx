@@ -58,13 +58,11 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                                             alt={post.metadata.title}
                                             fill
                                             className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                            loading='eager'
-                                            priority
+                                            loading='lazy'
                                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px'
-                                            quality={85}
+                                            quality={75}
                                             placeholder='blur'
                                             blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4='
-                                            fetchPriority='high'
                                         />
                                     </div>
 
