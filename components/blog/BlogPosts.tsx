@@ -49,7 +49,7 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
 
                     {/* Blog Grid */}
                     <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-                        {displayedBlogs.map((post) => (
+                        {displayedBlogs.map((post, index) => (
                             <Link key={post.slug} href={`/blog/${post.slug}`} className='group block'>
                                 <article className='bg-canvas-bg border-canvas-active hover:border-canvas-line rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
                                     <div className='relative mb-6 aspect-video overflow-hidden rounded-sm'>
@@ -58,11 +58,13 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                                             alt={post.metadata.title}
                                             fill
                                             className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                            loading='lazy'
-                                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px'
-                                            quality={75}
+                                            loading={index < 3 ? 'eager' : 'lazy'}
+                                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                            quality={index === 0 ? 85 : index < 3 ? 75 : 60}
                                             placeholder='blur'
                                             blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4='
+                                            priority={index < 3}
+                                            fetchPriority={index === 0 ? 'high' : index < 3 ? 'high' : 'low'}
                                         />
                                     </div>
 

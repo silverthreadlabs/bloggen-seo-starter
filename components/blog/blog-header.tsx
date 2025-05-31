@@ -51,12 +51,13 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
                         className='object-cover'
                         loading="eager"
                         priority
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                        quality={75}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                        quality={90}
                         placeholder="blur"
                         blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
                             '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
                         ).toString('base64')}`}
+                        fetchPriority="high"
                     />
                 </div>
             )}
