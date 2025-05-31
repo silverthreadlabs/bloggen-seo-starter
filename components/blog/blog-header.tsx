@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { formatDate } from '@/lib/utils/mdx';
 
 import { ArrowLeft } from 'lucide-react';
+import { Suspense } from 'react';
 
 interface Props {
     title: string;
@@ -44,19 +45,21 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
             {/* Featured Image */}
             {image && (
                 <div className='border-canvas-border relative mb-10 aspect-[21/9] w-full overflow-hidden rounded-sm border shadow-2xl'>
-                    <Image 
-                        src={image} 
-                        alt={title} 
-                        fill 
-                        className='object-cover'
-                        loading="eager"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                        quality={75}
-                        placeholder="blur"
-                        blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
-                            '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
-                        ).toString('base64')}`}
-                    />
+                    <Suspense fallback={<div className="w-full h-full bg-canvas-bg animate-pulse" />}>
+                        <Image 
+                            src={image} 
+                            alt={title} 
+                            fill 
+                            className='object-cover'
+                            loading="eager"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                            quality={75}
+                            placeholder="blur"
+                            blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
+                                '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
+                            ).toString('base64')}`}
+                        />
+                    </Suspense>
                 </div>
             )}
         </header>
