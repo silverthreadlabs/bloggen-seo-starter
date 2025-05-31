@@ -17,8 +17,8 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
         if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
             return -1;
         }
-        
-return 1;
+
+        return 1;
     });
 
     const displayedBlogs = isHomePage ? sortedBlogs.slice(0, 3) : sortedBlogs;
@@ -39,7 +39,10 @@ return 1;
                         <div className='flex flex-row items-center gap-2'>
                             <h1 className='text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                                 <span className='text-canvas-text-contrast'>Latest</span>
-                                <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'> Articles</span>
+                                <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'>
+                                    {' '}
+                                    Articles
+                                </span>
                             </h1>
                         </div>
                     </div>
@@ -55,14 +58,13 @@ return 1;
                                             alt={post.metadata.title}
                                             fill
                                             className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                            loading="eager"
+                                            loading='eager'
                                             priority
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                                            quality={75}
-                                            placeholder="blur"
-                                            blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
-                                                '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
-                                            ).toString('base64')}`}
+                                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px'
+                                            quality={85}
+                                            placeholder='blur'
+                                            blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4='
+                                            fetchPriority='high'
                                         />
                                     </div>
 
