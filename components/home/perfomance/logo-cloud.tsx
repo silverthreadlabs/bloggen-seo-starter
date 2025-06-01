@@ -1,10 +1,11 @@
 'use client';
 
 import React from 'react';
+
 import { AhrfeIcon } from '../../ui/seo-tools/ahref';
+import { GtmetrixIcon } from '../../ui/seo-tools/gtmetrix';
 import { LighthouseIcon } from '../../ui/seo-tools/lighthouse';
 import { PageSpeedIcon } from '../../ui/seo-tools/pagespeed';
-import { GtmetrixIcon } from '../../ui/seo-tools/gtmetrix';
 
 export default function LogoCloud() {
     const logos = [
@@ -72,19 +73,14 @@ export default function LogoCloud() {
                         {logos.map((logo, index) => (
                             <div
                                 key={index}
-                                className={`bg-canvas-bg-subtle/50 border-t border-b border-l ${index === 0 ? 'border-l' : ''} ${index === logos.length - 1 ? 'border-r' : ''} border-canvas-border/50 hover:bg-canvas-bg-subtle hover:border-canvas-border group relative flex h-48 items-center justify-center backdrop-blur-sm transition-all duration-500`}
+                                className={`bg-canvas-bg-subtle/50 border-canvas-border/50 hover:bg-canvas-bg-subtle hover:border-canvas-border group relative -mt-px -ml-px flex h-48 items-center justify-center border backdrop-blur-sm transition-all duration-500`}
                                 style={{
                                     animationDelay: `${index * 150}ms`
                                 }}>
                                 {/* Subtle inner glow effect */}
                                 <div className='from-canvas-bg/20 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
-
                                 {/* Content */}
                                 <div className='relative z-10 px-6'>{logo.content}</div>
-
-
-                                {/* Bottom highlight line */}
-                                {/* <div className='via-primary-solid absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transform bg-gradient-to-r from-transparent to-transparent transition-all duration-500 group-hover:w-3/4' /> */}
                             </div>
                         ))}
                     </div>
