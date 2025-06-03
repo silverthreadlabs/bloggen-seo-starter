@@ -7,7 +7,7 @@ import LogoCloud from './logo-cloud';
 export default function Performance() {
     return (
         <section className='px-4 sm:px-6 md:px-8 lg:px-0'>
-            <div className='mx-auto max-w-7xl py-10 xl:py-20'>
+            <div className='mx-auto max-w-7xl py-10 xl:py-16'>
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -53,12 +53,13 @@ export default function Faq() {
             } else {
                 newSet.add(id);
             }
+
             return newSet;
         });
     };
 
     return (
-        <section className='w-full px-4 py-16 sm:px-6 lg:px-8'>
+        <section className='py:10 w-full px-4 sm:px-6 lg:px-8 xl:py-16'>
             <div className='mx-auto max-w-4xl'>
                 {/* Header */}
                 <div className='mb-12 text-center'>
@@ -83,7 +84,7 @@ export default function Faq() {
                                     className='flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-300 hover:cursor-pointer'
                                     aria-expanded={isOpen}
                                     aria-controls={`faq-answer-${item.id}`}>
-                                    <span className='text-canvas-text-contrast pr-4 text-lg font-semibold'>
+                                    <span className='text-canvas-text-contrast pr-4 text-lg font-semibold select-none'>
                                         {item.question}
                                     </span>
                                     <div className='flex-shrink-0'>
@@ -112,8 +113,6 @@ export default function Faq() {
                         );
                     })}
                 </div>
-
-             
             </div>
         </section>
     );

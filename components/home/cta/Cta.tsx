@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button';
 
 export default function Cta() {
     return (
-        <section className='w-full px-4 py-16 sm:px-6 lg:px-8 max-w-7xl'>
+        <section className='w-full px-4 py-10 xl:py-16 sm:px-6 lg:px-8 max-w-7xl'>
             {/* CTA Section */}
-            <div className='mt-20'>
+            <div>
                 <div className='from-canvas-bg via-canvas-bg-hover to-canvas-bg-subtle relative overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-xl sm:p-12 lg:p-16'>
                     {/* Background Pattern */}
                     {/* <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjEiLz4KPC9nPgo8L2c+Cjwvc3ZnPg==')] opacity-20"></div> */}

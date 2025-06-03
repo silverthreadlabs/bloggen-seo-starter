@@ -21,7 +21,7 @@ return 1;
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--bg-base),var(--primary-bg))]" />
       </div> */}
 
-            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-8 xl:max-w-[1280px]'>
+            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-10 sm:py-16 xl:max-w-[1280px]'>
                 {/* Header */}
                 <div className='mx-auto mb-12 max-w-3xl text-center'>
                     <span className='text-primary-text border-canvas-line mb-4 max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>

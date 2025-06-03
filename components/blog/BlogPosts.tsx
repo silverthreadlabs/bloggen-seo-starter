@@ -30,7 +30,7 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
             </div>
 
             <div className='relative z-10'>
-                <div className='mx-auto py-20'>
+                <div className='mx-auto py-10 sm:py-16'>
                     {/* Section Header */}
                     <div className='mb-16'>
                         <span className='text-primary-text mb-4 block text-sm leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
