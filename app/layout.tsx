@@ -25,7 +25,6 @@ export const viewport: Viewport = {
     // userScalable: false,
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-    console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
 
     return (
         <html suppressHydrationWarning lang='en' className={`${manrope.variable}`} >

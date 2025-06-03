@@ -17,6 +17,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
+    console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
     const [mobileOpen, setMobileOpen] = useState(false);
     const toggleMobile = () => setMobileOpen((open) => !open);
 

@@ -53,6 +53,7 @@ export default function Faq() {
             } else {
                 newSet.add(id);
             }
+            
             return newSet;
         });
     };
