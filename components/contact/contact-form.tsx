@@ -130,7 +130,7 @@ export default function ContactForm() {
                 project: ''
             });
         } catch (error) {
-            console.error('EmailJS error:', error);
+            // console.error('EmailJS error:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);

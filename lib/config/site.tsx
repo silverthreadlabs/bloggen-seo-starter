@@ -29,7 +29,7 @@ export const siteConfig = {
     author: {
         name: 'Bloggen',
         url: 'https://www.bloggen.dev',
-        logo: 'https://www.bloggen.dev/favicon.ico',
+        logo: 'https://www.bloggen.dev/favicon/favicon.ico',
         twitterHandle: '@bloggen'
     },
     getImageConfig: (title: string) => ({

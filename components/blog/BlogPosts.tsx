@@ -17,8 +17,8 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
         if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
             return -1;
         }
-        
-return 1;
+
+        return 1;
     });
 
     const displayedBlogs = isHomePage ? sortedBlogs.slice(0, 3) : sortedBlogs;
@@ -30,32 +30,41 @@ return 1;
             </div>
 
             <div className='relative z-10'>
-                <div className='mx-auto py-20'>
+                <div className='mx-auto py-10 sm:py-16'>
                     {/* Section Header */}
                     <div className='mb-16'>
-                        <span className='text-primary-text mb-4 block text-base leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
+                        <span className='text-primary-text mb-4 block text-sm leading-relaxed font-normal tracking-wider uppercase md:text-lg'>
                             Browse Template Blog Posts
                         </span>
                         <div className='flex flex-row items-center gap-2'>
                             <h1 className='text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                                 <span className='text-canvas-text-contrast'>Latest</span>
-                                <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'> Articles</span>
+                                <span className='from-primary-solid via-primary-text to-primary-text-contrast bg-gradient-to-r bg-clip-text text-transparent'>
+                                    {' '}
+                                    Articles
+                                </span>
                             </h1>
                         </div>
                     </div>
 
                     {/* Blog Grid */}
                     <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-                        {displayedBlogs.map((post) => (
+                        {displayedBlogs.map((post, index) => (
                             <Link key={post.slug} href={`/blog/${post.slug}`} className='group block'>
                                 <article className='bg-canvas-bg border-canvas-active hover:border-canvas-line rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
                                     <div className='relative mb-6 aspect-video overflow-hidden rounded-sm'>
                                         <Image
                                             src={post.metadata.image || ''}
                                             alt={post.metadata.title}
+                                            fill
                                             className='h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
-                                            width={400}
-                                            height={225}
+                                            loading={index < 3 ? 'eager' : 'lazy'}
+                                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                            quality={index === 0 ? 85 : index < 3 ? 75 : 60}
+                                            placeholder='blur'
+                                            blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4='
+                                            priority={index < 3}
+                                            fetchPriority={index === 0 ? 'high' : index < 3 ? 'high' : 'low'}
                                         />
                                     </div>
 
@@ -68,9 +77,9 @@ return 1;
                                         </time>
                                     </div>
 
-                                    <h5 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl'>
+                                    <h2 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl'>
                                         {post.metadata.title}
-                                    </h5>
+                                    </h2>
 
                                     <div className='text-canvas-text group-hover:text-primary-text flex items-center text-sm transition-colors'>
                                         <span className='text-canvas-text border-canvas-line inline-flex max-w-fit rounded border border-none bg-transparent px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-base'>

@@ -1,4 +1,14 @@
+import { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
+
+export const metadata: Metadata = createPageMetadata({
+    path: 'terms',
+    description:
+        'Read our Terms of Service and how it relates to you.'
+});
+
 // Reusable section component
+
 const TermsSection = ({ number, title, children }: { number: number; title: string; children: React.ReactNode }) => (
     <div className='mb-8'>
         <h2 className=' text-canvas-text-contrast mb-4 text-3xl leading-snug font-semibold tracking-normal md:text-4xl'>

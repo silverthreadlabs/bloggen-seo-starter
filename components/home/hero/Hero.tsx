@@ -21,19 +21,19 @@ export default function Hero() {
     };
 
     return (
-        <div className='min-h-screen px-4 sm:px-6 md:px-8 lg:px-0'>
+        <div className='px-4 sm:px-6 md:px-8 lg:px-0'>
             <div className='fixed inset-0 z-[-1]'>
                 <div className='absolute inset-0' />
             </div>
 
             <div className='relative z-10'>
-                <div className='mx-auto flex min-h-screen max-w-7xl flex-col lg:flex-row lg:gap-16'>
+                <div className='mx-auto flex max-w-7xl flex-col lg:flex-row lg:gap-16'>
                     {/* Left Section */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2 }}
-                        className='flex flex-1 flex-col justify-center py-10 xl:py-20'>
+                        className='flex flex-1 flex-col justify-center py-10 xl:py-16'>
                         <div className='max-w-xl'>
                             <span className='text-primary-text border-canvas-line mb-4 block max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>
                                 Powered by Bloggen
@@ -82,8 +82,8 @@ export default function Hero() {
                                     </Link>
                                 </div>
 
-                                <div className='bg-canvas-bg-subtle border-canvas-line flex items-center justify-between rounded border px-4 py-3 font-mono text-sm'>
-                                    <span className='text-canvas-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg'>
+                                <div className='bg-canvas-base border-canvas-bg-active flex items-center justify-between rounded-lg border px-4 py-3 font-mono text-sm shadow-inner'>
+                                    <span className='text-canvas-text-contrast inline-flex max-w-fit px-1 text-sm leading-normal font-normal tracking-normal whitespace-nowrap md:text-lg '>
                                         $ npx create-bloggen-app
                                     </span>
                                     <Button

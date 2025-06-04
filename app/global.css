@@ -6,7 +6,7 @@
 
 @layer base {
     @theme inline {
-        --color-canvas-default: var(--canvas-default);
+   
         --color-canvas-base: var(--canvas-base);
         --color-canvas-bg-subtle: var(--canvas-bg-subtle);
         --color-canvas-bg: var(--canvas-bg);
@@ -19,7 +19,7 @@
         --color-canvas-solid-hover: var(--canvas-solid-hover);
         --color-canvas-text: var(--canvas-text);
         --color-canvas-text-contrast: var(--canvas-text-contrast);
-        --color-canvas-default: var(--canvas-default);
+        --color-canvas-on-canvas: var(--canvas-on-canvas);
 
         /* Primary colors */
         --color-primary-base: var(--primary-base);
@@ -268,7 +268,7 @@
         --primary-border-hover: #73a7ff;
         --primary-solid: #06f;
         --primary-solid-hover: #0059e8;
-        --primary-text: #005dec;
+        --primary-text: #0B4DB1;
         --primary-text-contrast: #0a2e6b;
         --primary-on-primary: #ffffff;
 
@@ -318,19 +318,19 @@
         --warning-on-warning: #000000;
 
         /* ALERT */
-        --alert-base: #fffcfc;
-        --alert-bg-subtle: #fff8f8;
-        --alert-bg: #ffefef;
-        --alert-bg-hover: #ffe5e5;
-        --alert-bg-active: #fdd8d8;
-        --alert-line: #f9c6c6;
-        --alert-border: #f3aeaf;
-        --alert-border-hover: #eb9091;
-        --alert-solid: #e5484d;
-        --alert-solid-hover: #dc3d43;
-        --alert-text: #cd2b31;
-        --alert-text-contrast: #381316;
-        --alert-on-alert: #ffffff;
+ --alert-base: #1f1417;
+  --alert-bg-subtle: #2a1519;
+  --alert-bg: #3b181f;
+  --alert-bg-hover: #471a23;
+  --alert-bg-active: #531b27;
+  --alert-line: #661d2c;
+  --alert-border: #8a1e34;
+  --alert-border-hover: #d01b3f;
+  --alert-solid: #e54666;
+  --alert-solid-hover: #f2657e;
+  --alert-text: #ff859d;
+  --alert-text-contrast: #fed2e1;
+  --alert-on-alert: #ffffff;
 
         /* INFO */
         --info-base: #fbfdff;
@@ -495,6 +495,8 @@
         padding: 0;
     }
 }
+
+
 
 /* Fix figure width issues on blog pages */
 #nd-page article figure {

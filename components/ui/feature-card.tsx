@@ -4,9 +4,10 @@ interface FeatureCardProps {
     descriptionStart: string;
     code?: string;
     descriptionEnd?: string;
+    link?: string;
 }
 
-function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd }: FeatureCardProps) {
+function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd, link }: FeatureCardProps) {
     return (
         <div className='group relative'>
             <div className='bg-canvas-bg border-canvas-active hover:border-canvas-line cursor-default rounded-xl border p-6 backdrop-blur-sm transition-all duration-300 ease-in-out'>
@@ -17,15 +18,20 @@ function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd }: Fe
                         </div>
                     </div>
                     <div>
-                        <h5 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
+                        <h3 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
                             {title}
-                        </h5>
+                        </h3>
                         <p className='text-canvas-text text-sm leading-relaxed font-normal tracking-normal transition-colors duration-300 ease-out md:text-lg'>
                             {descriptionStart}
                             {code && (
                                 <code className='bg-canvas-bg-active border-canvas-line text-canvas-text-contrast rounded-md border px-2 py-1 font-mono text-sm'>
                                     {code}
                                 </code>
+                            )}
+                            {link && (
+                                <a target="_blank" rel="noopener noreferrer" href={link} className="hover:underline group-hover:text-primary-solid">
+                                   {title}
+                                </a>
                             )}
                             {descriptionEnd}
                         </p>

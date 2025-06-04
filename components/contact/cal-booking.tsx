@@ -18,7 +18,7 @@ export default function CalBooking() {
                     }
                 });
             } catch (error) {
-                console.error('Error initializing Cal.com:', error);
+                // console.error('Error initializing Cal.com:', error);
             }
         })();
     }, []);

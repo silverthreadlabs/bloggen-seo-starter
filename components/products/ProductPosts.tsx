@@ -15,13 +15,13 @@ return 1;
     });
 
     return (
-        <div className='flex h-screen flex-col'>
+        <div className='flex flex-col '>
             {/* Background Elements */}
             {/* <div className="fixed inset-0 z-[-1]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--bg-base),var(--primary-bg))]" />
       </div> */}
 
-            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-8 xl:max-w-[1280px]'>
+            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-10 sm:py-16 xl:max-w-[1280px]'>
                 {/* Header */}
                 <div className='mx-auto mb-12 max-w-3xl text-center'>
                     <span className='text-primary-text border-canvas-line mb-4 max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>
@@ -50,9 +50,9 @@ return 1;
                                     </div>
 
                                     <div className='mt-4'>
-                                        <h4 className='text-canvas-text-contrast group-hover:text-primary-text mb-2 text-xl leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-2xl'>
+                                        <h3 className='text-canvas-text-contrast group-hover:text-primary-text mb-2 text-xl leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-2xl'>
                                             {post.metadata.title}
-                                        </h4>
+                                        </h3>
                                         <p className='text-canvas-text group-hover:text-canvas-text text-base leading-relaxed font-normal tracking-normal text-balance transition-colors duration-300 md:text-lg'>
                                             {post.metadata.summary}
                                         </p>

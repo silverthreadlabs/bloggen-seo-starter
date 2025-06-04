@@ -43,26 +43,28 @@ export default function Footer() {
                                 <FaRegEnvelope className='h-4 w-4' />
                                 <span>{EMAIL}</span>
                             </Link> */}
-                            <ThemeSwitcher />
+                                   <nav className='flex flex-wrap gap-4'>
+                                {NAV_ITEMS.map(({ href, label }) => (
+                                    <Link
+                                        key={href}
+                                        href={href}
+                                        className='text-canvas-text hover:text-canvas-text-contrast text-sm font-medium tracking wide transition-colors'>
+                                        {label}
+                                    </Link>
+                                ))}
+                            </nav>
                         </div>
 
                         {/* Nav + Social */}
                         <div
                             className={
-                                'flex flex-col items-start space-y-6 space-x-6 md:flex-row md:items-center md:space-y-0'
+                                'flex flex-col space-y-6 items-start sm:items-end '
                             }>
-                            <nav className='flex flex-wrap gap-4'>
-                                {NAV_ITEMS.map(({ href, label }) => (
-                                    <Link
-                                        key={href}
-                                        href={href}
-                                        className='text-canvas-text hover:text-primary-text text-sm transition-colors'>
-                                        {label}
-                                    </Link>
-                                ))}
-                            </nav>
+            
 
-                            <SocialLinks />
+                            <SocialLinks/>
+                            <ThemeSwitcher />
+
                         </div>
                     </div>
 
