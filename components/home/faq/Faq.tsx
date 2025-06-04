@@ -59,7 +59,7 @@ export default function Faq() {
     };
 
     return (
-        <section className='py:10 w-full px-4 sm:px-6 lg:px-8 xl:py-16'>
+        <section className='py:10 w-full px-4 sm:px-6 lg:px-8 xl:py-16' aria-label="Frequently Asked Questions">
             <div className='mx-auto max-w-4xl'>
                 {/* Header */}
                 <div className='mb-12 text-center'>
@@ -72,26 +72,28 @@ export default function Faq() {
                 </div>
 
                 {/* FAQ Items */}
-                <div className='space-y-4'>
+                <div className='space-y-4' role="list">
                     {faqData.map((item) => {
                         const isOpen = openItems.has(item.id);
 
                         return (
-                            <div key={item.id} className='duration-300'>
+                            <div key={item.id} className='duration-300' role="listitem">
                                 {/* Question Button */}
                                 <div
                                     onClick={() => toggleItem(item.id)}
                                     className='flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-300 hover:cursor-pointer'
                                     aria-expanded={isOpen}
-                                    aria-controls={`faq-answer-${item.id}`}>
+                                    aria-controls={`faq-answer-${item.id}`}
+                                    role="button"
+                                    aria-label={`${item.question} - Click to ${isOpen ? 'collapse' : 'expand'}`}>
                                     <span className='text-canvas-text-contrast pr-4 text-lg font-semibold select-none'>
                                         {item.question}
                                     </span>
                                     <div className='flex-shrink-0'>
                                         {isOpen ? (
-                                            <ChevronUp className='text-canvas-text h-5 w-5 transition-transform duration-300' />
+                                            <ChevronUp className='text-canvas-text h-5 w-5 transition-transform duration-300' aria-hidden="true" />
                                         ) : (
-                                            <ChevronDown className='text-canvas-text h-5 w-5 transition-transform duration-300' />
+                                            <ChevronDown className='text-canvas-text h-5 w-5 transition-transform duration-300' aria-hidden="true" />
                                         )}
                                     </div>
                                 </div>
@@ -101,7 +103,9 @@ export default function Faq() {
                                     id={`faq-answer-${item.id}`}
                                     className={`grid transition-all duration-300 ease-in-out ${
                                         isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                                    }`}>
+                                    }`}
+                                    role="region"
+                                    aria-labelledby={`faq-question-${item.id}`}>
                                     <div className='overflow-hidden'>
                                         <div className='px-6 pb-5'>
                                             <div className='bg-canvas-line mb-4 h-px'></div>
