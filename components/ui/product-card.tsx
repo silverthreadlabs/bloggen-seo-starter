@@ -89,16 +89,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
     return (
         <div className={`mx-auto w-full ${className}`}>
             {/* Theme Switcher - Circular Indicators */}
-            <div className='mb-12 flex justify-between items-center pt-8'>
-                <div className='flex gap-6 items-center'>
+            <div className='mb-12 flex items-center justify-between pt-8'>
+                <div className='flex items-center gap-6'>
                     {Object.entries(themes).map(([key, themeData]) => (
                         <div key={key} className='text-center'>
                             <button
                                 onClick={() => handleThemeChange(key as ThemeKey)}
                                 className={`relative h-12 w-12 transform rounded-full transition-all duration-500 hover:cursor-pointer ${themeData.indicator} ${
-                                    currentTheme === key
-                                        ? 'shadow-2xl ring-4 ring-white/40'
-                                        : 'hover:shadow-lg hover:ring-2 hover:ring-white/30'
+                                    currentTheme === key && 'ring-canvas-line ring-4'
                                 } `}>
                                 <div className='absolute inset-2 rounded-full bg-black/20 backdrop-blur-sm'></div>
                             </button>
@@ -111,11 +109,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
 
             {/* Product Card */}
             <div
-                className={`relative transform overflow-hidden rounded-3xl border transition-all duration-700 ${isAnimating ? 'scale-95 opacity-70 blur-sm' : 'blur-0 scale-100 opacity-100'} ${theme.cardBg} ${theme.border} mx-auto `}>
+                className={`relative transform overflow-hidden rounded-3xl border transition-all duration-700 ${isAnimating ? 'scale-95 opacity-70 blur-sm' : 'blur-0 scale-100 opacity-100'} ${theme.cardBg} ${theme.border} mx-auto`}>
                 {/* Horizontal Layout */}
                 <div className=''>
                     {/* Left Side - Product Image */}
-                   
 
                     {/* Right Side - Product Details */}
                     <div className='flex flex-col justify-between gap-4 p-6'>
@@ -129,7 +126,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                             </div>
 
                             <button
-                                className={`rounded-full hover:cursor-pointer p-2 ${theme.buttonSecondary} border transition-all duration-300`}>
+                                className={`rounded-full p-2 hover:cursor-pointer ${theme.buttonSecondary} border transition-all duration-300`}>
                                 <Heart className='h-3 w-3' fill='none' stroke='currentColor' />
                             </button>
                         </div>
@@ -147,7 +144,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                                     <button
                                         key={size}
                                         onClick={() => setSelectedSize(size)}
-                                        className={`rounded-xl hover:cursor-pointer px-2 py-2 text-sm font-semibold transition-all duration-300 ${selectedSize === size ? `${theme.sizeSelected}` : `${theme.sizeUnselected}`} `}>
+                                        className={`rounded-xl px-2 py-2 text-sm font-semibold transition-all duration-300 hover:cursor-pointer ${selectedSize === size ? `${theme.sizeSelected}` : `${theme.sizeUnselected}`} `}>
                                         {size}
                                     </button>
                                 ))}
@@ -157,12 +154,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                         {/* Action Buttons */}
                         <div className='flex gap-4'>
                             <button
-                                className={`flex-1 hover:cursor-pointer rounded-xl px-2 py-2 text-base font-bold ${theme.accent} transform text-white transition-all duration-300 hover:shadow-2xl`}>
+                                className={`flex-1 rounded-xl px-2 py-2 text-base font-bold hover:cursor-pointer ${theme.accent} transform text-white transition-all duration-300 hover:shadow-2xl`}>
                                 Buy Now
                             </button>
 
                             <button
-                                className={`flex-1 hover:cursor-pointer rounded-xl px-2 py-2 text-base font-bold ${theme.accentSecondary} transform border-2 transition-all duration-300 hover:shadow-xl`}>
+                                className={`flex-1 rounded-xl px-2 py-2 text-base font-bold hover:cursor-pointer ${theme.accentSecondary} transform border-2 transition-all duration-300 hover:shadow-xl`}>
                                 Add to Cart
                             </button>
                         </div>
