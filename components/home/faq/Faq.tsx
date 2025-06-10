@@ -1,11 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-
 import Link from 'next/link';
-
 import { Button } from '@/components/ui/button';
-
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface FAQItem {
@@ -17,28 +14,28 @@ interface FAQItem {
 const faqData: FAQItem[] = [
     {
         id: 1,
-        question: 'How do I get started?',
-        answer: "Getting started is simple! Sign up for an account, complete the onboarding process, and you'll have access to all our features. Our intuitive interface and helpful tutorials will guide you through every step."
+        question: 'What is bloggen-seo-starter?',
+        answer: "Bloggen SEO Starter is a production-ready Next.js 15 template designed for developers. It comes pre-configured with essential SEO features like JSON-LD, dynamic Open Graph images, sitemaps, robots.txt, and RSS feeds. Additionally, it supports MDX content, allowing seamless integration with bloggen.dev's AI-generated content."
     },
     {
         id: 2,
-        question: 'What pricing plans do you offer?',
-        answer: 'We offer flexible pricing plans to suit different needs - from individuals to enterprise teams. Our plans include a free tier for basic usage, professional plans for growing teams, and enterprise solutions with advanced features and dedicated support.'
+        question: 'How do I get started with bloggen-seo-starter?',
+        answer: 'To initiate your project, run the command: `npx create-bloggen-app`. This will scaffold a fully functional Next.js 15 application with all SEO configurations in place. Once set up, you can deploy your site to platforms like Vercel and begin adding content to the `/content` directory.'
     },
     {
         id: 3,
-        question: 'Is there customer support available?',
-        answer: 'Yes! We provide 24/7 customer support through multiple channels including live chat, email, and phone. Our expert support team is always ready to help you resolve any issues and make the most of our platform.'
+        question: 'What SEO features are included out of the box?',
+        answer: 'Bloggen SEO Starter offers a suite of built-in SEO features, including:\n\n• JSON-LD structured data for enhanced search engine understanding.\n• Dynamic Open Graph images for improved social media sharing.\n• Pre-configured sitemaps and robots.txt files.\n• RSS feed generation for content syndication.\n• Optimized metadata handling for better search engine indexing.'
     },
     {
         id: 4,
-        question: 'Can I integrate with other tools?',
-        answer: 'Absolutely! Our platform supports integrations with over 100+ popular tools and services. We provide APIs, webhooks, and pre-built connectors to ensure seamless workflow integration with your existing tech stack.'
+        question: 'How does bloggen.dev integrate with this template?',
+        answer: 'Bloggen.dev is an AI-powered content generation platform that produces MDX files for blogs and guides. These MDX files can be directly placed into the `/content` folder of the bloggen-seo-starter template. The template is designed to automatically render these files, eliminating the need for manual edits and streamlining the content publishing process.'
     },
     {
         id: 5,
-        question: 'Is my data secure?',
-        answer: 'Security is our top priority. We use enterprise-grade encryption, regular security audits, and comply with industry standards like SOC 2 and GDPR. Your data is protected with multiple layers of security and backup systems.'
+        question: 'Can I customize the design or theme of my site?',
+        answer: 'Absolutely! The bloggen-seo-starter template is fully compatible with DesignRift, an open-source theme builder. DesignRift allows you to modify your site\'s appearance using Radix color palettes. Once you\'ve customized your theme, you can integrate it into your bloggen-seo-starter project to achieve a personalized look and feel.'
     }
 ];
 
@@ -56,6 +53,18 @@ export default function Faq() {
 
             return newSet;
         });
+    };
+
+    const formatAnswer = (answer: string) => {
+        // Handle code snippets
+        const codeRegex = /`([^`]+)`/g;
+        let formattedAnswer = answer.replace(codeRegex, '<code class="bg-canvas-bg-active px-2 py-1 rounded text-sm font-mono">$1</code>');
+        
+        // Handle line breaks and bullet points
+        formattedAnswer = formattedAnswer.replace(/\n\n/g, '<br><br>');
+        formattedAnswer = formattedAnswer.replace(/\n•/g, '<br>•');
+        
+        return formattedAnswer;
     };
 
     return (
@@ -105,11 +114,29 @@ export default function Faq() {
                                         isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                                     }`}
                                     role="region"
-                                    aria-labelledby={`faq-question-${item.id}`}>
+                                    aria-labelledby={`${item.question}`}>
                                     <div className='overflow-hidden'>
                                         <div className='px-6 pb-5'>
                                             <div className='bg-canvas-line mb-4 h-px'></div>
-                                            <p className='text-canvas-text leading-relaxed'>{item.answer}</p>
+                                            <div 
+                                                className='text-canvas-text leading-relaxed'
+                                                dangerouslySetInnerHTML={{ __html: formatAnswer(item.answer) }}
+                                            />
+                                            {/* Special handling for the DesignRift link */}
+                                            {item.id === 5 && (
+                                                <p className='text-canvas-text leading-relaxed mt-2'>
+                                                    Visit{' '}
+                                                    <a 
+                                                        href="https://designrift.vercel.app/" 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer"
+                                                        className="text-primary-text-contrast duration-300 hover:underline"
+                                                    >
+                                                        Designrift
+                                                    </a>
+                                                    {' '}to get started with theme customization.
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
