@@ -24,7 +24,8 @@ const themes = {
         priceColor: 'text-canvas-text',
         discountBg: 'bg-gradient-to-r from-orange-500 to-amber-500',
         sizeSelected: 'bg-gradient-to-r from-orange-500 to-amber-500 text-white',
-        sizeUnselected: 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-600 border-orange-400/50'
+        sizeUnselected: 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-600 border-orange-400/50',
+        gradient: 'bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500'
     },
     supabase: {
         name: 'supabase',
@@ -41,7 +42,8 @@ const themes = {
         priceColor: 'text-canvas-text',
         discountBg: 'bg-gradient-to-r from-green-500 to-emerald-500',
         sizeSelected: 'bg-gradient-to-r from-green-500 to-emerald-500 text-white',
-        sizeUnselected: 'bg-green-500/20 hover:bg-green-500/30 text-green-600 border-green-400/50'
+        sizeUnselected: 'bg-green-500/20 hover:bg-green-500/30 text-green-600 border-green-400/50',
+        gradient: 'bg-gradient-to-br from-green-400 to-green-600'
     },
     nextjs: {
         name: 'nextjs',
@@ -58,7 +60,8 @@ const themes = {
         priceColor: 'text-white',
         discountBg: 'bg-gradient-to-r from-white to-gray-200 text-black',
         sizeSelected: 'bg-white text-black',
-        sizeUnselected: 'bg-white/10 hover:bg-white/20 text-white border-white/30'
+        sizeUnselected: 'bg-white/10 hover:bg-white/20 text-white border-white/30',
+        gradient: 'bg-gradient-to-br from-yellow-400 via-blue-500 to-purple-600'
     }
 };
 
@@ -95,10 +98,41 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                         <div key={key} className='text-center'>
                             <button
                                 onClick={() => handleThemeChange(key as ThemeKey)}
-                                className={`relative h-12 w-12 transform rounded-full transition-all duration-500 hover:cursor-pointer ${themeData.indicator} ${
-                                    currentTheme === key && 'ring-canvas-line ring-4'
-                                } `}>
-                                <div className='absolute inset-2 rounded-full bg-black/20 backdrop-blur-sm'></div>
+                                className={`relative h-12 w-12 transform overflow-hidden rounded-full transition-all duration-500 hover:scale-110 hover:cursor-pointer ${
+                                    currentTheme === key ? 'ring-4 ring-blue-400' : ''
+                                }`}>
+                                {/* Canvas color half (top-left) */}
+                                <div
+                                    className={`absolute inset-0 ${
+                                        key === 'claude'
+                                            ? 'bg-[#dad8d8]'
+                                            : key === 'supabase'
+                                              ? 'bg-[#dad8d8]'
+                                              : key === 'nextjs'
+                                                ? 'bg-white'
+                                                : ''
+                                    }`}
+                                    style={{
+                                        clipPath: 'polygon(0% 0%, 100% 0%, 0% 100%)'
+                                    }}></div>
+
+                                {/* Theme color half (bottom-right) */}
+                                <div
+                                    className={`absolute inset-0 ${
+                                        key === 'claude'
+                                            ? 'bg-amber-500'
+                                            : key === 'supabase'
+                                              ? 'bg-emerald-500'
+                                              : key === 'nextjs'
+                                                ? 'bg-black'
+                                                : ''
+                                    }`}
+                                    style={{
+                                        clipPath: 'polygon(100% 0%, 100% 100%, 0% 100%)'
+                                    }}></div>
+
+                                {/* Optional overlay for better visual effect */}
+                                {/* <div className='absolute inset-0.5 rounded-full backdrop-blur-xs '></div> */}
                             </button>
                             <p className='mt-3 text-sm font-medium text-gray-400 capitalize'>{themeData.name}</p>
                         </div>
@@ -109,7 +143,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
 
             {/* Product Card */}
             <div
-                className={`relative transform overflow-hidden rounded-3xl border transition-all duration-700 ${isAnimating ? 'scale-95 opacity-70 blur-sm' : 'blur-0 scale-100 opacity-100'} ${theme.cardBg} ${theme.border} mx-auto`}>
+                className={`relative transform overflow-hidden rounded-3xl border transition-all duration-700 ${isAnimating ? 'scale-95 opacity-70 ' : ' scale-100 opacity-100'} ${theme.cardBg} ${theme.border} mx-auto`}>
                 {/* Horizontal Layout */}
                 <div className=''>
                     {/* Left Side - Product Image */}
