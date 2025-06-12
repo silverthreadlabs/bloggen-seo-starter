@@ -112,7 +112,7 @@ export default function Header() {
                                         size='default'
                                         variant='solid'
                                         fullWidth
-                                        name='Contact'></Button>
+                                        name='Contact Us'>Contact</Button>
                                 </Link>
                                 <Link href='https://www.bloggen.dev/' target='_blank' className='flex-1'>
                                     <Button

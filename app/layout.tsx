@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import { RootProvider } from 'fumadocs-ui/provider';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header/Header';
+import Banner from '@/components/layout/banner';
 import { env } from '@/lib/utils/env';
 import './global.css';
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     storageKey='bloggen-seo-starter-theme'
                     disableTransitionOnChange>
                     <main className='from-canvas-bg to-canvas-bg-base flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
+                        <Banner />
                         <Header />
                         <RootProvider>{children}</RootProvider>
                         <Footer />
