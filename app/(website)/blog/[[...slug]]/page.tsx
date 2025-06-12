@@ -2,7 +2,7 @@
 
 import { notFound } from 'next/navigation';
 
-import { BlogPosts } from '@/components/blog/BlogPosts';
+import { BlogPosts } from '@/components/blog/blog-post';
 import BlogHeader from '@/components/blog/blog-header';
 import { siteConfig } from '@/lib/config/site';
 import { defaultMetadata } from '@/lib/seo/metadata/create-base-metadata';

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import FeaturesList from '@/components/about/FeatureList';
+import FeaturesList from '@/components/about/feature-list';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 
 export const metadata: Metadata = createPageMetadata({
@@ -65,9 +65,6 @@ export default function AboutPage() {
 
                 {/* Features */}
                 <section aria-labelledby='features-title' className='mb-16'>
-                    {/* <h3 id="features-title" className="sr-only">
-              Key Features
-            </h3> */}
                     <FeaturesList />
                 </section>
             </div>

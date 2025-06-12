@@ -1,7 +1,3 @@
-// lib/seo/BlogPostSchema.tsx
-
-
-// import { getURL } from "@/lib/utils/helpers";
 import { siteConfig } from '@/lib/config/site';
 
 import type { BlogPosting, WithContext } from 'schema-dts';

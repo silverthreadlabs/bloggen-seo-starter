@@ -14,9 +14,6 @@ export default function LogoCloud() {
             content: (
                 <div className='group flex flex-col items-center gap-4'>
                     <PageSpeedIcon width={225} />
-                    {/* <div className='text-canvas-text text-center text-sm font-medium tracking-wide hover:cursor-default'>
-                        PageSpeed Insights
-                    </div> */}
                 </div>
             )
         },
@@ -25,7 +22,6 @@ export default function LogoCloud() {
             content: (
                 <div className='group flex flex-col items-center gap-4'>
                     <LighthouseIcon width={200} />
-                    {/* <div className='text-canvas-text text-center text-sm font-medium tracking-wide hover:cursor-default'>Lighthouse</div> */}
                 </div>
             )
         },
@@ -34,7 +30,6 @@ export default function LogoCloud() {
             content: (
                 <div className='group flex flex-col items-center gap-4'>
                     <GtmetrixIcon width={144} />
-                    {/* <div className='text-canvas-text text-center text-sm font-medium tracking-wide hover:cursor-default'>GTmetrix</div> */}
                 </div>
             )
         },
@@ -43,7 +38,6 @@ export default function LogoCloud() {
             content: (
                 <div className='group flex flex-col items-center gap-4'>
                     <AhrfeIcon width={128} />
-                    {/* <div className='text-canvas-text text-center text-sm font-medium tracking-wide hover:cursor-default'>Ahrefs</div> */}
                 </div>
             )
         }
@@ -73,7 +67,7 @@ export default function LogoCloud() {
                         {logos.map((logo, index) => (
                             <div
                                 key={index}
-                                className={`border-canvas-border hover:bg-canvas-bg hover:border-canvas-border group relative -mt-px -ml-px flex h-48 items-center justify-center border backdrop-blur-sm transition-all ease-out duration-200`}
+                                className={`border-canvas-border hover:bg-canvas-bg hover:border-canvas-border group relative -mt-px -ml-px flex h-48 items-center justify-center border backdrop-blur-sm transition-all duration-200 ease-out`}
                                 style={{
                                     animationDelay: `${index * 150}ms`
                                 }}>

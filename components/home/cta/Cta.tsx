@@ -8,13 +8,10 @@ import { Button } from '@/components/ui/button';
 
 export default function Cta() {
     return (
-        <section className='w-full px-4 py-10 xl:py-16 sm:px-6 lg:px-8 max-w-7xl'>
+        <section className='w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 xl:py-16'>
             {/* CTA Section */}
             <div>
                 <div className='from-canvas-bg via-canvas-bg-hover to-canvas-bg-subtle relative overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-xl sm:p-12 lg:p-16'>
-                    {/* Background Pattern */}
-                    {/* <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjEiLz4KPC9nPgo8L2c+Cjwvc3ZnPg==')] opacity-20"></div> */}
-
                     {/* Floating Elements */}
                     <div className='bg-canvas-bg-hover absolute -top-4 -right-4 h-32 w-32 rounded-full blur-2xl'></div>
                     <div className='bg-canvas-bg-hover absolute -bottom-8 -left-8 h-40 w-40 rounded-full blur-3xl'></div>
@@ -28,10 +25,10 @@ export default function Cta() {
                         </div>
 
                         <h2 className='text-canvas-text-contrast mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl'>
-                        Ready to Get Started?
+                            Ready to Get Started?
                         </h2>
 
-                        <p className='text-canvas-text mb-8 text-lg sm:text-xl lg:text-2xl text-balance'>
+                        <p className='text-canvas-text mb-8 text-lg text-balance sm:text-xl lg:text-2xl'>
                             Join thousands of teams who have already revolutionized their productivity. Build smarter
                             with AI-powered content tools.
                         </p>

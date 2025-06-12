@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import Logo from '@/components/logo/Logo';
+import Logo from '@/components/logo/logo';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
 import SocialLinks from './social-links';
@@ -27,7 +27,6 @@ const title = 'Silverthread Labs';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-    // const isMobile = useMediaQuery('(max-width: 768px)');
 
     return (
         <footer className='bg-canvas-bg-subtle border-canvas-bg-hover w-full border-t shadow-inner'>
@@ -36,19 +35,12 @@ export default function Footer() {
                     <div className={'flex flex-col items-start justify-between space-y-8 md:flex-row md:space-y-0'}>
                         <div className='flex flex-col space-y-4'>
                             <Logo />
-                            {/* 
-                            <Link
-                                href={MAILTO}
-                                className='text-canvas-text hover:text-primary-text inline-flex items-center space-x-2 text-sm transition-colors'>
-                                <FaRegEnvelope className='h-4 w-4' />
-                                <span>{EMAIL}</span>
-                            </Link> */}
-                                   <nav className='flex flex-wrap gap-4'>
+                            <nav className='flex flex-wrap gap-4'>
                                 {NAV_ITEMS.map(({ href, label }) => (
                                     <Link
                                         key={href}
                                         href={href}
-                                        className='text-canvas-text hover:text-canvas-text-contrast text-sm font-medium tracking wide transition-colors'>
+                                        className='text-canvas-text hover:text-canvas-text-contrast tracking wide text-sm font-medium transition-colors'>
                                         {label}
                                     </Link>
                                 ))}
@@ -56,15 +48,9 @@ export default function Footer() {
                         </div>
 
                         {/* Nav + Social */}
-                        <div
-                            className={
-                                'flex flex-col space-y-6 items-start sm:items-end '
-                            }>
-            
-
-                            <SocialLinks/>
+                        <div className={'flex flex-col items-start space-y-6 sm:items-end'}>
+                            <SocialLinks />
                             <ThemeSwitcher />
-
                         </div>
                     </div>
 

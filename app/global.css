@@ -125,7 +125,6 @@
         --color-overlay-text-contrast: var(--overlay-text-contrast);
     }
 
-
     /* LIGHT THEME */
     :root {
         /* CANVAS */
@@ -141,7 +140,7 @@
         --canvas-solid-hover: #74849b;
         --canvas-text: #586578;
         --canvas-text-contrast: #18202b;
-        --canvas-on-canvas: #ffffff;
+        --canvas-on-canvas: #000000;
 
         /* PRIMARY */
         --primary-base: #fcfdff;
@@ -249,7 +248,7 @@
         --canvas-solid-hover: #677d9c;
         --canvas-text: #a4b5cd;
         --canvas-text-contrast: #eaeef5;
-        --canvas-on-canvas: #000;
+        --canvas-on-canvas: #ffffff;
 
         /* PRIMARY */
         --primary-base: #020616;
@@ -400,16 +399,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* .prose .anchor {
-  @apply absolute invisible no-underline;
-
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
-} */
-
 .anchor:hover {
     @apply visible;
 }
@@ -459,11 +448,6 @@ body {
     margin: 1px !important;
 }
 
-/* Track (background) */
-/* ::-webkit-scrollbar-track {
-  background-color: #07050e;
-} */
-
 /* Thumb (draggable scrolling handle) */
 ::-webkit-scrollbar-thumb {
     background-color: rgba(81, 83, 105, 0.5);
@@ -480,152 +464,3 @@ body {
 ::-webkit-scrollbar-button {
     display: none;
 }
-
-/* .prose {
-  max-width: none;
-}
-
-.prose p {
-  @apply text-gray-300;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  line-height: 1.75;
-}
-
-.prose h1 {
-  @apply text-white;
-  font-weight: 700;
-  font-size: 2.25rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.prose h2 {
-  @apply text-white;
-  font-weight: 700;
-  font-size: 1.875rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-.prose h3 {
-  @apply text-white;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-}
-
-.prose ul,
-.prose ol {
-  @apply text-gray-300;
-  margin: 1.25em 0;
-  padding-left: 1.625em;
-}
-
-.prose ul {
-  list-style-type: disc;
-}
-
-.prose ol {
-  list-style-type: decimal;
-}
-
-.prose li {
-  margin: 0.5em 0;
-  line-height: 1.75;
-}
-
-.prose code {
-  @apply text-blue-300 bg-gray-800;
-  font-weight: 600;
-  font-size: 0.875em;
-  padding: 0.25em 0.5em;
-  border-radius: 0.25em;
-}
-
-.prose pre {
-  @apply text-gray-300 bg-gray-800/50 border border-gray-700/50;
-  font-size: 0.875em;
-  line-height: 1.714;
-  padding: 1rem;
-  margin: 1.714em 0;
-  overflow-x: auto;
-  border-radius: 0.375rem;
-}
-
-.prose blockquote {
-  @apply text-gray-300 border-l-4 border-blue-500/50;
-  font-style: italic;
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-}
-
-.prose a {
-  @apply text-white hover:text-white;
-  text-decoration: underline;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-}
-
-.prose th {
-  @apply bg-gray-800/50 text-white border-b border-gray-700;
-  font-weight: 600;
-  text-align: left;
-  padding: 0.75rem;
-}
-
-.prose td {
-  @apply text-gray-300 border-b border-gray-800;
-  padding: 0.75rem;
-}
-
-.hljs {
-  @apply bg-gray-800/50 text-gray-300;
-  padding: 1em;
-  border-radius: 0.5em;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-name,
-.hljs-strong {
-  @apply text-blue-400;
-}
-
-.hljs-string {
-  @apply text-green-400;
-}
-
-.hljs-comment {
-  @apply text-gray-500;
-}
-
-.hljs-number,
-.hljs-literal {
-  @apply text-orange-400;
-}
-
-.hljs-tag,
-.hljs-template-variable,
-.hljs-variable,
-.hljs-deletion {
-  @apply text-red-400;
-}
-
-.hljs-regexp,
-.hljs-link {
-  @apply text-purple-400;
-} */

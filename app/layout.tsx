@@ -1,15 +1,19 @@
 import { Suspense } from 'react';
+
 import type { Viewport } from 'next';
-import Script from 'next/script';
 import { Manrope } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
+
 import { ThemeProvider } from 'next-themes';
-import { RootProvider } from 'fumadocs-ui/provider';
-import Footer from '@/components/layout/footer';
-import Header from '@/components/layout/header/Header';
-import Banner from '@/components/layout/banner';
+
+import Banner from '@/components/layout/banner/banner';
+import Footer from '@/components/layout/footer/footer';
+import Header from '@/components/layout/header/header';
 import { env } from '@/lib/utils/env';
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import './global.css';
+import { RootProvider } from 'fumadocs-ui/provider';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -22,24 +26,20 @@ const manrope = Manrope({
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1
-    // maximumScale: 1,
-    // userScalable: false,
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-
     return (
-        <html suppressHydrationWarning lang='en' className={`${manrope.variable}`} >
+        <html suppressHydrationWarning lang='en' className={`${manrope.variable}`}>
             <Suspense fallback={null}>
                 <GoogleAnalytics gaId={env?.GOOGLE_ANALYTICS_MEASUREMENT_ID || ''} />
             </Suspense>
-       {/* Ahrefs Analytics */}
-                <Script
-                    src="https://analytics.ahrefs.com/analytics.js"
-                    data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
-                    strategy="afterInteractive"
-                />
+            {/* Ahrefs Analytics */}
+            <Script
+                src='https://analytics.ahrefs.com/analytics.js'
+                data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
+                strategy='afterInteractive'
+            />
             <body className='antialiased lg:mx-auto' suppressHydrationWarning>
-                {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
                 <ThemeProvider
                     attribute='class'
                     defaultTheme='system'

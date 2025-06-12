@@ -17,17 +17,6 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
             {/* Header Section */}
             <div className='mb-20'>
                 <div className='mb-8 flex items-center space-x-3'>
-                    {/* <Link 
-            href="/blog" 
-            className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-canvas via-primary-bg-subtle to-primary-bg hover:via-primary-bg hover:to-primary-bg-hover border border-canvas-border hover:border-canvas-border-hover transition-all duration-300 group"
-          > 
-            <ArrowLeft className="w-4 h-4 text-primary-text group-hover:-translate-x-1 transition-transform" />
-            <span 
-              className="max-w-fit font-normal text-sm md:text-base leading-normal tracking-normal text-canvas-text bg-canvas px-1 inline-flex whitespace-nowrap rounded border border-canvas-line border-none bg-transparent text-primary-text font-medium tracking-wider uppercase text-sm group-hover:text-primary-text-contrast transition-colors"
-            >
-              Back to Blog
-            </span>
-          </Link> */}
                     <Link
                         href='/blog'
                         className='text-canvas-text hover:text-primary-text inline-flex items-center transition-colors'>
@@ -44,20 +33,20 @@ export default function BlogHeader({ title, publishedAt, image }: Props) {
             {/* Featured Image */}
             {image && (
                 <div className='border-canvas-border relative mb-10 aspect-[21/9] w-full overflow-hidden rounded-sm border shadow-2xl'>
-                    <Image 
-                        src={image} 
-                        alt={title} 
-                        fill 
+                    <Image
+                        src={image}
+                        alt={title}
+                        fill
                         className='object-cover'
-                        loading="eager"
+                        loading='eager'
                         priority
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px'
                         quality={90}
-                        placeholder="blur"
+                        placeholder='blur'
                         blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
                             '<svg width="1" height="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="#e2e8f0"/></svg>'
                         ).toString('base64')}`}
-                        fetchPriority="high"
+                        fetchPriority='high'
                     />
                 </div>
             )}

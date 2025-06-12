@@ -5,7 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import ProductCard from '@/components/ui/product-card';
+import PlayGroundCard from '@/components/home/designrift/playground-card';
 
 import { motion } from 'framer-motion';
 import { FaCheck } from 'react-icons/fa';
@@ -86,7 +86,7 @@ export default function Performance() {
                     {/* Graphics Side */}
                     <div className='flex items-center justify-center'>
                         {/* Interactive Card Side */}
-                        <ProductCard />
+                        <PlayGroundCard />
                     </div>
                 </div>
             </div>

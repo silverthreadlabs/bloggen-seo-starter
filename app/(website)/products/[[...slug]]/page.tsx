@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { ProductPosts } from '@/components/products/ProductPosts';
+import { ProductPosts } from '@/components/products/prodcut-posts';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config/site';
 import { defaultMetadata } from '@/lib/seo/metadata/create-base-metadata';

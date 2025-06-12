@@ -117,8 +117,8 @@ export default function Features() {
                                     onMouseEnter={() => handleFeatureHover(feature.id)}
                                     className={`group cursor-pointer rounded-lg border-l-4 p-6 transition-all duration-300 ease-out hover:shadow-md ${
                                         isActive
-                                        ? 'border-primary-solid bg-gradient-to-r from-primary-bg to-primary-bg-subtle text-primary-text-contrast'
-                                        : 'border-canvas-line bg-canvas-bg hover:border-primary-border hover:bg-primary-bg-subtle'
+                                            ? 'border-primary-solid from-primary-bg to-primary-bg-subtle text-primary-text-contrast bg-gradient-to-r'
+                                            : 'border-canvas-line bg-canvas-bg hover:border-primary-border hover:bg-primary-bg-subtle'
                                     }`}
                                     whileHover={{
                                         scale: 1.01,
@@ -126,7 +126,7 @@ export default function Features() {
                                     }}
                                     whileTap={{ scale: 0.98 }}>
                                     <motion.h3
-                                        className={`text-xl font-semibold tracking-wide  transition-colors duration-300 ${
+                                        className={`text-xl font-semibold tracking-wide transition-colors duration-300 ${
                                             isActive
                                                 ? 'text-primary-text-contrast'
                                                 : 'text-canvas-text-contrast group-hover:text-primary-text-contrast'
@@ -154,7 +154,7 @@ export default function Features() {
                                     animate='animate'
                                     exit='exit'
                                     transition={{ duration: 0.2, ease: 'easeIn' }}
-                                    className='cursor-default border-canvas-active hover:border-canvas-line bg-canvas-base rounded-2xl border p-10 max-h-80 shadow-lg '>
+                                    className='border-canvas-active hover:border-canvas-line bg-canvas-base max-h-80 cursor-default rounded-2xl border p-10 shadow-lg'>
                                     {/* Feature Badge */}
                                     <motion.div
                                         className='mb-6'
@@ -162,7 +162,7 @@ export default function Features() {
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.3 }}>
                                         <span className='bg-primary-bg text-primary-text-contrast inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium'>
-                                        {currentFeature.title}
+                                            {currentFeature.title}
                                         </span>
                                     </motion.div>
 
@@ -183,28 +183,6 @@ export default function Features() {
                                         transition={{ duration: 0.3 }}>
                                         {currentFeature.details}
                                     </motion.p>
-
-                                    {/* Visual Indicator */}
-                                    {/* <motion.div
-                                        className='flex items-center gap-3'
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ duration: 0.3 }}>
-                                        <motion.div
-                                            className='bg-primary-solid h-2 w-2 rounded-full'
-                                            animate={{
-                                                opacity: [0.6, 1, 0.6]
-                                            }}
-                                            transition={{
-                                                duration: 2.5,
-                                                repeat: Infinity,
-                                                ease: 'easeInOut'
-                                            }}
-                                        />
-                                        <span className='text-canvas-text text-sm font-medium tracking-wide uppercase'>
-                                            {currentFeature.title}
-                                        </span>
-                                    </motion.div> */}
                                 </motion.div>
                             </AnimatePresence>
                         </div>
