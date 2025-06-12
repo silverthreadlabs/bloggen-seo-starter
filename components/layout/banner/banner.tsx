@@ -24,7 +24,6 @@ export default function Banner() {
                 <span
                     className='bg-canvas-bg-subtle bg-opacity-40 absolute inset-x-0 bottom-0 z-10 block h-px w-full dark:hidden'
                     aria-hidden='true'></span>
-
                 <span
                     className='bg-canvas-bg-subtle absolute inset-x-0 bottom-0 z-10 block h-px w-full mix-blend-overlay dark:bg-canvas-on-canvas'
                     aria-hidden='true'></span>
