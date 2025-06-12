@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     data-key={process.env?.AHREFS_ANALYTICS_KEY || ''}
                     strategy="afterInteractive"
                 />
-            <body className='antialiased lg:mx-auto'>
+            <body className='antialiased lg:mx-auto' suppressHydrationWarning>
                 {/* <main className="flex-auto items-center bg-gradient-to-tr from-canvas-base from- via-canvas-hover via-min-w-0 flex flex-col md:px-0"> */}
                 <ThemeProvider
                     attribute='class'
