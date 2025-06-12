@@ -21,7 +21,7 @@ const featuresData: Feature[] = [
     },
     {
         id: 2,
-        title: 'Designrift',
+        title: 'Designrift Tshemeing',
         description: 'Powerful Theme Creation',
         details:
             'Create stunning themes for your web application leveraging Radix color palettes for cohesive styling. Build beautiful, consistent user interfaces with our comprehensive theming system.'
@@ -93,7 +93,7 @@ export default function Features() {
                     <h2 className='text-canvas-text-contrast mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl'>
                         Powerful Features
                     </h2>
-                    <p className='text-canvas-text mx-auto max-w-2xl text-lg'>
+                    <p className='text-canvas-text mx-auto max-w-2xl text-lg text-balance'>
                         Discover the tools and capabilities that make our platform the perfect solution for your needs.
                     </p>
                 </motion.div>
@@ -115,18 +115,18 @@ export default function Features() {
                                     key={feature.id}
                                     variants={itemVariants}
                                     onMouseEnter={() => handleFeatureHover(feature.id)}
-                                    className={`group cursor-pointer rounded-lg border-l-4 p-6 transition-all duration-300 ease-out ${
+                                    className={`group cursor-pointer rounded-lg border-l-4 p-6 transition-all duration-300 ease-out hover:shadow-md ${
                                         isActive
-                                            ? 'border-primary-solid bg-primary-bg text-primary-text-contrast'
-                                            : 'border-canvas-line bg-canvas-bg hover:border-primary-border hover:bg-primary-bg-subtle'
+                                        ? 'border-primary-solid bg-gradient-to-r from-primary-bg to-primary-bg-subtle text-primary-text-contrast'
+                                        : 'border-canvas-line bg-canvas-bg hover:border-primary-border hover:bg-primary-bg-subtle'
                                     }`}
                                     whileHover={{
-                                        scale: 1.02,
+                                        scale: 1.01,
                                         transition: { type: 'spring', stiffness: 400, damping: 25 }
                                     }}
                                     whileTap={{ scale: 0.98 }}>
                                     <motion.h3
-                                        className={`text-xl font-semibold tracking-wide uppercase transition-colors duration-300 ${
+                                        className={`text-xl font-semibold tracking-wide  transition-colors duration-300 ${
                                             isActive
                                                 ? 'text-primary-text-contrast'
                                                 : 'text-canvas-text-contrast group-hover:text-primary-text-contrast'
@@ -153,16 +153,16 @@ export default function Features() {
                                     initial='initial'
                                     animate='animate'
                                     exit='exit'
-                                    transition={{ duration: 0.4, ease: 'easeInOut' }}
-                                    className='border-canvas-active hover:border-canvas-line bg-canvas-bg rounded-2xl border p-8 shadow-lg transition-all duration-300 ease-out hover:shadow-lg'>
+                                    transition={{ duration: 0.2, ease: 'easeIn' }}
+                                    className='cursor-default border-canvas-active hover:border-canvas-line bg-canvas-base rounded-2xl border p-10 max-h-80 shadow-lg '>
                                     {/* Feature Badge */}
                                     <motion.div
                                         className='mb-6'
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.3 }}>
-                                        <span className='bg-primary-bg text-primary-text-contrast inline-flex items-center rounded-full px-4 py-2 text-sm font-medium'>
-                                            Feature Highlight
+                                        <span className='bg-primary-bg text-primary-text-contrast inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium'>
+                                        {currentFeature.title}
                                         </span>
                                     </motion.div>
 
@@ -185,7 +185,7 @@ export default function Features() {
                                     </motion.p>
 
                                     {/* Visual Indicator */}
-                                    <motion.div
+                                    {/* <motion.div
                                         className='flex items-center gap-3'
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -204,7 +204,7 @@ export default function Features() {
                                         <span className='text-canvas-text text-sm font-medium tracking-wide uppercase'>
                                             {currentFeature.title}
                                         </span>
-                                    </motion.div>
+                                    </motion.div> */}
                                 </motion.div>
                             </AnimatePresence>
                         </div>

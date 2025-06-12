@@ -4,13 +4,13 @@ import type React from 'react';
 import { useState } from 'react';
 
 import { Button } from './button';
-import { ThemeSwitcher } from './theme-switcher';
+import { ThemeToggle } from './theme-toggle';
 import { Heart } from 'lucide-react';
 
 // Enhanced theme definitions with actual color changes
 const themes = {
-    claude: {
-        name: 'claude',
+    amber: {
+        name: 'amber',
         cardBg: 'bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-yellow-500/10 backdrop-blur-xl',
         border: 'border-orange-300/30',
         text: 'text-canvas-text-contrast',
@@ -27,8 +27,8 @@ const themes = {
         sizeUnselected: 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-600 border-orange-400/50',
         gradient: 'bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500'
     },
-    supabase: {
-        name: 'supabase',
+    modern: {
+        name: 'modern',
         cardBg: 'bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-teal-500/10 backdrop-blur-xl',
         border: 'border-green-300/30',
         text: 'text-canvas-text-contrast',
@@ -45,8 +45,8 @@ const themes = {
         sizeUnselected: 'bg-green-500/20 hover:bg-green-500/30 text-green-600 border-green-400/50',
         gradient: 'bg-gradient-to-br from-green-400 to-green-600'
     },
-    nextjs: {
-        name: 'nextjs',
+    minimal: {
+        name: 'minimal',
         cardBg: 'bg-gradient-to-br from-gray-900/80 via-black/60 to-gray-800/80 backdrop-blur-xl',
         border: 'border-gray-300/20',
         text: 'text-white',
@@ -72,7 +72,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
-    const [currentTheme, setCurrentTheme] = useState<ThemeKey>('claude');
+    const [currentTheme, setCurrentTheme] = useState<ThemeKey>('amber');
     const [selectedSize, setSelectedSize] = useState<string>('256GB');
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
@@ -104,11 +104,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                                 {/* Canvas color half (top-left) */}
                                 <div
                                     className={`absolute inset-0 ${
-                                        key === 'claude'
+                                        key === 'amber'
                                             ? 'bg-[#dad8d8]'
-                                            : key === 'supabase'
+                                            : key === 'modern'
                                               ? 'bg-[#dad8d8]'
-                                              : key === 'nextjs'
+                                              : key === 'minimal'
                                                 ? 'bg-white'
                                                 : ''
                                     }`}
@@ -119,11 +119,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                                 {/* Theme color half (bottom-right) */}
                                 <div
                                     className={`absolute inset-0 ${
-                                        key === 'claude'
+                                        key === 'amber'
                                             ? 'bg-amber-500'
-                                            : key === 'supabase'
+                                            : key === 'modern'
                                               ? 'bg-emerald-500'
-                                              : key === 'nextjs'
+                                              : key === 'minimal'
                                                 ? 'bg-black'
                                                 : ''
                                     }`}
@@ -138,7 +138,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                         </div>
                     ))}
                 </div>
-                <ThemeSwitcher />
+                <ThemeToggle />
             </div>
 
             {/* Product Card */}

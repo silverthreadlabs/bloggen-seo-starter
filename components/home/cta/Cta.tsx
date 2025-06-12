@@ -22,18 +22,18 @@ export default function Cta() {
                     {/* Content */}
                     <div className='relative z-10 mx-auto max-w-4xl text-center'>
                         <div className='mb-6'>
-                            <span className='bg-canvas-bg text-canvas-text-contrast inline-flex items-center rounded-full px-4 py-2 text-sm font-medium backdrop-blur-sm'>
-                                ✨ Ready to get started?
+                            <span className='bg-canvas-bg-subtle text-canvas-text-contrast inline-flex items-center rounded-full px-4 py-2 text-sm font-medium backdrop-blur-sm'>
+                                ✨ Discover the power of Bloggen
                             </span>
                         </div>
 
                         <h2 className='text-canvas-text-contrast mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl'>
-                            Transform Your Workflow Today
+                        Ready to Get Started?
                         </h2>
 
-                        <p className='text-canvas-text-contrast mb-8 text-lg sm:text-xl lg:text-2xl'>
-                            Join thousands of teams who have already revolutionized their productivity. Start your
-                            journey with our powerful platform in just minutes.
+                        <p className='text-canvas-text mb-8 text-lg sm:text-xl lg:text-2xl text-balance'>
+                            Join thousands of teams who have already revolutionized their productivity. Build smarter
+                            with AI-powered content tools.
                         </p>
 
                         {/* CTA Section */}
@@ -44,7 +44,7 @@ export default function Cta() {
                                     variant='solid'
                                     size='lg'
                                     className='group relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25'>
-                                    <span className='relative z-10'>Start Free Trial</span>
+                                    <span className='relative z-10'>Create Your First Post</span>
                                     <div className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full'></div>
                                 </Button>
                             </Link>
