@@ -24,7 +24,6 @@ export default function Header() {
         <header
             className='bg-canvas-bg-subtle border-canvas-bg-hover sticky top-0 z-50 w-full border-b shadow-sm'
             role='banner'>
-            {/* px-4 sm:px-6 lg:px-8 */}
             <div className='mx-auto max-w-7xl px-4 xl:px-0'>
                 <div className='flex h-16 items-center justify-between'>
                     <Logo />
