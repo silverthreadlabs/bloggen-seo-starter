@@ -3,9 +3,7 @@ import { Suspense } from 'react';
 import type { Viewport } from 'next';
 import { Manrope } from 'next/font/google';
 import Script from 'next/script';
-
 import { ThemeProvider } from 'next-themes';
-
 import Banner from '@/components/layout/banner/banner';
 import Footer from '@/components/layout/footer/footer';
 import Header from '@/components/layout/header/header';
