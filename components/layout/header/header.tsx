@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import Logo from '@/components/logo/Logo';
+import Logo from '@/components/logo/logo';
 import { Button } from '@/components/ui/button';
 
-import { ArrowUpRight } from 'lucide-react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const NAV_ITEMS = [
@@ -17,6 +16,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
+    console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
     const [mobileOpen, setMobileOpen] = useState(false);
     const toggleMobile = () => setMobileOpen((open) => !open);
 
@@ -24,7 +24,6 @@ export default function Header() {
         <header
             className='bg-canvas-bg-subtle border-canvas-bg-hover sticky top-0 z-50 w-full border-b shadow-sm'
             role='banner'>
-            {/* px-4 sm:px-6 lg:px-8 */}
             <div className='mx-auto max-w-7xl px-4 xl:px-0'>
                 <div className='flex h-16 items-center justify-between'>
                     <Logo />
@@ -43,19 +42,13 @@ export default function Header() {
                             ))}
                         </ul>
                         <Link href='/contact' className='flex-1'>
-                            <Button color='primary' size='default' variant='solid' aria-label='Contact Us' name='Contact Us'>
-                                Contact
-                            </Button>
-                        </Link>
-                        <Link href='https://www.bloggen.dev/' target='_blank'>
                             <Button
                                 color='primary'
                                 size='default'
-                                variant='surface'
-                                aria-label='Create your first post'
-                                name='Create your first post'
-                                trailingIcon={<ArrowUpRight className='h-4 w-4' />}>
-                                Create your first post
+                                variant='solid'
+                                aria-label='Contact Us'
+                                name='Contact Us'>
+                                Contact
                             </Button>
                         </Link>
                     </nav>
@@ -91,7 +84,7 @@ export default function Header() {
                     aria-describedby='mobile-menu-description'
                     role='dialog'
                     aria-modal='true'
-                    className='bg-canvas-base/95 fixed inset-0 top-16 z-50 backdrop-blur-sm md:hidden'>
+                    className='bg-canvas-base/95 sticky inset-0 top-[100px] z-50 h-screen backdrop-blur-sm md:hidden'>
                     <ul className='border-canvas-border space-y-3 border-t p-4'>
                         {NAV_ITEMS.map(({ href, label }) => (
                             <li key={href}>
@@ -106,23 +99,8 @@ export default function Header() {
                         <li>
                             <div className='flex flex-col gap-3'>
                                 <Link href='/contact' onClick={toggleMobile} className='flex-1'>
-                                    <Button
-                                        color='primary'
-                                        size='default'
-                                        variant='solid'
-                                        fullWidth
-                                        name='Contact'></Button>
-                                </Link>
-                                <Link href='https://www.bloggen.dev/' target='_blank' className='flex-1'>
-                                    <Button
-                                        color='neutral'
-                                        size='default'
-                                        variant='outline'
-                                        trailingIcon={<ArrowUpRight className='h-4 w-4' />}
-                                        fullWidth
-                                        aria-label='Create your first post'
-                                        name='Create your first post'>
-                                        Create your first post
+                                    <Button color='primary' size='default' variant='solid' fullWidth name='Contact Us'>
+                                        Contact
                                     </Button>
                                 </Link>
                             </div>

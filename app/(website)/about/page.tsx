@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-import FeaturesList from '@/components/about/FeatureList';
+import FeaturesList from '@/components/about/feature-list';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 
 export const metadata: Metadata = createPageMetadata({
@@ -22,7 +22,7 @@ export default function AboutPage() {
                     })
                 }}
             />
-            <div className='mx-auto max-w-[90%] py-24 xl:max-w-[1280px]'>
+            <div className='mx-auto max-w-[90%] py-10 sm:py-16 xl:max-w-[1280px]'>
                 {/* Page Header */}
                 <header role='banner' className='mx-auto mb-16 max-w-3xl text-center'>
                     <div className='mb-6 flex flex-wrap items-center justify-center gap-2 px-4'>
@@ -65,9 +65,6 @@ export default function AboutPage() {
 
                 {/* Features */}
                 <section aria-labelledby='features-title' className='mb-16'>
-                    {/* <h3 id="features-title" className="sr-only">
-              Key Features
-            </h3> */}
                     <FeaturesList />
                 </section>
             </div>

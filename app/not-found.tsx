@@ -15,7 +15,7 @@ export default function NotFound() {
                                 Page Not Found
                             </span>
                         </div>
-                    </div>
+                </div>
 
                     {/* Description */}
                     <p className='text-lg text-slate-400'>

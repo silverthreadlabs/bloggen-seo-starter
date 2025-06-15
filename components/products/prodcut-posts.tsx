@@ -10,18 +10,13 @@ export function ProductPosts() {
         if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
             return -1;
         }
-        
-return 1;
+
+        return 1;
     });
 
     return (
-        <div className='flex flex-col '>
-            {/* Background Elements */}
-            {/* <div className="fixed inset-0 z-[-1]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,var(--bg-base),var(--primary-bg))]" />
-      </div> */}
-
-            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-8 xl:max-w-[1280px]'>
+        <div className='flex flex-col'>
+            <div className='relative z-10 mx-auto flex max-w-[90%] flex-1 flex-col justify-center py-10 sm:py-16 xl:max-w-[1280px]'>
                 {/* Header */}
                 <div className='mx-auto mb-12 max-w-3xl text-center'>
                     <span className='text-primary-text border-canvas-line mb-4 max-w-fit rounded border border-none bg-transparent px-1 font-mono text-sm leading-normal font-normal tracking-widest whitespace-nowrap uppercase md:text-base'>
@@ -30,7 +25,9 @@ return 1;
                     <div className='flex flex-row items-center justify-center gap-2'>
                         <h1 className='text-4xl leading-tight font-bold tracking-tight md:text-6xl'>
                             <span className='text-canvas-text-contrast'>What We </span>
-                            <span className='from-primary-solid via-primary-text to-primary-text-contrast border-none bg-transparent bg-gradient-to-r bg-clip-text text-transparent'>Build</span>
+                            <span className='from-primary-solid via-primary-text to-primary-text-contrast border-none bg-transparent bg-gradient-to-r bg-clip-text text-transparent'>
+                                Build
+                            </span>
                         </h1>
                     </div>
 

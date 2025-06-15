@@ -1,32 +1,3 @@
-// const description =
-//   "Launch your agency site with Bloggen SEO Starter featuring  Global Metadata Configuration, MDX products & blog pages, dynamic OG images, JSON-LD and more.";
-// const url = getURL();
-// Base metadata object with common properties
-// const meta = {
-//   url: getURL(),
-//   creator: "Bloggen",
-//   description: siteConfig.description,
-//   keywords: [
-//     siteConfig.title,
-//     "Bloggen",
-//     "SEO",
-//     "MDX",
-//     "Dynamic OG Images",
-//     "Open Graph Images",
-//     "JSON-LD",
-//     "Schema Markup",
-//     "High Performance",
-//     "Lighthouse Score",
-//     "Web Development",
-//   ],
-//   ogImageConfig: {
-//     url: `${getURL()}/og?title=${encodeURIComponent(siteConfig.title)}`,
-//     width: 1200,
-//     height: 630,
-//     alt: siteConfig.title,
-//   },
-// };
-// Create the common metadata structure that doesn't change between variations
 import { Metadata } from 'next';
 
 // import { getURL } from "@/lib/utils/helpers";

@@ -1,6 +1,5 @@
 
 
-// import { getURL } from "@/lib/utils/helpers";
 import { siteConfig } from '@/lib/config/site';
 
 import type { WebSite, WithContext } from 'schema-dts';
@@ -28,7 +27,6 @@ const homeSchema: WithContext<WebSite> = {
     },
     image: {
         '@type': 'ImageObject',
-        // url: `${baseURL}/assets/images/open-graph.png`,
         url: `${baseURL}/og?title=${encodeURIComponent(SITE_TITLE)}`,
         width: '1200',
         height: '630',

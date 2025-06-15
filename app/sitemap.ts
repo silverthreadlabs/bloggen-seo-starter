@@ -17,5 +17,10 @@ export default async function sitemap() {
         lastModified: new Date().toISOString().split('T')[0]
     }));
 
-    return [...routes, ...blogs, ...products];
+    const terms = {
+        url: `${siteConfig.baseUrl}/terms`,
+        lastModified: new Date().toISOString().split('T')[0]
+    };
+
+    return [...routes, ...blogs, ...products, terms];
 }

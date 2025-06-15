@@ -1,7 +1,3 @@
-// lib/seo/schema/auth.tsx
-
-
-// import { getURL } from "@/lib/utils/helpers";
 import { siteConfig } from '@/lib/config/site';
 
 import type { WebPage, WithContext } from 'schema-dts';

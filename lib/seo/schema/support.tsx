@@ -1,7 +1,3 @@
-// lib/seo/schema/support.tsx
-
-
-// import { getURL } from "@/lib/utils/helpers";
 import { siteConfig } from '@/lib/config/site';
 
 import type { ContactPoint, WebPage, WithContext } from 'schema-dts';

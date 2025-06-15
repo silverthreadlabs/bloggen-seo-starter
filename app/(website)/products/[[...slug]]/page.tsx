@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { ProductPosts } from '@/components/products/ProductPosts';
+import { ProductPosts } from '@/components/products/prodcut-posts';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config/site';
 import { defaultMetadata } from '@/lib/seo/metadata/create-base-metadata';
@@ -199,7 +199,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                     </div>
                 </div>
             </div>
-
             {/* Back Link */}
             <div className='mx-auto max-w-7xl py-12'>
                 <Link
