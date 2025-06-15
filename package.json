@@ -1,6 +1,6 @@
 {
   "name": "create-bloggen-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Create Search Engine Optimized websites with one command",
   "main": "index.js",
   "bin": {
