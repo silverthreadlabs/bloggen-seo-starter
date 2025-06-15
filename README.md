@@ -131,8 +131,17 @@ Automatic Light/Dark mode Theme with [`radix-colors`](https://www.radix-ui.com/c
   Mobile-first layouts that adapt seamlessly to tablet and desktop breakpoints.
 
 
-## Contributing Guidelines
+### Deployment
+Click the button below to deploy this example project with Vercel:
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsilverthreadlabs%2Fbloggen-seo-starter)
+
+Below are the steps to completing deployment:
+
+1. Create a Git Repository for your project.
+2. Provide the required environment variables.
+
+## Contributing Guidelines
 We welcome contributions to Bloggen SEO Starter! To contribute:
 
 1. Fork the repository.

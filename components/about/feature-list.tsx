@@ -1,7 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Search, Palette, Grid3X3, FileText, Code, BarChart3, ExternalLink, ChevronRight } from 'lucide-react';
+// import { Search, Palette, Grid3X3, FileText, Code, BarChart3, ExternalLink, ChevronRight } from 'lucide-react';
+import { LiaMarkdown } from "react-icons/lia";
+import { TbLetterD } from 'react-icons/tb'
+import { FaRegStar, FaRss, FaChartLine, FaSearch, FaExternalLinkAlt } from 'react-icons/fa';
 import Link from 'next/link';
 
 interface FeatureData {
@@ -17,14 +20,14 @@ interface FeatureData {
 
 const FEATURES: FeatureData[] = [
     {
-        icon: <Search className='h-6 w-6' />,
+        icon: <FaSearch className='h-6 w-6' />,
         title: 'SEO On by Default',
         descriptionStart: 'Built-in metadata, OG Images, sitemap & much more to ensure your site is optimized from day one.',
         color: 'from-blue-500 to-cyan-500',
         gradient: 'bg-gradient-to-br from-blue-50 to-cyan-50'
     },
     {
-        icon: <Palette className='h-6 w-6' />,
+        icon: <TbLetterD className='h-6 w-6' />,
         title: 'Designrift',
         descriptionStart: 'Create stunning themes for your web application with ',
         descriptionEnd: ' leveraging Radix color palettes for cohesive styling.',
@@ -33,7 +36,7 @@ const FEATURES: FeatureData[] = [
         gradient: 'bg-gradient-to-br from-purple-50 to-pink-50'
     },
     {
-        icon: <Grid3X3 className='h-6 w-6' />,
+        icon: <LiaMarkdown className='h-6 w-6' />,
         title: 'MDX-Powered Blog',
         descriptionStart: 'Simply drop your MDX blog files into ',
         code: '/content',
@@ -42,21 +45,21 @@ const FEATURES: FeatureData[] = [
         gradient: 'bg-gradient-to-br from-emerald-50 to-teal-50'
     },
     {
-        icon: <FileText className='h-6 w-6' />,
+        icon: <FaRegStar className='h-6 w-6' />,
         title: 'Rich Results Ready',
         descriptionStart: 'Auto-generated JSON-LD structured data powers rich snippets for improved Google visibility.',
         color: 'from-orange-500 to-red-500',
         gradient: 'bg-gradient-to-br from-orange-50 to-red-50'
     },
     {
-        icon: <Code className='h-6 w-6' />,
+        icon: <FaRss className='h-6 w-6' />,
         title: 'Instant RSS Feed',
         descriptionStart: 'Automatically generate an RSS feed to keep subscribers updated with every new post in real time.',
         color: 'from-indigo-500 to-blue-500',
         gradient: 'bg-gradient-to-br from-indigo-50 to-blue-50'
     },
     {
-        icon: <BarChart3 className='h-6 w-6' />,
+        icon: <FaChartLine className='h-6 w-6' />,
         title: 'SEO & Performance Analytics',
         descriptionStart: 'Built-in performance tracking with Google Analytics, Lighthouse metrics, and PageSpeed Insights.',
         color: 'from-green-500 to-emerald-500',
@@ -84,7 +87,7 @@ function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd, link
                     {/* Icon section */}
                     <div className="flex items-center justify-between mb-6">
                         <div className={`relative p-4 rounded-2xl bg-gradient-to-br ${color} shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-                            <div className="text-canvas-on-canvas">
+                            <div className="text-white">
                                 {icon}
                             </div>
                             {/* Icon glow */}
@@ -93,7 +96,7 @@ function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd, link
                         
                         {link && (
                             <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                                <ExternalLink className="h-5 w-5 text-canvas-text-contrast group-hover:text-canvas-text-contrast" />
+                                <FaExternalLinkAlt className="h-5 w-5 text-canvas-text-contrast group-hover:text-canvas-text-contrast" />
                             </div>
                         )}
                     </div>

@@ -80,7 +80,7 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
 
             <div className={`mx-auto w-full ${className}`}>
                 {/* Theme Switcher - Circular Indicators */}
-                <div className='mb-12 flex items-center justify-between pt-8'>
+                <div className='mb-12 product-card-themed flex items-center justify-between pt-8'>
                     <div className='flex items-center gap-6'>
                         <div className='text-center'>
                             <Button
