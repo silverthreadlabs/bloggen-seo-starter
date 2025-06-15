@@ -11,7 +11,10 @@
     "next",
     "next.js",
     "bloggen",
-    "seo"
+    "seo",
+    "starter",
+    "mdx-content",
+    "designrift"
   ],
   "repository": {
     "type": "git",
