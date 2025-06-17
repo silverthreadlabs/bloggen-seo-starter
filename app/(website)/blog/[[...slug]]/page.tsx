@@ -12,6 +12,7 @@ import { getMDXComponents } from '@/mdx-components';
 
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsBody, DocsPage } from 'fumadocs-ui/page';
+import BlogSchema from '@/lib/seo/schema/blog';
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
     const params = await props.params;
@@ -20,7 +21,8 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     if (!params.slug || params.slug.length === 0) {
         return (
             <main role='main' className='min-h-screen'>
-                <script
+                <BlogSchema/>
+                {/* <script
                     type='application/ld+json'
                     suppressHydrationWarning
                     dangerouslySetInnerHTML={{
@@ -34,7 +36,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
                             }
                         })
                     }}
-                />
+                /> */}
 
                 <BlogPosts />
             </main>
