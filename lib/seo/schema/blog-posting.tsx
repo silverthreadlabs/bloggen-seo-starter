@@ -102,9 +102,9 @@ const createBlogPostSchema = ({
     };
 };
 
-interface BlogPostSchemaComponentProps extends BlogPostSchemaProps {}
+// interface BlogPostSchemaComponentProps extends BlogPostSchemaProps {}
 
-const BlogPostSchema: React.FC<BlogPostSchemaComponentProps> = (props) => {
+const BlogPostSchema: React.FC<BlogPostSchemaProps> = (props) => {
     const schema = createBlogPostSchema(props);
     
     return (
