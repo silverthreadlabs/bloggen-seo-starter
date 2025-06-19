@@ -4,17 +4,17 @@ import Link from 'next/link';
 
 export default function NotFound() {
     return (
-        <section className='flex min-h-screen items-center justify-center bg-[#0A0A0F] px-4'>
-            <div className='w-full max-w-md text-center'>
+        <section className='flex w-full min-h-screen items-center justify-center px-4'>
+            <div className='text-center'>
                 <div className='space-y-6'>
                     {/* Error Code */}
                     <div className='relative'>
-                        <h1 className='text-[8rem] font-bold text-slate-800'>404</h1>
-                        <div className='absolute inset-0 flex items-center justify-center'>
+                        <h1 className='text-[8rem] font-bold text-canvas-text-contrast'>404</h1>
+                        {/* <div className='absolute inset-0 flex items-center justify-center'>
                             <span className='from-canvas-bg-subtle via-canvas-bg bg-gradient-to-tr bg-clip-text text-2xl font-semibold text-transparent'>
                                 Page Not Found
                             </span>
-                        </div>
+                        </div> */}
                 </div>
 
                     {/* Description */}

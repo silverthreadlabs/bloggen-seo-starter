@@ -14,7 +14,7 @@ export const docs = defineDocs({
 
 export const blog = defineCollections({
     type: 'doc',
-    dir: './content/blogs',
+    dir: './content/blog',
     schema: z.object({
         title: z.string(),
         description: z.string().optional(),

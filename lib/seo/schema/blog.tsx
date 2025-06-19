@@ -1,27 +1,23 @@
 import { siteConfig } from '@/lib/config/site';
 
-import type { Blog, WithContext } from 'schema-dts';
-
-const blogUrl = `${siteConfig.baseUrl}/blog`;
+import { Blog, WithContext } from 'schema-dts';
 
 const blogSchema: WithContext<Blog> = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Blog',
-    description: siteConfig.description,
-    url: blogUrl,
+    url: `${siteConfig.baseUrl}/blog`,
+    name: `Blog - ${siteConfig.title}`,
+    description:
+        'Learn how to build, customize, and grow your site with Bloggen SEO Starter and Bloggen AI. Setup guides, tips, and SEO content strategies—all in one place.',
     author: {
-        '@type': 'Organization',
+        '@type': 'Person',
         name: siteConfig.author.name,
-        url: siteConfig.author.url,
-        logo: {
-            '@type': 'ImageObject',
-            url: siteConfig.author.logo
-        }
+        url: siteConfig.author.url
     },
     publisher: {
         '@type': 'Organization',
-        name: siteConfig.author.name,
+        name: siteConfig.publisher,
+        url: siteConfig.author.url,
         logo: {
             '@type': 'ImageObject',
             url: siteConfig.author.logo
@@ -29,10 +25,10 @@ const blogSchema: WithContext<Blog> = {
     },
     image: {
         '@type': 'ImageObject',
-        url: `${siteConfig.baseUrl}/og?title=${encodeURIComponent(siteConfig.title)}`,
-        width: '1200',
-        height: '630',
-        description: `Blog | ${siteConfig.title}`
+        url: siteConfig.getImageConfig(`Blog | ${siteConfig.title}`).url,
+        width: siteConfig.getImageConfig(`Blog | ${siteConfig.title}`).width.toString(),
+        height: siteConfig.getImageConfig(`Blog | ${siteConfig.title}`).height.toString(),
+        description: siteConfig.getImageConfig(`Blog | ${siteConfig.title}`).description
     },
     keywords: siteConfig.keywords,
     sameAs: siteConfig.social.sameAs,
@@ -41,14 +37,14 @@ const blogSchema: WithContext<Blog> = {
         target: [
             {
                 '@type': 'EntryPoint',
-                urlTemplate: blogUrl
+                urlTemplate: `${siteConfig.baseUrl}/blog`
             }
         ]
     }
 };
 
-const BlogSchema: React.FC = () => {
-    return <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />;
-};
+const BlogSchema = () => (
+    <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+);
 
 export default BlogSchema;

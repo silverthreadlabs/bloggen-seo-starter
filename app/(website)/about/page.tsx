@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import FeaturesList from '@/components/about/feature-list';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
+import AboutSchema from '@/lib/seo/schema/about';
 
 export const metadata: Metadata = createPageMetadata({
     path: 'about',
@@ -13,15 +14,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function AboutPage() {
     return (
         <main role='main' className='min-h-screen'>
-            <script
-                type='application/ld+json'
-                suppressHydrationWarning
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        /* your existing structured data */
-                    })
-                }}
-            />
+            <AboutSchema />
             <div className='mx-auto max-w-[90%] py-10 sm:py-16 xl:max-w-[1280px]'>
                 {/* Page Header */}
                 <header role='banner' className='mx-auto mb-16 max-w-3xl text-center'>

@@ -1,52 +1,32 @@
-
-
 import { siteConfig } from '@/lib/config/site';
 
 import type { WebSite, WithContext } from 'schema-dts';
 
-const baseURL = siteConfig.baseUrl;
-const silverthreadLabsURL = 'https://www.silverthreadlabs.com';
-const SITE_TITLE = 'Bloggen SEO Starter';
-
 const homeSchema: WithContext<WebSite> = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Bloggen SEO Starter',
-    alternateName: ['bloggen seo Starter', 'Bloggen SEO Template', 'Bloggen Agency Starter', 'Bloggen Agency Template'],
-    description:
-        'Launch your agency site with Bloggen SEO Starter featuring  Global Metadata Configuration, MDX products & blog pages, dynamic OG images, JSON-LD and more.',
-    url: baseURL, // Dynamically uses your base URL
+    name: siteConfig.title,
+    alternateName: siteConfig.alternateNames,
+    description: siteConfig.description,
+    url: siteConfig.baseUrl,
     publisher: {
         '@type': 'Organization',
-        name: 'Silverthread Labs',
-        url: silverthreadLabsURL,
+        name: siteConfig.publisher,
+        url: siteConfig.author.url,
         logo: {
             '@type': 'ImageObject',
-            url: `${silverthreadLabsURL}/favicon/favicon.ico`
+            url: siteConfig.author.logo
         }
     },
     image: {
         '@type': 'ImageObject',
-        url: `${baseURL}/og?title=${encodeURIComponent(SITE_TITLE)}`,
-        width: '1200',
-        height: '630',
-        description: SITE_TITLE
+        url: siteConfig.getImageConfig(siteConfig.title).url,
+        width: siteConfig.getImageConfig(siteConfig.title).width.toString(),
+        height: siteConfig.getImageConfig(siteConfig.title).height.toString(),
+        description: siteConfig.getImageConfig(siteConfig.title).description
     },
-    sameAs: [
-        // "https://www.silverthreadlabs.com/"
-    ],
-    keywords: [
-        'Bloggen',
-        'SEO',
-        'MDX',
-        'Dynamic OG Images',
-        'Open Graph Images',
-        'JSON-LD',
-        'Schema Markup',
-        'High Performance',
-        'Lighthouse Score',
-        'Web Development'
-    ]
+    sameAs: siteConfig.social.sameAs,
+    keywords: siteConfig.keywords
 };
 
 const HomeSchema: React.FC = () => (

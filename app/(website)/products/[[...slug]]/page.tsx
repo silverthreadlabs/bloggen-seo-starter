@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config/site';
 import { defaultMetadata } from '@/lib/seo/metadata/create-base-metadata';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
+import ProductsSchema from '@/lib/seo/schema/products';
+import ProductPostSchema from '@/lib/seo/schema/products-posting';
 import { productSource, source } from '@/lib/source';
 import { getURL } from '@/lib/utils/url';
 import { getMDXComponents } from '@/mdx-components';
@@ -21,22 +23,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     if (!params.slug || params.slug.length === 0) {
         return (
             <main role='main' className='min-h-screen'>
-                <script
-                    type='application/ld+json'
-                    suppressHydrationWarning
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'ProductCollection',
-                            url: `${siteConfig.baseUrl}/products`,
-                            author: {
-                                '@type': 'Organization',
-                                name: 'Silverthread Labs'
-                            }
-                        })
-                    }}
-                />
-
+                <ProductsSchema />
                 <ProductPosts />
             </main>
         );
@@ -47,44 +34,22 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
     const MDXContent = page.data.body;
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: page.data.title,
-        description: page.data.summary,
-        image: page.data.image
-            ? `${getURL()}${page.data.image}`
-            : `${getURL()}/og?title=${encodeURIComponent(page.data.title)}`,
-        url: `${getURL()}/products/${page.slugs}`,
-        brand: {
-            '@type': 'Organization',
-            name: 'Silverthread Labs',
-            url: getURL(),
-            logo: {
-                '@type': 'ImageObject',
-                url: `${getURL()}/logo.png`
-            }
-        },
-        offers: {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            price: '0',
-            priceCurrency: 'USD'
-        },
-        datePublished: page.data.publishedAt,
-        dateModified: page.data.lastUpdated || page.data.publishedAt,
-        category: page.data.category,
-        version: page.data.version
-    };
-
     return (
         <main role='main' className='min-h-screen px-4 sm:px-6 md:px-8 lg:px-0'>
-            <script
-                type='application/ld+json'
-                suppressHydrationWarning
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(jsonLd)
-                }}
+            <ProductPostSchema
+                title={page.data.title}
+                description={page.data.description}
+                summary={page.data.summary}
+                publishedAt={page.data.publishedAt}
+                lastUpdated={page.data.lastUpdated}
+                image={page.data.image}
+                ogImage={page.data.ogImage}
+                slug={page.slugs}
+                author={page.data.author}
+                tags={page.data.tags}
+                category={page.data.category}
+                version={page.data.version}
+                link={page.data.link}
             />
 
             <div className='fixed inset-0 z-[-1]'>
