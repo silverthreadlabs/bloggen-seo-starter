@@ -2,7 +2,7 @@
 
 Bloggen SEO Starter is an AI-powered template designed to help you quickly set up a fully optimized blog or website. Created by SilverThread Labs, this template comes pre-configured with essential SEO features, allowing you to focus on generating high-quality content using Bloggen. With built-in MDX blogs, JSON-LD structured data, and dynamic Open Graph images, Bloggen SEO Starter is your go-to solution for a seamless blogging experience.
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-MIT-yellowgreen)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.1-blue) ![License](https://img.shields.io/badge/license-MIT-yellowgreen)
 
 ## Features
 
@@ -12,29 +12,41 @@ Bloggen SEO Starter is an AI-powered template designed to help you quickly set u
 - **Dynamic Open Graph Images**: Automatically generated OG images for enhanced social sharing.
 - **User-Friendly Setup**: Get your website up and running with minimal configuration.
 
-## Installation Instructions
+# Installation Instructions
 
-To get started with Bloggen SEO Starter, follow these steps:
+To get started with Bloggen SEO Starter, you have two options:
+
+## Option 1: Quick Start (Recommended)
+
+```bash
+npx create-bloggen-app
+```
+
+## Option 2: Manual Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/silverthreadlabs/bloggen-seo-starter.git
-   ```
+
+```bash
+git clone https://github.com/silverthreadlabs/bloggen-seo-starter.git
+```
 
 2. Navigate to the project directory:
-   ```bash
-   cd bloggen-seo-starter
-   ```
+
+```bash
+cd bloggen-seo-starter
+```
 
 3. Install the dependencies:
-   ```bash
-   npm install
-   ```
+
+```bash
+npm install
+```
 
 4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+
+```bash
+npm run dev
+```
 
 5. Open your browser and visit `http://localhost:3000` to see the application in action.
 
