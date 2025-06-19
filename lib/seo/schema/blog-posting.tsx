@@ -4,65 +4,114 @@ import type { BlogPosting, WithContext } from 'schema-dts';
 
 interface BlogPostSchemaProps {
     title: string;
-    description: string;
-    url: string;
-    image: string;
-    datePublished: string;
-    dateModified?: string;
-    authorName: string;
-    publisherName: string;
+    description?: string;
+    summary?: string;
+    publishedAt?: string;
+    modifiedAt?: string;
+    image?: string;
+    ogImage?: {
+        url: string;
+    };
+    slug: string[];
+    author?: string | {
+        name: string;
+        picture: string;
+    };
+    tags?: string[];
 }
 
-const BlogPostSchema: React.FC<BlogPostSchemaProps> = ({
+const createBlogPostSchema = ({
     title,
     description,
-    url,
+    summary,
+    publishedAt,
+    modifiedAt,
     image,
-    datePublished,
-    dateModified,
-    authorName,
-    publisherName
-}) => {
-    const baseURL = siteConfig.baseUrl;
-    const logoUrl = `${baseURL}/icon-512.png`;
+    ogImage,
+    slug,
+    author,
+    tags
+}: BlogPostSchemaProps): WithContext<BlogPosting> => {
+    const postUrl = `${siteConfig.baseUrl}/blog/${slug.join('/')}`;
+    
+    // Determine the best image to use
+    // const schemaImage = ogImage?.url || image;
+    // const imageUrl = image ? 
+    //     ? `${siteConfig.baseUrl}${image}` 
+    //     : siteConfig.getImageConfig(title).url;
 
-    const blogPostingSchema: WithContext<BlogPosting> = {
+
+        
+
+    // Handle author - can be string or object
+    const authorName = typeof author === 'string' ? author : author?.name || siteConfig.author.name;
+    const authorUrl = typeof author === 'object' && author.picture 
+        ? `${siteConfig.baseUrl}${author.picture}` 
+        : siteConfig.author.url;
+
+    // Use summary as description fallback, then site description
+    const schemaDescription = description || summary || siteConfig.description;
+
+    // Combine tags with site keywords
+    const schemaKeywords = tags ? [...tags, ...siteConfig.keywords] : siteConfig.keywords;
+
+    return {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: title,
-        description,
-        url,
-        image: {
-            '@type': 'ImageObject',
-            url: image,
-            width: '1200',
-            height: '630'
-        },
-        datePublished,
-        ...(dateModified && { dateModified }),
+        description: schemaDescription,
+        url: postUrl,
+        datePublished: publishedAt,
+        dateModified: modifiedAt || publishedAt,
         author: {
-            '@type': 'Person', // Change to "Organization" if needed
-            name: authorName
+            '@type': 'Person',
+            name: authorName,
+            url: siteConfig.author.url
         },
         publisher: {
             '@type': 'Organization',
-            name: publisherName,
+            name: siteConfig.publisher,
+            url: siteConfig.author.url,
             logo: {
                 '@type': 'ImageObject',
-                url: logoUrl
+                url: siteConfig.author.logo
             }
+        },
+        image: {
+            '@type': 'ImageObject',
+            url: `${siteConfig.baseUrl}${image}`,
+            width: siteConfig.getImageConfig(title).width.toString(),
+            height: siteConfig.getImageConfig(title).height.toString(),
+            description: title
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': baseURL
+            '@id': postUrl
+        },
+        isPartOf: {
+            '@type': 'Blog',
+            '@id': `${siteConfig.baseUrl}/blog`,
+            name: `Blog - ${siteConfig.title}`
+        },
+        keywords: schemaKeywords,
+        inLanguage: 'en-US',
+        potentialAction: {
+            '@type': 'ReadAction',
+            target: [postUrl]
         }
     };
+};
 
+interface BlogPostSchemaComponentProps extends BlogPostSchemaProps {}
+
+const BlogPostSchema: React.FC<BlogPostSchemaComponentProps> = (props) => {
+    const schema = createBlogPostSchema(props);
+    
     return (
-        <script
-            type='application/ld+json'
-            // Convert the JSON‑LD object to a string for injection
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+        <script 
+            type='application/ld+json' 
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} 
         />
     );
 };
