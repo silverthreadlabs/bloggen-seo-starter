@@ -14,17 +14,13 @@ const ThemeToggle = () => {
         setMounted(true);
     }, []);
 
-    // Handle system theme detection and set initial theme
+    // Handle system theme detection - but don't override system choice
     useEffect(() => {
         if (!mounted) return;
 
-        // If no theme is set or system theme, determine the actual theme
-        if (!theme || theme === 'system') {
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            const systemPrefersDark = mediaQuery.matches;
-            
-            // Set theme based on system preference
-            setTheme(systemPrefersDark ? 'dark' : 'light');
+        // Only set a theme if none is set, but don't override 'system'
+        if (!theme) {
+            setTheme('system');
         }
     }, [theme, setTheme, mounted]);
 
@@ -40,20 +36,29 @@ const ThemeToggle = () => {
     const isDark = theme === 'dark' || (theme === 'system' && resolvedTheme === 'dark');
 
     const toggleTheme = () => {
-        setTheme(isDark ? 'light' : 'dark');
+        // Cycle through: light -> dark -> system -> light
+        if (theme === 'light') {
+            setTheme('dark');
+        } else if (theme === 'dark') {
+            setTheme('system');
+        } else {
+            setTheme('light');
+        }
     };
 
     return (
         <button
             onClick={toggleTheme}
             className="cursor-pointer relative inline-flex h-8 w-14 items-center rounded-full  overflow-hidden"
-            aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
-            title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+            aria-label={`Switch theme (current: ${theme})`}
+            title={`Switch theme (current: ${theme})`}
         >
             {/* Animated background */}
             <motion.div
                 className={`absolute inset-0 rounded-full ${
-                    isDark ? 'bg-primary-solid' : 'bg-canvas-line'
+                    theme === 'dark' ? 'bg-primary-solid' : 
+                    theme === 'system' ? 'bg-gradient-to-r from-canvas-line to-primary-solid' :
+                    'bg-canvas-line'
                 }`}
                 transition={{
                     type: "spring",
@@ -64,7 +69,9 @@ const ThemeToggle = () => {
             
             {/* Single background icon */}
             <motion.div
-                className={`absolute ${isDark ? 'left-2' : 'right-2'}`}
+                className={`absolute ${
+                    theme === 'light' ? 'right-2' : theme === 'dark' ? 'left-2' : 'left-1/2 transform -translate-x-1/2'
+                }`}
                 animate={{
                     opacity: 1,
                     scale: 1
@@ -75,10 +82,12 @@ const ThemeToggle = () => {
                     damping: 25
                 }}
             >
-                {isDark ? (
+                {theme === 'light' ? (
+                    <FaMoon size={14} className="text-canvas-text" />
+                ) : theme === 'dark' ? (
                     <FaSun size={14} className="text-white" />
                 ) : (
-                    <FaMoon size={14} className="text-canvas-text" />
+                    <div className="w-3 h-3 rounded-full border-2 border-white bg-transparent" />
                 )}
             </motion.div>
             
@@ -86,7 +95,7 @@ const ThemeToggle = () => {
             <motion.div
                 className=" relative flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-lg z-10"
                 animate={{
-                    x: isDark ? 28 : 4
+                    x: theme === 'light' ? 4 : theme === 'dark' ? 28 : 16
                 }}
                 transition={{
                     type: "spring",

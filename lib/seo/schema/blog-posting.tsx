@@ -45,9 +45,9 @@ const createBlogPostSchema = ({
 
     // Handle author - can be string or object
     const authorName = typeof author === 'string' ? author : author?.name || siteConfig.author.name;
-    const authorUrl = typeof author === 'object' && author.picture 
-        ? `${siteConfig.baseUrl}${author.picture}` 
-        : siteConfig.author.url;
+    // const authorUrl = typeof author === 'object' && author.picture 
+    //     ? `${siteConfig.baseUrl}${author.picture}` 
+    //     : siteConfig.author.url;
 
     // Use summary as description fallback, then site description
     const schemaDescription = description || summary || siteConfig.description;

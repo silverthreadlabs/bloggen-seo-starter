@@ -18,7 +18,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
     // // If this is the root /blog path (empty slug)
     if (!params.slug || params.slug.length === 0) {
-
         return (
             <main role='main' className='min-h-screen'>
                 <BlogSchema />
@@ -39,7 +38,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 
     return (
         <main role='main' className='relative min-h-screen'>
-       <BlogPostSchema
+            <BlogPostSchema
                 title={page.data.title}
                 description={page.data.description}
                 summary={page.data.summary}
@@ -74,7 +73,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 }
 
 export async function generateStaticParams() {
-    
     return blogSource.generateParams();
 }
 
@@ -84,7 +82,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
     const currentPath = 'blog';
     // If this is the root path
     if (!resolvedParams.slug || resolvedParams.slug.length === 0) {
-
         return createPageMetadata({
             path: currentPath,
             description:
