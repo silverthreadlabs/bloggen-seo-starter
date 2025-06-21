@@ -41,13 +41,13 @@ This template is tailored as an agency example, but easily extended for personal
 
 To get started with Bloggen SEO Starter, you have two options:
 
-## Option 1: Quick Start (Recommended)
+### Option 1: Through npmjs (Recommended)
 
 ```bash
 npx create-bloggen-app
 ```
 
-## Option 2: Manual Installation
+### Option 2: Manually via GitHub
 
 1. Clone the repository:
 
