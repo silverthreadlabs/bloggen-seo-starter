@@ -1,28 +1,53 @@
-# Bloggen SEO Starter
+<div align="center">
+  <a href="https://www.bloggen.dev">
 
-Bloggen SEO Starter is an AI-powered template designed to help you quickly set up a fully optimized blog or website. Created by SilverThread Labs, this template comes pre-configured with essential SEO features, allowing you to focus on generating high-quality content using Bloggen. With built-in MDX blogs, JSON-LD structured data, and dynamic Open Graph images, Bloggen SEO Starter is your go-to solution for a seamless blogging experience.
+  <h1>Bloggen</h1>
+  </a>
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.1-blue) ![License](https://img.shields.io/badge/license-MIT-yellowgreen)
 
-## Features
+<a href="https://www.silverthreadlabs.com">
+  <img alt="Made by Silverthread Labs" src="https://img.shields.io/badge/MADE%20BY%20SILVERTHREAD%20LABS-000000.svg?style=for-the-badge&labelColor=000000">
+</a>
 
-- **AI Content Generation**: Use Bloggen to create high-ranking content effortlessly.
-- **Pre-configured MDX Blogs**: Start blogging immediately with ready-to-use MDX blog templates.
-- **SEO Optimization**: All pages come with pre-set metadata and JSON-LD structured data for better search engine visibility.
-- **Dynamic Open Graph Images**: Automatically generated OG images for enhanced social sharing.
-- **User-Friendly Setup**: Get your website up and running with minimal configuration.
+<a href="https://www.npmjs.com/package/create-bloggen-app">
+  <img alt="NPM version" src="https://img.shields.io/badge/NPM-v1.0.2-blue.svg?style=for-the-badge&labelColor=000000">
+</a>
 
-# Installation Instructions
+<a href="">
+  <img alt="License" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
+</a>
+
+<a href="https://www.reddit.com/r/DukeOfAllTrades/">
+  <img alt="Join the community on Reddit" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=reddit&labelColor=000&logoColor=fff">
+</a>
+
+
+</div>
+
+**Bloggen SEO Starter** is a fast, minimal Next.js template for building SEO-optimized, content-rich websites—not just blogs. It’s the first official starter in the Bloggen.dev ecosystem, showcasing how to use general-purpose MDX architecture to power full websites, dynamic pages, and web apps with structured content.
+
+Built with MDX powered by [Fumadocs](https://github.com/xetera/fumadocs), it lets you create flexible routes like `/blog`, `/docs`, `/services`, or `/product/x`—all content-driven, fully typed, and SEO-ready out of the box.
+
+**Designrift**, our theming engine, gives you powerful visual control with:
+
+* Radix-based color palettes
+* WCAG-compliant contrast
+* Built-in dark mode
+* Single-step theme setup and override
+
+This template is tailored as an agency example, but easily extended for personal sites, SaaS landing pages, or documentation-heavy apps. Think of it as your baseline for building fast, indexable, and accessible websites using the full potential of the Bloggen.dev platform.
+
+## Getting Started
 
 To get started with Bloggen SEO Starter, you have two options:
 
-## Option 1: Quick Start (Recommended)
+### Option 1: Through npmjs (Recommended)
 
 ```bash
 npx create-bloggen-app
 ```
 
-## Option 2: Manual Installation
+### Option 2: Manually via GitHub
 
 1. Clone the repository:
 
