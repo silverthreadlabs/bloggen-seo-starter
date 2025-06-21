@@ -11,9 +11,9 @@
 
 **Bloggen SEO Starter** is a fast, minimal Next.js template for building SEO-optimized, content-rich websites—not just blogs. It’s the first official starter in the Bloggen.dev ecosystem, showcasing how to use general-purpose MDX architecture to power full websites, dynamic pages, and web apps with structured content.
 
-Built with MDX powered by [Fumadocs](https://github.com/xetera/fumadocs), it lets you create flexible routes like `/blog`, `/docs`, `/services`, or `/product/x`—all content-driven, fully typed, and SEO-ready out of the box.
+Built with MDX powered by **Fumadocs**, it lets you create flexible routes like `/blog`, `/docs`, `/services`, or `/product/x`—all content-driven, fully typed, and SEO-ready out of the box.
 
-**Designrift**, our theming engine, gives you powerful visual control with:
+**[Designrift](https://designrift.vercel.app/)**, our theming engine, gives you powerful visual control with:
 
 * Radix-based color palettes
 * WCAG-compliant contrast
