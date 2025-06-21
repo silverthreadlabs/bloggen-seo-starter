@@ -18,7 +18,7 @@
 </a>
 
 <a href="https://www.reddit.com/r/DukeOfAllTrades/">
-  <img alt="Join the community on Reddit" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=reddit&labelColor=fff">
+  <img alt="Join the community on Reddit" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=reddit&labelColor=000&badgeColor=fff">
 </a>
 
 
