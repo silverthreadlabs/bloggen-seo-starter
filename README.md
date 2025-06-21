@@ -13,7 +13,7 @@
 </a>
 
 <a href="https://www.npmjs.com/package/create-bloggen-app">
-  <img alt="NPM version" src="https://img.shields.io/npm/v/bloggen-seo-starter.svg?style=for-the-badge&logo=npm&labelColor=000000">
+  <img alt="NPM version" src="https://img.shields.io/badge/NPM-v1.0.2-blue.svg?style=for-the-badge&labelColor=000000">
 </a>
 
 <a href="">
