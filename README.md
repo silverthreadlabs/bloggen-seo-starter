@@ -16,8 +16,8 @@
   <img alt="NPM version" src="https://img.shields.io/npm/v/bloggen-seo-starter.svg?style=for-the-badge&logo=npm&labelColor=000000">
 </a>
 
-<a href="https://github.com/silverthreadlabs/bloggen-seo-starter/blob/main/LICENSE">
-  <img alt="License" src="https://img.shields.io/npm/l/bloggen-seo-starter.svg?style=for-the-badge&labelColor=000000">
+<a href="">
+  <img alt="License" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
 </a>
 
 <a href="https://www.reddit.com/r/DukeOfAllTrades/">
@@ -39,8 +39,6 @@ Built with MDX powered by [Fumadocs](https://github.com/xetera/fumadocs), it let
 * Single-step theme setup and override
 
 This template is tailored as an agency example, but easily extended for personal sites, SaaS landing pages, or documentation-heavy apps. Think of it as your baseline for building fast, indexable, and accessible websites using the full potential of the Bloggen.dev platform.
-
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.1-blue) ![License](https://img.shields.io/badge/license-MIT-yellowgreen)
 
 ## Getting Started
 
