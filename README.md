@@ -1,9 +1,6 @@
 <div align="center">
   <a href="https://www.bloggen.dev">
-<!--     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png">
-      <img alt="Next.js logo" src="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png" height="128">
-    </picture> -->
+
   <h1>Bloggen</h1>
   </a>
 
@@ -21,7 +18,7 @@
 </a>
 
 <a href="https://www.reddit.com/r/DukeOfAllTrades/">
-  <img alt="Join the community on Reddit" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=reddit&labelColor=000">
+  <img alt="Join the community on Reddit" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=reddit&labelColor=fff">
 </a>
 
 
