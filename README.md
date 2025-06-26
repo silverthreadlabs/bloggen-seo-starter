@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://www.bloggen.dev"><h1>Bloggen</h1></a>
+<a href="https://www.bloggen.dev"><h1>Bloggen - SEO Starter</h1></a>
   
 <a href="https://www.silverthreadlabs.com"><img alt="Made by Silverthread Labs" src="https://img.shields.io/badge/MADE%20BY%20SILVERTHREAD%20LABS-000000.svg?style=for-the-badge&labelColor=000000"></a>
 <a href="https://www.npmjs.com/package/create-bloggen-app"><img alt="NPM version" src="https://img.shields.io/badge/NPM-v1.0.4-blue.svg?style=for-the-badge&labelColor=000000"></a>
