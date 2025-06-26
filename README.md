@@ -194,9 +194,6 @@ Your AI-generated content will appear here with proper markdown formatting, incl
 - Code blocks
 - And much more structured content
 ```
-### Step 2: Add Generated Content to Your Bloggen SEO Starter
-
-
 
 ## Features
 
