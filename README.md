@@ -49,36 +49,154 @@ cd bloggen-seo-starter
 3. Install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 4. Start the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 5. Open your browser and visit `http://localhost:3000` to see the application in action.
 
-## Usage Examples
+## Global SEO Configuration
 
-Once you have the application running, you can create and manage your blog posts easily. Here’s how to create a new blog post:
+The bloggen-seo-starter includes a powerful global SEO system that automatically handles metadata, Open Graph images, JSON-LD schemas, and more across your entire website.
 
-1. Navigate to the "Create Post" section.
-2. Fill in the title, content, and tags for your post.
-3. Click "Publish" to make your post live.
+### Quick Setup - Site Configuration
 
-### Example of Creating a Blog Post
+Simply update this file to include your information and it'll be automatically used in the global SEO of your website:
+
+**`lib/config/site.tsx`**
+```typescript
+import { getURL } from '@/lib/utils/url';
+
+export const siteConfig = {
+    title: 'Your Site Name',
+    description: 'Your site description for SEO',
+    baseUrl: getURL(),
+    creator: 'Your Name/Company',
+    publisher: 'Your Name/Company',
+    keywords: [
+        'your',
+        'relevant', 
+        'keywords',
+        'here'
+    ],
+    author: {
+        name: 'Your Name',
+        url: 'https://yourwebsite.com',
+        twitterHandle: '@yourtwitterhandle'
+    },
+    social: {
+        sameAs: ['https://yoursociallinks.com']
+    }
+};
+```
+
+### Using SEO in Your Pages
+
+**For Homepage (`app/page.tsx`):**
+```typescript
+import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
+
+export const metadata = createPageMetadata({
+    path: ''
+});
+```
+
+**For About Page (`app/about/page.tsx`):**
+```typescript
+export const metadata = createPageMetadata({
+    path: 'about',
+    description: 'Custom description for your about page'
+});
+```
+
+The system also automatically generates **sitemaps** and **JSON-LD schemas** using your `siteConfig`:
+
+```typescript
+// Sitemap pulls from siteConfig.baseUrl and routes
+const routes = siteConfig.sitemap.staticRoutes.map((route) => ({
+    url: `${siteConfig.baseUrl}${route}`
+}));
+
+// Schema uses siteConfig for structured data
+const homeSchema = {
+    '@type': 'WebSite',
+    name: siteConfig.title,
+    url: siteConfig.baseUrl
+};
+```
+
+### Flexibility & Adaptability
+
+You can adapt the starter to your existing Next.js project or adapt it any way as bloggen SEO starter doesn't have any opinions how you name or structure folders and files just that it comes with strong defaults which remain out of your way and can be cleanly overridden, extended and removed entirely. _Oh no :(_
+
+## Adding MDX content
+
+### 📽️ Watch: How to Add Bloggen-Generated MDX Content
+
+[![Watch the explainer video](https://img.youtube.com/vi/-ishVyHBoCg/hqdefault.jpg)](https://www.youtube.com/watch?v=-ishVyHBoCg&t=4s)
+
+
+Once you have the SEO configured, you can create and manage your the content on your site. The example shows how easy it is to add blog posts by generating content using [bloggen.dev](https://bloggen.dev) and then integrating it into your project.
+
+### Step 1: Generate Blog Content with Bloggen.dev
+
+1. Visit [bloggen.dev](https://bloggen.dev)
+2. Navigate to the blog generation tool
+3. Enter your topic or keywords in the prompt box (e.g., "cats", "web development", etc.)
+4. Let the AI generate your complete blog content
+5. Review the generated content in the live MDX viewer on the right panel
+6. Copy the generated markdown content or download it as a .md file
+
+### Step 2: Add Generated Content to Your Bloggen SEO Starter
+
+1. **Create Your Blog Post File**:
+   - Navigate to `content/blog/` directory
+   - Create a new `.mdx` file (e.g., `cats.mdx`, `my-topic.mdx`)
+   - Paste the generated content from bloggen.dev
+
+3. **Handle Images** (if your blog references images):
+   - The generated content may reference cover images and OG images
+   - Create a folder in `public/assets/blog/[your-blog-name]/`
+   - Add your cover image (rename to match your frontmatter reference)
+
+4. **Preview Your Blog**:
+   - Your new blog will automatically appear in the blog listings at `localhost:3000/blog`
+   - Click on your blog to view the full content
+
+### Example Generated Blog Structure
+
+When you generate content with bloggen.dev, you'll get a complete blog post with:
 
 ```mdx
-# My First Blog Post
+---
+title: "bolt.diy: The Future of Development Environments"
+publishedAt: '2024-12-31'
+author: 'Silverthread Labs'
+image: "/assets/blog/bolt/bolt.webp"
+ogImage:
+  url: "/assets/blog/bolt/bolt.webp"
+summary: 'Discover how bolt.diy revolutionizes development workflows by seamlessly bridging local and cloud environments, offering unprecedented flexibility and collaboration capabilities.'
+tags: ['Development', 'Cloud Computing', 'DevOps', 'Productivity']
+---
 
-This is an example of a blog post created using Bloggen SEO Starter. 
+# bolt.diy: The Future of Development Environments
 
-## SEO Tips
-- Use relevant keywords.
-- Optimize images with alt text.
+Your AI-generated content will appear here with proper markdown formatting, including:
+
+## Headers and Subheadings
+- Bullet points
+- **Bold text** and *italics*
+- Code blocks
+- And much more structured content
 ```
+### Step 2: Add Generated Content to Your Bloggen SEO Starter
+
+
 
 ## Features
 
@@ -183,7 +301,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For support or inquiries, please reach out to:
 
 - Email: silverthreadlabs@gmail.com
-- Visit our website: [SilverThread Labs](https://www.silverthreadlabs.com/)
+- Visit our website: [Silverthread Labs](https://www.silverthreadlabs.com/)
 - Explore Bloggen: [Bloggen](https://www.bloggen.dev/)
 
 Thank you for using Bloggen SEO Starter! We hope it helps you enhance your blogging experience and improve your site's SEO performance.
+
+*More comprehensive starters with additional features and integrations are on the way.*
