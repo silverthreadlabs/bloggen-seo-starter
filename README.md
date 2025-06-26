@@ -143,14 +143,17 @@ You can adapt the starter to your existing Next.js project or adapt it any way a
 
 Once you have the SEO configured, you can create and manage your the content on your site. The example shows how easy it is to add blog posts by generating content using [bloggen.dev](https://bloggen.dev) and then integrating it into your project.
 
-### Step 1: Generate Blog Content with Bloggen.dev
+### Step 1: Generate Blog Content with Bloggen.dev 
 
 1. Visit [bloggen.dev](https://bloggen.dev)
-2. Navigate to the blog generation tool
-3. Enter your topic or keywords in the prompt box (e.g., "cats", "web development", etc.)
+2. Navigate to the [blog generation tool](https://www.bloggen.dev/blog-generator)
+3. Enter your topic along with the keywords (you wish to rank for) in the prompt box (e.g., "cats", "web development", etc.)
 4. Let the AI generate your complete blog content
-5. Review the generated content in the live MDX viewer on the right panel
+5. Review the generated content and frontmatter metadata in the live MDX viewer on the right panel 
 6. Copy the generated markdown content or download it as a .md file
+
+> **Note:** Although our examples use content from [Bloggen.dev](https://www.bloggen.dev), the Bloggen SEO Starter doesn’t depend on it. You’re free to use any type of content as long as it’s saved as a `.mdx` or `.md` file with proper frontmatter in `source.config.ts`.
+
 
 ### Step 2: Add Generated Content to Your Bloggen SEO Starter
 
