@@ -105,6 +105,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
 
     return {
         ...baseMeta,
+        description: page.data.summary,
         openGraph: {
             ...baseMeta.openGraph,
             type: 'article',
