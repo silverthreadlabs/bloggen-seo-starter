@@ -77,7 +77,7 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                                         </time>
                                     </div>
 
-                                    <h2 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl'>
+                                    <h2 className='text-canvas-text-contrast group-hover:text-primary-text mb-3 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 md:text-xl line-clamp-2'>
                                         {post.metadata.title}
                                     </h2>
 
