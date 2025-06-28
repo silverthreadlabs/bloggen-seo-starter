@@ -1,9 +1,7 @@
-
 import type { ReactNode } from 'react';
 
 import '@/app/global.css';
 import { productSource } from '@/lib/source';
-
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -12,10 +10,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <DocsLayout
                 tree={productSource.pageTree}
                 sidebar={{ enabled: false }}
-                    searchToggle={{ enabled: false }}
-                    nav={{ enabled: false }}
-                    >
-                    {children}
+                searchToggle={{ enabled: false }}
+                nav={{ enabled: false }}>
+                {children}
             </DocsLayout>
         </div>
     );

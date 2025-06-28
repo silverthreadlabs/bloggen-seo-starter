@@ -355,6 +355,20 @@
     @apply bg-canvas-base/80 backdrop-blur-sm backdrop-saturate-300;
 }
 
+/* Hide the unwanted main tag from DocsLayout */
+main#nd-docs-layout {
+    display: none !important;
+}
+
+/* Alternative: Remove the main tag styling but keep content */
+main#nd-docs-layout > * {
+    display: block !important;
+}
+
+main#nd-docs-layout {
+    all: unset !important;
+    display: contents !important;
+}
 /*Add top padding to TOC to avoid conflict with custom nav*/
 
 #nd-toc {
