@@ -9,7 +9,6 @@ import BlogSchema from '@/lib/seo/schema/blog';
 import BlogPostSchema from '@/lib/seo/schema/blog-posting';
 import { blogSource, source } from '@/lib/source';
 import { getMDXComponents } from '@/mdx-components';
-
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsBody, DocsPage } from 'fumadocs-ui/page';
 
@@ -19,7 +18,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     // // If this is the root /blog path (empty slug)
     if (!params.slug || params.slug.length === 0) {
         return (
-            <main role='main' className='min-h-screen'>
+            <main role='main' className='min-h-screen '>
                 <BlogSchema />
                 <BlogPosts />
             </main>
