@@ -113,7 +113,7 @@ export default function Features() {
                             return (
                                 <motion.div
                                     key={feature.id}
-                                    variants={itemVariants}
+                                    variants={{itemVariants}}
                                     onMouseEnter={() => handleFeatureHover(feature.id)}
                                     className={`group cursor-pointer rounded-lg border-l-4 p-6 transition-all duration-300 ease-out hover:shadow-md ${
                                         isActive
