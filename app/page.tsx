@@ -5,10 +5,10 @@ import DesignRift from '@/components/home/designrift/designrift';
 import Faq from '@/components/home/faq/faq';
 import Features from '@/components/home/features/features';
 import Hero from '@/components/home/hero/hero';
-import Performance from '@/components/home/perfomance/performance';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 import HomeSchema from '@/lib/seo/schema/home';
 import FAQSchema from '@/lib/seo/schema/faq';
+import { BlogPosts } from '@/components/blog/blog-post';
 
 export const metadata: Metadata = createPageMetadata({
     path: ''
@@ -20,9 +20,9 @@ export default function Page() {
             <HomeSchema />
             <FAQSchema />
             <Hero />
-            <Performance />
             <DesignRift />
             <Features />
+            <BlogPosts isHomePage={true} />
             <Faq />
             <Cta />
         </main>

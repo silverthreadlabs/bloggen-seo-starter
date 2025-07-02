@@ -12,7 +12,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 const NAV_ITEMS = [
     { href: '/about', label: 'About' },
     { href: '/products', label: 'Products' },
-    { href: '/blog', label: 'Blog' }
+    { href: '/blog', label: 'Blog' },
+    { href: '/terms', label: 'Terms' }
 ];
 
 export default function Header() {

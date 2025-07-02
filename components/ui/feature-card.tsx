@@ -1,44 +1,46 @@
+import { motion } from 'framer-motion';
+import React from 'react';
+
 interface FeatureCardProps {
-    icon: React.ReactElement;
     title: string;
-    descriptionStart: string;
-    code?: string;
-    descriptionEnd?: string;
-    link?: string;
+    description: string;
+    details: string;
+    onHover?: () => void;
+    onLeave?: () => void;
+    isActive?: boolean;
 }
 
-function FeatureCard({ icon, title, descriptionStart, code, descriptionEnd, link }: FeatureCardProps) {
+function FeatureCard({ title, description, details, onHover, onLeave, isActive }: FeatureCardProps) {
     return (
-        <div className='group relative'>
-            <div className='bg-canvas-bg border-canvas-active hover:border-canvas-line cursor-default rounded-xl border p-6 backdrop-blur-sm transition-all duration-300 ease-in-out'>
-                <div className='flex items-start gap-4'>
-                    <div className='rounded-lg bg-gradient-to-br from-canvas-bg to-canvas-line p-3 transition-transform duration-300 ease-out group-hover:scale-[1.05]'>
-                        <div className='text-canvas-solid group-hover:text-primary-solid transition-colors duration-300 ease-out'>
-                            {icon}
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className='text-canvas-text-contrast group-hover:text-primary-solid mb-2 text-lg leading-relaxed font-semibold tracking-normal transition-colors duration-300 ease-out md:text-xl'>
-                            {title}
-                        </h3>
-                        <p className='text-canvas-text text-sm leading-relaxed font-normal tracking-normal transition-colors duration-300 ease-out md:text-lg'>
-                            {descriptionStart}
-                            {code && (
-                                <code className='bg-canvas-bg-active border-canvas-line text-canvas-text-contrast rounded-md border px-2 py-1 font-mono text-sm'>
-                                    {code}
-                                </code>
-                            )}
-                            {link && (
-                                <a target="_blank" rel="noopener noreferrer" href={link} className="hover:underline group-hover:text-primary-solid">
-                                   {title}
-                                </a>
-                            )}
-                            {descriptionEnd}
-                        </p>
-                    </div>
-                </div>
+        <motion.div
+            className={`relative rounded-2xl border p-8 bg-canvas-bg transition-all duration-300 cursor-pointer ${
+                isActive
+                    ? 'border-primary-solid bg-gradient-to-br from-primary-bg to-primary-bg-subtle text-primary-text-contrast'
+                    : 'border-canvas-line hover:border-primary-border hover:bg-primary-bg-subtle'
+            }`}
+            whileHover={{ scale: 1.02, boxShadow: '0 8px 32px rgba(80,80,180,0.10)' }}
+            whileTap={{ scale: 0.98 }}
+            onMouseEnter={onHover}
+            onMouseLeave={onLeave}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+            {/* Badge */}
+            <div className="mb-6">
+                <span className={`inline-block bg-primary-bg ${isActive ? 'bg-canvas-bg': 'bg-primary-bg' } 'text-primary-text-contrast' : 'text-canvas-text-contrast'} px-4 py-2 rounded-lg text-sm font-medium`}>
+                    {title}
+                </span>
             </div>
-        </div>
+            {/* Description */}
+            <h3 className="mb-4 text-2xl font-bold text-canvas-text-contrast">
+                {description}
+            </h3>
+            {/* Details */}
+            <p className="text-canvas-text text-lg leading-relaxed">
+                {details}
+            </p>
+        </motion.div>
     );
 }
 

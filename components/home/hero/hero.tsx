@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import FeatureCard from '@/components/ui/feature-card';
+import HeroFeatureCard from '@/components/ui/hero-feature-card';
 
 import features from './features-list';
 import { motion } from 'framer-motion';
@@ -115,7 +115,7 @@ export default function Hero() {
                         className='flex flex-1 items-center py-10 xl:py-20'>
                         <div className='grid w-full gap-6'>
                             {features.map((feature, index) => (
-                                <FeatureCard
+                                <HeroFeatureCard
                                     key={index}
                                     icon={feature.icon}
                                     title={feature.title}
