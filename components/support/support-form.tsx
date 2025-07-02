@@ -26,7 +26,7 @@ const budgetOptions = [
     { value: '>$100k', label: 'More than $100,000' }
 ];
 
-export default function ContactForm() {
+export default function SupportForm() {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',

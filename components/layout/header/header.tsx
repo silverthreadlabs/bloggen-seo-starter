@@ -41,14 +41,14 @@ export default function Header() {
                                 </li>
                             ))}
                         </ul>
-                        <Link href='/contact' className='flex-1'>
+                        <Link href='/support' className='flex-1'>
                             <Button
                                 color='primary'
                                 size='default'
                                 variant='solid'
-                                aria-label='Contact Us'
-                                name='Contact Us'>
-                                Contact
+                                aria-label='Our Support'
+                                name='Our Support'>
+                                Support
                             </Button>
                         </Link>
                     </nav>
@@ -98,9 +98,9 @@ export default function Header() {
                         ))}
                         <li>
                             <div className='flex flex-col gap-3'>
-                                <Link href='/contact' onClick={toggleMobile} className='flex-1'>
-                                    <Button color='primary' size='default' variant='solid' fullWidth name='Contact Us'>
-                                        Contact
+                                <Link href='/support' onClick={toggleMobile} className='flex-1'>
+                                    <Button color='primary' size='default' variant='solid' fullWidth name='Our Support'>
+                                        Support
                                     </Button>
                                 </Link>
                             </div>

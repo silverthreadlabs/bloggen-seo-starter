@@ -19,7 +19,7 @@ const NAV_ITEMS = [
     { href: '/about', label: 'About' },
     { href: '/products', label: 'Products' },
     { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/support', label: 'Support' },
     { href: '/terms', label: 'Terms' }
 ];
 

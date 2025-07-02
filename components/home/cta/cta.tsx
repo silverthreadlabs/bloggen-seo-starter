@@ -46,7 +46,7 @@ export default function Cta() {
                                 </Button>
                             </Link>
 
-                            <Link href='/contact'>
+                            <Link href='/support'>
                                 <Button
                                     color='primary'
                                     variant='ghost'
