@@ -75,7 +75,7 @@ export default function Performance() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className='flex flex-wrap gap-4'>
-                            <Link href='/theme-editor' target='_blank'>
+                            <Link href='/theme-editor'>
                                 <Button color='primary' variant='solid' size='lg' aria-label='Start Customizing Theme' trailingIcon={<FaArrowRight className='h-4 w-4' />}>
                                     Start Customizing
                                 </Button>

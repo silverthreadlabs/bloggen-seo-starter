@@ -51,7 +51,6 @@ export default function Hero() {
                             <div className='flex flex-col gap-4'>
                                 <div className='flex flex-col gap-4 sm:flex-row'>
                                     <Link
-                                        target='_blank'
                                         href='/theme-editor'
                                         className=''>
                                         <Button
