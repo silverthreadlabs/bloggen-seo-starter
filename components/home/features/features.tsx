@@ -19,7 +19,7 @@ export default function Features() {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
 
   return (
-    <section className="py-10 w-full px-4 sm:px-6 lg:px-8 xl:py-16">
+    <section id='features' className="py-10 w-full px-4 sm:px-6 lg:px-8 xl:py-16">
       <div className="mx-auto mb-16 max-w-7xl">
         {/* Header */}
         <motion.div

@@ -8,11 +8,11 @@ import { Button } from '@/components/ui/button';
 import PlayGroundCard from '@/components/home/designrift/playground-card';
 
 import { motion } from 'framer-motion';
-import { FaCheck } from 'react-icons/fa';
+import { FaArrowRight, FaCheck } from 'react-icons/fa';
 
 export default function Performance() {
     return (
-        <section className='overflow-hidden px-4 sm:px-6 md:px-8 lg:px-0'>
+        <section id='how-it-works' className='overflow-hidden px-4 sm:px-6 md:px-8 lg:px-0'>
             <div className='mx-auto max-w-7xl py-10 xl:py-16'>
                 <div className='grid grid-cols-1 items-center lg:grid-cols-2'>
                     {/* Content Side */}
@@ -40,7 +40,7 @@ export default function Performance() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className='text-canvas-text mb-8 max-w-lg text-lg leading-relaxed lg:text-xl'>
-                            Designrift helps you create stunning, accessible themes using Radix colors. Get built-in dark mode and accessibility. Set up once, customize infinitely.
+                            designrift helps you create stunning, accessible themes using Radix colors. Get built-in dark mode and accessibility. Set up once, customize infinitely.
                         </motion.p>
 
                         {/* Feature List */}
@@ -75,9 +75,9 @@ export default function Performance() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className='flex flex-wrap gap-4'>
-                            <Link href='https://designrift.vercel.app/' target='_blank'>
-                                <Button color='primary' variant='solid' size='lg' aria-label='Start Customizing Theme'>
-                                    Start Customizing with designrift
+                            <Link href='/theme-editor' target='_blank'>
+                                <Button color='primary' variant='solid' size='lg' aria-label='Start Customizing Theme' trailingIcon={<FaArrowRight className='h-4 w-4' />}>
+                                    Start Customizing
                                 </Button>
                             </Link>
                         </motion.div>

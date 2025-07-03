@@ -22,7 +22,9 @@ export default function Page() {
             <Hero />
             <DesignRift />
             <Features />
-            <BlogPosts isHomePage={true} />
+            <section id='blog'>
+                <BlogPosts isHomePage={true} />
+            </section>
             <Faq />
             <Cta />
         </main>

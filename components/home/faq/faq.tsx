@@ -13,28 +13,38 @@ interface FAQItem {
 const faqData: FAQItem[] = [
     {
         id: 1,
-        question: 'What is bloggen-seo-starter?',
-        answer: "Bloggen SEO Starter is a production-ready Next.js 15 template designed for developers. It comes pre-configured with essential SEO features like JSON-LD, dynamic Open Graph images, sitemaps, robots.txt, and RSS feeds. Additionally, it supports MDX content, allowing seamless integration with bloggen.dev's AI-generated content."
+        question: 'What is designrift?',
+        answer: 'designrift is a platform that helps you create stunning, accessible themes using Radix color palettes. It offers built-in dark mode, accessibility features, and a streamlined setup process for infinite customization.'
     },
     {
         id: 2,
-        question: 'How do I get started with bloggen-seo-starter?',
-        answer: 'To initiate your project, run the command: `npx create-bloggen-app`. This will scaffold a fully functional Next.js 15 application with all SEO configurations in place. Once set up, you can deploy your site to platforms like Vercel and begin adding content to the `/content` directory.'
+        question: 'Can I customize colors beyond the Radix palette?',
+        answer: 'Absolutely! While designrift leverages Radix color palettes for consistency and accessibility, you can extend or override colors to match your brand or unique design requirements.'
     },
     {
         id: 3,
-        question: 'What SEO features are included out of the box?',
-        answer: 'Bloggen SEO Starter offers a suite of built-in SEO features, including:\n\n• JSON-LD structured data for enhanced search engine understanding.\n• Dynamic Open Graph images for improved social media sharing.\n• Pre-configured sitemaps and robots.txt files.\n• RSS feed generation for content syndication.\n• Optimized metadata handling for better search engine indexing.'
+        question: 'Does designrift ensure accessibility and WCAG compliance?',
+        answer: 'Yes, every theme and color combination in designrift is designed to meet or exceed WCAG 2.1 contrast ratios, ensuring your site is accessible to all users.'
     },
     {
         id: 4,
-        question: 'How does bloggen.dev integrate with this template?',
-        answer: 'Bloggen.dev is an AI-powered content generation platform that produces MDX files for blogs and guides. These MDX files can be directly placed into the `/content` folder of the bloggen-seo-starter template. The template is designed to automatically render these files, eliminating the need for manual edits and streamlining the content publishing process.'
+        question: 'Is there a built-in dark mode?',
+        answer: 'Yes! designrift includes a one-click dark mode toggle. All themes are fully styled for both light and dark modes, providing a seamless experience for your users.'
     },
     {
         id: 5,
-        question: 'Can I customize the design or theme of my site?',
-        answer: "Absolutely! The bloggen-seo-starter template is fully compatible with DesignRift, an open-source theme builder. DesignRift allows you to modify your site's appearance using Radix color palettes. Once you've customized your theme, you can integrate it into your bloggen-seo-starter project to achieve a personalized look and feel."
+        question: 'How easy is it to set up designrift in my project?',
+        answer: 'designrift is designed for a single-step setup. Configure it once and you can scale or customize your themes infinitely without repetitive onboarding.'
+    },
+    {
+        id: 6,
+        question: 'Does designrift support frameworks like Tailwind or Chakra UI?',
+        answer: 'Yes, designrift is framework-agnostic and can be integrated with popular styling solutions like Tailwind CSS, Chakra UI, or your own custom design system.'
+    },
+    {
+        id: 7,
+        question: 'Is there TypeScript support for designrift?',
+        answer: 'Definitely! designrift is built with TypeScript, providing full type safety and autocompletion for a smooth developer experience.'
     }
 ];
 
@@ -77,9 +87,8 @@ function FAQItemComponent({ item, isOpen, onToggle }: FAQItemComponentProps) {
                 </span>
                 <div className='flex-shrink-0'>
                     <ChevronDown
-                        className={`text-canvas-text h-5 w-5 transition-transform duration-300 ${
-                            isOpen ? 'rotate-180' : 'rotate-0'
-                        }`}
+                        className={`text-canvas-text h-5 w-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'
+                            }`}
                         aria-hidden='true'
                     />
                 </div>
@@ -88,9 +97,8 @@ function FAQItemComponent({ item, isOpen, onToggle }: FAQItemComponentProps) {
             {/* Answer Content */}
             <div
                 id={`faq-answer-${item.id}`}
-                className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                }`}
+                className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    }`}
                 role='region'
                 aria-labelledby={`${item.question}`}>
                 <div className='overflow-hidden'>
@@ -99,20 +107,6 @@ function FAQItemComponent({ item, isOpen, onToggle }: FAQItemComponentProps) {
                             className='text-canvas-text leading-relaxed'
                             dangerouslySetInnerHTML={{ __html: formatAnswer(item.answer) }}
                         />
-                        {/* Special handling for the DesignRift link */}
-                        {item.id === 5 && (
-                            <p className='text-canvas-text mt-2 leading-relaxed'>
-                                Visit{' '}
-                                <a
-                                    href='https://designrift.vercel.app/'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='text-primary-text-contrast duration-300 hover:underline'>
-                                    Designrift
-                                </a>{' '}
-                                to get started with theme customization.
-                            </p>
-                        )}
                     </div>
                 </div>
             </div>
@@ -131,13 +125,13 @@ export default function Faq() {
             } else {
                 newSet.add(id);
             }
-            
+
             return newSet;
         });
     };
 
     return (
-        <section className='py:10 w-full px-4 sm:px-6 lg:px-8 xl:py-16' aria-label='Frequently Asked Questions'>
+        <section id='faq' className='py:10 w-full px-4 sm:px-6 lg:px-8 xl:py-16' aria-label='Frequently Asked Questions'>
             <div className='mx-auto max-w-4xl'>
                 {/* Header */}
                 <div className='mb-12 text-center'>

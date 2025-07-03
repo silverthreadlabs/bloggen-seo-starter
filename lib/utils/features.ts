@@ -11,30 +11,30 @@ export interface Feature {
 export const featuresData: Feature[] = [
     {
         id: 1,
-        title: 'Plug‑in MDX',
-        description: 'Instant Content Integration',
+        title: 'Radix Color Palette',
+        description: 'Built-in, flexible, and accessible',
         details:
-            'Bloggen AI exports MDX posts that drop straight into the content folder - no edits needed. Your content renders instantly, making content management seamless and efficient.'
+            'Leverage the power of Radix color palettes for a beautiful, consistent, and accessible UI. Easily customize your theme with a robust system designed for flexibility and seamless integration.'
     },
     {
         id: 2,
-        title: 'Designrift Theming',
-        description: 'Powerful Theme Creation',
+        title: 'Dark Mode Built In',
+        description: 'One-click toggle, fully themed',
         details:
-            'Create stunning themes for your web application leveraging Radix color palettes for cohesive styling. Build beautiful, consistent user interfaces with our comprehensive theming system.'
+            'Switch between light and dark modes effortlessly with a single click. Enjoy a fully themed experience that adapts instantly, providing comfort and style for every user preference.'
     },
     {
         id: 3,
-        title: 'SEO All Set',
-        description: 'Complete SEO Infrastructure',
+        title: 'Accessibility First',
+        description: 'Meets WCAG 2.1 contrast ratios',
         details:
-            'Launch with confidence knowing all SEO essentials are pre-configured. From sitemaps and robots.txt to JSON-LD and dynamic OG images, plus an RSS feed - everything is pre-wired.'
+            'Designed with accessibility at its core, every color and component meets or exceeds WCAG 2.1 contrast standards. Ensure your site is usable and welcoming for everyone, regardless of ability.'
     },
     {
         id: 4,
-        title: 'One‑Command Launch',
-        description: 'Effortless Deployment',
+        title: 'One-Step Setup',
+        description: 'Configure once, scale infinitely',
         details:
-            'Get started in seconds with a single command: npx create-bloggen-app. Push to Vercel and your typed Next.js 15 template goes live immediately.'
+            'Get started quickly with a streamlined setup process. Configure your project once and scale effortlessly as your needs grow—no repetitive steps or complex onboarding required.'
     }
 ]; 

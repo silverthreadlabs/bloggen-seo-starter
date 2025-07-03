@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+//light and dark
 import Logo from '@/components/logo/logo';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
@@ -57,7 +58,7 @@ export default function Footer() {
                     {/* Copyright */}
                     <div className='border-canvas-line mt-8 border-t pt-8'>
                         <p className='text-canvas-text text-sm'>
-                            © {currentYear} Bloggen. Crafted by{' '}
+                            © {currentYear} designrift. Crafted by{' '}
                             <Link href='https://silverthreadlabs.com' target='_blank' rel='noopener noreferrer'>
                                 <button className='group relative cursor-pointer'>
                                     <div className='ml-1 flex w-fit items-center justify-start space-x-3'>
