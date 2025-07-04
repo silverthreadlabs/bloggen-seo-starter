@@ -2,13 +2,13 @@ import { siteConfig } from '@/lib/config/site';
 
 import type { ContactPage, Organization, BreadcrumbList, WithContext } from 'schema-dts';
 
-// Contact Page Schema
-const contactPageSchema: WithContext<ContactPage> = {
+// Support Page Schema
+const supportPageSchema: WithContext<ContactPage> = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact Us - Get in Touch',
+    name: 'Our Support - Get in Touch',
     description: 'Have questions about our products, or just want to share your thoughts? We would love to hear from you!',
-    url: `${siteConfig.baseUrl}/contact`,
+    url: `${siteConfig.baseUrl}/support`,
     mainEntity: {
         '@type': 'Organization',
         name: siteConfig.publisher,
@@ -47,7 +47,7 @@ const contactPageSchema: WithContext<ContactPage> = {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Contact',
-                item: `${siteConfig.baseUrl}/contact`
+                item: `${siteConfig.baseUrl}/support`
             }
         ]
     },
@@ -60,10 +60,10 @@ const contactPageSchema: WithContext<ContactPage> = {
         {
             '@type': 'CommunicateAction',
             name: 'Send Message',
-            description: 'Send us a message using our contact form',
+            description: 'Send us a message using our support form',
             target: {
                 '@type': 'EntryPoint',
-                urlTemplate: `${siteConfig.baseUrl}/contact`,
+                urlTemplate: `${siteConfig.baseUrl}/support`,
                 actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform']
             }
         },
@@ -73,7 +73,7 @@ const contactPageSchema: WithContext<ContactPage> = {
             description: 'Schedule a 30-minute consultation call',
             target: {
                 '@type': 'EntryPoint',
-                urlTemplate: `${siteConfig.baseUrl}/contact`,
+                urlTemplate: `${siteConfig.baseUrl}/support`,
                 actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform']
             }
         }
@@ -144,13 +144,13 @@ const contactPageSchema: WithContext<ContactPage> = {
 // };
 
 // Combined schemas array for easier management
-const contactSchemas = [contactPageSchema];
+const supportSchemas = [supportPageSchema];
 
-const ContactSchema: React.FC = () => (
+const SupportSchema: React.FC = () => (
     <>
-        {contactSchemas.map((schema, index) => (
+        {supportSchemas.map((schema, index) => (
             <script
-                key={`contact-schema-${index}`}
+                key={`support-schema-${index}`}
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
             />
@@ -158,4 +158,4 @@ const ContactSchema: React.FC = () => (
     </>
 );
 
-export default ContactSchema;
+export default SupportSchema;

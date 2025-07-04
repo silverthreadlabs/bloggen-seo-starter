@@ -44,6 +44,6 @@ export const siteConfig = {
 
     },
     sitemap: {
-        staticRoutes: ['', '/contact', '/about', '/blog', '/products']
+        staticRoutes: ['', '/support', '/about', '/blog', '/products']
     }
 };

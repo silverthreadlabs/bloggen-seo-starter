@@ -1,6 +1,4 @@
-
-
-import { FaFileAlt, FaTachometerAlt, FaTerminal } from 'react-icons/fa';
+import { FaPalette, FaMoon, FaCog } from 'react-icons/fa';
 
 interface Feature {
     icon: React.ReactElement;
@@ -13,25 +11,19 @@ interface Feature {
 // Features array with updated structure and react-icons/fa
 const features: Feature[] = [
     {
-        icon: <FaFileAlt className='h-5 w-5' />,
-        title: 'Plug‑in MDX',
-        descriptionStart: 'Bloggen AI exports MDX posts that drop straight into the ',
-        code: '/content',
-        descriptionEnd: ' folder - no edits, instant render.'
+        icon: <FaPalette className='h-5 w-5' />,
+        title: 'Radix Color Palette',
+        descriptionStart: 'Built-in, flexible, and accessible color system for beautiful, consistent UIs.'
     },
     {
-        icon: <FaTachometerAlt className='h-5 w-5' />,
-        title: 'SEO All Set',
-        descriptionStart:
-            "Sitemap, robots.txt, JSON‑LD, dynamic OG images, and an RSS feed come pre‑wired; Bloggen's generators just fill the blanks."
+        icon: <FaMoon className='h-5 w-5' />,
+        title: 'Dark Mode Built In',
+        descriptionStart: 'One-click toggle, fully themed for a seamless dark mode experience.'
     },
     {
-        icon: <FaTerminal className='h-5 w-5' />,
-        title: 'One‑Command Launch',
-        descriptionStart: 'Run ',
-        code: 'npx create-bloggen-app',
-        descriptionEnd:
-            ', push to Vercel, and the typed Next.js 15 template goes live—ready to absorb future Bloggen content.'
+        icon: <FaCog className='h-5 w-5' />,
+        title: 'One-Step Setup',
+        descriptionStart: 'Configure once, scale infinitely—effortless setup for any project.'
     }
 ];
 export default features;

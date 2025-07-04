@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { getBlogPosts } from '@/lib/blog';
 import { formatDate } from '@/lib/utils/mdx';
 
-import { ArrowRight } from 'lucide-react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 
 interface BlogPostsProps {
     isHomePage?: boolean;
@@ -48,7 +48,7 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                     </div>
 
                     {/* Blog Grid */}
-                    <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                    <div className='mx-auto grid max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3'>
                         {displayedBlogs.map((post, index) => (
                             <Link key={post.slug} href={`/blog/${post.slug}`} className='group block'>
                                 <article className='bg-canvas-bg border-canvas-active hover:border-canvas-line rounded-lg border p-6 backdrop-blur-sm transition-all duration-300'>
@@ -97,22 +97,34 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                         <div className='mt-16 flex flex-col justify-center gap-4 sm:flex-row'>
                             <Link
                                 href='/blog'
-                                className='bg-primary-solid hover:bg-primary-solid-hover text-bg-default group flex items-center justify-center gap-2 rounded px-8 py-3 transition-all duration-300'>
-                                View All Posts
-                                <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                                className=''
+                            >
+                                <Button
+                                    color='primary'
+                                    variant='solid'
+                                    size='lg'
+                                    aria-label='View source code on GitHub'
+                                    name='View source code on GitHub'
+                                    fullWidth
+                                    // leadingIcon={<FaGithub className='h-5 w-5' />}
+                                    trailingIcon={
+                                        <FaArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                                    }>
+                                    View All Posts
+                                </Button>
                             </Link>
-                            <Link
+                            {/* <Link
                                 href='/rss.xml'
                                 className='bg-secondary-bg hover:bg-secondary-bg-hover text-canvas-text border-canvas-border hover:border-canvas-border-hover flex items-center justify-center gap-2 rounded border px-8 py-3 transition-all duration-300'>
                                 Subscribe to RSS
                                 <svg className='h-4 w-4' viewBox='0 0 24 24' fill='currentColor'>
                                     <path d='M6.18 15.64a2.18 2.18 0 112.18 2.18 2.18 2.18 0 01-2.18-2.18zM6.18 8.91h4.36v2.18H6.18V8.91zm0-4.36h8.73v2.18H6.18V4.55z' />
                                 </svg>
-                            </Link>
+                            </Link> */}
                         </div>
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

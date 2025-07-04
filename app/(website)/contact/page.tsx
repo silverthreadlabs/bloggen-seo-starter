@@ -8,14 +8,14 @@ import { Suspense } from 'react';
 
 import { Metadata } from 'next';
 
-import CalBooking from '@/components/contact/cal-booking';
-import ContactForm from '@/components/contact/contact-form';
+import CalBooking from '@/components/support/cal-booking';
+import ContactForm from '@/components/support/support-form';
 import TabsComponent from '@/components/ui/tabs';
 import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 import ContactSchema from '@/lib/seo/schema/contact';
 
 export const metadata: Metadata = createPageMetadata({
-    path: 'contact',
+    path: 'support',
     description:
         'Have questions about our products, or just want to share your thoughts? We would love to hear from you!'
 });

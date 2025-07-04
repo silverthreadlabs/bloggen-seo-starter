@@ -8,12 +8,22 @@ import Logo from '@/components/logo/logo';
 import { Button } from '@/components/ui/button';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const NAV_ITEMS = [
-    { href: '/about', label: 'About' },
-    { href: '/products', label: 'Products' },
-    { href: '/blog', label: 'Blog' }
+    { href: '#how-it-works', label: 'How It Works' },
+    { href: '#features', label: 'Features' },
+    { href: '#blog', label: 'Blog' },
+    { href: '#faq', label: 'FAQs' },
+    { href: '#cta', label: 'CTA' },
 ];
+
+function scrollToSection(id: string) {
+    const el = document.querySelector(id);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 export default function Header() {
     console.log('Crafted by Silverthread Labs:', 'https://www.silverthreadlabs.com');
@@ -33,22 +43,27 @@ export default function Header() {
                         <ul className='flex space-x-3'>
                             {NAV_ITEMS.map(({ href, label }) => (
                                 <li key={href}>
-                                    <Link
+                                    <a
                                         href={href}
-                                        className='text-canvas-text hover:text-canvas-text-contrast rounded-sm px-3 py-2 text-base font-medium transition-colors'>
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            scrollToSection(href);
+                                        }}
+                                        className='text-canvas-text hover:text-canvas-text-contrast rounded-sm px-2 py-2 text-base font-medium transition-colors'>
                                         {label}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>
-                        <Link href='/contact' className='flex-1'>
+                        <ThemeToggle/>
+                        <Link href='/support' className='flex-1'>
                             <Button
                                 color='primary'
                                 size='default'
                                 variant='solid'
-                                aria-label='Contact Us'
-                                name='Contact Us'>
-                                Contact
+                                aria-label='Our Support'
+                                name='Our Support'>
+                                Support
                             </Button>
                         </Link>
                     </nav>
@@ -60,7 +75,7 @@ export default function Header() {
                         name='Toggle menu'
                         aria-controls='mobile-menu'
                         aria-expanded={mobileOpen}
-                        className='block md:hidden' // Changed from md:hidden to block md:hidden for clarity
+                        className='block md:hidden'
                         color='neutral'
                         variant='ghost'
                         iconOnly
@@ -88,19 +103,23 @@ export default function Header() {
                     <ul className='border-canvas-border space-y-3 border-t p-4'>
                         {NAV_ITEMS.map(({ href, label }) => (
                             <li key={href}>
-                                <Link
+                                <a
                                     href={href}
-                                    onClick={toggleMobile}
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        scrollToSection(href);
+                                        setMobileOpen(false);
+                                    }}
                                     className='text-canvas-text hover:bg-canvas-bg hover:text-primary-text block rounded-sm px-4 py-2 text-base font-medium transition-colors'>
                                     {label}
-                                </Link>
+                                </a>
                             </li>
                         ))}
                         <li>
                             <div className='flex flex-col gap-3'>
-                                <Link href='/contact' onClick={toggleMobile} className='flex-1'>
-                                    <Button color='primary' size='default' variant='solid' fullWidth name='Contact Us'>
-                                        Contact
+                                <Link href='/support' onClick={toggleMobile} className='flex-1'>
+                                    <Button color='primary' size='default' variant='solid' fullWidth name='Our Support'>
+                                        Support
                                     </Button>
                                 </Link>
                             </div>
