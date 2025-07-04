@@ -1,6 +1,6 @@
 export const minimalCSS = `
 :root {
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://www.designrift.dev */ 
 /* LIGHT THEME */
   /* CANVAS */
   --canvas-base: #fcfcfc;
@@ -158,7 +158,7 @@ export const minimalCSS = `
 `;
 
 export const modernCSS = `
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://www.designrift.dev */ 
 /* LIGHT THEME */
 :root {
 
@@ -319,7 +319,7 @@ export const modernCSS = `
 `;
 
 export const subtleCSS = `
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://www.designrift.dev */ 
 /* LIGHT THEME */
 :root {
 

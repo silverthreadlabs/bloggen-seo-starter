@@ -13,7 +13,7 @@
 
 Built with MDX powered by **Fumadocs**, it lets you create flexible routes like `/blog`, `/docs`, `/services`, or `/product/x`—all content-driven, fully typed, and SEO-ready out of the box.
 
-**[Designrift](https://designrift.vercel.app/)**, our theming engine, gives you powerful visual control with:
+**[Designrift](https://www.designrift.dev/)**, our theming engine, gives you powerful visual control with:
 
 * Radix-based color palettes
 * WCAG-compliant contrast
@@ -262,7 +262,7 @@ Built on the latest Next.js App Router.
 * 🌗 **Radix Colors**<br>
 Automatic Light/Dark mode Theme with [`radix-colors`](https://www.radix-ui.com/colors).
 * 🎨 **Designrift Design Tokens**<br>
-  Semantic CSS variables for consistent theming and easy overrides with [Designrift](https://designrift.vercel.app/) .
+  Semantic CSS variables for consistent theming and easy overrides with [Designrift](https://www.designrift.dev/) .
 * 🔄 **Reusable CVA & Radix Primitives**<br>
   Pre-built, composable components with [`class-variance-authority`](https://cva.style/) and [Radix UI](https://www.radix-ui.com/).
 * ♿ **Accessibility-First**<br>

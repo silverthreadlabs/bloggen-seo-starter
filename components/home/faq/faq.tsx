@@ -104,7 +104,7 @@ function FAQItemComponent({ item, isOpen, onToggle }: FAQItemComponentProps) {
                             <p className='text-canvas-text mt-2 leading-relaxed'>
                                 Visit{' '}
                                 <a
-                                    href='https://designrift.vercel.app/'
+                                    href='https://www.designrift.dev/'
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     className='text-primary-text-contrast duration-300 hover:underline'>
