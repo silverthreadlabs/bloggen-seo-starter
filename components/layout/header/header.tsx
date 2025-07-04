@@ -8,6 +8,7 @@ import Logo from '@/components/logo/logo';
 import { Button } from '@/components/ui/button';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const NAV_ITEMS = [
     { href: '#how-it-works', label: 'How It Works' },
@@ -54,6 +55,7 @@ export default function Header() {
                                 </li>
                             ))}
                         </ul>
+                        <ThemeToggle/>
                         <Link href='/support' className='flex-1'>
                             <Button
                                 color='primary'

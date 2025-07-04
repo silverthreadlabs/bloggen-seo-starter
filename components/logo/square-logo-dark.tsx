@@ -14,10 +14,10 @@ const SquareLogoDark = ({ className }: { className?: string }) => (
         <path d="M22 22.5C22 22.7761 22.224 23.0013 22.4997 22.9856C23.6549 22.9197 24.8865 22.629 25.928 22.1246C27.1214 21.5467 28.2057 20.6996 29.1191 19.6317C30.0324 18.5639 30.757 17.2961 31.2513 15.9009C31.7456 14.5056 32 13.0102 32 11.5C32 9.9898 31.7456 8.49438 31.2513 7.09914C30.757 5.7039 30.0324 4.43615 29.1191 3.36827C28.2057 2.3004 27.1214 1.45331 25.928 0.875385C24.8865 0.371009 23.6549 0.0802571 22.4997 0.0144188C22.224 -0.00129333 22 0.223857 22 0.5L22 11.5L22 22.5Z" fill="url(#paint0_linear_2844_1180)" />
         <defs>
             <linearGradient id="paint0_linear_2844_1180" x1="32.8125" y1="6.67411" x2="21.0073" y2="19.5422" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#DB0761" />
-                <stop offset="0.25" stop-color="#C53DB3" />
-                <stop offset="0.754808" stop-color="#4FABF2" />
-                <stop offset="1" stop-color="#57E6EE" />
+                <stop stopColor="#DB0761" />
+                <stop offset="0.25" stopColor="#C53DB3" />
+                <stop offset="0.754808" stopColor="#4FABF2" />
+                <stop offset="1" stopColor="#57E6EE" />
             </linearGradient>
         </defs>
     </svg>

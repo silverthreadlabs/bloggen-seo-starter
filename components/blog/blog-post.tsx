@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { getBlogPosts } from '@/lib/blog';
 import { formatDate } from '@/lib/utils/mdx';
 
-import { ArrowRight } from 'lucide-react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 
 interface BlogPostsProps {
     isHomePage?: boolean;
@@ -97,9 +97,21 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                         <div className='mt-16 flex flex-col justify-center gap-4 sm:flex-row'>
                             <Link
                                 href='/blog'
-                                className='bg-primary-solid hover:bg-primary-solid-hover text-bg-default group flex items-center justify-center gap-2 rounded px-8 py-3 transition-all duration-300'>
-                                View All Posts
-                                <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                                className=''
+                            >
+                                <Button
+                                    color='primary'
+                                    variant='solid'
+                                    size='lg'
+                                    aria-label='View source code on GitHub'
+                                    name='View source code on GitHub'
+                                    fullWidth
+                                    // leadingIcon={<FaGithub className='h-5 w-5' />}
+                                    trailingIcon={
+                                        <FaArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                                    }>
+                                    View All Posts
+                                </Button>
                             </Link>
                             {/* <Link
                                 href='/rss.xml'
@@ -113,6 +125,6 @@ export function BlogPosts({ isHomePage = false }: BlogPostsProps) {
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

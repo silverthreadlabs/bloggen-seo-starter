@@ -15,8 +15,7 @@ import {
 } from '@/lib/theme-generator';
 
 import { useTheme } from 'next-themes';
-import LogoDark from '../logo/logo-dark';
-import LogoLight from '../logo/logo-light';
+import Logo from '@/components/logo/logo';
 
 interface ThemeSidebarProps {
   selectedColors: SelectedColors;
@@ -35,12 +34,13 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
 }) => {
   const primaryRecommendations = getPrimaryRecommendations(selectedColors.canvas);
   const { theme } = useTheme();
+  
   return (
     <aside className="bg-canvas-bg border-canvas-border w-full border-r md:w-96 md:h-full flex flex-col">
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="flex flex-col gap-1">
-          {theme==='dark' ? <LogoLight /> : <LogoDark />}
+          <Logo/>
           <p className="text-canvas-text mb-4 text-sm">
           Create stunning, accessible themes using Radix colors. Get built-in dark mode and accessibility. Set up once, customize infinitely.
           </p>
