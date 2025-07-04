@@ -31,7 +31,7 @@ const FEATURES: FeatureData[] = [
         title: 'Designrift',
         descriptionStart: 'Create stunning themes for your web application with ',
         descriptionEnd: ' leveraging Radix color palettes for cohesive styling.',
-        link: 'https://designrift.vercel.app',
+        link: 'https://www.designrift.dev',
         color: 'from-purple-500 to-pink-500',
         gradient: 'bg-gradient-to-br from-purple-50 to-pink-50'
     },

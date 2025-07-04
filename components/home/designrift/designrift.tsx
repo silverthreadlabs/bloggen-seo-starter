@@ -75,7 +75,7 @@ export default function Performance() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className='flex flex-wrap gap-4'>
-                            <Link href='https://designrift.vercel.app/' target='_blank'>
+                            <Link href='https://www.designrift.dev/' target='_blank'>
                                 <Button color='primary' variant='solid' size='lg' aria-label='Start Customizing Theme'>
                                     Start Customizing with designrift
                                 </Button>
