@@ -21,7 +21,7 @@ const featuresData: Feature[] = [
     },
     {
         id: 2,
-        title: 'Designrift Tshemeing',
+        title: 'Designrift Theming',
         description: 'Powerful Theme Creation',
         details:
             'Create stunning themes for your web application leveraging Radix color palettes for cohesive styling. Build beautiful, consistent user interfaces with our comprehensive theming system.'
