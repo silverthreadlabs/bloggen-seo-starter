@@ -215,7 +215,8 @@
     --info-text-contrast: #eaf6ff;
     --info-on-info: #ffffff;
 }
-@theme {
+
+@theme inline {
     --color-canvas-base: var(--canvas-base);
     --color-canvas-bg-subtle: var(--canvas-bg-subtle);
     --color-canvas-bg: var(--canvas-bg);
