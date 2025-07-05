@@ -154,7 +154,7 @@ export default function Features() {
                                     animate='animate'
                                     exit='exit'
                                     transition={{ duration: 0.2, ease: 'easeIn' }}
-                                    className='border-canvas-active hover:border-canvas-line bg-canvas-base max-h-80 cursor-default rounded-2xl border p-10 shadow-lg'>
+                                    className='border-canvas-active hover:border-canvas-line bg-canvas-base sm:max-h-80 cursor-default rounded-2xl border p-10 shadow-lg'>
                                     {/* Feature Badge */}
                                     <motion.div
                                         className='mb-6'
