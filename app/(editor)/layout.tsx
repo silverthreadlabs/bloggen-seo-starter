@@ -9,6 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import '@/app/global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
+import { GlobalThemeProvider } from '@/lib/theme-generator/global-theme-context';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -21,18 +22,16 @@ const manrope = Manrope({
 
 export default function ThemeEditorLayout({ children }: { children: React.ReactNode }) {
     return (
-        
-                <ThemeProvider
-                    attribute='class'
-                    defaultTheme='system'
-                    enableSystem={true}
-                    storageKey=''
-                    disableTransitionOnChange
-                >
-                    {children}
-                </ThemeProvider>
-        
-
-
+        <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem={true}
+            storageKey=''
+            disableTransitionOnChange
+        >
+            <GlobalThemeProvider>
+                {children}
+            </GlobalThemeProvider>
+        </ThemeProvider>
     );
 }

@@ -9,6 +9,7 @@ import { createPageMetadata } from '@/lib/seo/metadata/create-page-metadata';
 import HomeSchema from '@/lib/seo/schema/home';
 import FAQSchema from '@/lib/seo/schema/faq';
 import { BlogPosts } from '@/components/blog/blog-post';
+import { ThemeExample } from '@/components/home/example/theme-example';
 
 export const metadata: Metadata = createPageMetadata({
     path: ''
@@ -20,6 +21,7 @@ export default function Page() {
             <HomeSchema />
             <FAQSchema />
             <Hero />
+            <ThemeExample />
             <DesignRift />
             <Features />
             <section id='blog'>

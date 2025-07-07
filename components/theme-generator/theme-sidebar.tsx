@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { AppearanceTabs } from '@/components/ui/appearance-tabs';
@@ -13,9 +12,48 @@ import {
   type SelectedColors,
   type ColorCategory
 } from '@/lib/theme-generator';
+import { GlobalThemeContext } from '@/lib/theme-generator/global-theme-context';
+import { Button } from '@/components/ui/button';
 
 import { useTheme } from 'next-themes';
 import Logo from '@/components/logo/logo';
+
+const predefinedThemes = [
+  { key: 'minimal', label: 'Minimal', description: 'Clean and simple' },
+  { key: 'modern', label: 'Modern', description: 'Contemporary design' },
+  { key: 'subtle', label: 'Subtle', description: 'Soft and elegant' },
+];
+
+// TODO: Map each theme to its color values for all categories
+export const themeColorMap: Record<string, Partial<SelectedColors>> = {
+  minimal: {
+    canvas: 'gray',
+    primary: 'iris',
+    secondary: '',
+    success: 'green',
+    warning: 'yellow',
+    alert: 'red',
+    info: 'blue',
+  },
+  modern: {
+    canvas: 'sage',
+    primary: 'jade',
+    secondary: '',
+    success: 'green',
+    warning: 'amber',
+    alert: 'tomato',
+    info: 'sky',
+  },
+  subtle: {
+    canvas: 'sand',
+    primary: 'gold',
+    secondary: '',
+    success: 'mint',
+    warning: 'amber',
+    alert: 'crimson',
+    info: 'blue',
+  },
+};
 
 interface ThemeSidebarProps {
   selectedColors: SelectedColors;
@@ -30,22 +68,39 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
   onColorSelect,
   cssVariables,
   tailwindV3Config,
-  tailwindV4Complete 
+  tailwindV4Complete
 }) => {
   const primaryRecommendations = getPrimaryRecommendations(selectedColors.canvas);
   const { theme } = useTheme();
-  
+  const { currentTheme, setCurrentTheme } = useContext(GlobalThemeContext);
+
+  // Swatch grid for predefined themes
+
+
   return (
     <aside className="bg-canvas-bg border-canvas-border w-full border-r md:w-96 md:h-full flex flex-col">
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="flex flex-col gap-1">
-          <Logo/>
+          <Logo />
           <p className="text-canvas-text mb-4 text-sm">
-          Create stunning, accessible themes using Radix colors. Get built-in dark mode and accessibility. Set up once, customize infinitely.
+            Create stunning, accessible themes using Radix colors. Get built-in dark mode and accessibility. Set up once, customize infinitely.
           </p>
         </div>
-        
+
+        {/* Predefined Themes Selection (styled like ColorCategorySection) */}
+        <div className="mb-6">
+          <ColorCategorySection
+            title="Presets"
+            swatchColors={[]}
+            recommendedColors={predefinedThemes.map(theme => theme.key)}
+            allColors={[]}
+            selectedColor={currentTheme}
+            onColorSelect={(preset) => setCurrentTheme(preset)}
+            showSelect={true}
+          />
+        </div>
+
         <AppearanceTabs>
           <div className="flex flex-col space-y-6">
             {/* Canvas Colors */}
@@ -113,13 +168,13 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
       {/* Sticky footer section */}
       <div className="bg-canvas-bg border-canvas-border sticky bottom-0 border-t p-4 space-y-3">
         <div className="border-canvas-border pt-2">
-          <CodeDialog 
-            cssCode={cssVariables} 
-            tailwindV3Config={tailwindV3Config} 
-            tailwindV4Complete={tailwindV4Complete} 
+          <CodeDialog
+            cssCode={cssVariables}
+            tailwindV3Config={tailwindV3Config}
+            tailwindV4Complete={tailwindV4Complete}
           />
         </div>
-        
+
         <div className="border-canvas-border flex items-center justify-between border-t pt-4">
           <p className="text-fg-text text-sm">
             Built by
@@ -132,7 +187,7 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
               Syed Saif
             </Link>
           </p>
-          
+
           <Link
             href="https://github.com/syedsaif666/designrift"
             target="_blank"

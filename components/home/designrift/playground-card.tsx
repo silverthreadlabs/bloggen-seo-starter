@@ -1,20 +1,21 @@
 'use client';
 
 import type React from 'react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { minimalCSS, modernCSS, subtleCSS } from '@/lib/utils/theme';
 
 import { Button } from '../../ui/button';
 import { ThemeToggle } from '../../ui/theme-toggle';
 import { Heart } from 'lucide-react';
+import { GlobalThemeContext } from '@/lib/theme-generator/global-theme-context';
 
 interface PlayGroundCardProps {
     className?: string;
 }
 
 const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
-    const [currentTheme, setCurrentTheme] = useState<'minimal' | 'modern' | 'subtle'>('minimal');
+    const { currentTheme, setCurrentTheme } = useContext(GlobalThemeContext);
     const [selectedSize, setSelectedSize] = useState<string>('256GB');
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 

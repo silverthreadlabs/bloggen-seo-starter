@@ -160,6 +160,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ className = '' }) => {
                             </div>
 
                             <button
+                                type='button'
+                                title='Add to Wishlist'
                                 className={`rounded-full p-2 hover:cursor-pointer ${theme.buttonSecondary} border transition-all duration-300`}>
                                 <Heart className='h-3 w-3' fill='none' stroke='currentColor' />
                             </button>

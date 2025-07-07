@@ -9,6 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import '@/app/global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
+import { GlobalThemeProvider } from '@/lib/theme-generator/global-theme-context';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -32,14 +33,12 @@ export default function ThemeEditorLayout({ children }: { children: React.ReactN
                 strategy='afterInteractive'
             />
             <body className='antialiased lg:mx-auto' suppressHydrationWarning>
-                
+                <GlobalThemeProvider>
                     <main className='from-canvas-bg to-canvas-bg-base flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
                         {children}
                     </main>
-               
+                </GlobalThemeProvider>
             </body>
         </html>
-
-
     );
 }

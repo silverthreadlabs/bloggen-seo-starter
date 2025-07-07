@@ -12,6 +12,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 import '@/app/global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
+import { GlobalThemeProvider } from '@/lib/theme-generator/global-theme-context';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -27,19 +28,19 @@ export const viewport: Viewport = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-       
-                <ThemeProvider
-                    attribute='class'
-                    defaultTheme='system'
-                    enableSystem={true}
-                    storageKey=''
-                    disableTransitionOnChange
-                >
-                    <Banner />
-                    <Header />
-                    <RootProvider>{children}</RootProvider>
-                    <Footer />
-                </ThemeProvider>
-
+        <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem={true}
+            storageKey=''
+            disableTransitionOnChange
+        >
+            <GlobalThemeProvider>
+                <Banner />
+                <Header />
+                <RootProvider>{children}</RootProvider>
+                <Footer />
+            </GlobalThemeProvider>
+        </ThemeProvider>
     );
 }

@@ -1,5 +1,3 @@
-
-
 import { useState, useCallback, useMemo } from 'react';
 import {
   getDefaultSelectedColors,
@@ -50,6 +48,7 @@ export const useThemeGenerator = ({ radixColors }: UseThemeGeneratorProps) => {
     cssVariables,
     tailwindV3Config,
     tailwindV4Complete,
-    resetToDefaults
+    resetToDefaults,
+    setSelectedColors
   };
 };
