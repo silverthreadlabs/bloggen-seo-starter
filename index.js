@@ -3,10 +3,10 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-const projectName = process.argv[2] || 'bloggen-seo-starter';
+const projectName = process.argv[2] || 'designrift';
 const projectPath = path.join(process.cwd(), projectName);
 
-console.log(`Creating a new Bloggen SEO Starter in ${projectPath}...`);
+console.log(`Creating a new designrift in ${projectPath}...`);
 
 // Clone the repository
 execSync(`git clone https://github.com/silverthreadlabs/bloggen-seo-starter ${projectPath}`, { stdio: 'inherit' });

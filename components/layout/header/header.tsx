@@ -11,6 +11,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const NAV_ITEMS = [
+    {href: '#theme-example', label: 'Examples'},
     { href: '#how-it-works', label: 'How It Works' },
     { href: '#features', label: 'Features' },
     { href: '#blog', label: 'Blog' },

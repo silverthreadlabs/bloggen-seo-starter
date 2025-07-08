@@ -1,15 +1,15 @@
 import { getURL } from '@/lib/utils/url';
 
 export const siteConfig = {
-    title: 'Bloggen SEO Starter',
+    title: 'designrift',
     description:
-        'Launch your agency site with Bloggen SEO Starter featuring Global Metadata Configuration, MDX products & blog pages, dynamic OG images, JSON-LD and more.',
+        'Launch your agency site with designrift featuring Global Metadata Configuration, MDX products & blog pages, dynamic OG images, JSON-LD and more.',
     baseUrl: getURL(),
     creator: 'Silverthread Labs',
     publisher: 'Silverthread Labs',
     keywords: [
         'bloggen',
-        'bloggen seo starter',
+        'designrift',
         'seo',
         'json-ld',
         'mdx',
@@ -20,7 +20,7 @@ export const siteConfig = {
         'designrift',
     ],
     alternateNames: [
-        'bloggen seo starter',
+        'designrift',
         'bloggen seo template',
         'bloggen agency starter',
         'bloggen agency template'
