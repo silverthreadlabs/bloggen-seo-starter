@@ -1,6 +1,6 @@
 'use client';
-import React, { useContext } from 'react';
-import { GlobalThemeContext } from '@/lib/theme-generator/global-theme-context';
+import React from 'react';
+import { useTheme } from 'next-themes';
 
 const themes = [
   {
@@ -27,7 +27,8 @@ const themes = [
 ];
 
 export const ThemeExample = () => {
-  const { currentTheme, setCurrentTheme } = useContext(GlobalThemeContext);
+  const {theme, setTheme, systemTheme} = useTheme()
+  console.log('system', systemTheme)
 
   return (
     <section id='theme-example' className="w-full py-16 px-4 md:px-0 max-w-5xl mx-auto">
@@ -38,20 +39,20 @@ export const ThemeExample = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {themes.map((theme) => (
+        {themes.map((t) => (
           <button
-            key={theme.key}
+            key={t.key}
             type="button"
-            onClick={() => setCurrentTheme(theme.key)}
+            onClick={() => setTheme(`${t.key}${theme?.split('-')[1] === "dark" ? "-dark" : ""}`)}
             className={`flex items-center gap-4 px-6 py-5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-solid font-semibold text-lg ${
-              currentTheme === theme.key
+              theme?.split('-')[0] === t.key
                 ? 'ring-2 ring-primary-solid shadow-lg'
                 : 'hover:ring-2 hover:ring-primary-solid/50 shadow'
-            } ${theme.bg}`}
+            } ${t.bg}`}
             style={{ minHeight: 64 }}
           >
             <div className="flex gap-1">
-              {theme.swatches.map((color, idx) => (
+              {t.swatches.map((color, idx) => (
                 <span
                   key={color + idx}
                   className="w-5 h-5 rounded-sm border border-black/10"
@@ -59,8 +60,8 @@ export const ThemeExample = () => {
                 />
               ))}
             </div>
-            <span className={`ml-4 text-base md:text-lg font-semibold tracking-tight ${theme.text}`}>
-              {theme.label}
+            <span className={`ml-4 text-base md:text-lg font-semibold tracking-tight ${t.text}`}>
+              {t.label}
             </span>
           </button>
         ))}

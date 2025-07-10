@@ -70,9 +70,9 @@ const ThemeSwitcher = () => {
             }}
             aria-label='Theme selection'>
             {[
-                { value: 'light', icon: <FaSun size={18} />, title: 'Light theme' },
-                { value: 'system', icon: <FaDesktop size={18} />, title: 'System theme' },
-                { value: 'dark', icon: <FaMoon size={18} />, title: 'Dark theme' }
+                { value: `${theme}`, icon: <FaSun size={18} />, title: 'Light theme' },
+                // { value: `${theme}`, icon: <FaDesktop size={18} />, title: 'System theme' },
+                { value: `${theme}-dark`, icon: <FaMoon size={18} />, title: 'Dark theme' }
             ].map(({ value, icon, title }) => (
                 <RadioGroup.Item
                     key={value}

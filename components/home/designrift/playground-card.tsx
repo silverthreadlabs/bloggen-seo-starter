@@ -8,58 +8,31 @@ import { minimalCSS, modernCSS, subtleCSS } from '@/lib/utils/theme';
 import { Button } from '../../ui/button';
 import { ThemeToggle } from '../../ui/theme-toggle';
 import { Heart } from 'lucide-react';
-import { GlobalThemeContext } from '@/lib/theme-generator/global-theme-context';
+import { useTheme } from 'next-themes';
 
 interface PlayGroundCardProps {
     className?: string;
 }
 
 const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
-    const { currentTheme, setCurrentTheme } = useContext(GlobalThemeContext);
+    const { theme, setTheme } = useTheme();
     const [selectedSize, setSelectedSize] = useState<string>('256GB');
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
     const sizes = ['128GB', '256GB', '512GB', '1TB', '2TB'];
 
-    // Get the current theme CSS and scope it to the component
-    const getCurrentCSS = () => {
-        let themeCSS = '';
-        switch (currentTheme) {
-            case 'minimal':
-                themeCSS = minimalCSS;
-                break;
-            case 'modern':
-                themeCSS = modernCSS;
-                break;
-            case 'subtle':
-                themeCSS = subtleCSS;
-                break;
-            default:
-                themeCSS = minimalCSS;
-        }
+    
 
-        // Scope the CSS variables to our component
-        return themeCSS
-            .replace(/:root\s*{/g, '.product-card-themed {')
-            .replace(/\.dark\s*{/g, '.product-card-themed.dark {');
-    };
+      
 
-    const handleThemeChange = (themeKey: 'minimal' | 'modern' | 'subtle') => {
-        if (themeKey === currentTheme) return;
-
-        setIsAnimating(true);
-        setTimeout(() => {
-            setCurrentTheme(themeKey);
-            setTimeout(() => setIsAnimating(false), 200);
-        }, 150);
-    };
+    
 
     // Check if user prefers dark mode
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         const checkDarkMode = () => {
-            setIsDarkMode(document.documentElement.classList.contains('dark'));
+            setIsDarkMode(theme?.split('-')[1] === 'dark');
         };
 
         checkDarkMode();
@@ -77,7 +50,7 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
     return (
         <>
             {/* Apply scoped CSS to the product card container */}
-            <style>{getCurrentCSS()}</style>
+            {/* <style>{getCurrentCSS()}</style> */}
 
             <div className={`mx-auto w-full ${className}`}>
                 {/* Theme Switcher - Circular Indicators */}
@@ -85,13 +58,13 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
                     <div className='flex items-center gap-6'>
                         <div className='text-center'>
                             <Button
-                                onClick={() => handleThemeChange('minimal')}
+                                onClick={() => setTheme(`minimal${theme?.split('-')[1] === 'dark' ? '-dark' : ''}`)}
                                 variant='ghost'
                                 color='neutral'
                                 size='lg'
                                 iconOnly
                                 className={`relative transform overflow-hidden !rounded-full !p-0 !shadow-none transition-all duration-500 hover:scale-110 ${
-                                    currentTheme === 'minimal' ? 'ring-4 ring-blue-400' : ''
+                                    theme?.split('-')[0] === 'minimal' ? 'ring-4 ring-blue-400' : ''
                                 }`}
                                 leadingIcon={
                                     <div className='relative h-full w-full'>
@@ -111,13 +84,13 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
 
                         <div className='text-center'>
                             <Button
-                                onClick={() => handleThemeChange('modern')}
+                                onClick={() => setTheme(`modern${theme?.split('-')[1] === 'dark' ? '-dark' : ''}`)}
                                 variant='ghost'
                                 color='neutral'
                                 size='lg'
                                 iconOnly
                                 className={`relative transform overflow-hidden !rounded-full !p-0 !shadow-none transition-all duration-500 hover:scale-110 ${
-                                    currentTheme === 'modern' ? 'ring-4 ring-blue-400' : ''
+                                    theme?.split('-')[0] === 'modern' ? 'ring-4 ring-blue-400' : ''
                                 }`}
                                 leadingIcon={
                                     <div className='relative h-full w-full'>
@@ -137,13 +110,13 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
 
                         <div className='text-center'>
                             <Button
-                                onClick={() => handleThemeChange('subtle')}
+                                onClick={() => setTheme(`subtle${theme?.split('-')[1] === 'dark' ? '-dark' : ''}`)}
                                 variant='ghost'
                                 color='neutral'
                                 size='lg'
                                 iconOnly
                                 className={`relative transform overflow-hidden !rounded-full !p-0 !shadow-none transition-all duration-500 hover:scale-110 ${
-                                    currentTheme === 'subtle' ? 'ring-4 ring-blue-400' : ''
+                                    theme?.split('-')[0] === 'subtle' ? 'ring-4 ring-blue-400' : ''
                                 }`}
                                 leadingIcon={
                                     <div className='relative h-full w-full'>
@@ -200,9 +173,9 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
                                     key={size}
                                     onClick={() => setSelectedSize(size)}
                                     variant={selectedSize === size ? 'solid' : 'surface'}
-                                    color={selectedSize === size ?  `${currentTheme === 'minimal' ? 'neutral' : 'primary'}` : 'neutral'}
+                                    color={selectedSize === size ?  `${theme?.split('-')[0] === 'minimal' ? 'neutral' : 'primary'}` : 'neutral'}
                                     size='sm'
-                                    className={`${currentTheme === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
+                                    className={`${theme?.split('-')[0] === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
                                     {size}
                                 </Button>
                             ))}
@@ -213,19 +186,19 @@ const PlayGroundCard: React.FC<PlayGroundCardProps> = ({ className = '' }) => {
                             
                             <Button 
                                 variant='solid' 
-                                color={currentTheme === 'minimal' ? 'neutral' : 'primary'} 
+                                color={theme?.split('-')[0] === 'minimal' ? 'neutral' : 'primary'} 
                                 size='default' 
                                 fullWidth 
-                                className={`${currentTheme === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
+                                className={`${theme?.split('-')[0] === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
                                 Buy Now
                             </Button>
 
                             <Button 
                                 variant='outline' 
-                                color={currentTheme === 'minimal' ? 'neutral' : 'primary'} 
+                                color={theme?.split('-')[0] === 'minimal' ? 'neutral' : 'primary'} 
                                 size='default' 
                                 fullWidth 
-                                className={`${currentTheme === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
+                                className={`${theme?.split('-')[0] === 'minimal' ? 'rounded-md' : 'rounded-xl'}`}>
                                 Add to Cart
                             </Button>
                         </div>

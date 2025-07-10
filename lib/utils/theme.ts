@@ -1,6 +1,7 @@
 export const minimalCSS = `
 :root {
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://designrift.vercel.app */
+/*minimal theme*/
 /* LIGHT THEME */
   /* CANVAS */
   --canvas-base: #fcfcfc;
@@ -158,7 +159,8 @@ export const minimalCSS = `
 `;
 
 export const modernCSS = `
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://designrift.vercel.app */
+/*modern theme*/
 /* LIGHT THEME */
 :root {
 
@@ -236,6 +238,21 @@ export const modernCSS = `
   --alert-text: #cd2b31;
   --alert-text-contrast: #381316;
   --alert-on-alert: #ffffff;
+
+   /* INFO */
+    --info-base: #fbfdff;
+    --info-bg-subtle: #f5faff;
+        --info-bg: #edf6ff;
+        --info-bg-hover: #e1f0ff;
+        --info-bg-active: #cee7fe;
+        --info-line: #b7d9f8;
+        --info-border: #96c7f2;
+        --info-border-hover: #5eb0ef;
+        --info-solid: #0091ff;
+        --info-solid-hover: #0081f1;
+        --info-text: #006adc;
+        --info-text-contrast: #00254d;
+        --info-on-info: #ffffff;
 }
 
 /* DARK THEME */
@@ -315,11 +332,27 @@ export const modernCSS = `
   --alert-text: #ff6369;
   --alert-text-contrast: #feecee;
   --alert-on-alert: #ffffff;
+
+   /* INFO */
+        --info-base: #0f1720;
+        --info-bg-subtle: #0f1b2d;
+        --info-bg: #10243e;
+        --info-bg-hover: #102a4c;
+        --info-bg-active: #0f3058;
+        --info-line: #0d3868;
+        --info-border: #0a4481;
+        --info-border-hover: #0954a5;
+        --info-solid: #0091ff;
+        --info-solid-hover: #369eff;
+        --info-text: #52a9ff;
+        --info-text-contrast: #eaf6ff;
+        --info-on-info: #ffffff;
 }
 `;
 
 export const subtleCSS = `
-/* Generated with https://designrift.vercel.app */ 
+/* Generated with https://designrift.vercel.app */
+/*subtle theme*/
 /* LIGHT THEME */
 :root {
 
@@ -397,6 +430,21 @@ export const subtleCSS = `
   --alert-text: #cd2b31;
   --alert-text-contrast: #381316;
   --alert-on-alert: #ffffff;
+
+   /* INFO */
+        --info-base: #fbfdff;
+        --info-bg-subtle: #f5faff;
+        --info-bg: #edf6ff;
+        --info-bg-hover: #e1f0ff;
+        --info-bg-active: #cee7fe;
+        --info-line: #b7d9f8;
+        --info-border: #96c7f2;
+        --info-border-hover: #5eb0ef;
+        --info-solid: #0091ff;
+        --info-solid-hover: #0081f1;
+        --info-text: #006adc;
+        --info-text-contrast: #00254d;
+        --info-on-info: #ffffff;
 }
 
 /* DARK THEME */
@@ -476,5 +524,20 @@ export const subtleCSS = `
   --alert-text: #ff6369;
   --alert-text-contrast: #feecee;
   --alert-on-alert: #ffffff;
+
+   /* INFO */
+        --info-base: #0f1720;
+        --info-bg-subtle: #0f1b2d;
+        --info-bg: #10243e;
+        --info-bg-hover: #102a4c;
+        --info-bg-active: #0f3058;
+        --info-line: #0d3868;
+        --info-border: #0a4481;
+        --info-border-hover: #0954a5;
+        --info-solid: #0091ff;
+        --info-solid-hover: #369eff;
+        --info-text: #52a9ff;
+        --info-text-contrast: #eaf6ff;
+        --info-on-info: #ffffff;
 }
 `;

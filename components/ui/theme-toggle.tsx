@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 const ThemeToggle = () => {
-    const { theme, setTheme, resolvedTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     // Only render after hydration
@@ -20,7 +20,7 @@ const ThemeToggle = () => {
 
         // Only set a theme if none is set, but don't override 'system'
         if (!theme) {
-            setTheme('system');
+            setTheme(`minimal${systemTheme === "dark" ? "-dark" : ""}`);
         }
     }, [theme, setTheme, mounted]);
 
@@ -33,16 +33,21 @@ const ThemeToggle = () => {
         );
     }
 
-    const isDark = theme === 'dark' || (theme === 'system' && resolvedTheme === 'dark');
+    const isDark = theme?.split('-')[1] === 'dark';
 
     const toggleTheme = () => {
+        console.log('toggle', theme)
         // Cycle through: light -> dark -> system -> light
-        if (theme === 'light') {
-            setTheme('dark');
-        } else if (theme === 'dark') {
-            setTheme('system');
-        } else {
-            setTheme('light');
+        if (!isDark) {
+            console.log('toggleif', theme)
+            setTheme(`${theme}-dark`);
+        }
+        // else if (theme === 'dark') {
+        //     setTheme(`${theme}-${systemTheme===theme?systemTheme:theme}`);
+        // } 
+        else {
+            console.log('toggleelse', theme)
+            setTheme(`${theme?.split('-')[0]}`);
         }
     };
 
@@ -55,23 +60,17 @@ const ThemeToggle = () => {
         >
             {/* Animated background */}
             <motion.div
-                className={`absolute inset-0 rounded-full ${
-                    theme === 'dark' ? 'bg-primary-solid' : 
-                    theme === 'system' ? 'bg-gradient-to-r from-canvas-line to-primary-solid' :
-                    'bg-canvas-line'
-                }`}
+                className={`absolute inset-0 rounded-full ${theme?.split('-')[1] === 'dark' ? 'bg-primary-solid' : 'bg-canvas-line'}`}
                 transition={{
                     type: "spring",
                     stiffness: 500,
                     damping: 30
                 }}
             />
-            
+
             {/* Single background icon */}
             <motion.div
-                className={`absolute ${
-                    theme === 'light' ? 'right-2' : theme === 'dark' ? 'left-2' : 'left-1/2 transform -translate-x-1/2'
-                }`}
+                className={`absolute ${theme?.split('-')[1] === 'dark' ? 'left-2' : 'right-2'}`}
                 animate={{
                     opacity: 1,
                     scale: 1
@@ -82,20 +81,20 @@ const ThemeToggle = () => {
                     damping: 25
                 }}
             >
-                {theme === 'light' ? (
+                {theme?.split('-')[1] === '' ? (
                     <FaMoon size={14} className="text-canvas-text" />
-                ) : theme === 'dark' ? (
+                ) : theme?.split('-')[1] === 'dark' ? (
                     <FaSun size={14} className="text-white" />
                 ) : (
                     <div className="w-3 h-3 rounded-full border-2 border-white bg-transparent" />
                 )}
             </motion.div>
-            
+
             {/* Toggle circle with spring animation */}
             <motion.div
                 className=" relative flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-lg z-10"
                 animate={{
-                    x: theme === 'light' ? 4 : theme === 'dark' ? 28 : 16
+                    x: theme?.split('-')[1] === 'dark' ? 28 : 4
                 }}
                 transition={{
                     type: "spring",

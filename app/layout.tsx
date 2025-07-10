@@ -8,8 +8,6 @@ import { env } from '@/lib/utils/env';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import '@/app/global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
-import { GlobalThemeProvider } from '@/lib/theme-generator/global-theme-context';
 
 const manrope = Manrope({
     subsets: ['latin'],
@@ -20,7 +18,7 @@ const manrope = Manrope({
     fallback: ['system-ui', 'arial'] // Add fallback
 });
 
-export default function ThemeEditorLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html suppressHydrationWarning lang='en' className={`${manrope.variable}`}>
             <Suspense fallback={null}>
@@ -33,11 +31,27 @@ export default function ThemeEditorLayout({ children }: { children: React.ReactN
                 strategy='afterInteractive'
             />
             <body className='antialiased lg:mx-auto' suppressHydrationWarning>
-                <GlobalThemeProvider>
-                    <main className='from-canvas-bg to-canvas-bg-base flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
+                {/* <GlobalThemeProvider> */}
+                <main className='from-canvas-bg to-canvas-bg-base flex flex-auto flex-col items-center bg-gradient-to-b md:px-0'>
+                    <ThemeProvider
+                        attribute='class'
+                        defaultTheme='minimal'
+                        enableSystem={true}
+                        storageKey='theme'
+                        disableTransitionOnChange
+                        value={{
+                            minimal: 'minimal',
+                            'minimal-dark': 'minimal-dark',
+                            modern: 'modern',
+                            'modern-dark': 'modern-dark',
+                            subtle: 'subtle',
+                            'subtle-dark': 'subtle-dark',
+                        }}
+                    >
                         {children}
-                    </main>
-                </GlobalThemeProvider>
+                    </ThemeProvider>
+                </main>
+                {/* </GlobalThemeProvider> */}
             </body>
         </html>
     );

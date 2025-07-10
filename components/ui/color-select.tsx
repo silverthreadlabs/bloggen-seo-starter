@@ -51,7 +51,7 @@ const ColorOption = memo(
         >
           <div
             className="w-5 h-5 rounded"
-            style={{ backgroundColor }}
+            // style={{ backgroundColor }}
           />
           <Select.ItemText>{children}</Select.ItemText>
           <Select.ItemIndicator className="absolute right-2">
@@ -105,7 +105,8 @@ SelectTrigger.displayName = 'SelectTrigger';
 
 // Main component
 const ColorSelect = memo(({ value, onValueChange, recommendedColors, allColors }: ColorSelectProps) => {
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
+  const resolvedTheme = theme?.split('-')[1] === 'dark' ? 'dark' : 'light';
 
   // Memoize the filtered colors to prevent recalculation
   const filteredColors = useMemo(() =>

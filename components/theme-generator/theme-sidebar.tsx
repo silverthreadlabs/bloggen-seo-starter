@@ -12,7 +12,6 @@ import {
   type SelectedColors,
   type ColorCategory
 } from '@/lib/theme-generator';
-import { GlobalThemeContext } from '@/lib/theme-generator/global-theme-context';
 import { Button } from '@/components/ui/button';
 
 import { useTheme } from 'next-themes';
@@ -24,36 +23,6 @@ const predefinedThemes = [
   { key: 'subtle', label: 'Subtle', description: 'Soft and elegant' },
 ];
 
-// TODO: Map each theme to its color values for all categories
-export const themeColorMap: Record<string, Partial<SelectedColors>> = {
-  minimal: {
-    canvas: 'gray',
-    primary: 'iris',
-    secondary: '',
-    success: 'green',
-    warning: 'yellow',
-    alert: 'red',
-    info: 'blue',
-  },
-  modern: {
-    canvas: 'sage',
-    primary: 'jade',
-    secondary: '',
-    success: 'green',
-    warning: 'amber',
-    alert: 'tomato',
-    info: 'sky',
-  },
-  subtle: {
-    canvas: 'sand',
-    primary: 'gold',
-    secondary: '',
-    success: 'mint',
-    warning: 'amber',
-    alert: 'crimson',
-    info: 'blue',
-  },
-};
 
 interface ThemeSidebarProps {
   selectedColors: SelectedColors;
@@ -71,8 +40,7 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
   tailwindV4Complete
 }) => {
   const primaryRecommendations = getPrimaryRecommendations(selectedColors.canvas);
-  const { theme } = useTheme();
-  const { currentTheme, setCurrentTheme } = useContext(GlobalThemeContext);
+  const { theme, setTheme, systemTheme } = useTheme();
 
   // Swatch grid for predefined themes
 
@@ -95,8 +63,8 @@ export const ThemeSidebar: React.FC<ThemeSidebarProps> = ({
             swatchColors={[]}
             recommendedColors={predefinedThemes.map(theme => theme.key)}
             allColors={[]}
-            selectedColor={currentTheme}
-            onColorSelect={(preset) => setCurrentTheme(preset)}
+            selectedColor={theme?.split('-')[0]|| "minimal" }
+            onColorSelect={(preset) => setTheme(`${preset}${systemTheme === "dark" ? "-dark" : ""}`)}
             showSelect={true}
           />
         </div>

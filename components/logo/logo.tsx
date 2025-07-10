@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 const Logo = () => {
     const { theme, systemTheme } = useTheme();
     const [logo, setLogo] = useState<React.ReactNode>(null);
-    const themeValue = theme === 'system' ? systemTheme : theme;
+    // const themeValue = theme === 'system' ? systemTheme : theme;
     function getLogo() {
-        if (themeValue === 'dark') {
+        if (theme?.split('-')[1] === 'dark') {
             console.log('dark');
             
             return <LogoDark />;
@@ -22,7 +22,7 @@ const Logo = () => {
     }
     useEffect(() => {
         console.log('theme', theme);
-        console.log('themeValue', themeValue);
+        // console.log('themeValue', themeValue);
         setLogo(getLogo());
     }, [theme]);
 

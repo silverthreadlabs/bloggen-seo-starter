@@ -31,13 +31,13 @@ const SimpleThemeSwitcher = () => {
     );
   }
   
-  const isDark = resolvedTheme === 'dark';
+  const isDark = theme?.split('-')[1] === 'dark';
   const currentValue = isDark ? 'dark' : 'light';
   
   return (
     <Tabs.Root 
       value={currentValue} 
-      onValueChange={setTheme}
+      onValueChange={(value) => setTheme(`${value==="light"?theme?.split('-')[0]:`${theme}-${value}`}`)}
       className="w-full"
     >
       <Tabs.List 
