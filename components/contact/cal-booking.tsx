@@ -27,7 +27,7 @@ export default function CalBooking() {
         <div className='h-full min-h-96 w-full'>
             <Cal
                 namespace='30min'
-                calLink='syed-saif.com/30min'
+                calLink='saifpasha.com/30-minute-consultation'
                 style={{
                     width: '100%',
                     height: '100%',
